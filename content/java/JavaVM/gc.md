@@ -16,6 +16,12 @@ summary: " "
   - Paraller new（复制、新生代，并行） cms（老年代，标记清理，并行、并发）
 
 - cms
-  先进行一次stoptheword
+  - 先进行一次stoptheworld
+  - 标记和gcroot直接相关的对象
+  - 并发的进行标记
+  - stoptheworld
+  - 重新标记
+  - 并发的进行垃圾清除
 
 - g1
+  - 化整为零
