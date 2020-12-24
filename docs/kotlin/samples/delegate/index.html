@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>【译】Kotlin 语法基础 - 代理 - Bokmark Pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://bokmark.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.aad43d4ecb69a264f2539b89d7f779d5f3cdff22e7585fe5fc3c77272f1c2696.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-主页">
+      <a href="/">
+        <span>主页</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-架构">
+      <a href="/arch/">
+        <span>架构</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-系统源码">
+      <a href="/framework/">
+        <span>系统源码</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-java">
+      <a href="/java/">
+        <span>Java</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-kotlin">
+      <a href="/kotlin/">
+        <span>Kotlin</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-多线程">
+      <a href="/mulitthread/">
+        <span>多线程</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-杂记">
+      <a href="/notes/">
+        <span>杂记</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-开源框架">
+      <a href="/opensources/">
+        <span>开源框架</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://bokmark.github.io/"><img alt="Logo" src="/images/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://bokmark.github.io/"><img alt="Logo" src="/images/logo-mobile.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-主页">
+      <a href="/">
+        <span>主页</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-架构">
+      <a href="/arch/">
+        <span>架构</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-系统源码">
+      <a href="/framework/">
+        <span>系统源码</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-java">
+      <a href="/java/">
+        <span>Java</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-kotlin">
+      <a href="/kotlin/">
+        <span>Kotlin</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-多线程">
+      <a href="/mulitthread/">
+        <span>多线程</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-杂记">
+      <a href="/notes/">
+        <span>杂记</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-开源框架">
+      <a href="/opensources/">
+        <span>开源框架</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Kotlin</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/plus/fanxin/">Kotlin 泛型</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/plus/plus1/">Kotlin 进阶知识</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/conroutines/">Kotlin 协程 - 入门篇</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/samples/intro/">【译】Kotlin - 基础介绍</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://bokmark.github.io/kotlin/samples/delegate/">【译】Kotlin 语法基础 - 代理</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/samples/funarea/">【译】Kotlin 语法基础 - 作用域方法</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/samples/function/">【译】Kotlin 语法基础 - 函数</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/samples/flow/">【译】Kotlin 语法基础 - 流程控制</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/samples/special/">【译】Kotlin 语法基础 - 特殊特性</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/samples/specialclass/">【译】Kotlin 语法基础 - 特殊类</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/kotlin/samples/collections/">【译】Kotlin 语法基础 - 集合</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">【译】Kotlin 语法基础 - 代理</h1>
+<div class="content ">
+  <h3 id="delegation-pattern-委托模式">Delegation Pattern 委托模式</h3>
+<p>kotlin 天然支持 <a href="https://kotlinlang.org/docs/reference/delegation.html">委托代理模式</a>，不再需要编写一些模板文件。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">interface SoundBehavior {                                                          // 1
+    fun makeSound()
+}
+
+class ScreamBehavior(val n:String): SoundBehavior {                                // 2
+    override fun makeSound() = println(&#34;${n.toUpperCase()} !!!&#34;)
+}
+
+class RockAndRollBehavior(val n:String): SoundBehavior {                           // 2
+    override fun makeSound() = println(&#34;I&#39;m The King of Rock &#39;N&#39; Roll: $n&#34;)
+}
+
+// Tom Araya is the &#34;singer&#34; of Slayer
+class TomAraya(n:String): SoundBehavior by ScreamBehavior(n)                       // 3
+
+// You should know ;)
+class ElvisPresley(n:String): SoundBehavior by RockAndRollBehavior(n)              // 3
+
+fun main() {
+    val tomAraya = TomAraya(&#34;Thrash Metal&#34;)
+    tomAraya.makeSound()                                                           // 4
+    val elvisPresley = ElvisPresley(&#34;Dancin&#39; to the Jailhouse Rock.&#34;)
+    elvisPresley.makeSound()
+}
+/*
+THRASH METAL !!!
+I&#39;m The King of Rock &#39;N&#39; Roll: Dancin&#39; to the Jailhouse Rock.
+*/
+</code></pre></div><ul>
+<li>1 定义一个接口</li>
+<li>2 定义两个实现类，<code>ScreamBehavior</code> 和<code> RockAndRollBehavior</code>。他们都实现了 <code>SoundBehavior</code>的接口。</li>
+<li>3 <code>TomAraya </code> 和<code>ElvisPresley </code> 也是先了<code>SoundBehavior</code>的接口，但是他们没有提供实现，而是将实现委托给了<code>ScreamBehavior</code> 和<code> RockAndRollBehavior</code>。通过一个<code>by</code> 关键字，这个委托就产生了，你看没有一丝一毫的多余代码。</li>
+<li>4 当调用了 tomAraya 的 <code> makeSound()</code>  或者嗲用 elvisPresley 的 <code> makeSound()</code>的时候，他们分别调用了他们的委托类。</li>
+</ul>
+<hr>
+<h3 id="delegated-properties-代理属性">Delegated Properties 代理属性</h3>
+<p>kotlin 提供了一种<a href="http://kotlinlang.org/docs/reference/delegated-properties.html">代理属性</a>的机制,这个机制允许你将一个属性的get set 方法委托给某一个实例，这个实例必须有<code>getValue</code> 方法，如果待委托的属性还是一个可变属性那么 <code>setValue</code> 也是必须的。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">import kotlin.reflect.KProperty
+
+class Example {
+    var p: String by Delegate()                                               // 1
+
+    override fun toString() = &#34;Example Class&#34;
+}
+
+class Delegate() {
+    operator fun getValue(thisRef: Any?, prop: KProperty&lt;*&gt;): String {        // 2     
+        return &#34;$thisRef, thank you for delegating &#39;${prop.name}&#39; to me!&#34;
+    }
+
+    operator fun setValue(thisRef: Any?, prop: KProperty&lt;*&gt;, value: String) { // 2
+        println(&#34;$value has been assigned to ${prop.name} in $thisRef&#34;)
+    }
+}
+
+fun main() {
+    val e = Example()
+    println(e.p)
+    e.p = &#34;NEW&#34;
+}
+/*
+Example Class, thank you for delegating &#39;p&#39; to me!
+NEW has been assigned to p in Example Class
+*/
+</code></pre></div><ul>
+<li>1 委托属性 <code>p</code> 类型是<code>String</code> 被委托给了一个class <code>Delegate</code>的实例，这个实例用<code>by</code>关键字定义在 p之后。</li>
+<li>2 委托类里面的委托方法，这个方法的签名必须和这里一摸一样。方法里面你可以由自己决定需要几步操作。如果是不可变属性那么只有getValue 是必须的。</li>
+</ul>
+<h5 id="标准库里的delegate">标准库里的delegate</h5>
+<p>kotlin的标准库里面提供了一大堆有用的delegate，比如 <code>lazy</code> <code>observable</code> 等等。比如<code>lazy</code>的使用方法。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class LazySample {
+    init {
+      println(&#34;created!&#34;)            // 1
+    }
+
+    val lazyStr: String by lazy {
+        println(&#34;computed!&#34;)          // 2
+        &#34;my lazy&#34;
+    }
+}
+
+fun main() {
+    val sample = LazySample()         // 1
+    println(&#34;lazyStr = ${sample.lazyStr}&#34;)  // 2
+    println(&#34; = ${sample.lazyStr}&#34;)  // 3
+}
+/*
+created!
+computed!
+lazyStr = my lazy
+ = my lazy
+*/
+</code></pre></div><ul>
+<li>1 lazy 的属性不会在类实例创建的时候初始化</li>
+<li>2 第一次调用<code>lazyStr</code>的<code>get()</code>的时候，才会调用lazy类的实例的提供的表达式，返回一个&quot;my lazy&quot;。这个mylazy将会被赋值给lazyStr</li>
+<li>3 再次调用get的时候将会直接返回之前储存的值。</li>
+</ul>
+<p><em>如果你想要一个线程安全的 延迟初始化方案，请使用 <code>blockingLazy()</code> 代替。他保证了 getValue 后者 setValue 会只在一个线程上运行，并且所有的线程都可以读取到同样的值。</em></p>
+<h3 id="保存属性到-map">保存属性到 map</h3>
+<p>属性委托，同样可以用于保存内容到map 。这是很方便地用于类似于解析json，或者其他的什么东西之上的。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class User(val map: Map&lt;String, Any?&gt;) {
+    val name: String by map                // 1
+    val age: Int     by map                // 1
+}
+
+fun main() {
+    val user = User(mapOf(
+            &#34;name&#34; to &#34;John Doe&#34;,
+            &#34;age&#34;  to 25
+    ))
+
+    println(&#34;name = ${user.name}, age = ${user.age}&#34;)
+}
+//name = John Doe, age = 25
+</code></pre></div><ul>
+<li>1 在这里 map 内部提供过来 delegate 属性类的作用，当调用user的属性的get的时候，会去map中取出value，key是user属性的名字。</li>
+</ul>
+<p><em>当然你也可以用可变属性 不需要一定要val 的属性，只是你需要注意的是 如果你定义的是可变属性，那么你传入的map 也必须是可变map</em></p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+            欢迎发送邮件到我的邮箱 <li class="zerostatic"><a href="https://mail.163.com">bokmark@163.com</a></li> 和我交流
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>

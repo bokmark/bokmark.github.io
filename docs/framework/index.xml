@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frameworks on Bokmark Pages</title>
+    <link>https://bokmark.github.io/framework/</link>
+    <description>Recent content in Frameworks on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="https://bokmark.github.io/framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>系统启动流程</title>
+      <link>https://bokmark.github.io/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>https://bokmark.github.io/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</guid>
+      <description>启动启动流程</description>
+    </item>
+    
+    <item>
+      <title>Handler</title>
+      <link>https://bokmark.github.io/framework/handler/handler/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>https://bokmark.github.io/framework/handler/handler/</guid>
+      <description>从handler的面试题出发了解handler</description>
+    </item>
+    
+  </channel>
+</rss>
