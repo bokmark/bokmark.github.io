@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开源框架 on Bokmark Pages</title>
+    <link>/opensources/</link>
+    <description>Recent content in 开源框架 on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="/opensources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retrofit - platform</title>
+      <link>/opensources/retrofit/platform/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/opensources/retrofit/platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Retrofit - 原理</title>
+      <link>/opensources/retrofit/use/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/opensources/retrofit/use/</guid>
+      <description>Retrofit 的使用 可以看这里(/opensources/retrofit/use)
+ 介绍 retrofit 将你的htppapi 转化成java接口的样子
+public interface GitHubService { @GET(&amp;#34;users/{user}/repos&amp;#34;) Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; listRepos(@Path(&amp;#34;user&amp;#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
+Retrofit retrofit = new Retrofit.Builder() .baseUrl(&amp;#34;https://api.github.com/&amp;#34;) .build(); GitHubService service = retrofit.</description>
+    </item>
+    
+    <item>
+      <title>Retrofit - 大致流程源码解析</title>
+      <link>/opensources/retrofit/base/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/opensources/retrofit/base/</guid>
+      <description>Retrofit 的使用 可以看这里
+ 使用 retrofit 将你的htppapi 转化成java接口的样子
+public interface GitHubService { @GET(&amp;#34;users/{user}/repos&amp;#34;) Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; listRepos(@Path(&amp;#34;user&amp;#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
+Retrofit retrofit = new Retrofit.Builder() .baseUrl(&amp;#34;https://api.github.com/&amp;#34;) .build(); GitHubService service = retrofit.</description>
+    </item>
+    
+  </channel>
+</rss>

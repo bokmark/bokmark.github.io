@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/opensources/retrofit/platform/</loc>
+    <lastmod>2020-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/opensources/retrofit/use/</loc>
+    <lastmod>2020-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/opensources/retrofit/base/</loc>
+    <lastmod>2020-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/</loc>
+    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
+    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/jmm/</loc>
+    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/about/</loc>
+    <lastmod>2020-11-14T12:18:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arch/jetpack/camerax/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arch/jetpack/compose/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arch/jetpack/navigation/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arch/jetpack/startup/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arch/jetpack/viewmodel/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arch/jetpack/intro/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/opensources/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arch/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/plus/fanxin/</loc>
+    <lastmod>2020-11-30T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/plus/plus1/</loc>
+    <lastmod>2020-11-30T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/framework/handler/handler/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/aqs/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/cas/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/lock/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/synchronized/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/thread_local/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/volatile/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/blockingqueue/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/questions/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/conroutines/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mulitthread/base/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/other/io/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/other/json/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/java/other/object_proxy/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/intro/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/delegate/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/funarea/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/function/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/flow/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/special/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/specialclass/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/samples/collections/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-11-14T15:11:00+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/notes/other/brew/</loc>
+    <lastmod>2020-11-14T12:20:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/notes/other/giteepages/</loc>
+    <lastmod>2020-11-14T12:20:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/notes/fix_bug/gradle_connect_reset/</loc>
+    <lastmod>2020-11-14T12:20:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/notes/other/maven-snapshot/</loc>
+    <lastmod>2020-11-14T12:20:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/notes/</loc>
+    <lastmod>2020-11-14T12:20:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/notes/other/sed/</loc>
+    <lastmod>2020-11-14T12:20:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/</loc>
+    <lastmod>2020-11-14T12:18:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/framework/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+</urlset>

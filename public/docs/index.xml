@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Bokmark Pages</title>
+    <link>/docs/</link>
+    <description>Recent content in Docs on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Nov 2020 12:18:50 +0800</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>/docs/about/</link>
+      <pubDate>Sat, 14 Nov 2020 12:18:50 +0800</pubDate>
+      
+      <guid>/docs/about/</guid>
+      <description>欢迎 关注我的微信公众号 码谦 ，虽然毛都没有。
+作者 ： 帅不过王力宏 </description>
+    </item>
+    
+  </channel>
+</rss>

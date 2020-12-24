@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Maven snapshot - Bokmark Pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.aad43d4ecb69a264f2539b89d7f779d5f3cdff22e7585fe5fc3c77272f1c2696.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-主页">
+      <a href="/">
+        <span>主页</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-架构">
+      <a href="/arch/">
+        <span>架构</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-系统源码">
+      <a href="/framework/">
+        <span>系统源码</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-java">
+      <a href="/java/">
+        <span>Java</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-kotlin">
+      <a href="/kotlin/">
+        <span>Kotlin</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-多线程">
+      <a href="/mulitthread/">
+        <span>多线程</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-杂记">
+      <a href="/notes/">
+        <span>杂记</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-开源框架">
+      <a href="/opensources/">
+        <span>开源框架</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/"><img alt="Logo" src="/images/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/"><img alt="Logo" src="/images/logo-mobile.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-主页">
+      <a href="/">
+        <span>主页</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-架构">
+      <a href="/arch/">
+        <span>架构</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-系统源码">
+      <a href="/framework/">
+        <span>系统源码</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-java">
+      <a href="/java/">
+        <span>Java</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-kotlin">
+      <a href="/kotlin/">
+        <span>Kotlin</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-多线程">
+      <a href="/mulitthread/">
+        <span>多线程</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-杂记">
+      <a href="/notes/">
+        <span>杂记</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-开源框架">
+      <a href="/opensources/">
+        <span>开源框架</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Notes</h4>
+  <ul>
+    
+    <li class="">
+      <a href="/notes/other/brew/">brew</a>
+    </li>
+    
+    <li class="">
+      <a href="/notes/other/giteepages/">Gitee Pages服务</a>
+    </li>
+    
+    <li class="">
+      <a href="/notes/fix_bug/gradle_connect_reset/">Gradle connect Reset</a>
+    </li>
+    
+    <li class="active ">
+      <a href="/notes/other/maven-snapshot/">Maven snapshot</a>
+    </li>
+    
+    <li class="">
+      <a href="/notes/other/sed/">sed</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Maven snapshot</h1>
+<div class="content ">
+  <blockquote>
+<p>转载自 <a href="https://www.runoob.com/maven/maven-snapshots.html">https://www.runoob.com/maven/maven-snapshots.html</a></p>
+</blockquote>
+<h2 id="maven-快照snapshot">Maven 快照(SNAPSHOT)</h2>
+<p>一个大型的软件应用通常包含多个模块，并且通常的场景是多个团队开发同一应用的不同模块。举个例子，设想一个团队开发应用的前端，项目为 app-ui(app-ui.jar:1.0)，而另一个团队开发应用的后台，使用的项目是 data-service(data-service.jar:1.0)。</p>
+<p>现在可能出现的情况是开发 data-service 的团队正在进行快节奏的 bug 修复或者项目改进，并且他们几乎每隔一天就要发布库到远程仓库。 现在如果 data-service 团队每隔一天上传一个新版本，那么将会出现下面的问题：</p>
+<ul>
+<li>data-service 团队每次发布更新的代码时都要告知 app-ui 团队。</li>
+<li>app-ui 团队需要经常地更新他们 pom.xml 文件到最新版本。</li>
+</ul>
+<p>为了解决这种情况，快照的概念派上了用场。</p>
+<hr>
+<h3 id="什么是快照">什么是快照?</h3>
+<p>快照是一种特殊的版本，指定了某个当前的开发进度的副本。不同于常规的版本，Maven 每次构建都会在远程仓库中检查新的快照。 现在 data-service 团队会每次发布更新代码的快照到仓库中，比如说 data-service:1.0-SNAPSHOT 来替代旧的快照 jar 包。</p>
+<hr>
+<h3 id="项目快照-vs-版本">项目快照 vs 版本</h3>
+<p>对于版本，如果 Maven 以前下载过指定的版本文件，比如说 data-service:1.0，Maven 将不会再从仓库下载新的可用的 1.0 文件。若要下载更新的代码，data-service 的版本需要升到1.1。</p>
+<p>快照的情况下，每次 app-ui 团队构建他们的项目时，Maven 将自动获取最新的快照(data-service:1.0-SNAPSHOT)。</p>
+<h4 id="app-ui-项目的-pomxml-文件">app-ui 项目的 pom.xml 文件</h4>
+<p>app-ui 项目使用的是 data-service 项目的 1.0 快照。</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+   <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+   <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0
+</span><span class="s">   http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+   <span class="nt">&lt;groupId&gt;</span>app-ui<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>app-ui<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+   <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+   <span class="nt">&lt;name&gt;</span>health<span class="nt">&lt;/name&gt;</span>
+   <span class="nt">&lt;url&gt;</span>http://maven.apache.org<span class="nt">&lt;/url&gt;</span>
+   <span class="nt">&lt;properties&gt;</span>
+      <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+   <span class="nt">&lt;/properties&gt;</span>
+   <span class="nt">&lt;dependencies&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+      <span class="nt">&lt;groupId&gt;</span>data-service<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>data-service<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+   <span class="nt">&lt;/dependencies&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><h4 id="data-service-项目的-pomxml-文件">data-service 项目的 pom.xml 文件</h4>
+<p>data-service 项目为每次小的改动发布 1.0 快照。</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+   <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+   <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0
+</span><span class="s">   http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+   <span class="nt">&lt;groupId&gt;</span>data-service<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>data-service<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+   <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+   <span class="nt">&lt;name&gt;</span>health<span class="nt">&lt;/name&gt;</span>
+   <span class="nt">&lt;url&gt;</span>http://maven.apache.org<span class="nt">&lt;/url&gt;</span>
+   <span class="nt">&lt;properties&gt;</span>
+      <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+   <span class="nt">&lt;/properties&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+
+</code></pre></div><p>虽然，快照的情况下，Maven 在日常工作中会自动获取最新的快照， 你也可以在任何 maven 命令中使用 -U 参数强制 maven 现在最新的快照构建。</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+            欢迎发送邮件到我的邮箱 <li class="zerostatic"><a href="https://mail.163.com">bokmark@163.com</a></li> 和我交流
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>

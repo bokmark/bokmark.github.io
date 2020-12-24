@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark Pages</title>
+    <link>/</link>
+    <description>Recent content on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Nov 2020 15:11:00 +1000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retrofit - platform</title>
+      <link>/opensources/retrofit/platform/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/opensources/retrofit/platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Retrofit - 原理</title>
+      <link>/opensources/retrofit/use/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/opensources/retrofit/use/</guid>
+      <description>Retrofit 的使用 可以看这里(/opensources/retrofit/use)
+ 介绍 retrofit 将你的htppapi 转化成java接口的样子
+public interface GitHubService { @GET(&amp;#34;users/{user}/repos&amp;#34;) Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; listRepos(@Path(&amp;#34;user&amp;#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
+Retrofit retrofit = new Retrofit.Builder() .baseUrl(&amp;#34;https://api.github.com/&amp;#34;) .build(); GitHubService service = retrofit.</description>
+    </item>
+    
+    <item>
+      <title>Retrofit - 大致流程源码解析</title>
+      <link>/opensources/retrofit/base/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/opensources/retrofit/base/</guid>
+      <description>Retrofit 的使用 可以看这里
+ 使用 retrofit 将你的htppapi 转化成java接口的样子
+public interface GitHubService { @GET(&amp;#34;users/{user}/repos&amp;#34;) Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; listRepos(@Path(&amp;#34;user&amp;#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
+Retrofit retrofit = new Retrofit.Builder() .baseUrl(&amp;#34;https://api.github.com/&amp;#34;) .build(); GitHubService service = retrofit.</description>
+    </item>
+    
+    <item>
+      <title>Java 序列化</title>
+      <link>/java/%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      
+      <guid>/java/%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JMM</title>
+      <link>/mulitthread/jmm/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      
+      <guid>/mulitthread/jmm/</guid>
+      <description>java memory model 现代计算机原理 cpu 多级缓存模型
+  工作内存和主内存是抽象概念
+  虚拟机中每个线程有一个工作内存，只有一个主内存
+  count++ 这个操作 在jmm中是怎么工作的
+  每个线程只允许操作自己线程的工作内存不能操作主内存和别的线程的工作内存
+  jmm 导致的并发安全问题 </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/docs/about/</link>
+      <pubDate>Sat, 14 Nov 2020 12:18:50 +0800</pubDate>
+      
+      <guid>/docs/about/</guid>
+      <description>欢迎 关注我的微信公众号 码谦 ，虽然毛都没有。
+作者 ： 帅不过王力宏 </description>
+    </item>
+    
+    <item>
+      <title>[JetPack]CameraX</title>
+      <link>/arch/jetpack/camerax/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/arch/jetpack/camerax/</guid>
+      <description>作者在工作中遇到了 camera的开发的任务。现在特学习一下 caemrax。
+camera x 的介绍  camerax 使用方案  </description>
+    </item>
+    
+    <item>
+      <title>[JetPack]Compose</title>
+      <link>/arch/jetpack/compose/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/arch/jetpack/compose/</guid>
+      <description>第一步 Jetpack Compose 是干嘛用的？ 做过启动优化的同学一定会发现LayoutInflater.inflate实在是太慢了，可是真当你一点点得去优化xml却不会有太多的提升，真的是搞得人头疼。这时候就要分析 LayoutInflater.inflate 里面到底做了什么？让我们来研究一下吧。
+public View inflate(@LayoutRes int resource, @Nullable ViewGroup root, boolean attachToRoot) { final Resources res = getContext().getResources(); if (DEBUG) { Log.d(TAG, &amp;#34;INFLATING from resource: \&amp;#34;&amp;#34; + res.</description>
+    </item>
+    
+    <item>
+      <title>[JetPack]Navigation</title>
+      <link>/arch/jetpack/navigation/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/arch/jetpack/navigation/</guid>
+      <description>解释 Navigation 是一个框架，用于在 Android 应用中的“目标”之间导航，不论目标是作为 Fragment、Activity 还是其他组件实现，该框架都会提供一致的 API。</description>
+    </item>
+    
+    <item>
+      <title>[JetPack]StartUp</title>
+      <link>/arch/jetpack/startup/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/arch/jetpack/startup/</guid>
+      <description>G oogle 官方解释
+ 这是官方对于startup这个库的解释。
+ App startup 库 提供了 一个直截了当、高性能的方式去初始化你的应用。第三方库和app的开发者都可以使用app startup这个库以数据流的方式去显示的安排启动的各个步骤。
+app startup这个库允许你只创建一个contentprovider 去初始化你的各个 initializer，这将有助与提升你的app启动时间。
+ 从这段话中，我们可以看到几个重要的点。
+ contentprovider 数据流的方式，显示的安排各个启动的步骤 ###配置 配置在你的app或者library的moudle中的build.gradle 中  dependencies { implementation &amp;#34;androidx.startup:startup-runtime:1.0.0-alpha02&amp;#34; } 注册初始化组件 定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。</description>
+    </item>
+    
+    <item>
+      <title>[JetPack]viewmodel</title>
+      <link>/arch/jetpack/viewmodel/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/arch/jetpack/viewmodel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[JetPack]开篇</title>
+      <link>/arch/jetpack/intro/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/arch/jetpack/intro/</guid>
+      <description>本文所有的信息来源于官网的数据 https://developer.android.google.cn/jetpack/
+     库 说明     activity * 访问基于 Activity 构建的可组合 API。   ads 获取广告 ID（无论是否通过 Play 服务）。   annotation 公开元数据，帮助工具开发者和其他开发者了解您的应用代码。   appcompat * 允许在平台旧版 API 上访问新 API（很多使用 Material Design）。   arch.</description>
+    </item>
+    
+    <item>
+      <title>系统启动流程</title>
+      <link>/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</guid>
+      <description>启动启动流程</description>
+    </item>
+    
+    <item>
+      <title>Kotlin 泛型</title>
+      <link>/kotlin/plus/fanxin/</link>
+      <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/plus/fanxin/</guid>
+      <description>java的泛型  kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在这里 有体现。 官方介绍
+ java 泛型中的通配符  首先需要和各位读者明确java中的泛型的两个概念，这有助于你理解kotlin的泛型
+  泛型定义，上限和下限 泛型读取模式   泛型定义是指 在类或者方法上的定义的泛型，这些定义我们 可以定义上限和下限。比如这段代码  class A{} class B extends A{} class C extends A{} class Fu&amp;lt;T&amp;gt; {} class Zi&amp;lt;T extends B&amp;gt; extends Fu&amp;lt;T&amp;gt; {} Zi class定义了他的泛型类型具有上限是B，意味着他的类型只能传入B的子类。</description>
+    </item>
+    
+    <item>
+      <title>Kotlin 进阶知识</title>
+      <link>/kotlin/plus/plus1/</link>
+      <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/plus/plus1/</guid>
+      <description>顶级属性和顶级方法
+val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#34;x = $x; PI = $PI&amp;#34;) incrementX() println(&amp;#34;incrementX()&amp;#34;) println(&amp;#34;x = $x; PI = $PI&amp;#34;) } 定义在class 外面的属性 可以理解为 java中public 静态属性，可以被所有地方使用，只需要import 即可 方法同理。</description>
+    </item>
+    
+    <item>
+      <title>Handler</title>
+      <link>/framework/handler/handler/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/framework/handler/handler/</guid>
+      <description>从handler的面试题出发了解handler</description>
+    </item>
+    
+    <item>
+      <title>多线程--aqs</title>
+      <link>/mulitthread/aqs/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/aqs/</guid>
+      <description>AbstractQueuedSynchronizer、 抽象队列同步器</description>
+    </item>
+    
+    <item>
+      <title>多线程--cas</title>
+      <link>/mulitthread/cas/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/cas/</guid>
+      <description>cas</description>
+    </item>
+    
+    <item>
+      <title>多线程--lock</title>
+      <link>/mulitthread/lock/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/lock/</guid>
+      <description>实现一个自定义的lock 类似于 lock
+学习完 aqs之后再来研究lock的实现
+  公平锁和非公平锁
+  锁的可重入
+  </description>
+    </item>
+    
+    <item>
+      <title>多线程--synchronized</title>
+      <link>/mulitthread/synchronized/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/synchronized/</guid>
+      <description>synchronized(this) synchronized 在底层字节码的实现由这两个实现
+ monitorenter  拿到monitor的所有权，进入代码块
+ monitorexit  每一个对象都有一个monitor与之关联。 字节码获取一个moniter对象的所有权就获取了一个锁
+public synchronized void test() 对象头 优化synchronized 的性能设计了多个锁的量级   对象头
+  偏向锁 （经过统计发现，现代cpu 的锁大部分都是由同一个线程反复获得，所以设计了偏向锁，连自旋都不做了）
+  轻量级锁 - 为了避免上下文切换这类重量级操作。自旋锁cas。 适应性自旋锁 自旋锁次数由虚拟机动态调整。 自旋时间不大于上下文切换所需要的时间，否则就超出了 轻量级锁的意义</description>
+    </item>
+    
+    <item>
+      <title>多线程--thread local</title>
+      <link>/mulitthread/thread_local/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/thread_local/</guid>
+      <description>Thread Local 实现方式</description>
+    </item>
+    
+    <item>
+      <title>多线程--volatile</title>
+      <link>/mulitthread/volatile/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/volatile/</guid>
+      <description>jmm
+ volatile 如何保证可见性 volatile 可见性 最轻量级的同步工具，只能保证可见性，在线程的工作内存中对变量的修改会马上同步到主内存中。只能保证可见性。
+volatile 防止重排序 现代cpu 可以一次执行多个指令，从而 引入了 流水线和重排序 重排序缓存。
+arm 架构拥有 3级流水线，以为这可能同时执行3条指令。
+单线程情况下 重排序 将会保证执行结果相同。但是多线程情况下导致出现混乱的情况。
+volatile使用场景 一个线程写，多个线程读
+volatile 实现原理 lock 前缀 汇编指令 lock指令添加之后 线程的工作内存中使用到变量的时候必须重新从主内存中重新读取一遍 线程的工作内存中对变量进行修改之后必须立马写会主内存</description>
+    </item>
+    
+    <item>
+      <title>多线程--阻塞队列和线程池原理</title>
+      <link>/mulitthread/blockingqueue/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/blockingqueue/</guid>
+      <description>阻塞队列，线程池的实现原理</description>
+    </item>
+    
+    <item>
+      <title>多线程--面试题</title>
+      <link>/mulitthread/questions/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/questions/</guid>
+      <description>synchronized 修饰普通方法和静态方法的区别？什么是可见性？  synchronized 锁的一定是一个具体对象，synchronzied修改的是对象头的内容， synchronized 静态方法加的是 位于方法区中的class对象 synchronized 加在普通方法上锁的是this对象 可见性： 根据jmm，在线程的工作内存中修改一个变量，其他线程将看不到他在这个线程的修改，这就是可见性。 线程从主内存中读取变量到工作内存中，修改运行在线程的工作内存中，不定时地将数据写回主内存。 使用volatile 可以在线程修改变量之后，强行要求将其写回主内存，并且在其他协程使用的时候，强行要求其从主内存再读取一次  锁分哪几类？ 按照各个角度来分：
+ 线程要不要锁住资源  锁住：悲观锁 不锁住：乐观锁   锁住同步资源失败，线程要不要阻塞？  阻塞： 不阻塞：自旋锁 适应性自旋锁   synchronized的为了优化所定义的几个级别的锁  偏向锁 轻量级锁 重量级锁   多个线程竞争的时候是否公平  公平锁 排队锁 非公平锁 先尝试获取一次锁，再排队   一个线程中的多个流程能不能获取同一把锁  可重入锁 非可重入锁   多个线程能不能共享一把锁  共享锁 （读锁） 排他锁 （写锁）    cas 无锁编程的原理 利用了现代cpu提供的compare and swap 原子操作能力，辅助以自旋直到完成为止等方式实现了无锁化编程的能力。</description>
+    </item>
+    
+    <item>
+      <title>Kotlin 协程 - 入门篇</title>
+      <link>/kotlin/conroutines/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/conroutines/</guid>
+      <description>kotlin协程 几问</description>
+    </item>
+    
+    <item>
+      <title>多线程--基础知识</title>
+      <link>/mulitthread/base/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/mulitthread/base/</guid>
+      <description>Java 线程的实现方式有几种，FeatureTask的实现方式，死锁</description>
+    </item>
+    
+    <item>
+      <title>《深入理解Java 虚拟机》第二章</title>
+      <link>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</guid>
+      <description>《深入理解Java 虚拟机》第二章 自学笔记</description>
+    </item>
+    
+    <item>
+      <title>Java IO 的基础应用</title>
+      <link>/java/other/io/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/java/other/io/</guid>
+      <description>java io 的基础应用</description>
+    </item>
+    
+    <item>
+      <title>Java 对象头的内容</title>
+      <link>/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</guid>
+      <description>摘抄自 《深入理解Java虚拟机 &amp;ndash; JVM高级特性与最佳实践》</description>
+    </item>
+    
+    <item>
+      <title>json 的特别之处</title>
+      <link>/java/other/json/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/java/other/json/</guid>
+      <description>json的特别之处</description>
+    </item>
+    
+    <item>
+      <title>《深入理解Java虚拟机》字节码指令表</title>
+      <link>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</guid>
+      <description>摘抄自 《深入理解Java虚拟机 &amp;ndash; JVM高级特性与最佳实践》</description>
+    </item>
+    
+    <item>
+      <title>动态代理</title>
+      <link>/java/other/object_proxy/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>/java/other/object_proxy/</guid>
+      <description>Java的动态代理</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin - 基础介绍</title>
+      <link>/kotlin/samples/intro/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/intro/</guid>
+      <description>方法、操作符方法、中缀方法、vararg、变量、泛型、继承</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 代理</title>
+      <link>/kotlin/samples/delegate/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/delegate/</guid>
+      <description>委托模式 、 代理属性 、 lazy、to</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 作用域方法</title>
+      <link>/kotlin/samples/funarea/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/funarea/</guid>
+      <description>let 、 run 、 with 、 apply 、 also</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 函数</title>
+      <link>/kotlin/samples/function/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/function/</guid>
+      <description>高阶函数、lambda、扩展函数、扩展属性</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 流程控制</title>
+      <link>/kotlin/samples/flow/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/flow/</guid>
+      <description>when 、 loop 、 区间</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 特殊特性</title>
+      <link>/kotlin/samples/special/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/special/</guid>
+      <description>命名参数、string模板、解构声明、smart cast</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 特殊类</title>
+      <link>/kotlin/samples/specialclass/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/specialclass/</guid>
+      <description>Data class、enum class、sealed class、object keyword</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 集合</title>
+      <link>/kotlin/samples/collections/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      
+      <guid>/kotlin/samples/collections/</guid>
+      <description>list 、 map 、 set、fliter、any、all、none、first、last、partition</description>
+    </item>
+    
+    <item>
+      <title>brew</title>
+      <link>/notes/other/brew/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      
+      <guid>/notes/other/brew/</guid>
+      <description>brew 更换阿里的镜像</description>
+    </item>
+    
+    <item>
+      <title>Gitee Pages服务</title>
+      <link>/notes/other/giteepages/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      
+      <guid>/notes/other/giteepages/</guid>
+      <description>如何创建 github pages</description>
+    </item>
+    
+    <item>
+      <title>Gradle connect Reset</title>
+      <link>/notes/fix_bug/gradle_connect_reset/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      
+      <guid>/notes/fix_bug/gradle_connect_reset/</guid>
+      <description>Could not install Gradle distribution from &amp;lsquo;&lt;a href=&#34;https://services.gradle.org/distributions/gradle-6.5.1-all.zip&#39;&#34;&gt;https://services.gradle.org/distributions/gradle-6.5.1-all.zip&#39;&lt;/a&gt;.</description>
+    </item>
+    
+    <item>
+      <title>Maven snapshot</title>
+      <link>/notes/other/maven-snapshot/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      
+      <guid>/notes/other/maven-snapshot/</guid>
+      <description>Maven 快速开发迭代 版本好 snapshot</description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>/notes/other/sed/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      
+      <guid>/notes/other/sed/</guid>
+      <description>Sed 使用方法</description>
+    </item>
+    
+  </channel>
+</rss>
