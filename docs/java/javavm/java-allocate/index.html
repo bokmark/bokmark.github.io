@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Java 对象头的内容 - Bokmark Pages</title>
+  <title>Java  - Bokmark Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://bokmark.github.io/favicon.png">
@@ -200,7 +200,7 @@
       <a href="https://bokmark.github.io/java/other/io0/">HSDB</a>
     </li>
     
-    <li class="">
+    <li class="active ">
       <a href="https://bokmark.github.io/java/javavm/java-allocate/">Java </a>
     </li>
     
@@ -212,7 +212,7 @@
       <a href="https://bokmark.github.io/java/javavm/question/">Java vm 面试题</a>
     </li>
     
-    <li class="active ">
+    <li class="">
       <a href="https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/">Java 对象头的内容</a>
     </li>
     
@@ -235,36 +235,55 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">Java 对象头的内容</h1>
+<h1 class="title">Java </h1>
 <div class="content ">
-  <blockquote>
-<p>转自 这篇文章 修改了其中的几处错误 <a href="https://blog.csdn.net/lkforce/article/details/81128115">https://blog.csdn.net/lkforce/article/details/81128115</a></p>
-</blockquote>
-<p>Java对象保存在内存中时，由以下三部分组成：</p>
-<blockquote>
-<p>1，对象头
-2，实例数据
-3，对齐填充字节</p>
-</blockquote>
-<h3 id="对象头的内部组成">对象头的内部组成</h3>
-<p>Java 的对象头的数据</p>
-<blockquote>
-<p>1，Mark Word 32bit
-2，指向方法区中的指针
-3，数组长度（只有数组对象才有）</p>
-</blockquote>
-<h5 id="mark-word-长度32bit">mark word 长度32bit</h5>
-<p><img src="%5Cobjectgead.jpg" alt="mark word">todo</p>
+  <ul>
+<li>
+<p>虚拟机栈-一个线程一个栈</p>
 <ul>
-<li>无锁状态下，25个bit的hashcode，4个bit的分代年龄，1个bit的偏向锁标示位 固定为0 ，2个bit的锁标记位 固定为01</li>
-<li>偏向锁状态下，23个bit的线程ID，2个bit的epoch，4个bit的分代年龄，1个bit的偏向锁标记位固定为1 ，2个bit的锁标记位 固定为01</li>
+<li>
+<p>动态链接
+多态 - 静态分派 动态分派</p>
+</li>
+<li>
+<p>局部变量表
+存放8大基础类型和对象引用地址。
+为什么不存放对象本身呢？</p>
+</li>
+<li>
+<p>操作数栈</p>
+</li>
+<li>
+<p>返回地址</p>
+</li>
 </ul>
-<p>&ndash; 当从偏向锁升级到 轻量级锁的机制，todo 翻书</p>
-<p><em>在大量并发的情况下应该弃用偏向锁</em></p>
+</li>
+<li>
+<p>对象的分配策略</p>
 <ul>
-<li>轻量级锁状态下，30个bit指向栈中的markword的备份 2个bit的锁标记位固定为00</li>
-<li>重量级锁状态下，30个bit指向mutex的锁的指针，2个bit的锁标记为固定为10</li>
-<li>gc的时候，30个bit为空，2个bit的锁标记位固定为11</li>
+<li>对象逃逸分析：分析对象是否可以直接在栈中分配对象，如果是分配对象到栈内存中</li>
+<li>本地线程分配缓冲：是否具有本地线程缓冲，如果有直接映射到对应的缓冲中 tlab</li>
+<li>是否大对象：如果是大对象直接分配到老年代</li>
+<li>对象优先分配到eden区</li>
+<li>空间分配担保：虚拟机保证，在分配的时候如果当前的区域有足够的空间分配内存则保证一定那能分配成功，因为会先进行一次gc</li>
+<li>大对象直接进入老年代</li>
+<li>长期存活的对象进入老年代</li>
+<li>对象的gc年龄会动态的判断</li>
+</ul>
+</li>
+<li>
+<p>gc年龄</p>
+<ul>
+<li>当对象进去eden区之后每次gc都将对象的gc年龄加1。当超过阈值时，将会升级到下一代</li>
+<li>eden 复制算法 复制到from或者to之中的一个</li>
+<li>from和to相互复制直到进入老年代</li>
+<li>当每个区满的时候将会触发gc</li>
+<li>minor gc 、young gc 新生代</li>
+<li>major gc、old gc 老年代</li>
+<li>full gc 全部区域</li>
+<li>gc 年龄记在markword 区域</li>
+</ul>
+</li>
 </ul>
 
 </div>

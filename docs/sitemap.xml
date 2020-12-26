@@ -168,12 +168,17 @@
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B40/</loc>
+    <loc>https://bokmark.github.io/java/javavm/java-allocate/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
     <loc>https://bokmark.github.io/java/other/io/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bokmark.github.io/java/javavm/question/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
@@ -248,7 +253,12 @@
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/other/giteepages/</loc>
+    <loc>https://bokmark.github.io/notes/other/githubpages/</loc>
+    <lastmod>2020-11-14T12:20:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bokmark.github.io/notes/other/git_alias/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   

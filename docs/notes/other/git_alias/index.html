@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Java 对象头的内容 - Bokmark Pages</title>
+  <title>git配置 - Bokmark Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://bokmark.github.io/favicon.png">
@@ -185,47 +185,31 @@
           <div class="sidebar">
             
 <div class="docs-menu">
-  <h4>Java</h4>
+  <h4>Notes</h4>
   <ul>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/%E5%BA%8F%E5%88%97%E5%8C%96/">Java 序列化</a>
+      <a href="https://bokmark.github.io/notes/other/brew/">brew</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/">《深入理解Java 虚拟机》第二章</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/other/io0/">HSDB</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/javavm/java-allocate/">Java </a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/other/io/">Java IO 的基础应用</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/javavm/question/">Java vm 面试题</a>
+      <a href="https://bokmark.github.io/notes/other/githubpages/">Github Pages服务</a>
     </li>
     
     <li class="active ">
-      <a href="https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/">Java 对象头的内容</a>
+      <a href="https://bokmark.github.io/notes/other/git_alias/">git配置</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/other/json/">json 的特别之处</a>
+      <a href="https://bokmark.github.io/notes/fix_bug/gradle_connect_reset/">Gradle connect Reset</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/">《深入理解Java虚拟机》字节码指令表</a>
+      <a href="https://bokmark.github.io/notes/other/maven-snapshot/">Maven snapshot</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/other/object_proxy/">动态代理</a>
+      <a href="https://bokmark.github.io/notes/other/sed/">sed</a>
     </li>
     
   </ul>
@@ -235,38 +219,33 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">Java 对象头的内容</h1>
+<h1 class="title">git配置</h1>
 <div class="content ">
-  <blockquote>
-<p>转自 这篇文章 修改了其中的几处错误 <a href="https://blog.csdn.net/lkforce/article/details/81128115">https://blog.csdn.net/lkforce/article/details/81128115</a></p>
-</blockquote>
-<p>Java对象保存在内存中时，由以下三部分组成：</p>
-<blockquote>
-<p>1，对象头
-2，实例数据
-3，对齐填充字节</p>
-</blockquote>
-<h3 id="对象头的内部组成">对象头的内部组成</h3>
-<p>Java 的对象头的数据</p>
-<blockquote>
-<p>1，Mark Word 32bit
-2，指向方法区中的指针
-3，数组长度（只有数组对象才有）</p>
-</blockquote>
-<h5 id="mark-word-长度32bit">mark word 长度32bit</h5>
-<p><img src="%5Cobjectgead.jpg" alt="mark word">todo</p>
-<ul>
-<li>无锁状态下，25个bit的hashcode，4个bit的分代年龄，1个bit的偏向锁标示位 固定为0 ，2个bit的锁标记位 固定为01</li>
-<li>偏向锁状态下，23个bit的线程ID，2个bit的epoch，4个bit的分代年龄，1个bit的偏向锁标记位固定为1 ，2个bit的锁标记位 固定为01</li>
-</ul>
-<p>&ndash; 当从偏向锁升级到 轻量级锁的机制，todo 翻书</p>
-<p><em>在大量并发的情况下应该弃用偏向锁</em></p>
-<ul>
-<li>轻量级锁状态下，30个bit指向栈中的markword的备份 2个bit的锁标记位固定为00</li>
-<li>重量级锁状态下，30个bit指向mutex的锁的指针，2个bit的锁标记为固定为10</li>
-<li>gc的时候，30个bit为空，2个bit的锁标记位固定为11</li>
-</ul>
+  <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># This is Git&#39;s per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = xxx
+	email = xxx
+[filter &#34;lfs&#34;]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	co = checkout
+	cp = cherry-pick
+	cm = commit
+	ba = branch -a
+	bh = branch
+	amend = commit -a --amend
+	lg = log
+  lo = log --oneline
+	st = status
+	df = diff
+	review = !sh -c &#39;git push origin HEAD:refs/for/$1&#39; -
+	up = pull --rebase
 
+</code></pre></div>
 </div>
 </div>
 

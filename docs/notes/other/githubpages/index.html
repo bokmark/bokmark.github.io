@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Java 对象头的内容 - Bokmark Pages</title>
+  <title>Github Pages服务 - Bokmark Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://bokmark.github.io/favicon.png">
@@ -185,47 +185,31 @@
           <div class="sidebar">
             
 <div class="docs-menu">
-  <h4>Java</h4>
+  <h4>Notes</h4>
   <ul>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/%E5%BA%8F%E5%88%97%E5%8C%96/">Java 序列化</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/">《深入理解Java 虚拟机》第二章</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/other/io0/">HSDB</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/javavm/java-allocate/">Java </a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/other/io/">Java IO 的基础应用</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/java/javavm/question/">Java vm 面试题</a>
+      <a href="https://bokmark.github.io/notes/other/brew/">brew</a>
     </li>
     
     <li class="active ">
-      <a href="https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/">Java 对象头的内容</a>
+      <a href="https://bokmark.github.io/notes/other/githubpages/">Github Pages服务</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/other/json/">json 的特别之处</a>
+      <a href="https://bokmark.github.io/notes/other/git_alias/">git配置</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/">《深入理解Java虚拟机》字节码指令表</a>
+      <a href="https://bokmark.github.io/notes/fix_bug/gradle_connect_reset/">Gradle connect Reset</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/java/other/object_proxy/">动态代理</a>
+      <a href="https://bokmark.github.io/notes/other/maven-snapshot/">Maven snapshot</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/notes/other/sed/">sed</a>
     </li>
     
   </ul>
@@ -235,37 +219,77 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">Java 对象头的内容</h1>
+<h1 class="title">Github Pages服务</h1>
 <div class="content ">
-  <blockquote>
-<p>转自 这篇文章 修改了其中的几处错误 <a href="https://blog.csdn.net/lkforce/article/details/81128115">https://blog.csdn.net/lkforce/article/details/81128115</a></p>
-</blockquote>
-<p>Java对象保存在内存中时，由以下三部分组成：</p>
+  <h1 id="githubpages">GithubPages</h1>
+<hr>
 <blockquote>
-<p>1，对象头
-2，实例数据
-3，对齐填充字节</p>
+<p>作为一个程序员需要有一个记录知识点的地方，也需要一个做记录整理自己的知识体系的地方。GithubPages 作为影响力最大的博客网站，当我们需要进行博客搭建的时候，当然是选择他！</p>
 </blockquote>
-<h3 id="对象头的内部组成">对象头的内部组成</h3>
-<p>Java 的对象头的数据</p>
-<blockquote>
-<p>1，Mark Word 32bit
-2，指向方法区中的指针
-3，数组长度（只有数组对象才有）</p>
-</blockquote>
-<h5 id="mark-word-长度32bit">mark word 长度32bit</h5>
-<p><img src="%5Cobjectgead.jpg" alt="mark word">todo</p>
+<h3 id="准备">准备</h3>
+<ol>
+<li><a href="https://pages.github.com/">Pages</a> 这是github pages 提供的帮助文档。
+我们按照他提供的步骤一步步的搭建好仓库。比如我取名就是bokmark.github.io</li>
+<li><a href="https://themes.gohugo.io/">主题</a> 这是主题列表。我们使用hugo 来将markdown文件转化为html文件</li>
+</ol>
+<h3 id="开始">开始</h3>
+<ol>
+<li>
+<p>第一步创建hugo的站</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new site mysite
+</code></pre></div></li>
+<li>
+<p>然后再选一个好看的theme，我这里推荐我使用的这个主题</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd mysite
+git clone https://github.com/jugglerx/hugo-whisper-theme.git themes/hugo-whisper-theme
+</code></pre></div></li>
+<li>
+<p>修改config.toml</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL = &#34;/&#34;
+themesDir = &#34;themes&#34;
+publishdir = &#34;docs&#34;
+theme = &#34;hugo-whisper-theme&#34;
+</code></pre></div><p>这里面最重要的是 <code>publishdir = &quot;docs&quot;</code></p>
+</li>
+<li>
+<p>创建你要的页面</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new about.md
+// 会在content页面 创建about.md 文件
+hugo new notes/other/GithubPages.md
+// 会在 content/notes/other 目录下创建 GithubPages.md
+</code></pre></div></li>
+<li>
+<p>运行</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo
+// 如果想要在本地看一下效果可以这样
+hugo server
+// localhost:1313
+</code></pre></div><p>这时候在docs文档下面将会生成我们需要的html文件</p>
+</li>
+<li>
+<p>上传
+将整个库上传到github，包括<code>docs</code>文件夹。你可以使用git命令 也可以用github desktop 都可以。</p>
+</li>
+<li>
+<p>修改pages settings</p>
+</li>
+</ol>
 <ul>
-<li>无锁状态下，25个bit的hashcode，4个bit的分代年龄，1个bit的偏向锁标示位 固定为0 ，2个bit的锁标记位 固定为01</li>
-<li>偏向锁状态下，23个bit的线程ID，2个bit的epoch，4个bit的分代年龄，1个bit的偏向锁标记位固定为1 ，2个bit的锁标记位 固定为01</li>
+<li>来到你的仓库( <a href="https://github.com/%7Busername%7D/%7Busername%7D.github.io">https://github.com/{username}/{username}.github.io</a> )的settings页面。</li>
+<li>找到GitHub Pages栏</li>
+<li>找到 Source 栏</li>
+<li>select folder 选择docs</li>
+<li>点击save</li>
 </ul>
-<p>&ndash; 当从偏向锁升级到 轻量级锁的机制，todo 翻书</p>
-<p><em>在大量并发的情况下应该弃用偏向锁</em></p>
-<ul>
-<li>轻量级锁状态下，30个bit指向栈中的markword的备份 2个bit的锁标记位固定为00</li>
-<li>重量级锁状态下，30个bit指向mutex的锁的指针，2个bit的锁标记为固定为10</li>
-<li>gc的时候，30个bit为空，2个bit的锁标记位固定为11</li>
-</ul>
+<ol start="8">
+<li>
+<p>查看效果
+https://{username}.github.io</p>
+</li>
+<li>
+<p>亲测有效哦，毕竟你都看到这个页面了。</p>
+</li>
+</ol>
 
 </div>
 </div>

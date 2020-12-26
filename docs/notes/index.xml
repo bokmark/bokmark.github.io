@@ -17,12 +17,21 @@
     </item>
     
     <item>
-      <title>Gitee Pages服务</title>
-      <link>https://bokmark.github.io/notes/other/giteepages/</link>
+      <title>Github Pages服务</title>
+      <link>https://bokmark.github.io/notes/other/githubpages/</link>
       <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
       
-      <guid>https://bokmark.github.io/notes/other/giteepages/</guid>
-      <description>如何创建 github pages</description>
+      <guid>https://bokmark.github.io/notes/other/githubpages/</guid>
+      <description>如何创建 github pages， Hugo，</description>
+    </item>
+    
+    <item>
+      <title>git配置</title>
+      <link>https://bokmark.github.io/notes/other/git_alias/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      
+      <guid>https://bokmark.github.io/notes/other/git_alias/</guid>
+      <description>git配置、review、lo</description>
     </item>
     
     <item>
