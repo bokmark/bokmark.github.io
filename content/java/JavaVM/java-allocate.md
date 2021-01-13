@@ -7,7 +7,7 @@ summary: ""
 
 - 虚拟机栈-一个线程一个栈
   - 动态链接
-    多态 - 静态分派 动态分派
+    多态 - 静态分派 动态分派 [dizhi](https://wiki.jikexueyuan.com/project/java-vm/polymorphism.html)
   - 局部变量表
     存放8大基础类型和对象引用地址。
     为什么不存放对象本身呢？

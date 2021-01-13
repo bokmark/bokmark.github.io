@@ -26,6 +26,7 @@ suspend fun a()
 
 - 挂起函数必须在协程体或者挂起函数中执行
 - 每个挂起函数都有一个挂起点和一个resume
+- 每一个挂起函数都是一个可以取消的点
 
 
 
@@ -375,4 +376,6 @@ class MyContinuation<T>(val continuation: Continuation<T>) : Continuation<T> {
 }
 
 ```
+
+##### 上下文
 
