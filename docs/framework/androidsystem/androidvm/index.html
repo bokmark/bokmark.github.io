@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>系统启动流程 - Bokmark Pages</title>
+  <title>android vm - Bokmark Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://bokmark.github.io/favicon.png">
@@ -188,11 +188,11 @@
   <h4>Framework</h4>
   <ul>
     
-    <li class="">
+    <li class="active ">
       <a href="https://bokmark.github.io/framework/androidsystem/androidvm/">android vm</a>
     </li>
     
-    <li class="active ">
+    <li class="">
       <a href="https://bokmark.github.io/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/">系统启动流程</a>
     </li>
     
@@ -211,14 +211,71 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">系统启动流程</h1>
+<h1 class="title">android vm</h1>
 <div class="content ">
-  <p>系统启动流程 正确的阅读方式：</p>
-<ul>
-<li>先整体了解大概流程</li>
-<li>然后再阅读具体的代码流程</li>
-<li>看完代码之后再看细节的逻辑</li>
+  <ul>
+<li>Java vm
+基于栈的虚拟机，每一个运行的线程，都有一个独立的栈，每一个方法调用都会产生一个栈帧。当前线程运行的方法的栈帧在当前虚拟机栈的栈顶。所有的运算都通过栈帧中的操作数栈来炒作。
+每一个栈帧中包含 本地变量表，操作数栈，动态链接，返回地址。</li>
+<li>Android vm
+基于寄存器的虚拟机，取消了操作数栈。本地变量表使用虚拟的寄存器来代替，相应的字节码指令也将会变少，减少了数据在操作数栈和本地变量表中的移动。相当于将操作数栈和本地变量表合并在寄存器中。</li>
 </ul>
+<p><a href="https://source.android.google.cn/devices/tech/dalvik?hl=zh-cn">dalvik</a></p>
+<ul>
+<li>
+<p>jit 即时编译</p>
+</li>
+<li>
+<p>dalvik与 art的区别</p>
+<ul>
+<li>dalvik：解释执行dex字节码，结合jit将部分热点代码即时进行编译或者优化成本地机器码。</li>
+<li>art：安装的时候将dex 代码转化成本地机器码</li>
+</ul>
+</li>
+<li>
+<p>dalvik与 art的 安装的区别</p>
+<ul>
+<li>dalvik 是通过 dexopt 将apk中的dex文件提取放到存储中</li>
+<li>art 是通过dex2oat 将dex文件提取出来 编译成当前设备的机器码 aot （预编译）</li>
+</ul>
+</li>
+<li>
+<p>art的进化，从Android N 开始使用混编</p>
+<ul>
+<li>安装的时候将dex放到本地。</li>
+<li>先运行的时候先使用jit做一个编译，并且将编译的部分保存到profile。</li>
+<li>当空闲的时候将profile文件中保存的代码进行oat编译成本地代码。</li>
+<li>运行时查找本地代码，如果有就还是用本地代码 如果没有则使用jit编译并且保存到profile</li>
+</ul>
+</li>
+<li>
+<p>类加载机制</p>
+<ul>
+<li>ClassLoader
+<ul>
+<li>BootClassLoader // 加载基础的framework中的类</li>
+<li>BaseDexClassLoader // 加载apk中的dex的类，中间有一个 dexpathlist
+<ul>
+<li>PathClassLoader // Android apk的类加载机制</li>
+<li>DexClassLoader // 动态加载其他的dex文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>PathClassLoader 源码解析</p>
+<ul>
+<li>双亲委派机制
+<ul>
+<li>优先是由parent classloader 来进行加载，如果parent classloader 加载失败，再由自己进行加载。如果失败抛出classnotfoundexception</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>热修复等问题遇到 机器码怎么办？</p>
 
 </div>
 </div>

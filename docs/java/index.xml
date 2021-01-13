@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>Java 垃圾回收器 回收算法</title>
+      <link>https://bokmark.github.io/java/javavm/gc/</link>
+      <pubDate>Mon, 28 Dec 2020 15:14:39 +1000</pubDate>
+      
+      <guid>https://bokmark.github.io/java/javavm/gc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>HSDB</title>
       <link>https://bokmark.github.io/java/other/io0/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
@@ -41,7 +50,7 @@
       
       <guid>https://bokmark.github.io/java/javavm/java-allocate/</guid>
       <description>虚拟机栈-一个线程一个栈
-  动态链接 多态 - 静态分派 动态分派
+  动态链接 多态 - 静态分派 动态分派 dizhi
   局部变量表 存放8大基础类型和对象引用地址。 为什么不存放对象本身呢？
   操作数栈
   返回地址

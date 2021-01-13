@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="https://bokmark.github.io/framework/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>android vm</title>
+      <link>https://bokmark.github.io/framework/androidsystem/androidvm/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>https://bokmark.github.io/framework/androidsystem/androidvm/</guid>
+      <description>android vm 和 java vm 的区别</description>
+    </item>
+    
+    <item>
       <title>系统启动流程</title>
       <link>https://bokmark.github.io/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
@@ -22,6 +31,15 @@
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       
       <guid>https://bokmark.github.io/framework/handler/handler/</guid>
+      <description>从handler的面试题出发了解handler</description>
+    </item>
+    
+    <item>
+      <title>View </title>
+      <link>https://bokmark.github.io/framework/view/view/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>https://bokmark.github.io/framework/view/view/</guid>
       <description>从handler的面试题出发了解handler</description>
     </item>
     

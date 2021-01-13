@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>https://bokmark.github.io/framework/androidsystem/androidvm/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bokmark.github.io/kotlin/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
@@ -104,6 +109,11 @@
   
   <url>
     <loc>https://bokmark.github.io/framework/handler/handler/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bokmark.github.io/framework/view/view/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
@@ -160,6 +170,11 @@
   <url>
     <loc>https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bokmark.github.io/java/javavm/gc/</loc>
+    <lastmod>2020-12-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
