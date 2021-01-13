@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>系统启动流程 - Bokmark Pages</title>
+  <title>Java 垃圾回收器 回收算法 - Bokmark Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://bokmark.github.io/favicon.png">
@@ -185,23 +185,51 @@
           <div class="sidebar">
             
 <div class="docs-menu">
-  <h4>Framework</h4>
+  <h4>Java</h4>
   <ul>
     
     <li class="">
-      <a href="https://bokmark.github.io/framework/androidsystem/androidvm/">android vm</a>
+      <a href="https://bokmark.github.io/java/%E5%BA%8F%E5%88%97%E5%8C%96/">Java 序列化</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/">《深入理解Java 虚拟机》第二章</a>
     </li>
     
     <li class="active ">
-      <a href="https://bokmark.github.io/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/">系统启动流程</a>
+      <a href="https://bokmark.github.io/java/javavm/gc/">Java 垃圾回收器 回收算法</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/framework/handler/handler/">Handler</a>
+      <a href="https://bokmark.github.io/java/other/io0/">HSDB</a>
     </li>
     
     <li class="">
-      <a href="https://bokmark.github.io/framework/view/view/">View </a>
+      <a href="https://bokmark.github.io/java/javavm/java-allocate/">Java </a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/java/other/io/">Java IO 的基础应用</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/java/javavm/question/">Java vm 面试题</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/">Java 对象头的内容</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/java/other/json/">json 的特别之处</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/">《深入理解Java虚拟机》字节码指令表</a>
+    </li>
+    
+    <li class="">
+      <a href="https://bokmark.github.io/java/other/object_proxy/">动态代理</a>
     </li>
     
   </ul>
@@ -211,13 +239,49 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">系统启动流程</h1>
+<h1 class="title">Java 垃圾回收器 回收算法</h1>
 <div class="content ">
-  <p>系统启动流程 正确的阅读方式：</p>
+  <ul>
+<li>
+<p>垃圾回收算法</p>
 <ul>
-<li>先整体了解大概流程</li>
-<li>然后再阅读具体的代码流程</li>
-<li>看完代码之后再看细节的逻辑</li>
+<li>复制</li>
+<li>标记整理</li>
+<li>标记清理</li>
+</ul>
+</li>
+<li>
+<p>回收具体算法</p>
+<ul>
+<li>单线程serial-new（复制、新生代） serial-old（标记整理）</li>
+<li>多线程 paraller scavange（复制、新生代 并行） paraller old（标记整理 并行）</li>
+<li>Paraller new（复制、新生代，并行） cms（老年代，标记清理，并行、并发）</li>
+</ul>
+</li>
+<li>
+<p>cms</p>
+<ul>
+<li>先进行一次stoptheworld</li>
+<li>标记和gcroot直接相关的对象</li>
+<li>并发的进行标记</li>
+<li>stoptheworld</li>
+<li>重新标记</li>
+<li>并发的进行垃圾清除</li>
+</ul>
+</li>
+<li>
+<p>g1</p>
+<ul>
+<li>化整为零</li>
+</ul>
+</li>
+<li>
+<p>常量池</p>
+<ul>
+<li>静态常量池：编译期间确定的常量池 比如字面量</li>
+<li>动态常量池</li>
+</ul>
+</li>
 </ul>
 
 </div>
