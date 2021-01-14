@@ -39,7 +39,7 @@ summary: "从handler的面试题出发了解handler"
 
         handler.sendEmptyMessage(1);
 ```
-然后我们从源码中分析，所有的 send post 方法最终都会调用到 `enqueueMessage` 
+然后我们从源码中分析，所有的 send post 方法最终都会调用到 `enqueueMessage`
 
 ![handler外部调用关系图](https://upload-images.jianshu.io/upload_images/12975041-6be0ac83b80509fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -621,7 +621,7 @@ Looper在使用之前必须prepare 在prepare 里面使用了 ThreadLocal，[看
 ```
 [quit 和quit safely的区别看这里--未发布]()
 这里主要是把message 全部删除。
-在Looper.loop 方法中 
+在Looper.loop 方法中
 ```
      for (;;) {
             Message msg = queue.next(); // might block
