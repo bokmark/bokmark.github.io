@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bokmark.github.io/opensources/retrofit/platform/</loc>
+    <loc>https://bokmark.github.io/open_sources/retrofit/platform/</loc>
     <lastmod>2020-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/opensources/retrofit/use/</loc>
+    <loc>https://bokmark.github.io/open_sources/retrofit/use/</loc>
     <lastmod>2020-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/opensources/retrofit/base/</loc>
+    <loc>https://bokmark.github.io/open_sources/retrofit/base/</loc>
     <lastmod>2020-12-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://bokmark.github.io/arch/jetpack/hilt/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bokmark.github.io/arch/jetpack/navigation/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
@@ -68,7 +73,12 @@
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/framework/androidsystem/androidvm/</loc>
+    <loc>https://bokmark.github.io/android/framework/androidvm/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bokmark.github.io/arch/dagger/dagger/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
@@ -83,12 +93,12 @@
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/opensources/</loc>
+    <loc>https://bokmark.github.io/open_sources/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/framework/androidsystem/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</loc>
+    <loc>https://bokmark.github.io/android/framework/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
@@ -108,12 +118,12 @@
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/framework/handler/handler/</loc>
+    <loc>https://bokmark.github.io/android/handler/handler/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/framework/view/view/</loc>
+    <loc>https://bokmark.github.io/android/view/view/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
@@ -303,7 +313,7 @@
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/framework/</loc>
+    <loc>https://bokmark.github.io/android/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   

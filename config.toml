@@ -24,8 +24,8 @@ summaryLength = 30
     weight = 2
 
 [[menu.main]]
-    name = "系统源码"
-    url = "/framework/"
+    name = "Android"
+    url = "/android/"
     weight = 3
 
 [[menu.main]]
@@ -39,24 +39,29 @@ summaryLength = 30
     weight = 5
 
 [[menu.main]]
+    name = "操作系统"
+    url = "/opreation_system/"
+    weight = 6
+
+[[menu.main]]
     name = "多线程"
     url = "/mulitthread/"
-    weight = 6
+    weight = 7
 
 [[menu.main]]
     name = "杂记"
     url = "/notes/"
-    weight = 7
+    weight = 8
 
 [[menu.main]]
     name = "开源框架"
-    url = "/opensources/"
-    weight = 8
+    url = "/open_sources/"
+    weight = 9
 
 [[menu.main]]
     name = "Docs"
     url = "/docs/"
-    weight = 9
+    weight = 10
 
 [params]
   google_analytics_id=""
@@ -64,21 +69,18 @@ summaryLength = 30
   homepage_button_text = 'Who am I'
   homepage_intro = 'Whisper is a documentation theme built with Hugo. The design and functionality is intentionally minimal.'
   homepage_image = '/starsky.JPG'
-  mainSections = ["arch", "framework", "java", "kotlin" ,"mulitthread", "notes","opensources", "docs"]
+  mainSections = ["arch", "android", "java", "kotlin", "opreation_system", "mulitthread", "notes", "open_sources", "docs"]
 
   ## You can enable to add anchor links to header elements
   # enable_anchor_link = true
 
   [params.homepage_meta_tags]
-    meta_description = "Hugo Whisper is a documentation theme built with Hugo."
-    meta_og_title = "Hugo Whisper Theme"
+    meta_description = "MaQian, Bokmark, JayceMa, QQDDS, Lol, camera"
+    meta_og_title = "bokmark pages"
     meta_og_type = "website"
-    meta_og_url = "https://hugo-whisper.netlify.app"
-    meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-whisper-theme/master/images/tn.png"
-    meta_og_description = "Hugo Whisper is a documentation theme built with Hugo."
     meta_twitter_card = "summary"
-    meta_twitter_site = "@zerostaticio"
-    meta_twitter_creator = "@zerostaticio"
+    meta_twitter_site = "@bokmark"
+    meta_twitter_creator = "@bokmark"
 
   [params.logo]
       mobile = "/images/logo-mobile.svg"
