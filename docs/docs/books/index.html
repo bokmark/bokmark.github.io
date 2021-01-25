@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>开源框架 - Bokmark Pages</title>
+  <title>技术书籍 - Bokmark Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://bokmark.github.io/favicon.png">
@@ -71,7 +71,7 @@
       </a>
     </li>
     
-    <li class="menu-item-开源框架 active">
+    <li class="menu-item-开源框架">
       <a href="/open_sources/">
         <span>开源框架</span>
       </a>
@@ -146,7 +146,7 @@
       </a>
     </li>
     
-    <li class="menu-item-开源框架 active">
+    <li class="menu-item-开源框架">
       <a href="/open_sources/">
         <span>开源框架</span>
       </a>
@@ -199,19 +199,11 @@
           <div class="sidebar">
             
 <div class="docs-menu">
-  <h4>Open sources</h4>
+  <h4>Docs</h4>
   <ul>
     
     <li class="">
-      <a href="https://bokmark.github.io/open_sources/retrofit/platform/">Retrofit - platform</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/open_sources/retrofit/use/">Retrofit - 原理</a>
-    </li>
-    
-    <li class="">
-      <a href="https://bokmark.github.io/open_sources/retrofit/base/">Retrofit - 大致流程源码解析</a>
+      <a href="https://bokmark.github.io/docs/about/">About</a>
     </li>
     
   </ul>
@@ -223,37 +215,12 @@
           
 
 <span class="overview">Overview</span>
-<h1 class="title">开源框架</h1>
+<h1 class="title">技术书籍</h1>
 <div class="content">
-  <p>各种开源框架源码解析笔记</p>
+  <ul>
+<li><a href="/books/JavaWebNet.pdf">Java网络编程（第4版）</a></li>
+</ul>
 
-</div>
-
-
-<div class="summary mb-2">
-  
-  <h2 class="title-summary"><a href="https://bokmark.github.io/open_sources/retrofit/platform/">Retrofit - platform</a></h2>
-  <p></p>
-</div>
-
-
-<div class="summary mb-2">
-  
-  <h2 class="title-summary"><a href="https://bokmark.github.io/open_sources/retrofit/use/">Retrofit - 原理</a></h2>
-  <p>Retrofit 的使用 可以看这里(/opensources/retrofit/use)
- 介绍 retrofit 将你的htppapi 转化成java接口的样子
-public interface GitHubService { @GET(&#34;users/{user}/repos&#34;) Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&#34;user&#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
-Retrofit retrofit = new Retrofit.Builder() .baseUrl(&#34;https://api.github.com/&#34;) .build(); GitHubService service = retrofit.</p>
-</div>
-
-
-<div class="summary mb-2">
-  
-  <h2 class="title-summary"><a href="https://bokmark.github.io/open_sources/retrofit/base/">Retrofit - 大致流程源码解析</a></h2>
-  <p>Retrofit 的使用 可以看这里
- 使用 retrofit 将你的htppapi 转化成java接口的样子
-public interface GitHubService { @GET(&#34;users/{user}/repos&#34;) Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&#34;user&#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
-Retrofit retrofit = new Retrofit.Builder() .addConverterFactory(GsonConverterFactory.create()) .addCallAdapterFactory(RxJavaCallAdapterFactory.creat()) .</p>
 </div>
 
 
