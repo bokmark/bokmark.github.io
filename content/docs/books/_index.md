@@ -5,4 +5,4 @@ weight: 1
 ---
 
 
-- [Java网络编程（第4版）](/books/JavaWebNet.pdf)
+<a target="_blank" href="/books/JavaWebNet.pdf">Java网络编程（第4版）</a>
