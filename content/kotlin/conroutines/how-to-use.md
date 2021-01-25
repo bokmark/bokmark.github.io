@@ -3,7 +3,7 @@ title: 'Kotlin 协程 - 怎么使用'
 date: 2020-12-10T13:14:00+08:00
 draft: false
 weight: 3
-summary: "kotlin协程 几问"
+summary: "kotlin协程 launch async scope suspend"
 ---
 
 > 参考文档 https://www.jianshu.com/u/a324daa6fa19
@@ -17,16 +17,6 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
  ```
 
 *kotlin 的版本必须在1.4.10 之上*
-
-##### 基础使用suspend 函数
-
-```kotlin
-suspend fun a()
-```
-
-- 挂起函数必须在协程体或者挂起函数中执行
-- 每个挂起函数都有一个挂起点和一个resume
-- 每一个挂起函数都是一个可以取消的点
 
 
 
@@ -45,8 +35,6 @@ fun main() {
 
 *kotlin 在jvm上的实现是依赖于 java的thread的，所以我们可以在协程体中获取到相关的Thread的信息，并且也可以使用Thread的方法*
 
-###### GlobalScope: 一个带有生命周期的线程调度器
-
 - 我们来看看其中的launch 方法
 
   ```kotlin
@@ -57,7 +45,7 @@ fun main() {
   ): Job
   ```
 
-  - context：协程上下文。类似于一个map的概念，其中包含了协程运行的各个参数。具体概念之后介绍。
+  - context：协程上下文。类似于一个list的概念，其中包含了协程运行的各个参数。具体概念之后介绍。
 
   - start：启动模式
 
@@ -204,7 +192,7 @@ public interface Deferred<out T> : Job {
 }
 ```
 
-- await：阻塞当前协程，直到协程执行完成。
+- await：挂起当前协程，直到async启动的子协程执行完成。
 
 - SelectClause1： select 之后再说
 
@@ -271,9 +259,7 @@ fun main() {
 }
 ```
 
-
-
-##### withContext
+##### 基础作用withContext
 
 ```kotlin
 fun <T> log(t: T) {
@@ -300,9 +286,7 @@ fun main() {
 */
 ```
 
-
-
-##### withTimeout
+##### 基础作用withTimeout
 
 ```kotlin
 fun <T> log(t: T) {
@@ -326,41 +310,30 @@ suspend fun main() {
 public suspend fun <T> withTimeout(timeMillis: Long, block: suspend CoroutineScope.() -> T): T
 ```
 
-
-
-
-
 ##### 拦截器
 
 ```kotlin
+fun myLog(msg: String) {
+    println("${DateTime.now().toString("HH:mm:ss:SSS")}@[${Thread.currentThread().name}] >> $msg ")
+}
 suspend fun main() {
     GlobalScope.launch(MyContinuationInterceptor()) {
-        myLog(1)
+        myLog("1")
         synchronized(this) {
 
         }
         val job = async {
-            myLog(2)
+            myLog("2")
             delay(1000)
-            myLog(3)
+            myLog("3")
             "Hello"
         }
-        myLog(4)
+        myLog("4")
         val result = job.await()
         myLog("5. $result")
     }.join()
-    myLog(6)
+    myLog("6")
 }
-
-fun myLog(int:Int) {
-    println("[${Thread.currentThread().name}] $int")
-}
-
-
-fun myLog(str:String) {
-    println("[${Thread.currentThread().name}] $str")
-}
-
 class MyContinuationInterceptor : ContinuationInterceptor {
     override val key = ContinuationInterceptor
     override fun <T> interceptContinuation(continuation: Continuation<T>) =
@@ -374,7 +347,68 @@ class MyContinuation<T>(val continuation: Continuation<T>) : Continuation<T> {
         continuation.resumeWith(result)
     }
 }
-
+/*
+21:06:11:823@[main] >> <MyContinuation> Success(kotlin.Unit)
+21:06:11:874@[main] >> 1
+21:06:11:874@[main] >> 1.5
+21:06:11:877@[main] >> <MyContinuation> Success(kotlin.Unit)
+21:06:11:878@[main] >> 2
+21:06:11:887@[main] >> 4
+21:06:12:886@[kotlinx.coroutines.DefaultExecutor] >> <MyContinuation> Success(kotlin.Unit)
+21:06:12:886@[kotlinx.coroutines.DefaultExecutor] >> 3
+21:06:12:888@[kotlinx.coroutines.DefaultExecutor] >> <MyContinuation> Success(Hello)
+21:06:12:888@[kotlinx.coroutines.DefaultExecutor] >> 5. Hello
+21:06:12:888@[kotlinx.coroutines.DefaultExecutor] >> 6
+*/
 ```
 
-##### 上下文
+#### suspend
+
+- 标记和提醒
+  - 将包含耗时任务的函数标记为suspend
+- 编译器将根据suspend函数来处理字节码
+
+
+
+#### scope
+
+```kotlin
+public interface CoroutineScope {
+    public val coroutineContext: CoroutineContext
+}
+public val CoroutineScope.isActive: Boolean
+public fun CoroutineScope.cancel(cause: CancellationException? = null)
+public fun CoroutineScope.ensureActive()
+```
+
+```kotlin
+val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+scope.launch {
+    log("start")
+    launch(SupervisorJob()) {
+        log("start 2")
+        delay(2000)
+        log("end 2")
+    }
+
+    log("end")
+}
+Thread.sleep(1000)
+scope.cancel()
+Thread.sleep(Long.MAX_VALUE)
+/*
+17:30:24:664@[DefaultDispatcher-worker-2] >> start
+17:30:24:732@[DefaultDispatcher-worker-2] >> end
+17:30:24:732@[DefaultDispatcher-worker-3] >> start 2
+17:30:26:739@[DefaultDispatcher-worker-3] >> end 2
+*/
+```
+
+```kotlin
+public fun CoroutineScope.cancel(cause: CancellationException? = null) {
+    val job = coroutineContext[Job] ?: error("Scope cannot be cancelled because it does not have a job: $this")
+    job.cancel(cause)
+}
+```
+
+从cancel中可以看出 是获取到当前的这个协程的上下文中的job属性调用这个job的cancel。这样是不会取消这个子协程的运行的。（如果子协程和父协程用的不是同一个job的话）

@@ -1,5 +1,5 @@
 ---
-title: 'Kotlin 协程 - 入门篇'
+title: 'Kotlin 协程本质'
 date: 2019-02-11T19:30:08+10:00
 draft: false
 weight: 3
@@ -13,18 +13,38 @@ summary: "kotlin协程 几问"
 
 ### kotlin 协程是什么
 
-- kotlin基础
-- java 线程基础
-- java线程池基础
-- kotlin协程与java的线程的关系
+- kotlin 协程在jvm上的 实现就是一套线程框架，这是由于kotlin的协程中的调度器都是基于线程之心执行的
 
-### kotlin协程基础
+### 上下文包含的内容
 
-- suspend 函数
-- 协程上下文
-- 挂起点
+- 所有的可能的元素
 
-### kotlin怎么用
+  ```kotlin
+  public interface ThreadContextElement<S> : CoroutineContext.Element
+  public interface ContinuationInterceptor : CoroutineContext.Element
+  public interface CoroutineExceptionHandler : CoroutineContext.Element
+  public interface Job : CoroutineContext.Element
+  
+  ////
+  public abstract class AbstractCoroutineContextElement(public override val key: Key<*>) : Element
+  public data class CoroutineName(val name: String) : AbstractCoroutineContextElement(CoroutineName)
+  internal class YieldContext : AbstractCoroutineContextElement(Key)
+  public abstract class CoroutineDispatcher :
+  	AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor
+  public object NonCancellable : AbstractCoroutineContextElement(Job), Job
+  internal data class CoroutineId(    val id: Long) :
+  	ThreadContextElement<String>, AbstractCoroutineContextElement(CoroutineId)
+  internal class AndroidExceptionPreHandler :
+      AbstractCoroutineContextElement(CoroutineExceptionHandler), CoroutineExceptionHandler
+  ```
 
-- kotlinx coroutine
-- lifecycle-ktx 插件种kotlin的基础
+- Job
+
+- ContinuationInterceptor 拦截器
+
+- 错误处理
+
+- name
+
+- id
+
