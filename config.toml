@@ -63,6 +63,11 @@ summaryLength = 30
     url = "/docs/"
     weight = 10
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   google_analytics_id=""
   homepage_button_link = '/docs/about'
@@ -85,3 +90,9 @@ summaryLength = 30
   [params.logo]
       mobile = "/images/logo-mobile.svg"
       standard  = "/images/logo.svg"
+
+# 作者配置
+[author]
+  name = "bokmark"
+  email = "bokmark@163.com"
+  link = ""

@@ -6,12 +6,14 @@
     <description>Recent content in 开源框架 on Bokmark Pages</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
     <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="https://bokmark.github.io/open_sources/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Retrofit - platform</title>
       <link>https://bokmark.github.io/open_sources/retrofit/platform/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/open_sources/retrofit/platform/</guid>
       <description></description>
     </item>
@@ -20,7 +22,7 @@
       <title>Retrofit - 原理</title>
       <link>https://bokmark.github.io/open_sources/retrofit/use/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/open_sources/retrofit/use/</guid>
       <description>Retrofit 的使用 可以看这里(/opensources/retrofit/use)
  介绍 retrofit 将你的htppapi 转化成java接口的样子
@@ -32,7 +34,7 @@ Retrofit retrofit = new Retrofit.Builder() .baseUrl(&amp;#34;https://api.github.
       <title>Retrofit - 大致流程源码解析</title>
       <link>https://bokmark.github.io/open_sources/retrofit/base/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/open_sources/retrofit/base/</guid>
       <description>Retrofit 的使用 可以看这里
  使用 retrofit 将你的htppapi 转化成java接口的样子

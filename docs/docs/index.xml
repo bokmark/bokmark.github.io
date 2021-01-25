@@ -6,12 +6,14 @@
     <description>Recent content in Docs on Bokmark Pages</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
     <lastBuildDate>Sat, 14 Nov 2020 12:18:50 +0800</lastBuildDate><atom:link href="https://bokmark.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://bokmark.github.io/docs/about/</link>
       <pubDate>Sat, 14 Nov 2020 12:18:50 +0800</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/docs/about/</guid>
       <description>欢迎 关注我的微信公众号 码谦 ，虽然毛都没有。
 作者 ： 帅不过王力宏 </description>

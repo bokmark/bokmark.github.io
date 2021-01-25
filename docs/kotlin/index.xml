@@ -6,12 +6,14 @@
     <description>Recent content in Kotlin 内容 on Bokmark Pages</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
     <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="https://bokmark.github.io/kotlin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kotlin 泛型</title>
       <link>https://bokmark.github.io/kotlin/plus/fanxin/</link>
       <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/plus/fanxin/</guid>
       <description>java的泛型  kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在这里 有体现。 官方介绍
  java 泛型中的通配符  首先需要和各位读者明确java中的泛型的两个概念，这有助于你理解kotlin的泛型
@@ -22,7 +24,7 @@
       <title>Kotlin 进阶知识</title>
       <link>https://bokmark.github.io/kotlin/plus/plus1/</link>
       <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/plus/plus1/</guid>
       <description>顶级属性和顶级方法
 val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#34;x = $x; PI = $PI&amp;#34;) incrementX() println(&amp;#34;incrementX()&amp;#34;) println(&amp;#34;x = $x; PI = $PI&amp;#34;) } 定义在class 外面的属性 可以理解为 java中public 静态属性，可以被所有地方使用，只需要import 即可 方法同理。</description>
@@ -32,7 +34,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>Kotlin 协程本质</title>
       <link>https://bokmark.github.io/kotlin/conroutines/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/conroutines/</guid>
       <description>kotlin协程 几问</description>
     </item>
@@ -41,7 +43,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin - 基础介绍</title>
       <link>https://bokmark.github.io/kotlin/samples/intro/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/intro/</guid>
       <description>方法、操作符方法、中缀方法、vararg、变量、泛型、继承</description>
     </item>
@@ -50,7 +52,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin 语法基础 - 代理</title>
       <link>https://bokmark.github.io/kotlin/samples/delegate/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/delegate/</guid>
       <description>委托模式 、 代理属性 、 lazy、to</description>
     </item>
@@ -59,7 +61,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin 语法基础 - 作用域方法</title>
       <link>https://bokmark.github.io/kotlin/samples/funarea/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/funarea/</guid>
       <description>let 、 run 、 with 、 apply 、 also</description>
     </item>
@@ -68,7 +70,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin 语法基础 - 函数</title>
       <link>https://bokmark.github.io/kotlin/samples/function/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/function/</guid>
       <description>高阶函数、lambda、扩展函数、扩展属性</description>
     </item>
@@ -77,7 +79,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin 语法基础 - 流程控制</title>
       <link>https://bokmark.github.io/kotlin/samples/flow/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/flow/</guid>
       <description>when 、 loop 、 区间</description>
     </item>
@@ -86,7 +88,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin 语法基础 - 特殊特性</title>
       <link>https://bokmark.github.io/kotlin/samples/special/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/special/</guid>
       <description>命名参数、string模板、解构声明、smart cast</description>
     </item>
@@ -95,7 +97,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin 语法基础 - 特殊类</title>
       <link>https://bokmark.github.io/kotlin/samples/specialclass/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/specialclass/</guid>
       <description>Data class、enum class、sealed class、object keyword</description>
     </item>
@@ -104,7 +106,7 @@ val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;#3
       <title>【译】Kotlin 语法基础 - 集合</title>
       <link>https://bokmark.github.io/kotlin/samples/collections/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/kotlin/samples/collections/</guid>
       <description>list 、 map 、 set、fliter、any、all、none、first、last、partition</description>
     </item>

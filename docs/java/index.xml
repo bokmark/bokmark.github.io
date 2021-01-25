@@ -6,12 +6,14 @@
     <description>Recent content in Java on Bokmark Pages</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
     <lastBuildDate>Tue, 01 Dec 2020 15:14:39 +1000</lastBuildDate><atom:link href="https://bokmark.github.io/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java 序列化</title>
       <link>https://bokmark.github.io/java/%E5%BA%8F%E5%88%97%E5%8C%96/</link>
       <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
       <description></description>
     </item>
@@ -20,7 +22,7 @@
       <title>《深入理解Java 虚拟机》第二章</title>
       <link>https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</guid>
       <description>《深入理解Java 虚拟机》第二章 自学笔记</description>
     </item>
@@ -29,7 +31,7 @@
       <title>Java 垃圾回收器 回收算法</title>
       <link>https://bokmark.github.io/java/javavm/gc/</link>
       <pubDate>Mon, 28 Dec 2020 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/javavm/gc/</guid>
       <description></description>
     </item>
@@ -38,7 +40,7 @@
       <title>HSDB</title>
       <link>https://bokmark.github.io/java/other/io0/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/other/io0/</guid>
       <description>java io 的基础应用</description>
     </item>
@@ -47,7 +49,7 @@
       <title>Java </title>
       <link>https://bokmark.github.io/java/javavm/java-allocate/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/javavm/java-allocate/</guid>
       <description>虚拟机栈-一个线程一个栈
   动态链接 多态 - 静态分派 动态分派 dizhi
@@ -62,7 +64,7 @@
       <title>Java IO 的基础应用</title>
       <link>https://bokmark.github.io/java/other/io/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/other/io/</guid>
       <description>java io 的基础应用</description>
     </item>
@@ -71,7 +73,7 @@
       <title>Java vm 面试题</title>
       <link>https://bokmark.github.io/java/javavm/question/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/javavm/question/</guid>
       <description>jvm 内存结构
  jmm的规则内存分为线程的工作内存、主内存之分 线程的工作内存包括虚拟栈、本地方法栈、程序计数器 主内存包括堆、方法区 堆按照垃圾回收算法分为 eden、from、to、老年代 方法区分为静态方法区，动态方法区 虚拟机栈是一个栈帧的filo栈。一个栈帧包含操作数栈、本地变量表、动态链接、返回地址 直接内存、本地内存    什么情况下内存栈溢出
@@ -83,7 +85,7 @@
       <title>Java 对象头的内容</title>
       <link>https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</guid>
       <description>摘抄自 《深入理解Java虚拟机 &amp;ndash; JVM高级特性与最佳实践》</description>
     </item>
@@ -92,7 +94,7 @@
       <title>json 的特别之处</title>
       <link>https://bokmark.github.io/java/other/json/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/other/json/</guid>
       <description>json的特别之处</description>
     </item>
@@ -101,7 +103,7 @@
       <title>《深入理解Java虚拟机》字节码指令表</title>
       <link>https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</guid>
       <description>摘抄自 《深入理解Java虚拟机 &amp;ndash; JVM高级特性与最佳实践》</description>
     </item>
@@ -110,7 +112,7 @@
       <title>动态代理</title>
       <link>https://bokmark.github.io/java/other/object_proxy/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/other/object_proxy/</guid>
       <description>Java的动态代理</description>
     </item>
@@ -119,7 +121,7 @@
       <title></title>
       <link>https://bokmark.github.io/java/datastruct/hashmap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
+      <author>bokmark@163.com (bokmark)</author>
       <guid>https://bokmark.github.io/java/datastruct/hashmap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</guid>
       <description>源码解析不会通篇解析，会通过面试题整理来针对性地解析其中的关键点
   主要的几个面试题：
