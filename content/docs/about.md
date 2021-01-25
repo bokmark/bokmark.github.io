@@ -13,4 +13,4 @@ weight: 1
 
 
 
-![扫描二维码](/qrcode_for_mq258.jpg)
+![扫描二维码](/images/qrcode_for_mq258.jpg)

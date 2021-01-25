@@ -81,7 +81,7 @@ summary: "AbstractQueuedSynchronizer、 抽象队列同步器"
 
 ### clh 队列锁
 - clh 三个人的头字母
-![扫描二维码](/clh.jpg)
+![扫描二维码](/images/clh.jpg)
 - qnode
  - mypred
  - locked

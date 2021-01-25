@@ -21,7 +21,7 @@ summary: "阻塞队列，线程池的实现原理"
 - LinkedBlockingDeque
 
 
-![线程池示意图](/multithread.jpg)
+![线程池示意图](/images/multithread.jpg)
 
 ### 线程池的接口
 - exectuor

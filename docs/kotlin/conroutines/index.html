@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Kotlin 协程 - 入门篇 - Bokmark Pages</title>
+  <title>Kotlin 协程本质 - Bokmark Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://bokmark.github.io/favicon.png">
@@ -211,7 +211,7 @@
     </li>
     
     <li class="active ">
-      <a href="https://bokmark.github.io/kotlin/conroutines/">Kotlin 协程 - 入门篇</a>
+      <a href="https://bokmark.github.io/kotlin/conroutines/">Kotlin 协程本质</a>
     </li>
     
     <li class="">
@@ -253,7 +253,7 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">Kotlin 协程 - 入门篇</h1>
+<h1 class="title">Kotlin 协程本质</h1>
 <div class="content ">
   <blockquote>
 <p><a href="https://www.kotlincn.net/docs/reference/coroutines/coroutines-guide.html">官方文档</a></p>
@@ -261,21 +261,44 @@
 </blockquote>
 <h3 id="kotlin-协程是什么">kotlin 协程是什么</h3>
 <ul>
-<li>kotlin基础</li>
-<li>java 线程基础</li>
-<li>java线程池基础</li>
-<li>kotlin协程与java的线程的关系</li>
+<li>kotlin 协程在jvm上的 实现就是一套线程框架，这是由于kotlin的协程中的调度器都是基于线程之心执行的</li>
 </ul>
-<h3 id="kotlin协程基础">kotlin协程基础</h3>
+<h3 id="上下文包含的内容">上下文包含的内容</h3>
 <ul>
-<li>suspend 函数</li>
-<li>协程上下文</li>
-<li>挂起点</li>
-</ul>
-<h3 id="kotlin怎么用">kotlin怎么用</h3>
-<ul>
-<li>kotlinx coroutine</li>
-<li>lifecycle-ktx 插件种kotlin的基础</li>
+<li>
+<p>所有的可能的元素</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">public</span> <span class="k">interface</span> <span class="nc">ThreadContextElement</span><span class="p">&lt;</span><span class="n">S</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">CoroutineContext</span><span class="p">.</span><span class="n">Element</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">ContinuationInterceptor</span> <span class="p">:</span> <span class="n">CoroutineContext</span><span class="p">.</span><span class="n">Element</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">CoroutineExceptionHandler</span> <span class="p">:</span> <span class="n">CoroutineContext</span><span class="p">.</span><span class="n">Element</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">Job</span> <span class="p">:</span> <span class="n">CoroutineContext</span><span class="p">.</span><span class="n">Element</span>
+  
+<span class="c1">////
+</span><span class="c1"></span><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">AbstractCoroutineContextElement</span><span class="p">(</span><span class="k">public</span> <span class="k">override</span> <span class="k">val</span> <span class="py">key</span><span class="p">:</span> <span class="n">Key</span><span class="p">&lt;*&gt;)</span> <span class="p">:</span> <span class="n">Element</span>
+<span class="k">public</span> <span class="k">data</span> <span class="k">class</span> <span class="nc">CoroutineName</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">:</span> <span class="n">AbstractCoroutineContextElement</span><span class="p">(</span><span class="n">CoroutineName</span><span class="p">)</span>
+<span class="k">internal</span> <span class="k">class</span> <span class="nc">YieldContext</span> <span class="p">:</span> <span class="n">AbstractCoroutineContextElement</span><span class="p">(</span><span class="n">Key</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">CoroutineDispatcher</span> <span class="p">:</span>
+  <span class="n">AbstractCoroutineContextElement</span><span class="p">(</span><span class="n">ContinuationInterceptor</span><span class="p">),</span> <span class="n">ContinuationInterceptor</span>
+<span class="k">public</span> <span class="k">object</span> <span class="nc">NonCancellable</span> <span class="p">:</span> <span class="n">AbstractCoroutineContextElement</span><span class="p">(</span><span class="n">Job</span><span class="p">),</span> <span class="n">Job</span>
+<span class="k">internal</span> <span class="k">data</span> <span class="k">class</span> <span class="nc">CoroutineId</span><span class="p">(</span>    <span class="k">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">Long</span><span class="p">)</span> <span class="p">:</span>
+  <span class="n">ThreadContextElement</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;,</span> <span class="n">AbstractCoroutineContextElement</span><span class="p">(</span><span class="n">CoroutineId</span><span class="p">)</span>
+<span class="k">internal</span> <span class="k">class</span> <span class="nc">AndroidExceptionPreHandler</span> <span class="p">:</span>
+    <span class="n">AbstractCoroutineContextElement</span><span class="p">(</span><span class="n">CoroutineExceptionHandler</span><span class="p">),</span> <span class="n">CoroutineExceptionHandler</span>
+</code></pre></div></li>
+<li>
+<p>Job</p>
+</li>
+<li>
+<p>ContinuationInterceptor 拦截器</p>
+</li>
+<li>
+<p>错误处理</p>
+</li>
+<li>
+<p>name</p>
+</li>
+<li>
+<p>id</p>
+</li>
 </ul>
 
 </div>

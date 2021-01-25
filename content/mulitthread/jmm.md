@@ -4,7 +4,7 @@ date: 2020-12-01T15:14:39+10:00
 weight: 1
 ---
  java memory model
-![cpu 多级缓存模型](/jmm.jpg)
+![cpu 多级缓存模型](/images/jmm.jpg)
 现代计算机原理 cpu 多级缓存模型
 
 - 工作内存和主内存是抽象概念
