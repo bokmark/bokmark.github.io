@@ -2,64 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on Bokmark Pages</title>
-    <link>https://bokmark.github.io/notes/</link>
+    <link>/notes/</link>
     <description>Recent content in Notes on Bokmark Pages</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
     <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Sat, 14 Nov 2020 12:20:31 +0800</lastBuildDate><atom:link href="https://bokmark.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Nov 2020 12:20:31 +0800</lastBuildDate><atom:link href="/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>brew</title>
-      <link>https://bokmark.github.io/notes/other/brew/</link>
+      <link>/notes/other/brew/</link>
       <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>https://bokmark.github.io/notes/other/brew/</guid>
+      <guid>/notes/other/brew/</guid>
       <description>brew 更换阿里的镜像</description>
     </item>
     
     <item>
       <title>Github Pages服务</title>
-      <link>https://bokmark.github.io/notes/other/githubpages/</link>
+      <link>/notes/other/githubpages/</link>
       <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>https://bokmark.github.io/notes/other/githubpages/</guid>
+      <guid>/notes/other/githubpages/</guid>
       <description>如何创建 github pages， Hugo，</description>
     </item>
     
     <item>
       <title>git配置</title>
-      <link>https://bokmark.github.io/notes/other/git_alias/</link>
+      <link>/notes/other/git_alias/</link>
       <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>https://bokmark.github.io/notes/other/git_alias/</guid>
+      <guid>/notes/other/git_alias/</guid>
       <description>git配置、review、lo</description>
     </item>
     
     <item>
       <title>Gradle connect Reset</title>
-      <link>https://bokmark.github.io/notes/fix_bug/gradle_connect_reset/</link>
+      <link>/notes/fix_bug/gradle_connect_reset/</link>
       <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>https://bokmark.github.io/notes/fix_bug/gradle_connect_reset/</guid>
+      <guid>/notes/fix_bug/gradle_connect_reset/</guid>
       <description>Could not install Gradle distribution from &amp;lsquo;&lt;a href=&#34;https://services.gradle.org/distributions/gradle-6.5.1-all.zip&#39;&#34;&gt;https://services.gradle.org/distributions/gradle-6.5.1-all.zip&#39;&lt;/a&gt;.</description>
     </item>
     
     <item>
       <title>Maven snapshot</title>
-      <link>https://bokmark.github.io/notes/other/maven-snapshot/</link>
+      <link>/notes/other/maven-snapshot/</link>
       <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>https://bokmark.github.io/notes/other/maven-snapshot/</guid>
+      <guid>/notes/other/maven-snapshot/</guid>
       <description>Maven 快速开发迭代 版本好 snapshot</description>
     </item>
     
     <item>
       <title>sed</title>
-      <link>https://bokmark.github.io/notes/other/sed/</link>
+      <link>/notes/other/sed/</link>
       <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>https://bokmark.github.io/notes/other/sed/</guid>
+      <guid>/notes/other/sed/</guid>
       <description>Sed 使用方法</description>
     </item>
     

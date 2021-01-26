@@ -3,340 +3,345 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bokmark.github.io/open_sources/retrofit/platform/</loc>
+    <loc>/open_sources/retrofit/platform/</loc>
     <lastmod>2020-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/open_sources/retrofit/use/</loc>
+    <loc>/open_sources/retrofit/use/</loc>
     <lastmod>2020-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/open_sources/retrofit/base/</loc>
+    <loc>/open_sources/retrofit/base/</loc>
     <lastmod>2020-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/</loc>
+    <loc>/java/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
+    <loc>/java/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/jmm/</loc>
+    <loc>/mulitthread/jmm/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/docs/about/</loc>
+    <loc>/docs/about/</loc>
     <lastmod>2020-11-14T12:18:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/jetpack/camerax/</loc>
+    <loc>/arch/jetpack/camerax/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/jetpack/compose/</loc>
+    <loc>/arch/jetpack/compose/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/jetpack/hilt/</loc>
+    <loc>/arch/jetpack/hilt/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/jetpack/navigation/</loc>
+    <loc>/arch/jetpack/navigation/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/jetpack/startup/</loc>
+    <loc>/arch/jetpack/startup/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/jetpack/viewmodel/</loc>
+    <loc>/arch/jetpack/viewmodel/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/jetpack/intro/</loc>
+    <loc>/arch/jetpack/intro/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/android/framework/androidvm/</loc>
+    <loc>/android/framework/androidvm/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/dagger/dagger/</loc>
+    <loc>/arch/dagger/dagger/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/</loc>
+    <loc>/kotlin/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/</loc>
+    <loc>/android/framework/mediastore/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/open_sources/</loc>
+    <loc>/mulitthread/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/docs/books/</loc>
+    <loc>/open_sources/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/opreation_system/</loc>
+    <loc>/docs/books/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/android/framework/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</loc>
+    <loc>/opreation_system/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/arch/</loc>
+    <loc>/android/framework/android-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/plus/fanxin/</loc>
+    <loc>/arch/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kotlin/plus/fanxin/</loc>
     <lastmod>2020-11-30T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/plus/plus1/</loc>
+    <loc>/kotlin/plus/plus1/</loc>
     <lastmod>2020-11-30T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/android/handler/handler/</loc>
+    <loc>/android/handler/handler/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/android/view/view/</loc>
+    <loc>/android/view/view/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/aqs/</loc>
+    <loc>/mulitthread/aqs/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/cas/</loc>
+    <loc>/mulitthread/cas/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/lock/</loc>
+    <loc>/mulitthread/lock/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/synchronized/</loc>
+    <loc>/mulitthread/synchronized/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/thread_local/</loc>
+    <loc>/mulitthread/thread_local/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/volatile/</loc>
+    <loc>/mulitthread/volatile/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/blockingqueue/</loc>
+    <loc>/mulitthread/blockingqueue/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/questions/</loc>
+    <loc>/mulitthread/questions/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/conroutines/</loc>
+    <loc>/kotlin/conroutines/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/mulitthread/base/</loc>
+    <loc>/mulitthread/base/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</loc>
+    <loc>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/javavm/gc/</loc>
+    <loc>/java/javavm/gc/</loc>
     <lastmod>2020-12-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/other/io0/</loc>
+    <loc>/java/other/io0/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/javavm/java-allocate/</loc>
+    <loc>/java/javavm/java-allocate/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/other/io/</loc>
+    <loc>/java/other/io/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/javavm/question/</loc>
+    <loc>/java/javavm/question/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</loc>
+    <loc>/java/javavm/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/other/json/</loc>
+    <loc>/java/other/json/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</loc>
+    <loc>/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/other/object_proxy/</loc>
+    <loc>/java/other/object_proxy/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/intro/</loc>
+    <loc>/kotlin/samples/intro/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/delegate/</loc>
+    <loc>/kotlin/samples/delegate/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/funarea/</loc>
+    <loc>/kotlin/samples/funarea/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/function/</loc>
+    <loc>/kotlin/samples/function/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/flow/</loc>
+    <loc>/kotlin/samples/flow/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/special/</loc>
+    <loc>/kotlin/samples/special/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/specialclass/</loc>
+    <loc>/kotlin/samples/specialclass/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/kotlin/samples/collections/</loc>
+    <loc>/kotlin/samples/collections/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2020-11-14T15:11:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/other/brew/</loc>
+    <loc>/notes/other/brew/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/other/githubpages/</loc>
+    <loc>/notes/other/githubpages/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/other/git_alias/</loc>
+    <loc>/notes/other/git_alias/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/fix_bug/gradle_connect_reset/</loc>
+    <loc>/notes/fix_bug/gradle_connect_reset/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/other/maven-snapshot/</loc>
+    <loc>/notes/other/maven-snapshot/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/</loc>
+    <loc>/notes/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/notes/other/sed/</loc>
+    <loc>/notes/other/sed/</loc>
     <lastmod>2020-11-14T12:20:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/docs/</loc>
+    <loc>/docs/</loc>
     <lastmod>2020-11-14T12:18:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/android/</loc>
+    <loc>/android/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/java/datastruct/hashmap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</loc>
+    <loc>/java/datastruct/hashmap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</loc>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/categories/</loc>
+    <loc>/categories/</loc>
   </url>
   
   <url>
-    <loc>https://bokmark.github.io/tags/</loc>
+    <loc>/tags/</loc>
   </url>
   
 </urlset>

@@ -1,4 +1,3 @@
-baseURL = "https://bokmark.github.io/"
 publishdir = "docs"
 languageCode = "en-us"
 title = "Bokmark Pages"
