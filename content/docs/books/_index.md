@@ -6,14 +6,13 @@ weight: 1
 
 <a href="/books/JavaWebNet.pdf" target="_blank" download="Java网络编程（第4版）">Java网络编程（第4版）</a><br>
 <a href="/books/EffectiveJava.pdf" target="_blank" download="Effective Java 中文第二版">Effective Java 中文第二版</a><br>
-<a href="/books/JavaNode.pdf" target="_blank" download="Essential Java.《Java 编程要点》">Essential Java.《Java 编程要点》</a><br>
 <a href="/books/Head_First_Java_2.pdf" target="_blank" download="Head First Java中文版">Head First Java中文版</a><br>
 <a href="/books/Head_First_arch.pdf" target="_blank" download="Head First 设计模式(中文版)">Head First 设计模式(中文版)</a><br>
 <a href="/books/HTTP.pdf" target="_blank" download="HTTP权威指南">HTTP权威指南</a><br>
 <a href="/books/Java_Mind_4.pdf" target="_blank" download="Java编程思想（第4版）">Java编程思想（第4版）</a><br>
-<a href="/books/Java_Multi_f.pdf" target="_blank" download="Java并发编程的艺术(方腾飞)">Java并发编程的艺术(方腾飞)</a><br>
 <a href="/books/Java_Multi_art.pdf" target="_blank" download="Java并发编程实战（中文版）">Java并发编程实战（中文版）</a><br>
 <a href="/books/TCP_IP.pdf" target="_blank" download="TCP IP详解">TCP IP详解</a><br>
+<a href="/books/JVM.pdf" target="_blank" download="TCP IP详解">深入理解Java虚拟机：JVM高级特性与最佳实践</a><br>
 
 
 # 推荐名单
