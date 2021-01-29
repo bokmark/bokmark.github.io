@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark Pages</title>
+    <link>/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</guid>
+      <description>源码解析不会通篇解析，会通过面试题整理来针对性地解析其中的关键点
+  主要的几个面试题：
+ HashMap的底层原理是什么？线程安全么？ HashMap中put是如何实现的？ 谈一下hashMap中什么时候需要进行扩容，扩容resize()又是如何实现的？ 什么是哈希碰撞？怎么解决? HashMap和HashTable的区别 HashMap中什么时候需要进行扩容，扩容resize()是如何实现的？ hashmap concurrenthashmap原理 arraylist和hashmap的区别，为什么取数快？   1. HashMap的底层原理是什么？线程安全么？ #  HashMap的底层原理是链表的数组， 通过hash算法计算出 key的hash值再根据数组长度取模得到index 如果index相同，那么就排在同一个链表中。链表中根据key的hash值大小有序排列方便查找  jdk 1.8 之后 androidsdk 24 之后 hashmap 的内部实现有链表改为 链表加红黑树实现，当一个链表的长度大于 8之后将会在后续添加的时候转变为红黑树   get： 先通过hash算法计算出key的hash值 然后再通过hash根据 链表数组的长度取模 获得index。根据index去循环链表或者红黑树取到相应的value。 put： 先通过hash算法计算出key的hash值 然后再通过hash根据 链表数组的长度取模 获得index，再根据排列顺序将 entry放到链表或者红黑树中。  线程不安全，当多个线程操作的时候可能使读取的数据为错误数据。
+2. HashMap中put是如何实现的？ #   简单过程：先通过hash算法计算出key的hash值 然后再通过hash根据 链表数组的长度取模 获得index，再根据排列顺序将 entry放到链表或者红黑树中。 看代码：
+ public V put(K key, V value) { return putVal(hash(key), key, value, false, true); } final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) { Node&amp;lt;K,V&amp;gt;[] tab; Node&amp;lt;K,V&amp;gt; p; int n, i; if ((tab = table) == null || (n = tab.</description>
+    </item>
+    
+  </channel>
+</rss>

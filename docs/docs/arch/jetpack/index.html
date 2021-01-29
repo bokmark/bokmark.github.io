@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="本文所有的信息来源于官网的数据 https://developer.android.google.cn/jetpack/
+     库 说明      activity * 访问基于 Activity 构建的可组合 API。    ads 获取广告 ID（无论是否通过 Play 服务）。    annotation 公开元数据，帮助工具开发者和其他开发者了解您的应用代码。    appcompat * 允许在平台旧版 API 上访问新 API（很多使用 Material Design）。    arch.core 其他架构依赖项的帮助程序，包括可与 LiveData 配合使用的 JUnit 测试规则。    asynclayoutinflater 异步膨胀布局以避免界面出现卡顿。    autofill 通过扩展提示提高自动填充的准确性。    benchmark 在 Android Studio 中准确评估代码的性能。    biometric 通过生物识别特征或设备凭据进行身份验证，以及执行加密操作。    browser 在用户的默认浏览器中显示网页。    camera * 构建移动相机应用。    car 为支持 Android 技术的汽车开发驾驶友好型应用。    cardview 用圆角和阴影实现 Material Design 卡片图案。    collection 降低较小的现有集合和新集合对内存的影响。    compose 使用描述界面形状和数据依赖项的可组合函数，以编程方式定义界面。    compose.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/docs/arch/jetpack/" />
+
+<title>Jetpack | Bokmark Pages</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
+<script defer src="/en.search.min.3f985bb0f77064ad6ac570126cf608ff955e70e323baa3fd01ff1b6000f2404c.js" integrity="sha256-P5hbsPdwZK1qxXASbPYI/5VecOMjuqP9Af8bYADyQEw="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<link rel="alternate" type="application/rss+xml" href="/docs/arch/jetpack/index.xml" title="Bokmark Pages" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark Pages</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/Handler/" class="">Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
+    <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
+      <a  class="">Framework</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/androidvm/" class="">android vm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/start/" class="">系统启动流程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/binder/" class="">Binder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="toggle"  />
+    <label for="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="flex justify-between">
+      <a  class="">View</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/view/" class="">View </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/arch/" class="">Arch</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
+    <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
+      <a href="/docs/arch/dagger/" class="">Dagger</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8be0af9073ee9bf5adc200d689a982b1" class="toggle" checked />
+    <label for="section-8be0af9073ee9bf5adc200d689a982b1" class="flex justify-between">
+      <a href="/docs/arch/jetpack/" class="active">Jetpack</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/compose/" class="">Compose</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/startup/" class="">StartUp</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/java/" class="">Java</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5cd4235df550fb51f2cd7173470aec9d" class="toggle"  />
+    <label for="section-5cd4235df550fb51f2cd7173470aec9d" class="flex justify-between">
+      <a  class="">Java v M</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/gc/" class="">Java 垃圾回收器 回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java-allocate/" class="">Java </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/question/" class="">Java vm 面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/" class="">Java 对象头的内容</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76a0b3127bcb1439cbea08b42a85d796" class="toggle"  />
+    <label for="section-76a0b3127bcb1439cbea08b42a85d796" class="flex justify-between">
+      <a  class="">Other</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io0/" class="">HSDB</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/object_proxy/" class="">动态代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34df903e8b7eb59a3ad4c31872960812" class="toggle"  />
+    <label for="section-34df903e8b7eb59a3ad4c31872960812" class="flex justify-between">
+      <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="">多线程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jmm/" class="">JMM</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/aqs/" class="">多线程--aqs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/cas/" class="">多线程--cas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/lock/" class="">多线程--lock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized/" class="">多线程--synchronized</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/thread_local/" class="">多线程--thread local</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile/" class="">多线程--volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/blockingqueue/" class="">多线程--阻塞队列和线程池原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/questions/" class="">多线程--面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/base/" class="">多线程--基础知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ff2116bff7eb47793028d71d3690ea14" class="toggle"  />
+    <label for="section-ff2116bff7eb47793028d71d3690ea14" class="flex justify-between">
+      <a  class="">《深入理解 Java 虚拟机》</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/" class="">《深入理解Java 虚拟机》第二章</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/" class="">《深入理解Java虚拟机》字节码指令表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90abdf45b388491dd8582d80fdac3b6e" class="toggle"  />
+    <label for="section-90abdf45b388491dd8582d80fdac3b6e" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Kotlin</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6067e15e42271c95f4e7245c333a660b" class="toggle"  />
+    <label for="section-6067e15e42271c95f4e7245c333a660b" class="flex justify-between">
+      <a href="/docs/kotlin/conroutines/" class="">Conroutines</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/how-to-use/" class="">Kotlin 协程 - 怎么使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/" class="">Kotlin 协程本质</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de1c3339b4d58bf97a87da32fd667b9f" class="toggle"  />
+    <label for="section-de1c3339b4d58bf97a87da32fd667b9f" class="flex justify-between">
+      <a href="/docs/kotlin/plus/" class="">Plus</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/fanxin/" class="">Kotlin 泛型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/plus1/" class="">Kotlin 进阶知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-890e164347abfc846f7df26b475a8732" class="toggle"  />
+    <label for="section-890e164347abfc846f7df26b475a8732" class="flex justify-between">
+      <a href="/docs/kotlin/samples/" class="">Samples</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/intro/" class="">【译】Kotlin - 基础介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/delegate/" class="">【译】Kotlin 语法基础 - 代理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/funarea/" class="">【译】Kotlin 语法基础 - 作用域方法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/function/" class="">【译】Kotlin 语法基础 - 函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/flow/" class="">【译】Kotlin 语法基础 - 流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/special/" class="">【译】Kotlin 语法基础 - 特殊特性</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/specialclass/" class="">【译】Kotlin 语法基础 - 特殊类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/collections/" class="">【译】Kotlin 语法基础 - 集合</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>OpenSources</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle"  />
+    <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
+      <a href="/docs/open_sources/retrofit/" class="">Retrofit</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/use/" class="">Retrofit - 原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/base/" class="">Retrofit - 大致流程源码解析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%B9%A6%E6%9C%AC/" class="">技术书籍</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        随笔
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/bokmark" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://bokmark.gitee.io" target="_blank" rel="noopener">
+        Gitee
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/theme/hugo-book/" target="_blank" rel="noopener">
+        hugo-theme-book
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Jetpack</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p> 本文所有的信息来源于官网的数据 
+  <a href="https://developer.android.google.cn/jetpack/">https://developer.android.google.cn/jetpack/</a></p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>库</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/activity">activity *</a></td>
+<td>访问基于 Activity 构建的可组合 API。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/ads">ads</a></td>
+<td>获取广告 ID（无论是否通过 Play 服务）。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/annotation">annotation</a></td>
+<td>公开元数据，帮助工具开发者和其他开发者了解您的应用代码。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/appcompat">appcompat *</a></td>
+<td>允许在平台旧版 API 上访问新 API（很多使用 Material Design）。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/arch-core">arch.core</a></td>
+<td>其他架构依赖项的帮助程序，包括可与 LiveData 配合使用的 JUnit 测试规则。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/asynclayoutinflater">asynclayoutinflater</a></td>
+<td>异步膨胀布局以避免界面出现卡顿。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/autofill">autofill</a></td>
+<td>通过扩展提示提高自动填充的准确性。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/benchmark">benchmark</a></td>
+<td>在 Android Studio 中准确评估代码的性能。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/biometric">biometric</a></td>
+<td>通过生物识别特征或设备凭据进行身份验证，以及执行加密操作。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/browser">browser</a></td>
+<td>在用户的默认浏览器中显示网页。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/camera">camera *</a></td>
+<td>构建移动相机应用。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/car">car</a></td>
+<td>为支持 Android 技术的汽车开发驾驶友好型应用。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/cardview">cardview</a></td>
+<td>用圆角和阴影实现 Material Design 卡片图案。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/collection">collection</a></td>
+<td>降低较小的现有集合和新集合对内存的影响。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/compose">compose</a></td>
+<td>使用描述界面形状和数据依赖项的可组合函数，以编程方式定义界面。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/compose-animation">compose.animation</a></td>
+<td>在 Jetpack Compose 应用中构建动画，丰富用户的体验。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/compose-foundation">compose.foundation</a></td>
+<td>使用现成可用的构建块编写 Jetpack Compose 应用，还可扩展 Foundation 以构建您自己的设计系统元素。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/compose-material">compose.material</a></td>
+<td>使用现成可用的 Material Design 组件构建 Jetpack Compose UI。这是 Compose 的更高级别的入口点，旨在提供与 <a href="http://www.material.io">www.material.io</a> 上描述的组件一致的组件。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/compose-runtime">compose.runtime</a></td>
+<td>Compose 的编程模型和状态管理的基本构建块，以及 Compose 编译器插件针对的核心运行时。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/compose-ui">compose.ui</a></td>
+<td>与设备互动所需的 Compose UI 的基本组件，包括布局、绘图和输入。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/concurrent">concurrent</a></td>
+<td>使用协程将任务移出主线程，并充分利用 ListenableFuture。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/constraintlayout">constraintlayout</a></td>
+<td>使用相对定位灵活地确定微件的位置和大小。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/contentpager">contentpager</a></td>
+<td>在后台线程中加载 ContentProvider 数据并进行分页。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/coordinatorlayout">coordinatorlayout</a></td>
+<td>定位顶级应用微件，例如 AppBarLayout 和 FloatingActionButton。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/core">core</a></td>
+<td>针对最新的平台功能和 API 调整应用，同时还支持旧设备。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/cursoradapter">cursoradapter</a></td>
+<td>向 ListView 微件提供光标数据。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/customview">customview</a></td>
+<td>实现自定义视图。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/databinding">databinding *</a></td>
+<td>使用声明性格式将布局中的界面组件绑定到应用中的数据源。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/documentfile">documentfile</a></td>
+<td>查看文件文档。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/drawerlayout">drawerlayout</a></td>
+<td>实现 Material Design 抽屉式导航栏微件。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/dynamicanimation">dynamicanimation</a></td>
+<td>使用基于物理特性的动画 API 制作流畅的动画。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/emoji">emoji</a></td>
+<td>在当前设备和旧版本设备上显示表情符号。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/enterprise">enterprise</a></td>
+<td>创建企业专用应用。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/exifinterface">exifinterface</a></td>
+<td>读取和写入图片文件 EXIF 标记。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/fragment">fragment *</a></td>
+<td>将您的应用细分为在一个 Activity 中托管的多个独立屏幕。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/gaming">gaming</a></td>
+<td>在您的应用中以原生方式使用 Android 游戏 SDK 来执行复杂的游戏任务，例如帧同步。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/gridlayout">gridlayout</a></td>
+<td>实现网格布局。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/heifwriter">heifwriter</a></td>
+<td>使用 Android 设备上可用的编解码器，以 HEIF 格式对图像或图像集进行编码。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/hilt">hilt</a></td>
+<td>扩展了 Dagger Hilt 的功能，以实现 androidx 库中某些类的依赖项注入。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/interpolator">interpolator</a></td>
+<td>在旧版平台上使用动画插值器。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/jetifier">jetifier</a></td>
+<td>一款独立工具，可将某个库中对已弃用支持库的依赖项迁移到等效的 AndroidX 依赖项。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/leanback">leanback</a></td>
+<td>使用适合 dpad 的微件和模板 Fragment 为 Android TV 设备编写应用。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/legacy">legacy</a></td>
+<td>此工件及其类已弃用。从 Android 8 开始，后台检查限制会使此类不再有用。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/lifecycle">lifecycle *</a></td>
+<td>构建生命周期感知型组件，这些组件可以根据 Activity 或 Fragment 的当前生命周期状态调整行为。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/loader">loader</a></td>
+<td>加载配置更改后继续存在的界面数据。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/localbroadcastmanager">localbroadcastmanager</a></td>
+<td>此工件及其类已弃用。请改用 LiveData 或响应式流。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/media">media</a></td>
+<td>与其他应用共享媒体内容和控件。已被 media2 取代。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/media2">media2</a></td>
+<td>与其他应用共享媒体内容和控件。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/mediarouter">mediarouter</a></td>
+<td>利用通用界面实现在远程接收端设备上显示和播放媒体内容。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/multidex">multidex</a></td>
+<td>在搭载 Android 5 之前版本的设备上部署包含多个 dex 文件的应用。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/navigation">navigation *</a></td>
+<td>构建和组织应用内界面，处理深层链接以及在屏幕之间导航。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/paging">paging *</a></td>
+<td>在页面中加载数据，并在 RecyclerView 中呈现。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/palette">palette</a></td>
+<td>从图片中提取具有代表性的调色板。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/percentlayout">percentlayout</a></td>
+<td>此工件及其类已弃用。请改用 ConstraintLayout 和关联布局。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/preference">preference</a></td>
+<td>无需与设备存储空间交互，也不需要管理界面，便能构建交互式设置画面。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/print">print</a></td>
+<td>通过您的应用打印照片、文档和其他图形及图片。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/recommendation">recommendation</a></td>
+<td>将内容推广到 Android TV 启动器的主屏幕。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/recyclerview">recyclerview</a></td>
+<td>在您的界面中显示大量数据，同时最大限度减少内存用量。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/remotecallback">remotecallback</a></td>
+<td>创建一个封装容器，以便开发者更轻松地提供 PendingIntent。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/room">room *</a></td>
+<td>创建、存储和管理由 SQLite 数据库支持的持久性数据。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/savedstate">savedstate</a></td>
+<td>编写可插入组件，这些组件会在进程终止时保存界面状态，并在进程重启时恢复界面状态。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/security">security</a></td>
+<td>安全地管理密钥并对文件和 sharedpreferences 进行加密。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/sharetarget">sharetarget</a></td>
+<td>提供向后兼容性，可以将快捷方式用作直接共享目标。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/slice">slice</a></td>
+<td>在应用外显示模板化界面元素。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/slidingpanelayout">slidingpanelayout</a></td>
+<td>实现滑动窗格界面模式。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/startup">startup</a></td>
+<td>实现一种在应用启动时初始化组件的简单、高效方法。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/sqlite">sqlite</a></td>
+<td>使用本地 SQLite 数据库。如果可能，请改用 Room。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/swiperefreshlayout">swiperefreshlayout</a></td>
+<td>实现下拉刷新的界面模式。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/test">test *</a></td>
+<td>在 Android 中进行测试。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/textclassifier">textclassifier</a></td>
+<td>识别文本中的对话、链接、选定内容和其他类似构造内容。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/tracing">tracing</a></td>
+<td>将跟踪事件写入系统跟踪缓冲区。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/transition">transition</a></td>
+<td>使用开始和结束布局为界面中的动作添加动画效果。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/tvprovider">tvprovider</a></td>
+<td>提供 Android TV 频道。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/ui">ui</a></td>
+<td>使用 Jetpack Compose 库。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/vectordrawable">vectordrawable</a></td>
+<td>渲染矢量图形。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/versionedparcelable">versionedparcelable</a></td>
+<td>提供稳定且紧凑的二进制序列化格式，该格式可跨进程传递或安全保留。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/viewpager">viewpager</a></td>
+<td>以可滑动的格式显示视图或 Fragment。如果可能，请改用 viewpager2。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/viewpager2">viewpager2</a></td>
+<td>以可滑动的格式显示视图或 Fragment。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/wear">wear</a></td>
+<td>打造适用于 Wear OS by Google 谷歌智能手表的应用。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/webkit">webkit</a></td>
+<td>在 Android 5 及更高版本上使用新式 WebView API。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/window">window</a></td>
+<td>帮助支持不同的设备类型，例如可折叠设备。</td>
+</tr>
+<tr>
+<td>
+  <a href="https://developer.android.google.cn/jetpack/androidx/releases/work">work *</a></td>
+<td>调度和执行可延期且基于约束条件的后台任务。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>这是截至8月27日 官网上看到的所有的 jetpack提供的功能
+这里我将找几个比较常用的库 来学习 jetpack 是如何做到 如它所说的 <code>Jetpack 是一个由多个库组成的套件，可帮助开发者遵循最佳做法，减少样板代码并编写可在各种 Android 版本和设备中一致运行的代码，让开发者精力集中编写重要的代码。</code></p>
+<hr>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark Pages</title>
+    <link>/docs/java/JavaVM/</link>
+    <description>Recent content on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
+    <lastBuildDate>Mon, 28 Dec 2020 15:14:39 +1000</lastBuildDate><atom:link href="/docs/java/JavaVM/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 垃圾回收器 回收算法</title>
+      <link>/docs/java/JavaVM/gc/</link>
+      <pubDate>Mon, 28 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/gc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java </title>
+      <link>/docs/java/JavaVM/java-allocate/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/java-allocate/</guid>
+      <description>  虚拟机栈-一个线程一个栈
+  动态链接 多态 - 静态分派 动态分派 dizhi
+  局部变量表 存放8大基础类型和对象引用地址。 为什么不存放对象本身呢？
+  操作数栈
+  返回地址
+    对象的分配策略
+ 对象逃逸分析：分析对象是否可以直接在栈中分配对象，如果是分配对象到栈内存中 本地线程分配缓冲：是否具有本地线程缓冲，如果有直接映射到对应的缓冲中 tlab 是否大对象：如果是大对象直接分配到老年代 对象优先分配到eden区 空间分配担保：虚拟机保证，在分配的时候如果当前的区域有足够的空间分配内存则保证一定那能分配成功，因为会先进行一次gc 大对象直接进入老年代 长期存活的对象进入老年代 对象的gc年龄会动态的判断    gc年龄
+ 当对象进去eden区之后每次gc都将对象的gc年龄加1。当超过阈值时，将会升级到下一代 eden 复制算法 复制到from或者to之中的一个 from和to相互复制直到进入老年代 当每个区满的时候将会触发gc minor gc 、young gc 新生代 major gc、old gc 老年代 full gc 全部区域 gc 年龄记在markword 区域    </description>
+    </item>
+    
+    <item>
+      <title>Java vm 面试题</title>
+      <link>/docs/java/JavaVM/question/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/question/</guid>
+      <description>jvm 内存结构
+ jmm的规则内存分为线程的工作内存、主内存之分 线程的工作内存包括虚拟栈、本地方法栈、程序计数器 主内存包括堆、方法区 堆按照垃圾回收算法分为 eden、from、to、老年代 方法区分为静态方法区，动态方法区 虚拟机栈是一个栈帧的filo栈。一个栈帧包含操作数栈、本地变量表、动态链接、返回地址 直接内存、本地内存    什么情况下内存栈溢出
+ 线程爆炸多    描述一下 new一个对象的流程
+ 检查对象的class是否存在方法区中，如果没有则加载 分配内存  分析内存存放的区域  逃逸分析：是否分配到栈上 是否大对象，如果是直接分配到老年代 分配到eden   内存的规整化  指针碰撞 空闲列表   考虑并发问题：  talb：本地线程分配内存缓冲 cas：分配内存区域重试     内存空间初始化 设置 对象初始化    Java对象会不会分配在栈中
+ 逃逸分析：可以在栈上分配 几乎所有的对象都在堆中分配    如果判断一个对象是否被回收，有哪些算法，实际虚拟机使用得最多得是什么
+  引用计数
+  gcroot 可达性算法</description>
+    </item>
+    
+    <item>
+      <title>Java 对象头的内容</title>
+      <link>/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</guid>
+      <description>摘抄自 《深入理解Java虚拟机 &amp;ndash; JVM高级特性与最佳实践》</description>
+    </item>
+    
+  </channel>
+</rss>

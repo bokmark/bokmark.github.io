@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="委托模式 、 代理属性 、 lazy、to">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="【译】Kotlin 语法基础 - 代理" />
+<meta property="og:description" content="委托模式 、 代理属性 、 lazy、to" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/kotlin/samples/delegate/" />
+<meta property="article:published_time" content="2019-02-11T19:30:08+10:00" />
+<meta property="article:modified_time" content="2019-02-11T19:30:08+10:00" />
+<title>【译】Kotlin 语法基础 - 代理 | Bokmark Pages</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
+<script defer src="/en.search.min.3f985bb0f77064ad6ac570126cf608ff955e70e323baa3fd01ff1b6000f2404c.js" integrity="sha256-P5hbsPdwZK1qxXASbPYI/5VecOMjuqP9Af8bYADyQEw="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark Pages</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/Handler/" class="">Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
+    <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
+      <a  class="">Framework</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/androidvm/" class="">android vm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/start/" class="">系统启动流程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/binder/" class="">Binder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="toggle"  />
+    <label for="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="flex justify-between">
+      <a  class="">View</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/view/" class="">View </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/arch/" class="">Arch</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
+    <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
+      <a href="/docs/arch/dagger/" class="">Dagger</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8be0af9073ee9bf5adc200d689a982b1" class="toggle"  />
+    <label for="section-8be0af9073ee9bf5adc200d689a982b1" class="flex justify-between">
+      <a href="/docs/arch/jetpack/" class="">Jetpack</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/compose/" class="">Compose</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/startup/" class="">StartUp</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/java/" class="">Java</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5cd4235df550fb51f2cd7173470aec9d" class="toggle"  />
+    <label for="section-5cd4235df550fb51f2cd7173470aec9d" class="flex justify-between">
+      <a  class="">Java v M</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/gc/" class="">Java 垃圾回收器 回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java-allocate/" class="">Java </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/question/" class="">Java vm 面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/" class="">Java 对象头的内容</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76a0b3127bcb1439cbea08b42a85d796" class="toggle"  />
+    <label for="section-76a0b3127bcb1439cbea08b42a85d796" class="flex justify-between">
+      <a  class="">Other</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io0/" class="">HSDB</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/object_proxy/" class="">动态代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34df903e8b7eb59a3ad4c31872960812" class="toggle"  />
+    <label for="section-34df903e8b7eb59a3ad4c31872960812" class="flex justify-between">
+      <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="">多线程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jmm/" class="">JMM</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/aqs/" class="">多线程--aqs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/cas/" class="">多线程--cas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/lock/" class="">多线程--lock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized/" class="">多线程--synchronized</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/thread_local/" class="">多线程--thread local</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile/" class="">多线程--volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/blockingqueue/" class="">多线程--阻塞队列和线程池原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/questions/" class="">多线程--面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/base/" class="">多线程--基础知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ff2116bff7eb47793028d71d3690ea14" class="toggle"  />
+    <label for="section-ff2116bff7eb47793028d71d3690ea14" class="flex justify-between">
+      <a  class="">《深入理解 Java 虚拟机》</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/" class="">《深入理解Java 虚拟机》第二章</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/" class="">《深入理解Java虚拟机》字节码指令表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90abdf45b388491dd8582d80fdac3b6e" class="toggle"  />
+    <label for="section-90abdf45b388491dd8582d80fdac3b6e" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Kotlin</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6067e15e42271c95f4e7245c333a660b" class="toggle"  />
+    <label for="section-6067e15e42271c95f4e7245c333a660b" class="flex justify-between">
+      <a href="/docs/kotlin/conroutines/" class="">Conroutines</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/how-to-use/" class="">Kotlin 协程 - 怎么使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/" class="">Kotlin 协程本质</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de1c3339b4d58bf97a87da32fd667b9f" class="toggle"  />
+    <label for="section-de1c3339b4d58bf97a87da32fd667b9f" class="flex justify-between">
+      <a href="/docs/kotlin/plus/" class="">Plus</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/fanxin/" class="">Kotlin 泛型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/plus1/" class="">Kotlin 进阶知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-890e164347abfc846f7df26b475a8732" class="toggle" checked />
+    <label for="section-890e164347abfc846f7df26b475a8732" class="flex justify-between">
+      <a href="/docs/kotlin/samples/" class="">Samples</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/intro/" class="">【译】Kotlin - 基础介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/delegate/" class=" active">【译】Kotlin 语法基础 - 代理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/funarea/" class="">【译】Kotlin 语法基础 - 作用域方法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/function/" class="">【译】Kotlin 语法基础 - 函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/flow/" class="">【译】Kotlin 语法基础 - 流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/special/" class="">【译】Kotlin 语法基础 - 特殊特性</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/specialclass/" class="">【译】Kotlin 语法基础 - 特殊类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/collections/" class="">【译】Kotlin 语法基础 - 集合</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>OpenSources</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle"  />
+    <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
+      <a href="/docs/open_sources/retrofit/" class="">Retrofit</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/use/" class="">Retrofit - 原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/base/" class="">Retrofit - 大致流程源码解析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%B9%A6%E6%9C%AC/" class="">技术书籍</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        随笔
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/bokmark" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://bokmark.gitee.io" target="_blank" rel="noopener">
+        Gitee
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/theme/hugo-book/" target="_blank" rel="noopener">
+        hugo-theme-book
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>【译】Kotlin 语法基础 - 代理</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#delegation-pattern-委托模式">Delegation Pattern 委托模式</a></li>
+            <li><a href="#delegated-properties-代理属性">Delegated Properties 代理属性</a></li>
+            <li><a href="#保存属性到-map">保存属性到 map</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h3 id="delegation-pattern-委托模式">
+  Delegation Pattern 委托模式
+  <a class="anchor" href="#delegation-pattern-%e5%a7%94%e6%89%98%e6%a8%a1%e5%bc%8f">#</a>
+</h3>
+<p>kotlin 天然支持 
+  <a href="https://kotlinlang.org/docs/reference/delegation.html">委托代理模式</a>，不再需要编写一些模板文件。</p>
+<pre><code>interface SoundBehavior {                                                          // 1
+    fun makeSound()
+}
+
+class ScreamBehavior(val n:String): SoundBehavior {                                // 2
+    override fun makeSound() = println(&quot;${n.toUpperCase()} !!!&quot;)
+}
+
+class RockAndRollBehavior(val n:String): SoundBehavior {                           // 2
+    override fun makeSound() = println(&quot;I'm The King of Rock 'N' Roll: $n&quot;)
+}
+
+// Tom Araya is the &quot;singer&quot; of Slayer
+class TomAraya(n:String): SoundBehavior by ScreamBehavior(n)                       // 3
+
+// You should know ;)
+class ElvisPresley(n:String): SoundBehavior by RockAndRollBehavior(n)              // 3
+
+fun main() {
+    val tomAraya = TomAraya(&quot;Thrash Metal&quot;)
+    tomAraya.makeSound()                                                           // 4
+    val elvisPresley = ElvisPresley(&quot;Dancin' to the Jailhouse Rock.&quot;)
+    elvisPresley.makeSound()
+}
+/*
+THRASH METAL !!!
+I'm The King of Rock 'N' Roll: Dancin' to the Jailhouse Rock.
+*/
+</code></pre><ul>
+<li>1 定义一个接口</li>
+<li>2 定义两个实现类，<code>ScreamBehavior</code> 和<code> RockAndRollBehavior</code>。他们都实现了 <code>SoundBehavior</code>的接口。</li>
+<li>3 <code>TomAraya </code> 和<code>ElvisPresley </code> 也是先了<code>SoundBehavior</code>的接口，但是他们没有提供实现，而是将实现委托给了<code>ScreamBehavior</code> 和<code> RockAndRollBehavior</code>。通过一个<code>by</code> 关键字，这个委托就产生了，你看没有一丝一毫的多余代码。</li>
+<li>4 当调用了 tomAraya 的 <code> makeSound()</code>  或者嗲用 elvisPresley 的 <code> makeSound()</code>的时候，他们分别调用了他们的委托类。</li>
+</ul>
+<hr>
+<h3 id="delegated-properties-代理属性">
+  Delegated Properties 代理属性
+  <a class="anchor" href="#delegated-properties-%e4%bb%a3%e7%90%86%e5%b1%9e%e6%80%a7">#</a>
+</h3>
+<p>kotlin 提供了一种
+  <a href="http://kotlinlang.org/docs/reference/delegated-properties.html">代理属性</a>的机制,这个机制允许你将一个属性的get set 方法委托给某一个实例，这个实例必须有<code>getValue</code> 方法，如果待委托的属性还是一个可变属性那么 <code>setValue</code> 也是必须的。</p>
+<pre><code>import kotlin.reflect.KProperty
+
+class Example {
+    var p: String by Delegate()                                               // 1
+
+    override fun toString() = &quot;Example Class&quot;
+}
+
+class Delegate() {
+    operator fun getValue(thisRef: Any?, prop: KProperty&lt;*&gt;): String {        // 2     
+        return &quot;$thisRef, thank you for delegating '${prop.name}' to me!&quot;
+    }
+
+    operator fun setValue(thisRef: Any?, prop: KProperty&lt;*&gt;, value: String) { // 2
+        println(&quot;$value has been assigned to ${prop.name} in $thisRef&quot;)
+    }
+}
+
+fun main() {
+    val e = Example()
+    println(e.p)
+    e.p = &quot;NEW&quot;
+}
+/*
+Example Class, thank you for delegating 'p' to me!
+NEW has been assigned to p in Example Class
+*/
+</code></pre><ul>
+<li>1 委托属性 <code>p</code> 类型是<code>String</code> 被委托给了一个class <code>Delegate</code>的实例，这个实例用<code>by</code>关键字定义在 p之后。</li>
+<li>2 委托类里面的委托方法，这个方法的签名必须和这里一摸一样。方法里面你可以由自己决定需要几步操作。如果是不可变属性那么只有getValue 是必须的。</li>
+</ul>
+<h5 id="标准库里的delegate">
+  标准库里的delegate
+  <a class="anchor" href="#%e6%a0%87%e5%87%86%e5%ba%93%e9%87%8c%e7%9a%84delegate">#</a>
+</h5>
+<p>kotlin的标准库里面提供了一大堆有用的delegate，比如 <code>lazy</code> <code>observable</code> 等等。比如<code>lazy</code>的使用方法。</p>
+<pre><code>class LazySample {
+    init {
+      println(&quot;created!&quot;)            // 1
+    }
+
+    val lazyStr: String by lazy {
+        println(&quot;computed!&quot;)          // 2
+        &quot;my lazy&quot;
+    }
+}
+
+fun main() {
+    val sample = LazySample()         // 1
+    println(&quot;lazyStr = ${sample.lazyStr}&quot;)  // 2
+    println(&quot; = ${sample.lazyStr}&quot;)  // 3
+}
+/*
+created!
+computed!
+lazyStr = my lazy
+ = my lazy
+*/
+</code></pre><ul>
+<li>1 lazy 的属性不会在类实例创建的时候初始化</li>
+<li>2 第一次调用<code>lazyStr</code>的<code>get()</code>的时候，才会调用lazy类的实例的提供的表达式，返回一个&quot;my lazy&quot;。这个mylazy将会被赋值给lazyStr</li>
+<li>3 再次调用get的时候将会直接返回之前储存的值。</li>
+</ul>
+<p><em>如果你想要一个线程安全的 延迟初始化方案，请使用 <code>blockingLazy()</code> 代替。他保证了 getValue 后者 setValue 会只在一个线程上运行，并且所有的线程都可以读取到同样的值。</em></p>
+<h3 id="保存属性到-map">
+  保存属性到 map
+  <a class="anchor" href="#%e4%bf%9d%e5%ad%98%e5%b1%9e%e6%80%a7%e5%88%b0-map">#</a>
+</h3>
+<p>属性委托，同样可以用于保存内容到map 。这是很方便地用于类似于解析json，或者其他的什么东西之上的。</p>
+<pre><code>class User(val map: Map&lt;String, Any?&gt;) {
+    val name: String by map                // 1
+    val age: Int     by map                // 1
+}
+
+fun main() {
+    val user = User(mapOf(
+            &quot;name&quot; to &quot;John Doe&quot;,
+            &quot;age&quot;  to 25
+    ))
+
+    println(&quot;name = ${user.name}, age = ${user.age}&quot;)
+}
+//name = John Doe, age = 25
+</code></pre><ul>
+<li>1 在这里 map 内部提供过来 delegate 属性类的作用，当调用user的属性的get的时候，会去map中取出value，key是user属性的名字。</li>
+</ul>
+<p><em>当然你也可以用可变属性 不需要一定要val 的属性，只是你需要注意的是 如果你定义的是可变属性，那么你传入的map 也必须是可变map</em></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#delegation-pattern-委托模式">Delegation Pattern 委托模式</a></li>
+            <li><a href="#delegated-properties-代理属性">Delegated Properties 代理属性</a></li>
+            <li><a href="#保存属性到-map">保存属性到 map</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

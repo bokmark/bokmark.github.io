@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java的泛型 #   kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在 这里 有体现。 官方介绍
+ java 泛型中的通配符 #   首先需要和各位读者明确java中的泛型的两个概念，这有助于你理解kotlin的泛型
+  泛型定义，上限和下限 泛型读取模式   泛型定义是指 在类或者方法上的定义的泛型，这些定义我们 可以定义上限和下限。比如这段代码  class A{} class B extends A{} class C extends A{} class Fu&lt;T&gt; {} class Zi&lt;T extends B&gt; extends Fu&lt;T&gt; {} Zi class定义了他的泛型类型具有上限是B，意味着他的类型只能传入B的子类。
+你不能在Java中这样定义 class A&lt;? extends T&gt; 因为这样编译器无法在编译阶段确定他的类型
+泛型读取模式  List&lt;? extends A&gt; list = new ArrayList&lt;B&gt;(); A a0 = list.get(0); list.add(new A()); 这一段代码中list.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Kotlin 泛型" />
+<meta property="og:description" content="java的泛型 #   kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在 这里 有体现。 官方介绍
+ java 泛型中的通配符 #   首先需要和各位读者明确java中的泛型的两个概念，这有助于你理解kotlin的泛型
+  泛型定义，上限和下限 泛型读取模式   泛型定义是指 在类或者方法上的定义的泛型，这些定义我们 可以定义上限和下限。比如这段代码  class A{} class B extends A{} class C extends A{} class Fu&lt;T&gt; {} class Zi&lt;T extends B&gt; extends Fu&lt;T&gt; {} Zi class定义了他的泛型类型具有上限是B，意味着他的类型只能传入B的子类。
+你不能在Java中这样定义 class A&lt;? extends T&gt; 因为这样编译器无法在编译阶段确定他的类型
+泛型读取模式  List&lt;? extends A&gt; list = new ArrayList&lt;B&gt;(); A a0 = list.get(0); list.add(new A()); 这一段代码中list." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/kotlin/plus/fanxin/" />
+<meta property="article:published_time" content="2020-11-30T19:30:08+10:00" />
+<meta property="article:modified_time" content="2020-11-30T19:30:08+10:00" />
+<title>Kotlin 泛型 | Bokmark Pages</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
+<script defer src="/en.search.min.3f985bb0f77064ad6ac570126cf608ff955e70e323baa3fd01ff1b6000f2404c.js" integrity="sha256-P5hbsPdwZK1qxXASbPYI/5VecOMjuqP9Af8bYADyQEw="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark Pages</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/Handler/" class="">Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
+    <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
+      <a  class="">Framework</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/androidvm/" class="">android vm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/start/" class="">系统启动流程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/binder/" class="">Binder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="toggle"  />
+    <label for="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="flex justify-between">
+      <a  class="">View</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/view/" class="">View </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/arch/" class="">Arch</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
+    <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
+      <a href="/docs/arch/dagger/" class="">Dagger</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8be0af9073ee9bf5adc200d689a982b1" class="toggle"  />
+    <label for="section-8be0af9073ee9bf5adc200d689a982b1" class="flex justify-between">
+      <a href="/docs/arch/jetpack/" class="">Jetpack</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/compose/" class="">Compose</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/startup/" class="">StartUp</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/java/" class="">Java</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5cd4235df550fb51f2cd7173470aec9d" class="toggle"  />
+    <label for="section-5cd4235df550fb51f2cd7173470aec9d" class="flex justify-between">
+      <a  class="">Java v M</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/gc/" class="">Java 垃圾回收器 回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java-allocate/" class="">Java </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/question/" class="">Java vm 面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/" class="">Java 对象头的内容</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76a0b3127bcb1439cbea08b42a85d796" class="toggle"  />
+    <label for="section-76a0b3127bcb1439cbea08b42a85d796" class="flex justify-between">
+      <a  class="">Other</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io0/" class="">HSDB</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/object_proxy/" class="">动态代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34df903e8b7eb59a3ad4c31872960812" class="toggle"  />
+    <label for="section-34df903e8b7eb59a3ad4c31872960812" class="flex justify-between">
+      <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="">多线程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jmm/" class="">JMM</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/aqs/" class="">多线程--aqs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/cas/" class="">多线程--cas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/lock/" class="">多线程--lock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized/" class="">多线程--synchronized</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/thread_local/" class="">多线程--thread local</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile/" class="">多线程--volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/blockingqueue/" class="">多线程--阻塞队列和线程池原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/questions/" class="">多线程--面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/base/" class="">多线程--基础知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ff2116bff7eb47793028d71d3690ea14" class="toggle"  />
+    <label for="section-ff2116bff7eb47793028d71d3690ea14" class="flex justify-between">
+      <a  class="">《深入理解 Java 虚拟机》</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/" class="">《深入理解Java 虚拟机》第二章</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/" class="">《深入理解Java虚拟机》字节码指令表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90abdf45b388491dd8582d80fdac3b6e" class="toggle"  />
+    <label for="section-90abdf45b388491dd8582d80fdac3b6e" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Kotlin</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6067e15e42271c95f4e7245c333a660b" class="toggle"  />
+    <label for="section-6067e15e42271c95f4e7245c333a660b" class="flex justify-between">
+      <a href="/docs/kotlin/conroutines/" class="">Conroutines</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/how-to-use/" class="">Kotlin 协程 - 怎么使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/" class="">Kotlin 协程本质</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de1c3339b4d58bf97a87da32fd667b9f" class="toggle" checked />
+    <label for="section-de1c3339b4d58bf97a87da32fd667b9f" class="flex justify-between">
+      <a href="/docs/kotlin/plus/" class="">Plus</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/fanxin/" class=" active">Kotlin 泛型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/plus1/" class="">Kotlin 进阶知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-890e164347abfc846f7df26b475a8732" class="toggle"  />
+    <label for="section-890e164347abfc846f7df26b475a8732" class="flex justify-between">
+      <a href="/docs/kotlin/samples/" class="">Samples</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/intro/" class="">【译】Kotlin - 基础介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/delegate/" class="">【译】Kotlin 语法基础 - 代理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/funarea/" class="">【译】Kotlin 语法基础 - 作用域方法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/function/" class="">【译】Kotlin 语法基础 - 函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/flow/" class="">【译】Kotlin 语法基础 - 流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/special/" class="">【译】Kotlin 语法基础 - 特殊特性</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/specialclass/" class="">【译】Kotlin 语法基础 - 特殊类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/collections/" class="">【译】Kotlin 语法基础 - 集合</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>OpenSources</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle"  />
+    <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
+      <a href="/docs/open_sources/retrofit/" class="">Retrofit</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/use/" class="">Retrofit - 原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/base/" class="">Retrofit - 大致流程源码解析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%B9%A6%E6%9C%AC/" class="">技术书籍</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        随笔
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/bokmark" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://bokmark.gitee.io" target="_blank" rel="noopener">
+        Gitee
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/theme/hugo-book/" target="_blank" rel="noopener">
+        hugo-theme-book
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kotlin 泛型</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#java的泛型">java的泛型</a></li>
+            <li><a href="#kotlin-的泛型">kotlin 的泛型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h3 id="java的泛型">
+  java的泛型
+  <a class="anchor" href="#java%e7%9a%84%e6%b3%9b%e5%9e%8b">#</a>
+</h3>
+<blockquote>
+<p>kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在
+  <a href="/kotlin/intro/">这里</a> 有体现。
+
+  <a href="https://www.kotlincn.net/docs/reference/generics.html">官方介绍</a></p>
+</blockquote>
+<h5 id="java-泛型中的通配符">
+  java 泛型中的通配符
+  <a class="anchor" href="#java-%e6%b3%9b%e5%9e%8b%e4%b8%ad%e7%9a%84%e9%80%9a%e9%85%8d%e7%ac%a6">#</a>
+</h5>
+<blockquote>
+<p>首先需要和各位读者明确java中的泛型的两个概念，这有助于你理解kotlin的泛型</p>
+</blockquote>
+<ul>
+<li>泛型定义，上限和下限</li>
+<li>泛型读取模式</li>
+</ul>
+<ol>
+<li>泛型定义是指 在类或者方法上的定义的泛型，这些定义我们 可以定义上限和下限。比如这段代码</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span><span style="color:#f92672">{}</span>
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A<span style="color:#f92672">{}</span>
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> <span style="color:#66d9ef">extends</span> A<span style="color:#f92672">{}</span>
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fu</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{}</span>
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Zi</span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> B<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Fu<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{}</span>
+</code></pre></div><p>Zi class定义了他的泛型类型具有上限是B，意味着他的类型只能传入B的子类。</p>
+<p>你不能在Java中这样定义 <code>class A&lt;? extends T&gt;</code> 因为这样编译器无法在编译阶段确定他的类型</p>
+<ol start="2">
+<li>泛型读取模式</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> A<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;();</span>
+  A a0 <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+  list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> A<span style="color:#f92672">());</span>
+</code></pre></div><p>这一段代码中<code>list.add(new A());</code> 会报错。这是因为当我们在使用？extends xx的时候会有一个规则就是读写权限限制。我们再来看一段代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> B<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;();</span>
+  B b <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+  list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> B<span style="color:#f92672">());</span>
+</code></pre></div><p>这一段代码中<code>B b = list.get(0);</code> 会报错。
+其实我们去读写权限安全的角度去思考编译器的处理逻辑就能够理解。</p>
+<ul>
+<li>当我们声明一个变量为 <code>? extends A</code> 的时候，是希望这个泛型变量接受的泛型类型为A的子类，而且我们只关注A的方法，不考虑子类的扩展或者重载（不然直接声明一个子类的泛型变量即可）</li>
+<li>以list为例，当声明了一个list，泛型类型为A的子类，那么这个list的元素是不是可以有很多种子类的可能（比如B或者C）。这就会遇到一个问题，如果允许这个list可以修改，那么运行期间就可能报错，（比如arraylist是使用数组来实现的，但是你类型不同，数组怎么实现？）。所有为了避免这种问题，编译器所幸就拒绝你对其进行修改只允许获取。</li>
+<li>同理，当你声明一个变量为<code>? super B</code>的时候，你是希望这个泛型变量接收的泛型类型为B的父类，而且我们关注点在B的方法上面。同样以list为例，当你声明了一个list，泛型类型为B的父类那么这个list的元素的时候，你去获取这个元素的时候你得到的引用为B，但是这个B 可能是b的父类的元素，这中间就会产生转化错误（我们可以用父类去引用子类的实例，但是不能用子类去引用父类的实例）。那么编译器就索性拒绝你对其进行获取，但是允许你修改,当然你只可以添加B的类型的实例。</li>
+</ul>
+<ol start="3">
+<li>两者的区别</li>
+</ol>
+<p>像第一小节所的你不能在Java中这样定义 <code>class A&lt;? extends T&gt;</code>。这就导致了Java中泛型其实可以分为两种理解，第一种就是在定义的时候规定的泛型，我们叫他泛型定义。还有一种就是泛型读取模式定义了一个类型引用了一个变量，限制了对这个变量的各种读取模式。</p>
+<h3 id="kotlin-的泛型">
+  kotlin 的泛型
+  <a class="anchor" href="#kotlin-%e7%9a%84%e6%b3%9b%e5%9e%8b">#</a>
+</h3>
+<blockquote>
+<p><em>当你理解Java的泛型之后用<code>out</code>代替 <code>? extends</code>。用 <code>in</code>代替<code>? super</code> 就可以了。</em></p>
+</blockquote>
+<p>当然kotlin作为一门有野心的语音不会这么简单的处理泛型。那么有什么需要注意的嘛？接下来我们来看看</p>
+<ul>
+<li>
+<p>扩展到整个类的修饰</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Array</span>&lt;T&gt;(<span style="color:#66d9ef">val</span> size: Int) {
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">get</span>(index: Int): T { <span style="color:#960050;background-color:#1e0010">……</span> }
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">set</span>(index: Int, value: T) { <span style="color:#960050;background-color:#1e0010">……</span> }
+  }
+</code></pre></div><p>这里当我们给一个类 定义了泛型的时候类中的各个方法和属性就可以使用这个T。那么我们这么定义呢</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Kotlin" data-lang="Kotlin">  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Array</span>&lt;<span style="color:#66d9ef">in</span> T&gt;(<span style="color:#66d9ef">val</span> size: Int) {
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">get</span>(index: Int): T { <span style="color:#960050;background-color:#1e0010">……</span> } <span style="color:#75715e">// 这里会报错
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">set</span>(index: Int, value: T) { <span style="color:#960050;background-color:#1e0010">……</span> }
+  }
+</code></pre></div><p>这里我们就可以发现类里面的所有T 都带上了in的限制。</p>
+<p><em>这一点Java是做不到的，这个特性也是Kotlin 特有的</em></p>
+</li>
+<li>
+<p>使用处型变：类型投影</p>
+<pre><code>fun copy(from: Array&lt;out Any&gt;, to: Array&lt;Any&gt;) { …… }
+</code></pre><p>在这里定义了out 就限制了from数组被修改。</p>
+</li>
+<li>
+<p>星投影 （copy 从官网）</p>
+<p>有时你想说，你对类型参数一无所知，但仍然希望以安全的方式使用它。 这里的安全方式是定义泛型类型的这种投影，该泛型类型的每个具体实例化将是该投影的子类型。</p>
+<p>Kotlin 为此提供了所谓的星投影语法：</p>
+<ul>
+<li>对于 Foo <out T : TUpper>，其中 T 是一个具有上界 TUpper 的协变类型参数，Foo &lt;<em>&gt; 等价于 Foo <out TUpper>。 这意味着当 T 未知时，你可以安全地从 Foo &lt;</em>&gt; 读取 TUpper 的值。</li>
+<li>对于 Foo <in T>，其中 T 是一个逆变类型参数，Foo &lt;<em>&gt; 等价于 Foo <in Nothing>。 这意味着当 T 未知时，没有什么可以以安全的方式写入 Foo &lt;</em>&gt;。</li>
+<li>对于 Foo <T : TUpper>，其中 T 是一个具有上界 TUpper 的不型变类型参数，Foo&lt;*&gt; 对于读取值时等价于 Foo<out TUpper> 而对于写值时等价于 Foo<in Nothing>。</li>
+</ul>
+<p>如果泛型类型具有多个类型参数，则每个类型参数都可以单独投影。 例如，如果类型被声明为 interface Function &lt;in T, out U&gt;，我们可以想象以下星投影：</p>
+<ul>
+<li>Function&lt;*, String&gt; 表示 Function&lt;in Nothing, String&gt;；</li>
+<li>Function&lt;Int, *&gt; 表示 Function&lt;Int, out Any?&gt;；</li>
+<li>Function&lt;*, *&gt; 表示 Function&lt;in Nothing, out Any?&gt;。</li>
+</ul>
+<p><em>注意：星投影非常像 Java 的原始类型，但是安全。</em></p>
+</li>
+<li>
+<p>泛型擦除</p>
+<p>这一点和Java 类似在虚拟机上泛型是没有具体的类型的。这些仅在编译器检查。is as 之类的关键字也不能再这一点上进行判断</p>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#java的泛型">java的泛型</a></li>
+            <li><a href="#kotlin-的泛型">kotlin 的泛型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

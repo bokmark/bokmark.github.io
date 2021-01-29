@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="when 、 loop 、 区间">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="【译】Kotlin 语法基础 - 流程控制" />
+<meta property="og:description" content="when 、 loop 、 区间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/kotlin/samples/flow/" />
+<meta property="article:published_time" content="2019-02-11T19:30:08+10:00" />
+<meta property="article:modified_time" content="2019-02-11T19:30:08+10:00" />
+<title>【译】Kotlin 语法基础 - 流程控制 | Bokmark Pages</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
+<script defer src="/en.search.min.3f985bb0f77064ad6ac570126cf608ff955e70e323baa3fd01ff1b6000f2404c.js" integrity="sha256-P5hbsPdwZK1qxXASbPYI/5VecOMjuqP9Af8bYADyQEw="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark Pages</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/Handler/" class="">Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
+    <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
+      <a  class="">Framework</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/androidvm/" class="">android vm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/start/" class="">系统启动流程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/binder/" class="">Binder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="toggle"  />
+    <label for="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="flex justify-between">
+      <a  class="">View</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/view/" class="">View </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/arch/" class="">Arch</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
+    <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
+      <a href="/docs/arch/dagger/" class="">Dagger</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8be0af9073ee9bf5adc200d689a982b1" class="toggle"  />
+    <label for="section-8be0af9073ee9bf5adc200d689a982b1" class="flex justify-between">
+      <a href="/docs/arch/jetpack/" class="">Jetpack</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/compose/" class="">Compose</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/startup/" class="">StartUp</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/java/" class="">Java</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5cd4235df550fb51f2cd7173470aec9d" class="toggle"  />
+    <label for="section-5cd4235df550fb51f2cd7173470aec9d" class="flex justify-between">
+      <a  class="">Java v M</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/gc/" class="">Java 垃圾回收器 回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java-allocate/" class="">Java </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/question/" class="">Java vm 面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/" class="">Java 对象头的内容</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76a0b3127bcb1439cbea08b42a85d796" class="toggle"  />
+    <label for="section-76a0b3127bcb1439cbea08b42a85d796" class="flex justify-between">
+      <a  class="">Other</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io0/" class="">HSDB</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/object_proxy/" class="">动态代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34df903e8b7eb59a3ad4c31872960812" class="toggle"  />
+    <label for="section-34df903e8b7eb59a3ad4c31872960812" class="flex justify-between">
+      <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="">多线程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jmm/" class="">JMM</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/aqs/" class="">多线程--aqs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/cas/" class="">多线程--cas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/lock/" class="">多线程--lock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized/" class="">多线程--synchronized</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/thread_local/" class="">多线程--thread local</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile/" class="">多线程--volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/blockingqueue/" class="">多线程--阻塞队列和线程池原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/questions/" class="">多线程--面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/base/" class="">多线程--基础知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ff2116bff7eb47793028d71d3690ea14" class="toggle"  />
+    <label for="section-ff2116bff7eb47793028d71d3690ea14" class="flex justify-between">
+      <a  class="">《深入理解 Java 虚拟机》</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/" class="">《深入理解Java 虚拟机》第二章</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/" class="">《深入理解Java虚拟机》字节码指令表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90abdf45b388491dd8582d80fdac3b6e" class="toggle"  />
+    <label for="section-90abdf45b388491dd8582d80fdac3b6e" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Kotlin</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6067e15e42271c95f4e7245c333a660b" class="toggle"  />
+    <label for="section-6067e15e42271c95f4e7245c333a660b" class="flex justify-between">
+      <a href="/docs/kotlin/conroutines/" class="">Conroutines</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/how-to-use/" class="">Kotlin 协程 - 怎么使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/" class="">Kotlin 协程本质</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de1c3339b4d58bf97a87da32fd667b9f" class="toggle"  />
+    <label for="section-de1c3339b4d58bf97a87da32fd667b9f" class="flex justify-between">
+      <a href="/docs/kotlin/plus/" class="">Plus</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/fanxin/" class="">Kotlin 泛型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/plus1/" class="">Kotlin 进阶知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-890e164347abfc846f7df26b475a8732" class="toggle" checked />
+    <label for="section-890e164347abfc846f7df26b475a8732" class="flex justify-between">
+      <a href="/docs/kotlin/samples/" class="">Samples</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/intro/" class="">【译】Kotlin - 基础介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/delegate/" class="">【译】Kotlin 语法基础 - 代理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/funarea/" class="">【译】Kotlin 语法基础 - 作用域方法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/function/" class="">【译】Kotlin 语法基础 - 函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/flow/" class=" active">【译】Kotlin 语法基础 - 流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/special/" class="">【译】Kotlin 语法基础 - 特殊特性</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/specialclass/" class="">【译】Kotlin 语法基础 - 特殊类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/collections/" class="">【译】Kotlin 语法基础 - 集合</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>OpenSources</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle"  />
+    <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
+      <a href="/docs/open_sources/retrofit/" class="">Retrofit</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/use/" class="">Retrofit - 原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/base/" class="">Retrofit - 大致流程源码解析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%B9%A6%E6%9C%AC/" class="">技术书籍</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        随笔
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/bokmark" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://bokmark.gitee.io" target="_blank" rel="noopener">
+        Gitee
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/theme/hugo-book/" target="_blank" rel="noopener">
+        hugo-theme-book
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>【译】Kotlin 语法基础 - 流程控制</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#when">when</a></li>
+            <li><a href="#loop-循环">Loop 循环</a></li>
+            <li><a href="#ranges-区间">Ranges 区间</a></li>
+            <li><a href="#相等关系检查-equality-checks">相等关系检查 Equality Checks</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h3 id="when">
+  when
+  <a class="anchor" href="#when">#</a>
+</h3>
+<h5 id="when-语句">
+  when 语句
+  <a class="anchor" href="#when-%e8%af%ad%e5%8f%a5">#</a>
+</h5>
+<p>用来代替广泛使用的 switch 关键字，Kotlin 提供了一种更加灵活和简洁的when 结构。when可以被用来当作一个语句，也可以用来当作一个表达式</p>
+<pre><code>fun main() {
+    cases(&quot;Hello&quot;)
+    cases(1)
+    cases(0L)
+    cases(MyClass())
+    cases(&quot;hello&quot;)
+}
+
+fun cases(obj: Any) {                                
+    when (obj) {                                     // 1   
+        1 -&gt; println(&quot;One&quot;)                          // 2
+        &quot;Hello&quot; -&gt; println(&quot;Greeting&quot;)               // 3
+        is Long -&gt; println(&quot;Long&quot;)                   // 4
+        !is String -&gt; println(&quot;Not a string&quot;)        // 5
+        else -&gt; println(&quot;Unknown&quot;)                   // 6
+    }   
+}
+
+class MyClass
+
+/*
+Greeting
+One
+Long
+Not a string
+Unknown
+*/
+</code></pre><ul>
+<li>1 这是一个<code>when</code>语句</li>
+<li>2 检查哪个obj 等于1</li>
+<li>3 检查哪个obj 等于 Hello</li>
+<li>4 检查哪个obj 是Long</li>
+<li>5 检查哪个obj 不是String</li>
+<li>6 默认语句
+注意：将会按照顺序一条一条语句查询，直到一条语句满足条件，所以只有最靠前的满足条件的语句才会被执行</li>
+</ul>
+<h5 id="when-表达式">
+  when 表达式
+  <a class="anchor" href="#when-%e8%a1%a8%e8%be%be%e5%bc%8f">#</a>
+</h5>
+<pre><code>fun main() {
+    println(whenAssign(&quot;Hello&quot;))
+    println(whenAssign(3.4))
+    println(whenAssign(1))
+    println(whenAssign(MyClass()))
+}
+
+fun whenAssign(obj: Any): Any {
+    val result = when (obj) {                   // 1
+        1 -&gt; &quot;one&quot;                              // 2
+        &quot;Hello&quot; -&gt; 1                            // 3
+        is Long -&gt; false                        // 4
+        else -&gt; 42                              // 5
+    }
+    return result
+}
+
+class MyClass
+</code></pre><ul>
+<li>1 这是一个when 语句表达式</li>
+<li>2 检查哪个obj等于1 如果等于返回一个one的字符串</li>
+<li>3 检查哪个obj等于 Hello 如果等于返回一个 1</li>
+<li>4 检查哪个obj 是Long 类型，如果等于返回一个false</li>
+<li>5 默认返回 42。<em>不像在 when语句中，在when表达式中else 式要求一定存在的，因为如果不存在，编译器将无法覆盖所有的可能性来推断出 返回值的类型</em></li>
+</ul>
+<hr>
+<h3 id="loop-循环">
+  Loop 循环
+  <a class="anchor" href="#loop-%e5%be%aa%e7%8e%af">#</a>
+</h3>
+<p>kotlin 支持的循环模式有以下几种：<code>for</code> , <code>while</code> , <code>do-while</code></p>
+<h5 id="for">
+  for
+  <a class="anchor" href="#for">#</a>
+</h5>
+<p><code>for</code> 在kotlin的使用方式与大多数语言一致</p>
+<pre><code>val cakes = listOf(&quot;carrot&quot;, &quot;cheese&quot;, &quot;chocolate&quot;)
+
+for (cake in cakes) {                               // 1
+    println(&quot;Yummy, it's a $cake cake!&quot;)
+}
+</code></pre><ul>
+<li>1 将会遍历每个参数</li>
+</ul>
+<h5 id="while-和-do-while">
+  while 和 do-while
+  <a class="anchor" href="#while-%e5%92%8c-do-while">#</a>
+</h5>
+<p><code>while</code> 和 <code>do-while</code> 在kotlin的使用方式与大多数语言一致</p>
+<pre><code>fun eatACake() = println(&quot;Eat a Cake&quot;)
+fun bakeACake() = println(&quot;Bake a Cake&quot;)
+
+fun main(args: Array&lt;String&gt;) {
+    var cakesEaten = 0
+    var cakesBaked = 0
+
+    while (cakesEaten &lt; 5) {                    // 1
+        eatACake()
+        cakesEaten ++
+    }
+
+    do {                                        // 2
+        bakeACake()
+        cakesBaked++
+    } while (cakesBaked &lt; cakesEaten)
+
+}
+</code></pre><ul>
+<li>1 执行语句块当判断条件为true的时候</li>
+<li>2 先执行语句块再判断条件</li>
+</ul>
+<h5 id="iterators-迭代器">
+  Iterators 迭代器
+  <a class="anchor" href="#iterators-%e8%bf%ad%e4%bb%a3%e5%99%a8">#</a>
+</h5>
+<p>你可以再类中自定义你的迭代器，通过再类里 实现 iterator 操作符 方法</p>
+<pre><code>class Animal(val name: String)
+
+class Zoo(val animals: List&lt;Animal&gt;) {
+
+    operator fun iterator(): Iterator&lt;Animal&gt; {             // 1
+        return animals.iterator()                           // 2
+    }
+/*                                                          // 2.1
+  operator fun iterator(): Iterator&lt;Animal&gt; {          
+        return object :   Iterator&lt;Animal&gt; {
+            override fun next() : Animal {
+                return Animal(&quot;111&quot;)
+            }
+            override fun hasNext(): Boolean {
+                return false
+            }
+        }                       
+    }
+*/
+}
+
+fun main() {
+
+    val zoo = Zoo(listOf(Animal(&quot;zebra&quot;), Animal(&quot;lion&quot;)))
+
+    for (animal in zoo) {                                   // 3
+        println(&quot;Watch out, it's a ${animal.name}&quot;)
+    }
+
+}
+/*
+Watch out, it's a zebra
+Watch out, it's a lion
+*/
+</code></pre><ul>
+<li>1 在类中定义一个迭代器。这个操作符方法的方法名为 iterator，用operator 修复fun</li>
+<li>2 返回一个迭代器这意味着你必须实现这两个方法 例如2.1那样
+<code>next(): Animal</code>
+<code>hasNext(): Boolean</code></li>
+<li>3 通过使用用户定义的迭代器进行循环</li>
+</ul>
+<p>The iterator can be declared in the type or as an extension function.</p>
+<h3 id="ranges-区间">
+  Ranges 区间
+  <a class="anchor" href="#ranges-%e5%8c%ba%e9%97%b4">#</a>
+</h3>
+<p>kotlin提供了一系列工具用于区间的数据处理。我们大致看一下</p>
+<pre><code>for(i in 0..3) {             // 1
+    print(i)
+}
+print(&quot; &quot;)
+
+for(i in 2..8 step 2) {      // 2
+    print(i)
+}
+print(&quot; &quot;)
+
+for (i in 3 downTo 0) {      // 3
+    print(i)
+}
+print(&quot; &quot;)
+// 0123 2468 3210
+</code></pre><ul>
+<li>1 从0到3 一个一个遍历，包含0 和3 。输出0 1 2 3</li>
+<li>2 从2到8 两个两个遍历，包含2和8。输出 2 4 6 8</li>
+<li>3 从3到0倒序一个一个遍历，包含3和0。输出 3 2 1 0</li>
+</ul>
+<p>char数组也支持同样的操作</p>
+<pre><code>for (c in 'a'..'d') {        // 1
+    print(c)
+}
+print(&quot; &quot;)
+
+for (c in 'z' downTo 's' step 2) { // 2
+    print(c)
+}
+print(&quot; &quot;)
+// abcd zxvt
+</code></pre><ul>
+<li>1 按照字母表遍历 a 到 d 包括a和 d</li>
+<li>2 按照字母表从z 倒序到 s 两个两个遍历。char 范围同样支持 step 和downTo 关键字</li>
+</ul>
+<p>in关键字 同样支持用在if语句中</p>
+<pre><code>val x = 2
+if (x in 1..5) {            // 1
+    print(&quot;x is in range from 1 to 5&quot;)
+}
+println()
+
+if (x !in 6..10) {          // 2
+    print(&quot;x is not in range from 6 to 10&quot;)
+}
+</code></pre><ul>
+<li>1 判断一个x 是否在1 - 5的范围里</li>
+<li>2 判断x 是否不在 6 - 10 的范围中</li>
+</ul>
+<hr>
+<h3 id="相等关系检查-equality-checks">
+  相等关系检查 Equality Checks
+  <a class="anchor" href="#%e7%9b%b8%e7%ad%89%e5%85%b3%e7%b3%bb%e6%a3%80%e6%9f%a5-equality-checks">#</a>
+</h3>
+<p>在kotlin 中，使用 <code>==</code> 来比较结构是否相等。使用<code> ===</code> 来比较引用地址是否相等。
+更准确地说，<code>a == b</code> 编译完之后等价于 <code> if (a == null) b == null else a.equals(b)</code>.</p>
+<pre><code>val authors = setOf(&quot;Shakespeare&quot;, &quot;Hemingway&quot;, &quot;Twain&quot;)
+val writers = setOf(&quot;Twain&quot;, &quot;Shakespeare&quot;, &quot;Hemingway&quot;)
+val writers1 = setOf(&quot;Twain&quot;, &quot;Shakespeare&quot;, &quot;Hemingway&quot;)
+val writers2 = writers
+
+println(authors == writers)    // 1
+println(authors === writers)   // 2
+println(writers === writers1)  // 3
+println(writers2 === writers)  // 4
+/*
+true
+false
+false
+true
+*/
+</code></pre><ul>
+<li>1 返回 <code>true</code> 因为相当于调用了 <code>authors.equals(writers)</code> 然后sets将会忽略元素的顺序</li>
+<li>2 返回 <code>false</code> 因为 <code>authors</code> 和 <code>writers</code>不是同样的引用地址.</li>
+<li>3 返回 <code>false</code> 哪怕writers 和writers1 完全相同，两者指向的也不是相同的引用地址</li>
+<li>4 返回 <code>true</code> 指向了同一个对象</li>
+</ul>
+<h5 id="多元表达式-conditional-expression">
+  多元表达式 Conditional Expression
+  <a class="anchor" href="#%e5%a4%9a%e5%85%83%e8%a1%a8%e8%be%be%e5%bc%8f-conditional-expression">#</a>
+</h5>
+<p>在kotlin中没有java 的哪种 <code>a?b:c</code> 的三元表达式。取而代之地是使用if表达式</p>
+<pre><code>fun max(a: Int, b: Int) = if (a &gt; b) a else b         // 1
+
+println(max(99, -42))
+</code></pre><ul>
+<li>1  返回 a或者b</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#when">when</a></li>
+            <li><a href="#loop-循环">Loop 循环</a></li>
+            <li><a href="#ranges-区间">Ranges 区间</a></li>
+            <li><a href="#相等关系检查-equality-checks">相等关系检查 Equality Checks</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

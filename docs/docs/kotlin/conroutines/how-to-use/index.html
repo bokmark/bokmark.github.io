@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="kotlin协程 launch async scope suspend">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Kotlin 协程 - 怎么使用" />
+<meta property="og:description" content="kotlin协程 launch async scope suspend" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/kotlin/conroutines/how-to-use/" />
+<meta property="article:published_time" content="2020-12-10T13:14:00+08:00" />
+<meta property="article:modified_time" content="2020-12-10T13:14:00+08:00" />
+<title>Kotlin 协程 - 怎么使用 | Bokmark Pages</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
+<script defer src="/en.search.min.3f985bb0f77064ad6ac570126cf608ff955e70e323baa3fd01ff1b6000f2404c.js" integrity="sha256-P5hbsPdwZK1qxXASbPYI/5VecOMjuqP9Af8bYADyQEw="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark Pages</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/Handler/" class="">Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
+    <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
+      <a  class="">Framework</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/androidvm/" class="">android vm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/start/" class="">系统启动流程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/binder/" class="">Binder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="toggle"  />
+    <label for="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="flex justify-between">
+      <a  class="">View</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/view/" class="">View </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/arch/" class="">Arch</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
+    <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
+      <a href="/docs/arch/dagger/" class="">Dagger</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8be0af9073ee9bf5adc200d689a982b1" class="toggle"  />
+    <label for="section-8be0af9073ee9bf5adc200d689a982b1" class="flex justify-between">
+      <a href="/docs/arch/jetpack/" class="">Jetpack</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/compose/" class="">Compose</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/startup/" class="">StartUp</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/java/" class="">Java</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5cd4235df550fb51f2cd7173470aec9d" class="toggle"  />
+    <label for="section-5cd4235df550fb51f2cd7173470aec9d" class="flex justify-between">
+      <a  class="">Java v M</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/gc/" class="">Java 垃圾回收器 回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java-allocate/" class="">Java </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/question/" class="">Java vm 面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/" class="">Java 对象头的内容</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76a0b3127bcb1439cbea08b42a85d796" class="toggle"  />
+    <label for="section-76a0b3127bcb1439cbea08b42a85d796" class="flex justify-between">
+      <a  class="">Other</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io0/" class="">HSDB</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/object_proxy/" class="">动态代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34df903e8b7eb59a3ad4c31872960812" class="toggle"  />
+    <label for="section-34df903e8b7eb59a3ad4c31872960812" class="flex justify-between">
+      <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="">多线程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jmm/" class="">JMM</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/aqs/" class="">多线程--aqs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/cas/" class="">多线程--cas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/lock/" class="">多线程--lock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized/" class="">多线程--synchronized</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/thread_local/" class="">多线程--thread local</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile/" class="">多线程--volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/blockingqueue/" class="">多线程--阻塞队列和线程池原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/questions/" class="">多线程--面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/base/" class="">多线程--基础知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ff2116bff7eb47793028d71d3690ea14" class="toggle"  />
+    <label for="section-ff2116bff7eb47793028d71d3690ea14" class="flex justify-between">
+      <a  class="">《深入理解 Java 虚拟机》</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/" class="">《深入理解Java 虚拟机》第二章</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/" class="">《深入理解Java虚拟机》字节码指令表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90abdf45b388491dd8582d80fdac3b6e" class="toggle"  />
+    <label for="section-90abdf45b388491dd8582d80fdac3b6e" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Kotlin</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6067e15e42271c95f4e7245c333a660b" class="toggle" checked />
+    <label for="section-6067e15e42271c95f4e7245c333a660b" class="flex justify-between">
+      <a href="/docs/kotlin/conroutines/" class="">Conroutines</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/how-to-use/" class=" active">Kotlin 协程 - 怎么使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/conroutines/" class="">Kotlin 协程本质</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de1c3339b4d58bf97a87da32fd667b9f" class="toggle"  />
+    <label for="section-de1c3339b4d58bf97a87da32fd667b9f" class="flex justify-between">
+      <a href="/docs/kotlin/plus/" class="">Plus</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/fanxin/" class="">Kotlin 泛型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/plus1/" class="">Kotlin 进阶知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-890e164347abfc846f7df26b475a8732" class="toggle"  />
+    <label for="section-890e164347abfc846f7df26b475a8732" class="flex justify-between">
+      <a href="/docs/kotlin/samples/" class="">Samples</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/intro/" class="">【译】Kotlin - 基础介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/delegate/" class="">【译】Kotlin 语法基础 - 代理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/funarea/" class="">【译】Kotlin 语法基础 - 作用域方法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/function/" class="">【译】Kotlin 语法基础 - 函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/flow/" class="">【译】Kotlin 语法基础 - 流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/special/" class="">【译】Kotlin 语法基础 - 特殊特性</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/specialclass/" class="">【译】Kotlin 语法基础 - 特殊类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/collections/" class="">【译】Kotlin 语法基础 - 集合</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>OpenSources</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle"  />
+    <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
+      <a href="/docs/open_sources/retrofit/" class="">Retrofit</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/use/" class="">Retrofit - 原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/base/" class="">Retrofit - 大致流程源码解析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%B9%A6%E6%9C%AC/" class="">技术书籍</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        随笔
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/bokmark" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://bokmark.gitee.io" target="_blank" rel="noopener">
+        Gitee
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/theme/hugo-book/" target="_blank" rel="noopener">
+        hugo-theme-book
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kotlin 协程 - 怎么使用</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p>参考文档 <a href="https://www.jianshu.com/u/a324daa6fa19">https://www.jianshu.com/u/a324daa6fa19</a></p>
+</blockquote>
+<h5 id="添加依赖">
+  添加依赖
+  <a class="anchor" href="#%e6%b7%bb%e5%8a%a0%e4%be%9d%e8%b5%96">#</a>
+</h5>
+<p>kotlin的标准库中有kotlin的协程基础的库，我们现在只关注如何使用协程，重要的部分都在这个库里。（原理在下一篇文章中）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">implementation <span style="color:#e6db74">&#39;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2&#39;</span>
+</code></pre></div><p><em>kotlin 的版本必须在1.4.10 之上</em></p>
+<h5 id="基础使用-launch">
+  基础使用 launch
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e4%bd%bf%e7%94%a8-launch">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    GlobalScope.launch {
+        delay(<span style="color:#ae81ff">500</span>)
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    }
+    Thread.sleep(<span style="color:#ae81ff">1000</span>)<span style="color:#75715e">// 由于globalscope的生命周期是跟随主线程的 所以这里不sleep的话会导致协程被取消
+</span><span style="color:#75715e"></span>    println(<span style="color:#e6db74">&#34;thread sleep </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+}
+</code></pre></div><p><em>kotlin 在jvm上的实现是依赖于 java的thread的，所以我们可以在协程体中获取到相关的Thread的信息，并且也可以使用Thread的方法</em></p>
+<ul>
+<li>
+<p>我们来看看其中的launch 方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">CoroutineScope</span>.launch(
+    context: CoroutineContext = EmptyCoroutineContext,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    block: <span style="color:#66d9ef">suspend</span> CoroutineScope.() <span style="color:#f92672">-&gt;</span> Unit
+): Job
+</code></pre></div><ul>
+<li>
+<p>context：协程上下文。类似于一个list的概念，其中包含了协程运行的各个参数。具体概念之后介绍。</p>
+</li>
+<li>
+<p>start：启动模式</p>
+<ul>
+<li>
+<p>DEFAULT：允许协程马上开始执行。允许在协程运行之前取消。</p>
+</li>
+<li>
+<p>LAZY：需要调用job的start方法，来允许协程马上开始执行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    println(<span style="color:#e6db74">&#34;start in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">val</span> job = GlobalScope.launch(start = CoroutineStart.LAZY) {
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== start&#34;</span>)
+        delay(<span style="color:#ae81ff">500</span>)
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== end&#34;</span>)
+    }
+    println(<span style="color:#e6db74">&#34;job is defined in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    job.start()
+    Thread.sleep(<span style="color:#ae81ff">1000</span>) <span style="color:#75715e">// 由于globalscope的生命周期是跟随主线程的 所以这里不sleep的话会导致协程被取消
+</span><span style="color:#75715e"></span>    println(<span style="color:#e6db74">&#34;end in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">start in main
+</span><span style="color:#75715e">job is defined in main
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-1 ==== start
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-1 ==== end
+</span><span style="color:#75715e">end in main
+</span><span style="color:#75715e">*/</span>
+</code></pre></div></li>
+<li>
+<p>ATOMIC：与DEFAULT相似，只是协程一定会运行到第一个挂起点（suspend 函数）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#a6e22e">@ExperimentalCoroutinesApi</span>
+<span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    println(<span style="color:#e6db74">&#34;start in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">val</span> job = GlobalScope.launch(start = CoroutineStart.ATOMIC) {
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== start&#34;</span>)
+        delay(<span style="color:#ae81ff">500</span>)
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== end&#34;</span>)
+    }
+    <span style="color:#75715e">//job.cancelAndJoin()
+</span><span style="color:#75715e"></span>    println(<span style="color:#e6db74">&#34;end in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#75715e">//Thread.sleep(1000)
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">start in main
+</span><span style="color:#75715e">end in main
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-2 ==== start
+</span><span style="color:#75715e">====== 也有可能是这样 ====== 为什么会这样？todo
+</span><span style="color:#75715e">start in main
+</span><span style="color:#75715e">end in main
+</span><span style="color:#75715e">*/</span>
+</code></pre></div></li>
+<li>
+<p>UNDISPATCHED：先不调度执行，等到第一个挂起点再调度。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#a6e22e">@ExperimentalCoroutinesApi</span>
+<span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    println(<span style="color:#e6db74">&#34;start in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">val</span> job = GlobalScope.launch(start = CoroutineStart.UNDISPATCHED) {
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== start&#34;</span>)
+        delay(<span style="color:#ae81ff">500</span>)
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== end&#34;</span>)
+    }
+    Thread.sleep(<span style="color:#ae81ff">1000</span>)
+    println(<span style="color:#e6db74">&#34;end in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+}
+<span style="color:#75715e">/* result
+</span><span style="color:#75715e">start in main
+</span><span style="color:#75715e">in global scope main ==== start
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-1 ==== end
+</span><span style="color:#75715e">end in main
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">delay</span>(timeMillis: Long) {
+   <span style="color:#75715e">/*...*/</span>
+}
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>block：协程的代码块</p>
+</li>
+<li>
+<p>Job:返回一个job</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Job</span> : CoroutineContext.Element {
+   <span style="color:#75715e">/*...*/</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">start</span>(): Boolean
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">cancel</span>(cause: CancellationException? = <span style="color:#66d9ef">null</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">cancel</span>(): Unit = cancel(<span style="color:#66d9ef">null</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">cancel</span>(cause: Throwable? = <span style="color:#66d9ef">null</span>): Boolean
+        <span style="color:#75715e">/*...*/</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">join</span>()
+        <span style="color:#75715e">/*...*/</span>
+}
+</code></pre></div><p>与rxjava 类似返回一个disposable一样用于控制这个协程体的引用</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="基础使用-async">
+  基础使用 async
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e4%bd%bf%e7%94%a8-async">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    println(<span style="color:#e6db74">&#34;start in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">val</span> deferred = GlobalScope.async {
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== start&#34;</span>)
+        delay(<span style="color:#ae81ff">500</span>)
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== end&#34;</span>)
+    }
+    println(<span style="color:#e6db74">&#34;deferred is defined in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    deferred.await() <span style="color:#75715e">// 这个方法需要在suspend 方法中调用
+</span><span style="color:#75715e"></span>    Thread.sleep(<span style="color:#ae81ff">1000</span>)
+    println(<span style="color:#e6db74">&#34;end in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">start in main
+</span><span style="color:#75715e">deferred is defined in main
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-1 ==== start
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-1 ==== end
+</span><span style="color:#75715e">end in DefaultDispatcher-worker-1
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><p>我们来看一下<code>async</code>方法的实现</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> &lt;<span style="color:#a6e22e">T</span>&gt; <span style="color:#a6e22e">CoroutineScope</span>.async(
+    context: CoroutineContext = EmptyCoroutineContext,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    block: <span style="color:#66d9ef">suspend</span> CoroutineScope.() <span style="color:#f92672">-&gt;</span> T
+): Deferred&lt;T&gt;
+</code></pre></div><p>这里与<code>launch</code>相同，除了返回值不同。那么来看看Deferred的代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Deferred</span>&lt;<span style="color:#66d9ef">out</span> T&gt; : Job {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">await</span>(): T
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">val</span> onAwait: SelectClause1&lt;T&gt;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">getCompleted</span>(): T
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">getCompletionExceptionOrNull</span>(): Throwable?
+}
+</code></pre></div><ul>
+<li>
+<p>await：挂起当前协程，直到async启动的子协程执行完成。</p>
+</li>
+<li>
+<p>SelectClause1： select 之后再说</p>
+</li>
+<li>
+<p>getCompleted：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    println(<span style="color:#e6db74">&#34;start in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">val</span> deferred = GlobalScope.async {
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== start&#34;</span>)
+        delay(<span style="color:#ae81ff">500</span>)
+        println(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== end&#34;</span>)
+    }
+    println(<span style="color:#e6db74">&#34;deferred is defined in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    deferred.invokeOnCompletion {
+        println(<span style="color:#e6db74">&#34;getCompleted in invokeOnCompletion is </span><span style="color:#e6db74">${deferred.getCompleted()}</span><span style="color:#e6db74">&#34;</span>)
+    }
+    Thread.sleep(<span style="color:#ae81ff">1000</span>)
+    println(<span style="color:#e6db74">&#34;end in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">start in main
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-1 ==== start
+</span><span style="color:#75715e">deferred is defined in main
+</span><span style="color:#75715e">in global scope DefaultDispatcher-worker-1 ==== end
+</span><span style="color:#75715e">getCompleted in invokeOnCompletion is kotlin.Unit
+</span><span style="color:#75715e">end in main
+</span><span style="color:#75715e">*/</span>
+</code></pre></div></li>
+<li>
+<p>getCompletionExceptionOrNull：</p>
+<p>与<code>getCompleted</code>一致</p>
+</li>
+</ul>
+<p>async的几种用法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">doSomethingUsefulOne</span>(): Int {
+    delay(<span style="color:#ae81ff">1000</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1000</span>
+}
+
+<span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">doSomethingUsefulTwo</span>(): Int {
+    delay(<span style="color:#ae81ff">500</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">500</span>
+}
+
+<span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">concurrentSum</span>(): Int = coroutineScope {
+    <span style="color:#66d9ef">val</span> one = async { doSomethingUsefulOne() }
+    <span style="color:#66d9ef">val</span> two = async { doSomethingUsefulTwo() }
+    one.await() + two.await()
+}
+
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+
+    log(<span style="color:#e6db74">&#34;start in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    runBlocking {
+        <span style="color:#66d9ef">val</span> time = measureTimeMillis {
+            log(<span style="color:#e6db74">&#34;The answer is </span><span style="color:#e6db74">${concurrentSum()}</span><span style="color:#e6db74">&#34;</span>)
+        }
+        log(<span style="color:#e6db74">&#34;Completed in </span><span style="color:#e6db74">$time</span><span style="color:#e6db74"> ms&#34;</span>)
+    }
+    log(<span style="color:#e6db74">&#34;end in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+}
+</code></pre></div><h5 id="基础作用withcontext">
+  基础作用withContext
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e4%bd%9c%e7%94%a8withcontext">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> &lt;<span style="color:#a6e22e">T</span>&gt; <span style="color:#a6e22e">log</span>(t: T) {
+    println(<span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">] </span><span style="color:#e6db74">$t</span><span style="color:#e6db74">&#34;</span>)
+}
+
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    newSingleThreadContext(<span style="color:#e6db74">&#34;Ctx1&#34;</span>).use { ctx1 <span style="color:#f92672">-&gt;</span>
+        newSingleThreadContext(<span style="color:#e6db74">&#34;Ctx2&#34;</span>).use { ctx2 <span style="color:#f92672">-&gt;</span>
+            runBlocking(ctx1) {
+                log(<span style="color:#e6db74">&#34;Started in ctx1&#34;</span>)
+                withContext(ctx2) {
+                    log(<span style="color:#e6db74">&#34;Working in ctx2&#34;</span>)
+                }
+                log(<span style="color:#e6db74">&#34;Back to ctx1&#34;</span>)
+            }
+        }
+    }    
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">[Ctx1] Started in ctx1
+</span><span style="color:#75715e">[Ctx2] Working in ctx2
+</span><span style="color:#75715e">[Ctx1] Back to ctx1
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><h5 id="基础作用withtimeout">
+  基础作用withTimeout
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e4%bd%9c%e7%94%a8withtimeout">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> &lt;<span style="color:#a6e22e">T</span>&gt; <span style="color:#a6e22e">log</span>(t: T) {
+    println(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${DateTime.now().toString(&#34;YYYY-MM-DD HH:mm:ss:SSS&#34;)}</span><span style="color:#e6db74"> &gt;_ [</span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">] </span><span style="color:#e6db74">$t</span><span style="color:#e6db74">&#34;</span>)
+}
+
+<span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+
+    log(<span style="color:#e6db74">&#34;start in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+    withTimeout(<span style="color:#ae81ff">1000</span>) {
+        log(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== start&#34;</span>)
+        delay(<span style="color:#ae81ff">2000</span>)
+        log(<span style="color:#e6db74">&#34;in global scope </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74"> ==== end&#34;</span>)
+    }
+    Thread.sleep(<span style="color:#ae81ff">1000</span>)
+    log(<span style="color:#e6db74">&#34;end in </span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">&#34;</span>)
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> &lt;<span style="color:#a6e22e">T</span>&gt; <span style="color:#a6e22e">withTimeout</span>(timeMillis: Long, block: <span style="color:#66d9ef">suspend</span> CoroutineScope.() <span style="color:#f92672">-&gt;</span> T): T
+</code></pre></div><h5 id="拦截器">
+  拦截器
+  <a class="anchor" href="#%e6%8b%a6%e6%88%aa%e5%99%a8">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">myLog</span>(msg: String) {
+    println(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${DateTime.now().toString(&#34;HH:mm:ss:SSS&#34;)}</span><span style="color:#e6db74">@[</span><span style="color:#e6db74">${Thread.currentThread().name}</span><span style="color:#e6db74">] &gt;&gt; </span><span style="color:#e6db74">$msg</span><span style="color:#e6db74"> &#34;</span>)
+}
+<span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">main</span>() {
+    GlobalScope.launch(MyContinuationInterceptor()) {
+        myLog(<span style="color:#e6db74">&#34;1&#34;</span>)
+        synchronized(<span style="color:#66d9ef">this</span>) {
+
+        }
+        <span style="color:#66d9ef">val</span> job = async {
+            myLog(<span style="color:#e6db74">&#34;2&#34;</span>)
+            delay(<span style="color:#ae81ff">1000</span>)
+            myLog(<span style="color:#e6db74">&#34;3&#34;</span>)
+            <span style="color:#e6db74">&#34;Hello&#34;</span>
+        }
+        myLog(<span style="color:#e6db74">&#34;4&#34;</span>)
+        <span style="color:#66d9ef">val</span> result = job.await()
+        myLog(<span style="color:#e6db74">&#34;5. </span><span style="color:#e6db74">$result</span><span style="color:#e6db74">&#34;</span>)
+    }.join()
+    myLog(<span style="color:#e6db74">&#34;6&#34;</span>)
+}
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyContinuationInterceptor</span> : ContinuationInterceptor {
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">val</span> key = ContinuationInterceptor
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> &lt;<span style="color:#a6e22e">T</span>&gt; <span style="color:#a6e22e">interceptContinuation</span>(continuation: Continuation&lt;T&gt;) =
+        MyContinuation(continuation)
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyContinuation</span>&lt;T&gt;(<span style="color:#66d9ef">val</span> continuation: Continuation&lt;T&gt;) : Continuation&lt;T&gt; {
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">val</span> context = continuation.context
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">resumeWith</span>(result: Result&lt;T&gt;) {
+        myLog(<span style="color:#e6db74">&#34;&lt;MyContinuation&gt; </span><span style="color:#e6db74">$result</span><span style="color:#e6db74">&#34;</span>)
+        continuation.resumeWith(result)
+    }
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">21:06:11:823@[main] &gt;&gt; &lt;MyContinuation&gt; Success(kotlin.Unit)
+</span><span style="color:#75715e">21:06:11:874@[main] &gt;&gt; 1
+</span><span style="color:#75715e">21:06:11:874@[main] &gt;&gt; 1.5
+</span><span style="color:#75715e">21:06:11:877@[main] &gt;&gt; &lt;MyContinuation&gt; Success(kotlin.Unit)
+</span><span style="color:#75715e">21:06:11:878@[main] &gt;&gt; 2
+</span><span style="color:#75715e">21:06:11:887@[main] &gt;&gt; 4
+</span><span style="color:#75715e">21:06:12:886@[kotlinx.coroutines.DefaultExecutor] &gt;&gt; &lt;MyContinuation&gt; Success(kotlin.Unit)
+</span><span style="color:#75715e">21:06:12:886@[kotlinx.coroutines.DefaultExecutor] &gt;&gt; 3
+</span><span style="color:#75715e">21:06:12:888@[kotlinx.coroutines.DefaultExecutor] &gt;&gt; &lt;MyContinuation&gt; Success(Hello)
+</span><span style="color:#75715e">21:06:12:888@[kotlinx.coroutines.DefaultExecutor] &gt;&gt; 5. Hello
+</span><span style="color:#75715e">21:06:12:888@[kotlinx.coroutines.DefaultExecutor] &gt;&gt; 6
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><h4 id="suspend">
+  suspend
+  <a class="anchor" href="#suspend">#</a>
+</h4>
+<ul>
+<li>标记和提醒
+<ul>
+<li>将包含耗时任务的函数标记为suspend</li>
+</ul>
+</li>
+<li>编译器将根据suspend函数来处理字节码</li>
+</ul>
+<h4 id="scope">
+  scope
+  <a class="anchor" href="#scope">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">CoroutineScope</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">val</span> coroutineContext: CoroutineContext
+}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">val</span> CoroutineScope.isActive: Boolean
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">CoroutineScope</span>.cancel(cause: CancellationException? = <span style="color:#66d9ef">null</span>)
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">CoroutineScope</span>.ensureActive()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+scope.launch {
+    log(<span style="color:#e6db74">&#34;start&#34;</span>)
+    launch(SupervisorJob()) {
+        log(<span style="color:#e6db74">&#34;start 2&#34;</span>)
+        delay(<span style="color:#ae81ff">2000</span>)
+        log(<span style="color:#e6db74">&#34;end 2&#34;</span>)
+    }
+
+    log(<span style="color:#e6db74">&#34;end&#34;</span>)
+}
+Thread.sleep(<span style="color:#ae81ff">1000</span>)
+scope.cancel()
+Thread.sleep(Long.MAX_VALUE)
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">17:30:24:664@[DefaultDispatcher-worker-2] &gt;&gt; start
+</span><span style="color:#75715e">17:30:24:732@[DefaultDispatcher-worker-2] &gt;&gt; end
+</span><span style="color:#75715e">17:30:24:732@[DefaultDispatcher-worker-3] &gt;&gt; start 2
+</span><span style="color:#75715e">17:30:26:739@[DefaultDispatcher-worker-3] &gt;&gt; end 2
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">CoroutineScope</span>.cancel(cause: CancellationException? = <span style="color:#66d9ef">null</span>) {
+    <span style="color:#66d9ef">val</span> job = coroutineContext[Job] <span style="color:#f92672">?:</span> error(<span style="color:#e6db74">&#34;Scope cannot be cancelled because it does not have a job: </span><span style="color:#e6db74">$this</span><span style="color:#e6db74">&#34;</span>)
+    job.cancel(cause)
+}
+</code></pre></div><p>从cancel中可以看出 是获取到当前的这个协程的上下文中的job属性调用这个job的cancel。这样是不会取消这个子协程的运行的。（如果子协程和父协程用的不是同一个job的话）</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

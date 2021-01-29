@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark Pages</title>
+    <link>/docs/kotlin/plus/</link>
+    <description>Recent content on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
+    <lastBuildDate>Mon, 30 Nov 2020 19:30:08 +1000</lastBuildDate><atom:link href="/docs/kotlin/plus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kotlin 泛型</title>
+      <link>/docs/kotlin/plus/fanxin/</link>
+      <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/plus/fanxin/</guid>
+      <description>java的泛型 #   kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在 这里 有体现。 官方介绍
+ java 泛型中的通配符 #   首先需要和各位读者明确java中的泛型的两个概念，这有助于你理解kotlin的泛型
+  泛型定义，上限和下限 泛型读取模式   泛型定义是指 在类或者方法上的定义的泛型，这些定义我们 可以定义上限和下限。比如这段代码  class A{} class B extends A{} class C extends A{} class Fu&amp;lt;T&amp;gt; {} class Zi&amp;lt;T extends B&amp;gt; extends Fu&amp;lt;T&amp;gt; {} Zi class定义了他的泛型类型具有上限是B，意味着他的类型只能传入B的子类。
+你不能在Java中这样定义 class A&amp;lt;? extends T&amp;gt; 因为这样编译器无法在编译阶段确定他的类型
+泛型读取模式  List&amp;lt;? extends A&amp;gt; list = new ArrayList&amp;lt;B&amp;gt;(); A a0 = list.get(0); list.add(new A()); 这一段代码中list.</description>
+    </item>
+    
+    <item>
+      <title>Kotlin 进阶知识</title>
+      <link>/docs/kotlin/plus/plus1/</link>
+      <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/plus/plus1/</guid>
+      <description>顶级属性和顶级方法
+val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;quot;x = $x; PI = $PI&amp;quot;) incrementX() println(&amp;quot;incrementX()&amp;quot;) println(&amp;quot;x = $x; PI = $PI&amp;quot;) } 定义在class 外面的属性 可以理解为 java中public 静态属性，可以被所有地方使用，只需要import 即可 方法同理。
+  幕后属性
+private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map&amp;lt;String, Int&amp;gt; get() { if (_table == null) { _table = HashMap() // 类型参数已推断出  } return _table ?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,5 @@
+.DS_Store
+resources/
+node_modules/
+.vscode/
+.history/

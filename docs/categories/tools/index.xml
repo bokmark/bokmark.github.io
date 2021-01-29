@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on Bokmark Pages</title>
+    <link>/categories/tools/</link>
+    <description>Recent content in tools on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
+    <lastBuildDate>Thu, 02 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brew 的镜像更换</title>
+      <link>/posts/brew/</link>
+      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/brew/</guid>
+      <description>转载
+ 你可能有过这样糟糕的经历，当你满心欢喜的敲下 “brew install 应用名称”，静静的等待安装结果的时候，Homebrew在 Updating Homebrew卡死了。
+ Homebrew是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。
+使用 阿里云 的 Homebrew 镜像源进行加速 #  如果你没有更换过镜像源，执行 brew 命令安装应用的时候，跟以下 3 个仓库地址有关：
+ brew.git homebrew-core.git homebrew-bottles  通过以下操作将这 3 个仓库地址全部替换为 阿里云 提供的地址
+更换 brew.git #  cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git 更换 homebrew-core.git #  cd &amp;quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git  执行上面两个命令之后请执行 brew update
+ 更换 homebrew-bottles #  如果你使用zsh那么
+echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
+    </item>
+    
+    <item>
+      <title>我的git配置</title>
+      <link>/posts/git_alias/</link>
+      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/git_alias/</guid>
+      <description># This is Git&#39;s per-user configuration file.[user]# Please adapt and uncomment the following lines:name = xxxemail = xxx[filter &amp;quot;lfs&amp;quot;]clean = git-lfs clean -- %fsmudge = git-lfs smudge -- %fprocess = git-lfs filter-processrequired = true[alias]co = checkoutcp = cherry-pickcm = commitba = branch -abh = branchamend = commit -a --amendlg = loglo = log --onelinest = statusdf = diffreview = !</description>
+    </item>
+    
+  </channel>
+</rss>

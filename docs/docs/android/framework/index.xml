@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark Pages</title>
+    <link>/docs/android/framework/</link>
+    <description>Recent content on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
+    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="/docs/android/framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>android vm</title>
+      <link>/docs/android/framework/androidvm/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/framework/androidvm/</guid>
+      <description>android vm 和 java vm 的区别</description>
+    </item>
+    
+    <item>
+      <title>系统启动流程</title>
+      <link>/docs/android/framework/start/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/framework/start/</guid>
+      <description>启动启动流程</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/android/framework/binder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/framework/binder/</guid>
+      <description>为什么要多进程 #   获得更多的内存 每个进程使用的内存大小通过 getprop dalivk.vm.heapsize可以 得到 风险隔离，每个进程不会影响别的进程  进程间通信 IPC 是为了什么 #   A调用B的方法 A获取B的数据 A传递数据给B之后再获取数据   linux 进程通信 #   管道 socket 共享内存 信号量 等等  binder 有什么优势（言下之义就是 和另外的进程间通信有什么优势） #   性能： &amp;ndash; binder：数据只拷贝一次 &amp;ndash; 共享内存：数据无需拷贝 &amp;ndash; socket： 拷贝两次 特点： &amp;ndash; binder： 基于c/s 架构 &amp;ndash; 共享内存：同步处理进程数据，比较麻烦 &amp;ndash; socket： 通用接口，传输效率低，开销比较大 安全性： &amp;ndash; binder：实名，匿名， 每个应用分配一个uid &amp;ndash; 共享内存：依赖与上层协议，访问点开放不安全 &amp;ndash; 依赖与上层协议，访问接入点开放不安全  linux 基础 内核空间，用户空间。 #  内核态与用户态：</description>
+    </item>
+    
+  </channel>
+</rss>
