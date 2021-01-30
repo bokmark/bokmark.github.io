@@ -1,17 +1,11 @@
-+++
-title = "Brew 的镜像更换"
-description = ""
-tags = [
-    "mac",
-    "brew",
-]
-date = "2020-04-02"
-categories = [
-    "others",
-    "tools"
-]
-menu = "main"
-+++
+---
+title: 'Brew 的镜像更换'
+date: 2020-12-01
+weight: 1
+tags: ["mac", "brew"]
+categories: ["tools"]
+menu: "main"
+---
 
 > [转载](https://blog.csdn.net/weixin_36139431/article/details/103361751)
 

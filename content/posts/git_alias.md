@@ -1,17 +1,14 @@
-+++
-title = "我的git配置"
-description = ""
-tags = [
-    "review",
-    "git",
-]
-date = "2020-04-02"
-categories = [
+---
+title: "我的git配置"
+description: ""
+tags: ["review","git"]
+date: "2020-04-02"
+categories: [
     "others",
     "tools"
 ]
-menu = "main"
-+++
+menu: "main"
+---
 
 ```
 # This is Git's per-user configuration file.

@@ -1,20 +1,20 @@
-+++
-title = "Github Pages服务"
-description = ""
-tags = [
+---
+title: "Github Pages服务"
+description: ""
+tags: [
     "go",
     "golang",
     "templates",
     "themes",
     "development",
 ]
-date = "2014-04-02"
-categories = [
+dat: "2014-04-02"
+categories: [
     "Development",
     "golang",
 ]
-menu = "main"
-+++
+menu: "main"
+---
 
 # GithubPages
 
