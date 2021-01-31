@@ -6,7 +6,7 @@ weight: 2
 ---
 
 ### java的泛型
-> kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在[这里](/kotlin/intro/) 有体现。
+> kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在[这里](/docs/kotlin/coroutines/how-to-use) 有体现。
 > [官方介绍](https://www.kotlincn.net/docs/reference/generics.html)
 
 ##### java 泛型中的通配符

@@ -7,12 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
-    <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="/categories/Development/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/categories/Development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github Pages服务</title>
       <link>/posts/GithubPages/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/posts/GithubPages/</guid>
       <description>GithubPages #    作为一个程序员需要有一个记录知识点的地方，也需要一个做记录整理自己的知识体系的地方。GithubPages 作为影响力最大的博客网站，当我们需要进行博客搭建的时候，当然是选择他！

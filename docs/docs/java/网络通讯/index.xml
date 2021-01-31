@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark Pages</title>
+    <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/</link>
+    <description>Recent content on Bokmark Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
+    <lastBuildDate>Tue, 01 Dec 2020 15:14:39 +1000</lastBuildDate><atom:link href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 序列化</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/</guid>
+      <description>网络协议 #  网络分层 #  OSI 分层模型 ISO 组织讨论的架构，分层更加详细，理想化学、术化，现实中使用TCP\IP模型更多
+ mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD 应用层--表示层; 表示层--会话层; 会话层--传输层; 传输层--网络层; 网络层--数据链路层; 数据链路层--物理层;  TCP\IP 分层模型 IEEE 组织开发，更贴近现实
+graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务（） 表示层：数据格式转化，数据加密 会话层：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层：提供介质访问和链路管理（） 物理层：物理传输  问题： 移动通信的3g、4g在哪个层次？ &amp;ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
+   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密    应用层 解除或者建立与别的节点的连接    传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802.</description>
+    </item>
+    
+  </channel>
+</rss>

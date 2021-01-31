@@ -4,7 +4,7 @@ date: 2020-12-02
 weight: 1
 ---
 
-> Retrofit 的使用 可以看[这里](/opensources/retrofit/use)
+> Retrofit 的使用 可以看[这里](/docs/open_sources/retrofit/use)
 
 ## 使用
 
@@ -62,10 +62,10 @@ public <T> T create(final Class<T> service) {
             });
   }
 ```
-很明显这是一个动态代理。具体可以看[这里](/java/other/object_proxy)
+很明显这是一个动态代理。具体可以看[这里](/docs/java/other/object_proxy)
 所谓动态代理就是指方法被调用的时候都会回调到`InvocationHandler`方法里面。
 
-这段代码中的platform我们之后[再聊](/opensources/retrofit/platform)，先来看loadServiceMethod。
+这段代码中的platform我们之后[再聊](/docs/open_sources/retrofit/platform)，先来看loadServiceMethod。
 
 #### ServiceMethod -> loadServiceMethod
 ```Java

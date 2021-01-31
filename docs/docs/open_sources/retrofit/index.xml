@@ -7,8 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
-    <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/docs/open_sources/retrofit/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/open_sources/retrofit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Retrofit - platform</title>
       <link>/docs/open_sources/retrofit/platform/</link>
@@ -24,7 +23,7 @@
       <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/open_sources/retrofit/use/</guid>
-      <description>Retrofit 的使用 可以看这里(/opensources/retrofit/use)
+      <description>Retrofit 的使用 可以看这里(/docs/open_sources/retrofit/use)
  介绍 #  retrofit 将你的htppapi 转化成java接口的样子
 public interface GitHubService { @GET(&amp;#34;users/{user}/repos&amp;#34;) Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; listRepos(@Path(&amp;#34;user&amp;#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
 Retrofit retrofit = new Retrofit.Builder() .baseUrl(&amp;#34;https://api.github.com/&amp;#34;) .build(); GitHubService service = retrofit.create(GitHubService.class); GitHubService 提供的每一个 Call 都将提供 同步或者异步的api请求去请求http

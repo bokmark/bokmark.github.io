@@ -7,7 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
-    <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Thu, 10 Dec 2020 13:14:00 +0800</lastBuildDate><atom:link href="/docs/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/kotlin/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

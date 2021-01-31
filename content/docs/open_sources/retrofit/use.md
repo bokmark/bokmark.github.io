@@ -4,7 +4,7 @@ date: 2020-12-02
 weight: 1
 ---
 
-> Retrofit 的使用 可以看这里(/opensources/retrofit/use)
+> Retrofit 的使用 可以看这里(/docs/open_sources/retrofit/use)
 
 ## 介绍
 

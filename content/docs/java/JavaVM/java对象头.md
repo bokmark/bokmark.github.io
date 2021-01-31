@@ -25,7 +25,7 @@ Java 的对象头的数据
 
 
 
-![mark word](\objectgead.jpg)todo
+![mark word](/images/object_head.png)todo
 - 无锁状态下，25个bit的hashcode，4个bit的分代年龄，1个bit的偏向锁标示位 固定为0 ，2个bit的锁标记位 固定为01
 - 偏向锁状态下，23个bit的线程ID，2个bit的epoch，4个bit的分代年龄，1个bit的偏向锁标记位固定为1 ，2个bit的锁标记位 固定为01
 
