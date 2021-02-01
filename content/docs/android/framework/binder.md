@@ -1,3 +1,10 @@
+---
+title: 'Binder以及相关概念'
+date: 2018-11-28T15:14:39+10:00
+weight: 2
+summary: "从handler的面试题出发了解handler"
+---
+
 # 为什么要多进程
 - 获得更多的内存 每个进程使用的内存大小通过 getprop dalivk.vm.heapsize可以 得到
 - 风险隔离，每个进程不会影响别的进程

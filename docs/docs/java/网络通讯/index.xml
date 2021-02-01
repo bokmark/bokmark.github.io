@@ -10,15 +10,41 @@
     <webMaster>bokmark@163.com (bokmark)</webMaster>
     <lastBuildDate>Tue, 01 Dec 2020 15:14:39 +1000</lastBuildDate><atom:link href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Java 序列化</title>
+      <title>TCP 三次握手、四次挥手</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/</guid>
+      <description>TCP 的三次握手、四次挥手 #  三次握手 #  由于tcp 是有具有数据排序超时重传的功能，所以需要交换服务器和客户端的序列号的起始值。
+SYN：Synchronize Sequence Numbers ACK：Acknowledge character  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) sequenceDiagram Note left of Client: SYN_SENT activate Client Client-Server: SYN=1, seq = 12345（请求建立连接） deactivate Client activate Server Note right of Server: SYN_RCVD Server-Client: SYN=1,ACK=1,ack=12346,seq=45678(响应请求连接请求，并发送服务器的连接请求) deactivate Server activate Client Note left of Client: ESTABLISHED Client-Server: ACK=1,ack=45679(收到服务器发送的连接请求，并响应) deactivate Client activate Server Note right of Server: ESTABLISHED deactivate Server 为什么是三次握手，而不是四次握手，不是二次握手 #  这是有效建立连接必需步骤：双端需要交换序列号值起始值 的所需要的最小次数。  三次握手的漏洞 #   syn 宏泛攻击（ddos的一种） 虚假的发起syn的请求，（第一次握手），服务器返回第二次握手，并且等待。这将会大量消耗服务器资源。（超时的时间一般都是分钟级别的） syn 宏泛攻击 解决方案  无效连接监控释放 新起一个线程轮询服务器的连接，将无效的连接释放。 延缓tcb分配方法 防火墙 组织无效的请求发送到服务器     课外阅读 #   网络嗅探 原始套接字（直接抓起网卡中的数据，越过网络层传输层） tcpdump websocket：应用层协议（《HTML5 WebSocket权威指南》）  四次挥手 #    第一次挥手：客户端发送关闭请求 第二次挥手：服务端响应客户端关闭请求 第三次挥手：服务端关闭请求 第四次挥手：客户端发送关闭确认请求   sequenceDiagram Note left of 主动关闭方: FIN_WAIT_1(close主动关闭) Note right of 被动关闭方: CLOSE_WAIT activate 主动关闭方 主动关闭方-被动关闭方: FIN=1, seq = 12345（请求关闭连接） deactivate 主动关闭方 activate 被动关闭方 被动关闭方-主动关闭方: ACK=1,seq=12346(确认收到请求，并发送服务器的连接请求) deactivate 被动关闭方 activate 主动关闭方 Note left of 主动关闭方: FIN_WAIT_2 被动关闭方-主动关闭方 : FIN=1,seq=45678(确认收到请求，并发送服务器的连接请求) activate 被动关闭方 Note right of 被动关闭方: CLOSE deactivate 主动关闭方 deactivate 被动关闭方 activate 主动关闭方 主动关闭方-被动关闭方: ACK=1, seq = 45679（请求关闭连接） activate 被动关闭方 Note left of 主动关闭方: TIME_WAITING（2*MSL） deactivate 主动关闭方 Note right of 被动关闭方: CLOSED deactivate 被动关闭方  MSL: 最长报文段的寿命。一个ip报文数据在网络中能存活的最长时间。（RFC的协议定义中，是两分钟。常规定义时间是30秒）（1分钟~4分钟）  为什么是四次挥手 #  这是因为tcp是全双工的，所以连接双方都需要和对方明确不会再有数据发送  为什么第2步和第3步 不合并发送 #  可以合并发送，这不是硬性要求，这是rfc文档定义的规则，当被动关闭方收到fin的报文，并且自己也没有数据要发送的时候，就可以将第二步和第三步合并发送。但是如果被动关闭方还有别的数据需要发送，那么就需要将两个步骤分开  为什么主动发送关闭端 需要一个TIME_WAITING 状态 #   确保可以对被动关闭方发送的fin报文进行响应：预防fin报文的ack报文丢失，从而导致服务器重发了fin报文，但是客户端无法ack。 确保服务器延迟发送的数据不会错误的发送到别的端口上：因为存在端口冲突，当主动发送方关闭了tcp连接的时候端口号可能被别的程序得到，从而导致被动关闭方延迟发送或者还在网络中的数据包被错误的发送的新开的程序端口上。   </description>
+    </item>
+    
+    <item>
+      <title>tcp 分段与ip 分片</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/</guid>
+      <description>TCP/IP详解&amp;ndash;TCP的分段和IP的分片 #    转载
+ 分组可以发生在运输层和网络层，运输层中的TCP会分段，网络层中的IP会分片。IP层的分片更多的是为运输层的UDP服务的，由于TCP自己会避免IP的分片，所以使用TCP传输在IP层都不会发生分片的现象。 我们在学习TCP/IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组， 同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。
+TCP #  我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。
+MTU（最大传输单元） #  MTU前面已经说过了，是链路层中的网络对数据帧的一个限制，依然以以太网为例，MTU为1500个字节。一个IP数据报在以太网中传输，如果它的长度大于该MTU值，就要进行分片传输，使得每片数据报的长度小于MTU。分片传输的IP数据报不一定按序到达，但IP首部中的信息能让这些数据报片按序组装 （标识 标志 偏移等信息进行重组合 卷2 有讲） 。 IP数据报的分片与重组是在网络层进完成的。  MSS（最大分段大小） #  MSS是TCP里的一个概念（首部的选项字段中）。MSS是TCP数据包每次能够传输的最大数据分段，TCP报文段的长度大于MSS时，要进行分段传输。TCP协议在建立连接的时候通常要协商双方的MSS值，每一方都有用于通告它期望接收的MSS选项（MSS选项只出现在SYN报文段中，即TCP三次握手的前两次）。MSS的值一般为MTU值减去两个首部大小（需要减去IP数据包包头的大小20Bytes和TCP数据段的包头20Bytes）所以如果用链路层以太网，MSS的值往往为1460。 而Internet上标准的MTU（最小的MTU，链路层网络为x2.5时）为576，那么如果不设置，则MSS的默认值就为536个字节。很多时候，MSS的值最好取512的倍数。TCP报文段的分段与重组是在运输层完成的。
+到了这里有一个问题自然就明了了，TCP分段的原因是MSS，IP分片的原因是MTU，由于一直有MSS&amp;lt;=MTU，很明显，分段后的每一段TCP报文段再加上IP首部后的长度不可能超过MTU，因此也就不需要在网络层进行IP分片了。因此TCP报文段很少会发生IP分片的情况。
+ UDP #  再来看UDP数据报，由于UDP数据报不会自己进行分段，因此当长度超过了MTU时，会在网络层进行IP分片。同样，ICMP（在网络层中）同样会出现IP分片情况。 在TCP/IP分层中，数据链路层用MTU（Maximum Transmission Unit，最大传输单元）来限制所能传输的数据包大小，MTU是指一次传送的数据最大长度，不包括数据链路层数据帧的帧头，如以太网的MTU为1500字节，实际上数据帧的最大长度为1518 = 6+6+2+4+1500 字节，其中以太网数据帧的帧头为6+6+2字节。  当发送的IP数据报的大小超过了MTU时，IP层就需要对数据进行分片，否则数据将无法发送成功。
+分片传输的IP数据报不一定按序到达，但IP首部中的信息能让这些数据报片按序组装。IP数据报的分片与重组是在网络层进完成的
+划重点 #   TCP分段产生原因是MSS.（最大分段大小） IP分片由网络层完成，也在网络层进行重组； TCP分段是在传输层完成，并在传输层进行重组. //透明性 到了这里有一个问题自然就明了了，TCP分段的原因是MSS，IP分片的原因是MTU，由于一直有MSS&amp;lt;=MTU，很明显，分段后的每一段TCP报文段再加上IP首部后的长度不可能超过MTU，因此也就不需要在网络层进行IP分片了。因此TCP报文段很少会发生IP分片的情况。 若数据过大，只会在传输层进行数据分段，到了IP层就不用分片。 而我们常提到的 IP分片是由于UDP传输协议造成的，因为UDP传输协议并未限定传输数据报的大小。   UDP不会分段，就由IP来分片。 TCP会分段，当然就不用IP来分片了！ #  为什么要避免UDP数据报在IP层分片呢 #  在网络编程中，我们要避免出现IP分片，那么为什么要避免呢？ 原因是IP层是没有超时重传机制的，如果IP层对一个数据包进行了分片，只要有一个分片丢失了，只能依赖于传输层进行重传，结果是所有的分片都要重传一遍，这个代价有点大。 由此可见，IP分片会大大降低传输层传送数据的成功率，所以我们要避免IP分片。 对于UDP包，我们需要在应用层去限制每个包的大小，一般不要超过1472字节，即以太网MTU（1500—UDP首部（8）—IP首部（20）。 对于TCP数据，应用层就不需要考虑这个问题了，因为传输层已经帮我们做了。在建立连接的三次握手的过程中，连接双方会相互通告MSS（Maximum Segment Size，最大报文段长度），MSS一般是MTU—IP首部（20）—TCP首部（20），每次发送的TCP数据都不会超过双方MSS的最小值，所以就保证了IP数据报不会超过MTU，避免了IP分片。  udp中一个包大小究竟为多大合适 #  在进行UDP编程的时候,我们最容易想到的问题就是,一次发送多少bytes好？</description>
+    </item>
+    
+    <item>
+      <title>网络协议</title>
       <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/</guid>
       <description>网络协议 #  网络分层 #  OSI 分层模型 ISO 组织讨论的架构，分层更加详细，理想化学、术化，现实中使用TCP\IP模型更多
  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD 应用层--表示层; 表示层--会话层; 会话层--传输层; 传输层--网络层; 网络层--数据链路层; 数据链路层--物理层;  TCP\IP 分层模型 IEEE 组织开发，更贴近现实
-graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务（） 表示层：数据格式转化，数据加密 会话层：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层：提供介质访问和链路管理（） 物理层：物理传输  问题： 移动通信的3g、4g在哪个层次？ &amp;ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
-   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密    应用层 解除或者建立与别的节点的连接    传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802.</description>
+graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务 表示层（TCP\IP协议中包含在应用层中）：数据格式转化，数据加密 会话层（TCP\IP协议中包含在应用层中）：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层（TCP\IP协议中包含在数据层中）：提供介质访问和链路管理 物理层（TCP\IP协议中包含在数据层中）：物理传输  问题： 移动通信的3g、4g在哪个层次？ &amp;ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
+   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密 没有   应用层 解除或者建立与别的节点的连接 没有   传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802.</description>
     </item>
     
   </channel>

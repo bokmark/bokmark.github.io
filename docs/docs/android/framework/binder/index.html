@@ -5,17 +5,18 @@
   <meta name="generator" content="Hugo 0.78.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="为什么要多进程 #   获得更多的内存 每个进程使用的内存大小通过 getprop dalivk.vm.heapsize可以 得到 风险隔离，每个进程不会影响别的进程  进程间通信 IPC 是为了什么 #   A调用B的方法 A获取B的数据 A传递数据给B之后再获取数据   linux 进程通信 #   管道 socket 共享内存 信号量 等等  binder 有什么优势（言下之义就是 和另外的进程间通信有什么优势） #   性能： &ndash; binder：数据只拷贝一次 &ndash; 共享内存：数据无需拷贝 &ndash; socket： 拷贝两次 特点： &ndash; binder： 基于c/s 架构 &ndash; 共享内存：同步处理进程数据，比较麻烦 &ndash; socket： 通用接口，传输效率低，开销比较大 安全性： &ndash; binder：实名，匿名， 每个应用分配一个uid &ndash; 共享内存：依赖与上层协议，访问点开放不安全 &ndash; 依赖与上层协议，访问接入点开放不安全  linux 基础 内核空间，用户空间。 #  内核态与用户态：">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="为什么要多进程 #   获得更多的内存 每个进程使用的内存大小通过 getprop dalivk.vm.heapsize可以 得到 风险隔离，每个进程不会影响别的进程  进程间通信 IPC 是为了什么 #   A调用B的方法 A获取B的数据 A传递数据给B之后再获取数据   linux 进程通信 #   管道 socket 共享内存 信号量 等等  binder 有什么优势（言下之义就是 和另外的进程间通信有什么优势） #   性能： &ndash; binder：数据只拷贝一次 &ndash; 共享内存：数据无需拷贝 &ndash; socket： 拷贝两次 特点： &ndash; binder： 基于c/s 架构 &ndash; 共享内存：同步处理进程数据，比较麻烦 &ndash; socket： 通用接口，传输效率低，开销比较大 安全性： &ndash; binder：实名，匿名， 每个应用分配一个uid &ndash; 共享内存：依赖与上层协议，访问点开放不安全 &ndash; 依赖与上层协议，访问接入点开放不安全  linux 基础 内核空间，用户空间。 #  内核态与用户态：" />
+<meta name="description" content="从handler的面试题出发了解handler">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Binder以及相关概念" />
+<meta property="og:description" content="从handler的面试题出发了解handler" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/framework/binder/" />
+<meta property="article:published_time" content="2018-11-28T15:14:39+10:00" />
 <meta property="article:modified_time" content="2021-01-30T01:27:42+08:00" />
-<title>Binder | Bokmark Pages</title>
+<title>Binder以及相关概念 | Bokmark Pages</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
-<script defer src="/en.search.min.0e454a54c8901e3207a79d6071ed6c0cd4a3e1489ec0649ca7ed5230258384bb.js" integrity="sha256-DkVKVMiQHjIHp51gce1sDNSj4UiewGScp&#43;1SMCWDhLs="></script>
+<script defer src="/en.search.min.09c77d93cc4b25909587be5b2488bb1d8f208b47d9c94416995780fae8ed9944.js" integrity="sha256-Ccd9k8xLJZCVh75bJIi7HY8gi0fZyUQWmVeA&#43;ujtmUQ="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -96,6 +97,41 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-7bb810424bf7c7832a8f68a6b8ebba84" class="toggle"  />
+    <label for="section-7bb810424bf7c7832a8f68a6b8ebba84" class="flex justify-between">
+      <a  class="">Android Studio</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/android_studio/maven_sdk/" class="">创建并上传mavenSdk</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle" checked />
     <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
       <a  class="">Framework</a>
@@ -139,7 +175,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/android/framework/binder/" class=" active">Binder</a>
+    <a href="/docs/android/framework/binder/" class=" active">Binder以及相关概念</a>
   
 
         </li>
@@ -467,7 +503,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class="">Java 序列化</a>
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/" class="">TCP 三次握手、四次挥手</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/" class="">tcp 分段与ip 分片</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class="">网络协议</a>
   
 
         </li>
@@ -1070,7 +1132,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Binder</strong>
+  <strong>Binder以及相关概念</strong>
 
   <label for="toc-control">
     

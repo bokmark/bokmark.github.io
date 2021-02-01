@@ -5,6 +5,8 @@ weight: 2
 summary: "从handler的面试题出发了解handler"
 ---
 
+# Handler
+
 > handler 是学习中问得最常见的一个问题。而这一次我将从几个handler最常见的几个问题来开始学习这个问题
 
 - 一个线程可以有几个Handler

@@ -7,22 +7,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="网络协议 #  网络分层 #  OSI 分层模型 ISO 组织讨论的架构，分层更加详细，理想化学、术化，现实中使用TCP\IP模型更多
  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD 应用层--表示层; 表示层--会话层; 会话层--传输层; 传输层--网络层; 网络层--数据链路层; 数据链路层--物理层;  TCP\IP 分层模型 IEEE 组织开发，更贴近现实
-graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务（） 表示层：数据格式转化，数据加密 会话层：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层：提供介质访问和链路管理（） 物理层：物理传输  问题： 移动通信的3g、4g在哪个层次？ &ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
-   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密    应用层 解除或者建立与别的节点的连接    传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Java 序列化" />
+graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务 表示层（TCP\IP协议中包含在应用层中）：数据格式转化，数据加密 会话层（TCP\IP协议中包含在应用层中）：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层（TCP\IP协议中包含在数据层中）：提供介质访问和链路管理 物理层（TCP\IP协议中包含在数据层中）：物理传输  问题： 移动通信的3g、4g在哪个层次？ &ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
+   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密 没有   应用层 解除或者建立与别的节点的连接 没有   传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="网络协议" />
 <meta property="og:description" content="网络协议 #  网络分层 #  OSI 分层模型 ISO 组织讨论的架构，分层更加详细，理想化学、术化，现实中使用TCP\IP模型更多
  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD 应用层--表示层; 表示层--会话层; 会话层--传输层; 传输层--网络层; 网络层--数据链路层; 数据链路层--物理层;  TCP\IP 分层模型 IEEE 组织开发，更贴近现实
-graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务（） 表示层：数据格式转化，数据加密 会话层：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层：提供介质访问和链路管理（） 物理层：物理传输  问题： 移动通信的3g、4g在哪个层次？ &ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
-   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密    应用层 解除或者建立与别的节点的连接    传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802." />
+graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务 表示层（TCP\IP协议中包含在应用层中）：数据格式转化，数据加密 会话层（TCP\IP协议中包含在应用层中）：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层（TCP\IP协议中包含在数据层中）：提供介质访问和链路管理 物理层（TCP\IP协议中包含在数据层中）：物理传输  问题： 移动通信的3g、4g在哪个层次？ &ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
+   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密 没有   应用层 解除或者建立与别的节点的连接 没有   传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" />
 <meta property="article:published_time" content="2020-12-01T15:14:39+10:00" />
 <meta property="article:modified_time" content="2020-12-01T15:14:39+10:00" />
-<title>Java 序列化 | Bokmark Pages</title>
+<title>网络协议 | Bokmark Pages</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
-<script defer src="/en.search.min.0e454a54c8901e3207a79d6071ed6c0cd4a3e1489ec0649ca7ed5230258384bb.js" integrity="sha256-DkVKVMiQHjIHp51gce1sDNSj4UiewGScp&#43;1SMCWDhLs="></script>
+<script defer src="/en.search.min.09c77d93cc4b25909587be5b2488bb1d8f208b47d9c94416995780fae8ed9944.js" integrity="sha256-Ccd9k8xLJZCVh75bJIi7HY8gi0fZyUQWmVeA&#43;ujtmUQ="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -103,6 +103,41 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-7bb810424bf7c7832a8f68a6b8ebba84" class="toggle"  />
+    <label for="section-7bb810424bf7c7832a8f68a6b8ebba84" class="flex justify-between">
+      <a  class="">Android Studio</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/android_studio/maven_sdk/" class="">创建并上传mavenSdk</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
     <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
       <a  class="">Framework</a>
@@ -146,7 +181,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/android/framework/binder/" class="">Binder</a>
+    <a href="/docs/android/framework/binder/" class="">Binder以及相关概念</a>
   
 
         </li>
@@ -474,7 +509,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class=" active">Java 序列化</a>
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/" class="">TCP 三次握手、四次挥手</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/" class="">tcp 分段与ip 分片</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class=" active">网络协议</a>
   
 
         </li>
@@ -1077,7 +1138,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Java 序列化</strong>
+  <strong>网络协议</strong>
 
   <label for="toc-control">
     
@@ -1097,6 +1158,19 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#网络分层">网络分层</a></li>
         <li><a href="#tcpip协议族模型中有哪些具体协议">TCP\IP协议族模型中有哪些具体协议</a></li>
+        <li><a href="#tcpip协议族中的主要概念">TCP\IP协议族中的主要概念</a>
+          <ul>
+            <li><a href="#传输层主要协议tcp--udp">传输层主要协议TCP 、 UDP</a></li>
+            <li><a href="#ip地址mac地址">IP地址、Mac地址</a></li>
+            <li><a href="#端口号-称为程序地址">端口号 称为程序地址</a></li>
+          </ul>
+        </li>
+        <li><a href="#tcp概述">TCP概述</a>
+          <ul>
+            <li><a href="#网络协议为什么要分包">网络协议为什么要分包</a></li>
+            <li><a href="#tcp的基本特性">TCP的基本特性</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1159,13 +1233,13 @@ graph TD;
   <div class="flex-even markdown-inner">
     <h3 id="分层说明">分层说明</h3>
 <ul>
-<li><strong>应用层</strong>：为应用提供服务（）</li>
-<li><strong>表示层</strong>：数据格式转化，数据加密</li>
-<li><strong>会话层</strong>：建立、管理、维护会话</li>
+<li><strong>应用层</strong>：为应用提供服务</li>
+<li><strong>表示层（TCP\IP协议中包含在应用层中）</strong>：数据格式转化，数据加密</li>
+<li><strong>会话层（TCP\IP协议中包含在应用层中）</strong>：建立、管理、维护会话</li>
 <li><strong>传输层</strong>：建立、管理、 维护端对端的连接</li>
 <li><strong>网络层</strong>：IP地址以及路由选择</li>
-<li><strong>数据链路层</strong>：提供介质访问和链路管理（）</li>
-<li><strong>物理层</strong>：物理传输</li>
+<li><strong>数据链路层（TCP\IP协议中包含在数据层中）</strong>：提供介质访问和链路管理</li>
+<li><strong>物理层（TCP\IP协议中包含在数据层中）</strong>：物理传输</li>
 </ul>
 <p><strong>问题</strong>：
 移动通信的3g、4g在哪个层次？
@@ -1196,12 +1270,12 @@ graph TD;
 <tr>
 <td>应用层</td>
 <td>数据格式化、代码转化、数据加密</td>
-<td></td>
+<td>没有</td>
 </tr>
 <tr>
 <td>应用层</td>
 <td>解除或者建立与别的节点的连接</td>
-<td></td>
+<td>没有</td>
 </tr>
 <tr>
 <td>传输层</td>
@@ -1225,6 +1299,107 @@ graph TD;
 </tr>
 </tbody>
 </table>
+<h2 id="tcpip协议族中的主要概念">
+  TCP\IP协议族中的主要概念
+  <a class="anchor" href="#tcpip%e5%8d%8f%e8%ae%ae%e6%97%8f%e4%b8%ad%e7%9a%84%e4%b8%bb%e8%a6%81%e6%a6%82%e5%bf%b5">#</a>
+</h2>
+<p>以太网协议中，规定了同一个局域网中的主机与另一个主机通信需要需要知道对方的mac地址。</p>
+<h3 id="传输层主要协议tcp--udp">
+  传输层主要协议TCP 、 UDP
+  <a class="anchor" href="#%e4%bc%a0%e8%be%93%e5%b1%82%e4%b8%bb%e8%a6%81%e5%8d%8f%e8%ae%aetcp--udp">#</a>
+</h3>
+<ul>
+<li>TCP：面向连接的 可靠的流协议</li>
+<li>UDP：面向无连接的 不可靠的协议</li>
+</ul>
+<h3 id="ip地址mac地址">
+  IP地址、Mac地址
+  <a class="anchor" href="#ip%e5%9c%b0%e5%9d%80mac%e5%9c%b0%e5%9d%80">#</a>
+</h3>
+<ul>
+<li>ip 在原地址与目标地址之间传递数据包</li>
+<li>mac地址制造商制作的时候写入，是网络设备的唯一标识</li>
+<li>网络层还有icmp 控制报文协议、igmp internet组管理协议等</li>
+<li>链路层 arp （地址解析协议）和 rarp（反向地址转化协议）</li>
+<li>arp 地址解析协议 通过ip转化为mac地址</li>
+</ul>
+<h3 id="端口号-称为程序地址">
+  端口号 称为程序地址
+  <a class="anchor" href="#%e7%ab%af%e5%8f%a3%e5%8f%b7-%e7%a7%b0%e4%b8%ba%e7%a8%8b%e5%ba%8f%e5%9c%b0%e5%9d%80">#</a>
+</h3>
+<p>客户端程序一般情况下不需要端口号，操作系统将会帮忙分配端口号。一般都是分配49152 ~ 65535这些没有人用的端口号</p>
+<h2 id="tcp概述">
+  TCP概述
+  <a class="anchor" href="#tcp%e6%a6%82%e8%bf%b0">#</a>
+</h2>
+<h3 id="网络协议为什么要分包">
+  网络协议为什么要分包
+  <a class="anchor" href="#%e7%bd%91%e7%bb%9c%e5%8d%8f%e8%ae%ae%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e5%88%86%e5%8c%85">#</a>
+</h3>
+<p>包：全能性术语
+帧：数据链路层中包的单位
+片：IP数据中的单位
+段：TCP数据流中的信息
+消息：是指应用协议中的数据和单位</p>
+<ul>
+<li>数据链路层对ip层有长度限制：MTU（以以太网为例，MTU=1500字节</li>
+<li>ip层算上首部 对上层限制：MSS</li>
+<li>MSS的值一般为MTU值减去两个首部大小（需要减去IP数据包包头的大小20Bytes和TCP数据段的包头20Bytes）</li>
+</ul>
+<h3 id="tcp的基本特性">
+  TCP的基本特性
+  <a class="anchor" href="#tcp%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%89%b9%e6%80%a7">#</a>
+</h3>
+<ul>
+<li>
+<p>面向连接</p>
+<ul>
+<li>只能端对端</li>
+<li>（udp 既能端对端，也能广播，组播）</li>
+</ul>
+</li>
+<li>
+<p>可靠性</p>
+<ul>
+<li>怎么保证可靠性
+<ul>
+<li>超时重传。超过一定时间没有收到应答确认就认为数据包丢掉了，重新发送</li>
+<li>应答确认</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>数据排序</p>
+<p>发送的时候按照顺序发送，接受的时候也有可能不按照顺序接受</p>
+<ul>
+<li>物理连接：真实的链路连接</li>
+<li>虚拟连接：在三次握手之后也可以认为两端建立了连接
+  <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/">三次握手</a><br></li>
+</ul>
+<p>所以tcp数据包有按照数据排序功能</p>
+</li>
+<li>
+<p>流量控制</p>
+<ul>
+<li>滑动窗口：
+接受端和发送端有可能存在处理速度不同的问题存在，所以会有一个协商机制存在。在报文的响应中，数据接收方将下次能接受的数据发送给数据发送方。来协商这个发送的数据</li>
+</ul>
+</li>
+<li>
+<p>全双工
+每一端都可以成为数据接受方，也可以成为数据发送方，并且可以同时发送。</p>
+</li>
+<li>
+<p>RTT（往返时延） RTO（重传超时）（动态调整）</p>
+</li>
+</ul>
+<blockquote>
+<p>扩展阅读 
+  <a href="https://draveness.me/whys-the-design-tcp-message-frame/">TCP 粘包问题</a>
+扩展阅读 
+  <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/">tcp_ip</a></p>
+</blockquote>
 </article>
  
       
@@ -1265,6 +1440,19 @@ graph TD;
       <ul>
         <li><a href="#网络分层">网络分层</a></li>
         <li><a href="#tcpip协议族模型中有哪些具体协议">TCP\IP协议族模型中有哪些具体协议</a></li>
+        <li><a href="#tcpip协议族中的主要概念">TCP\IP协议族中的主要概念</a>
+          <ul>
+            <li><a href="#传输层主要协议tcp--udp">传输层主要协议TCP 、 UDP</a></li>
+            <li><a href="#ip地址mac地址">IP地址、Mac地址</a></li>
+            <li><a href="#端口号-称为程序地址">端口号 称为程序地址</a></li>
+          </ul>
+        </li>
+        <li><a href="#tcp概述">TCP概述</a>
+          <ul>
+            <li><a href="#网络协议为什么要分包">网络协议为什么要分包</a></li>
+            <li><a href="#tcp的基本特性">TCP的基本特性</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
