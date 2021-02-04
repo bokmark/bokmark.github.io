@@ -5,33 +5,35 @@
   <meta name="generator" content="Hugo 0.78.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="G oogle 官方解释
+<meta name="description" content="StartUp 初始化组件 #    G oogle 官方解释
  这是官方对于startup这个库的解释。
  App startup 库 提供了 一个直截了当、高性能的方式去初始化你的应用。第三方库和app的开发者都可以使用app startup这个库以数据流的方式去显示的安排启动的各个步骤。
 app startup这个库允许你只创建一个contentprovider 去初始化你的各个 initializer，这将有助与提升你的app启动时间。
  从这段话中，我们可以看到几个重要的点。
- contentprovider 数据流的方式，显示的安排各个启动的步骤 ###配置 配置在你的app或者library的moudle中的build.gradle 中  dependencies { implementation &#34;androidx.startup:startup-runtime:1.0.0-alpha02&#34; } 注册初始化组件 #  定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。
+ contentprovider 数据流的方式，显示的安排各个启动的步骤  配置 #  配置在你的app或者library的moudle中的build.gradle 中
+dependencies { implementation &#34;androidx.startup:startup-runtime:1.0.0-alpha02&#34; } 注册初始化组件 #  定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。
 组件的创建 #  实现 Initializer&lt;T&gt; 接口。该接口有如下两个方法：
  T create(Context) 返回创建好的实例 dependencies() 创建该组件之前需要创建的其他组件。   以workmanager举例说明
 // Initializes WorkManager. class WorkManagerInitializer implements Initializer&lt;WorkManager&gt; { @Override public WorkManager create(Context context) { Configuration configuration = Configuration.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="StartUp" />
-<meta property="og:description" content="G oogle 官方解释
+<meta property="og:description" content="StartUp 初始化组件 #    G oogle 官方解释
  这是官方对于startup这个库的解释。
  App startup 库 提供了 一个直截了当、高性能的方式去初始化你的应用。第三方库和app的开发者都可以使用app startup这个库以数据流的方式去显示的安排启动的各个步骤。
 app startup这个库允许你只创建一个contentprovider 去初始化你的各个 initializer，这将有助与提升你的app启动时间。
  从这段话中，我们可以看到几个重要的点。
- contentprovider 数据流的方式，显示的安排各个启动的步骤 ###配置 配置在你的app或者library的moudle中的build.gradle 中  dependencies { implementation &#34;androidx.startup:startup-runtime:1.0.0-alpha02&#34; } 注册初始化组件 #  定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。
+ contentprovider 数据流的方式，显示的安排各个启动的步骤  配置 #  配置在你的app或者library的moudle中的build.gradle 中
+dependencies { implementation &#34;androidx.startup:startup-runtime:1.0.0-alpha02&#34; } 注册初始化组件 #  定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。
 组件的创建 #  实现 Initializer&lt;T&gt; 接口。该接口有如下两个方法：
  T create(Context) 返回创建好的实例 dependencies() 创建该组件之前需要创建的其他组件。   以workmanager举例说明
 // Initializes WorkManager. class WorkManagerInitializer implements Initializer&lt;WorkManager&gt; { @Override public WorkManager create(Context context) { Configuration configuration = Configuration." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/arch/jetpack/startup/" />
 <meta property="article:modified_time" content="2021-01-30T01:27:42+08:00" />
-<title>StartUp | Bokmark Pages</title>
+<title>StartUp | Bokmark</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
-<script defer src="/en.search.min.09c77d93cc4b25909587be5b2488bb1d8f208b47d9c94416995780fae8ed9944.js" integrity="sha256-Ccd9k8xLJZCVh75bJIi7HY8gi0fZyUQWmVeA&#43;ujtmUQ="></script>
+<script defer src="/en.search.min.35bec5ae81ffd8f495d482abc7846b4fb3309df297ff5f9fe5b44fac1120204c.js" integrity="sha256-Nb7FroH/2PSV1IKrx4RrT7MwnfKX/1&#43;f5bRPrBEgIEw="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -51,7 +53,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark Pages</span>
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark</span>
   </a>
 </h2>
 
@@ -324,6 +326,41 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2bc0755154b587ced0ab9471360baeda" class="toggle"  />
+    <label for="section-2bc0755154b587ced0ab9471360baeda" class="flex justify-between">
+      <a href="/docs/arch/design_pattern/" class="">设计模式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/design_pattern/DecoratorPattern/" class="">装饰器模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -518,6 +555,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/bio/" class="">BIO,NIO,AIO</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/" class="">TCP 三次握手、四次挥手</a>
   
 
@@ -545,6 +595,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class="">网络协议</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/" class="">网络协议 相关问题</a>
   
 
         </li>
@@ -709,6 +772,17 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io/" class="">Java IO 的基础应用</a>
+  
+
+        </li>
       
     
       
@@ -1120,6 +1194,12 @@ https://github.com/alex-shpak/hugo-book
       </a>
   </li>
   
+  <li>
+    <a href="https://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener">
+        mermaid
+      </a>
+  </li>
+  
 </ul>
 
 
@@ -1163,18 +1243,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#startup-初始化组件">StartUp 初始化组件</a>
       <ul>
-        <li>
-          <ul>
-            <li><a href="#注册初始化组件">注册初始化组件</a></li>
-            <li><a href="#组件的创建">组件的创建</a></li>
-            <li><a href="#有依赖的组件的创建">有依赖的组件的创建</a></li>
-            <li><a href="#manifest的规范">manifest的规范</a></li>
-            <li><a href="#startup的另一种用法">startup的另一种用法</a></li>
-            <li><a href="#不自动加载组件的逻辑">不自动加载组件的逻辑</a></li>
-          </ul>
-        </li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#注册初始化组件">注册初始化组件</a></li>
+        <li><a href="#组件的创建">组件的创建</a></li>
+        <li><a href="#有依赖的组件的创建">有依赖的组件的创建</a></li>
+        <li><a href="#manifest的规范">manifest的规范</a></li>
+        <li><a href="#startup的另一种用法">startup的另一种用法</a></li>
+        <li><a href="#不自动加载组件的逻辑">不自动加载组件的逻辑</a></li>
         <li><a href="#总结">总结</a></li>
       </ul>
     </li>
@@ -1190,7 +1267,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><blockquote>
+  <article class="markdown"><h1 id="startup-初始化组件">
+  StartUp 初始化组件
+  <a class="anchor" href="#startup-%e5%88%9d%e5%a7%8b%e5%8c%96%e7%bb%84%e4%bb%b6">#</a>
+</h1>
+<blockquote>
 <p>
   <a href="https://developer.android.google.cn/topic/libraries/app-startup">G oogle 官方解释</a></p>
 </blockquote>
@@ -1202,23 +1283,26 @@ https://github.com/alex-shpak/hugo-book
 <p>从这段话中，我们可以看到几个重要的点。</p>
 <ul>
 <li>contentprovider</li>
-<li>数据流的方式，显示的安排各个启动的步骤
-###配置
-配置在你的app或者library的moudle中的build.gradle 中</li>
+<li>数据流的方式，显示的安排各个启动的步骤</li>
 </ul>
+<h2 id="配置">
+  配置
+  <a class="anchor" href="#%e9%85%8d%e7%bd%ae">#</a>
+</h2>
+<p>配置在你的app或者library的moudle中的build.gradle 中</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
     implementation <span style="color:#e6db74">&#34;androidx.startup:startup-runtime:1.0.0-alpha02&#34;</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><h3 id="注册初始化组件">
+</code></pre></div><h2 id="注册初始化组件">
   注册初始化组件
   <a class="anchor" href="#%e6%b3%a8%e5%86%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e7%bb%84%e4%bb%b6">#</a>
-</h3>
+</h2>
 <p>定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。
 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。</p>
-<h3 id="组件的创建">
+<h2 id="组件的创建">
   组件的创建
   <a class="anchor" href="#%e7%bb%84%e4%bb%b6%e7%9a%84%e5%88%9b%e5%bb%ba">#</a>
-</h3>
+</h2>
 <p>实现 <code>Initializer&lt;T&gt;</code> 接口。该接口有如下两个方法：</p>
 <ul>
 <li>T create(Context)
@@ -1248,10 +1332,10 @@ https://github.com/alex-shpak/hugo-book
 </code></pre></div><blockquote>
 <p>这个例子中间，我们可以看到由于不需要依赖与别的组件，dependencies 直接返回一个空的list</p>
 </blockquote>
-<h3 id="有依赖的组件的创建">
+<h2 id="有依赖的组件的创建">
   有依赖的组件的创建
   <a class="anchor" href="#%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e7%bb%84%e4%bb%b6%e7%9a%84%e5%88%9b%e5%bb%ba">#</a>
-</h3>
+</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Initializes ExampleLogger.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExampleLoggerInitializer</span> <span style="color:#66d9ef">implements</span> Initializer<span style="color:#f92672">&lt;</span>ExampleLogger<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
 
@@ -1270,10 +1354,10 @@ https://github.com/alex-shpak/hugo-book
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>这里在<code>ExampleLogger</code> 的create期间，workmanager已经创建好了，在这里可以直接是使用。</p>
-<h3 id="manifest的规范">
+<h2 id="manifest的规范">
   manifest的规范
   <a class="anchor" href="#manifest%e7%9a%84%e8%a7%84%e8%8c%83">#</a>
-</h3>
+</h2>
 <p>startup 库依赖与InitializationProvider</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;provider</span>
     <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;androidx.startup.InitializationProvider&#34;</span>
@@ -1285,10 +1369,10 @@ https://github.com/alex-shpak/hugo-book
           <span style="color:#a6e22e">android:value=</span><span style="color:#e6db74">&#34;androidx.startup&#34;</span> <span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/provider&gt;</span>
 </code></pre></div><p>再在provider的metadata中定义好自己的Initializer。就会自动注册组件。</p>
-<h3 id="startup的另一种用法">
+<h2 id="startup的另一种用法">
   startup的另一种用法
   <a class="anchor" href="#startup%e7%9a%84%e5%8f%a6%e4%b8%80%e7%a7%8d%e7%94%a8%e6%b3%95">#</a>
-</h3>
+</h2>
 <p>首先在xml中这样定义</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;provider</span>
     <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;androidx.startup.InitializationProvider&#34;</span>
@@ -1452,10 +1536,10 @@ https://github.com/alex-shpak/hugo-book
 <li>如果没有则创建当前的实例，并且调用create</li>
 <li>判断去重，避免重复创建。</li>
 </ul>
-<h3 id="不自动加载组件的逻辑">
+<h2 id="不自动加载组件的逻辑">
   不自动加载组件的逻辑
   <a class="anchor" href="#%e4%b8%8d%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd%e7%bb%84%e4%bb%b6%e7%9a%84%e9%80%bb%e8%be%91">#</a>
-</h3>
+</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">AppInitializer<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span>context<span style="color:#f92672">)</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">initializeComponent</span><span style="color:#f92672">(</span>ExampleLoggerInitializer<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
 
@@ -1515,18 +1599,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#startup-初始化组件">StartUp 初始化组件</a>
       <ul>
-        <li>
-          <ul>
-            <li><a href="#注册初始化组件">注册初始化组件</a></li>
-            <li><a href="#组件的创建">组件的创建</a></li>
-            <li><a href="#有依赖的组件的创建">有依赖的组件的创建</a></li>
-            <li><a href="#manifest的规范">manifest的规范</a></li>
-            <li><a href="#startup的另一种用法">startup的另一种用法</a></li>
-            <li><a href="#不自动加载组件的逻辑">不自动加载组件的逻辑</a></li>
-          </ul>
-        </li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#注册初始化组件">注册初始化组件</a></li>
+        <li><a href="#组件的创建">组件的创建</a></li>
+        <li><a href="#有依赖的组件的创建">有依赖的组件的创建</a></li>
+        <li><a href="#manifest的规范">manifest的规范</a></li>
+        <li><a href="#startup的另一种用法">startup的另一种用法</a></li>
+        <li><a href="#不自动加载组件的逻辑">不自动加载组件的逻辑</a></li>
         <li><a href="#总结">总结</a></li>
       </ul>
     </li>

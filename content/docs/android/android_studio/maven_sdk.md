@@ -50,21 +50,22 @@ repositories {
 **可以说 pom文件就是maven的灵魂**
 
 ## Android中的aar
-在AndroidStudio中创建module，并且运行这个module的assemble task，将会在build目录创建一个aar。
-这个aar中只包括这些代码
-- 本module的java、kotlin代码
-- 本module的aidl
-- 本module的res资源文件
-- 本module生成的java或者class 代码
+我们假设当前的module为AModule，他依赖于BModule。
+当我们运行AModule的assemble task之后，将会在build目录得到一个aar。
+这个aar中只包括这些内容
+- AModule中包含的所有java、kotlin代码
+- AModule中的aidl文件
+- AModule中的res资源文件
+- AModule中自动生成的那些java或者class 代码
 
-这些内容中不包含这个module依赖的module的代码。<br>
-**所以这就意味着如果我们直只上传这个maven的aar，这个aar是无法编译通过的**
+这些内容中不包含BModule的代码。<br>
+**所以这就意味着如果我们只能上传这个AModule中的代码，AModule所依赖的BModule的代码是无法编译进AModule的aar中的，因为会有一个BModule的aar存在**
 
-所以我们需要做的是尽量将sdk的代码合并到一个module。**那么确实无法做到这一点该怎么办呢？** 这里介绍两种方法
-- [fat-aar](https://github.com/kezong/fat-aar-android)。一个gradle 插件将依赖module的代码强行合并进本module。
-- 将依赖module的aar 也上传到仓库中，通过引入依赖的依赖的方式来将依赖module引入。
+所以我们需要做的是尽量将sdk的代码合并到一个module。**那么确实无法做到这一点该怎么办呢？** 这里介绍两种方法：
+- [fat-aar](https://github.com/kezong/fat-aar-android)。一个gradle 插件将依赖module的代码强行合并进本module。（但是不推荐）
+- 将BModule的aar 也上传到仓库中。这样我们就可以通过引入依赖的依赖的方式来将BModule引入。
 
-我们接下来的讨论的就是（将依赖module的aar 也上传到仓库中） 这种方式。
+我们接下来的讨论的就是（将BModule的aar 也上传到仓库中）的这种方式。
 
 ## 如何将一个module的aar 上传到maven
 
@@ -81,10 +82,10 @@ maven.password=xxx
 
 ```groovy
 
-Properties propterties = new Properties()
-try {
-  properties.load(new FileInputStream(new File("..\local.properties")))
-} catch(Throwable e) {
+Properties properties = new Properties()
+def localPropertiesFile = new File('../local.properties')
+if (null != localPropertiesFile && localPropertiesFile.exists()) {
+  properties.load(localPropertiesFile.newDataInputStream())
 }
 
 afterEvaluate {

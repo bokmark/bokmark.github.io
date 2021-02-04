@@ -1,6 +1,7 @@
 ---
 title: 'StartUp'
 ---
+# StartUp 初始化组件
 
 >  [G oogle 官方解释](https://developer.android.google.cn/topic/libraries/app-startup)
 
@@ -13,18 +14,18 @@ title: 'StartUp'
 从这段话中，我们可以看到几个重要的点。
 - contentprovider
 - 数据流的方式，显示的安排各个启动的步骤
-###配置
+## 配置
 配置在你的app或者library的moudle中的build.gradle 中
 ```gradle
 dependencies {
     implementation "androidx.startup:startup-runtime:1.0.0-alpha02"
 }
 ```
-### 注册初始化组件
+## 注册初始化组件
 定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。
 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。
 
-### 组件的创建
+## 组件的创建
 实现 `Initializer<T>` 接口。该接口有如下两个方法：
 - T create(Context)
 返回创建好的实例
@@ -53,7 +54,7 @@ class WorkManagerInitializer implements Initializer<WorkManager> {
 ```
 > 这个例子中间，我们可以看到由于不需要依赖与别的组件，dependencies 直接返回一个空的list
 
-### 有依赖的组件的创建
+## 有依赖的组件的创建
 ```java
 // Initializes ExampleLogger.
 class ExampleLoggerInitializer implements Initializer<ExampleLogger> {
@@ -74,7 +75,7 @@ class ExampleLoggerInitializer implements Initializer<ExampleLogger> {
 }
 ```
 这里在`ExampleLogger` 的create期间，workmanager已经创建好了，在这里可以直接是使用。
-### manifest的规范
+## manifest的规范
 startup 库依赖与InitializationProvider
 ```xml
 <provider
@@ -89,7 +90,7 @@ startup 库依赖与InitializationProvider
 ```
 再在provider的metadata中定义好自己的Initializer。就会自动注册组件。
 
-### startup的另一种用法
+## startup的另一种用法
 首先在xml中这样定义
 ```xml
 <provider
@@ -267,7 +268,7 @@ public final class InitializationProvider extends ContentProvider {
 - 如果没有则创建当前的实例，并且调用create
 - 判断去重，避免重复创建。
 
-### 不自动加载组件的逻辑
+## 不自动加载组件的逻辑
 
 ```java
 AppInitializer.getInstance(context)

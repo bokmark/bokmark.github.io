@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bokmark Pages</title>
+    <title>Bokmark</title>
     <link>/docs/java/JavaVM/</link>
-    <description>Recent content on Bokmark Pages</description>
+    <description>Recent content on Bokmark</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>

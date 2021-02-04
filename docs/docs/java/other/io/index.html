@@ -12,11 +12,11 @@
 <meta property="og:url" content="/docs/java/other/io/" />
 <meta property="article:published_time" content="2018-11-28T15:14:39+10:00" />
 <meta property="article:modified_time" content="2021-01-30T01:27:42+08:00" />
-<title>Java IO 的基础应用 | Bokmark Pages</title>
+<title>Java IO 的基础应用 | Bokmark</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
-<script defer src="/en.search.min.09c77d93cc4b25909587be5b2488bb1d8f208b47d9c94416995780fae8ed9944.js" integrity="sha256-Ccd9k8xLJZCVh75bJIi7HY8gi0fZyUQWmVeA&#43;ujtmUQ="></script>
+<script defer src="/en.search.min.35bec5ae81ffd8f495d482abc7846b4fb3309df297ff5f9fe5b44fac1120204c.js" integrity="sha256-Nb7FroH/2PSV1IKrx4RrT7MwnfKX/1&#43;f5bRPrBEgIEw="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -36,7 +36,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark Pages</span>
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark</span>
   </a>
 </h2>
 
@@ -309,6 +309,41 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2bc0755154b587ced0ab9471360baeda" class="toggle"  />
+    <label for="section-2bc0755154b587ced0ab9471360baeda" class="flex justify-between">
+      <a href="/docs/arch/design_pattern/" class="">设计模式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/design_pattern/DecoratorPattern/" class="">装饰器模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -503,6 +538,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/bio/" class="">BIO,NIO,AIO</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/" class="">TCP 三次握手、四次挥手</a>
   
 
@@ -530,6 +578,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class="">网络协议</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/" class="">网络协议 相关问题</a>
   
 
         </li>
@@ -694,6 +755,17 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io/" class=" active">Java IO 的基础应用</a>
+  
+
+        </li>
       
     
       
@@ -1105,6 +1177,12 @@ https://github.com/alex-shpak/hugo-book
       </a>
   </li>
   
+  <li>
+    <a href="https://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener">
+        mermaid
+      </a>
+  </li>
+  
 </ul>
 
 
@@ -1146,7 +1224,30 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#java中io基础应用">Java中IO基础应用</a>
+      <ul>
+        <li><a href="#inputoutput-方向理解">Input\Output 方向理解</a></li>
+        <li><a href="#字节流">字节流</a>
+          <ul>
+            <li><a href="#举个栗子">举个栗子</a></li>
+            <li><a href="#几个主要实现类的类图以inputstream为例">几个主要实现类的类图（以InputStream为例）</a></li>
+            <li><a href="#几个主要stream的功能介绍">几个主要stream的功能介绍</a></li>
+          </ul>
+        </li>
+        <li><a href="#字符流">字符流</a>
+          <ul>
+            <li><a href="#举个栗子-1">举个栗子</a></li>
+            <li><a href="#几个主要实现类的类图以reader为例">几个主要实现类的类图（以Reader为例）</a></li>
+          </ul>
+        </li>
+        <li><a href="#randomaccessfile">RandomAccessFile</a></li>
+        <li><a href="#filechannelnio">FileChannel(nio)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1157,7 +1258,137 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown"><h1 id="java中io基础应用">
+  Java中IO基础应用
+  <a class="anchor" href="#java%e4%b8%adio%e5%9f%ba%e7%a1%80%e5%ba%94%e7%94%a8">#</a>
+</h1>
+<blockquote>
+<p>
+  <a href="https://github.com/square/okio">课外阅读 okio</a></p>
+</blockquote>
+<h2 id="inputoutput-方向理解">
+  Input\Output 方向理解
+  <a class="anchor" href="#inputoutput-%e6%96%b9%e5%90%91%e7%90%86%e8%a7%a3">#</a>
+</h2>
+<p>从内存的角度来理解input\output的方向。</p>
+<ul>
+<li>内存输出到外部 output <strong>Write</strong></li>
+<li>内存接受输入 input <strong>Read</strong>
+
+
+<script src="/mermaid.min.js"></script>
+
+  <script>mermaid.initialize({
+  "flowchart": {
+    "useMaxWidth":true
+  },
+  "theme": "default"
+}
+)</script>
+
+
+
+
+<p class="mermaid">
+graph TD;
+    内存-- output -->外部;
+    外部-- input -->内存;
+</p>
+</li>
+</ul>
+<h2 id="字节流">
+  字节流
+  <a class="anchor" href="#%e5%ad%97%e8%8a%82%e6%b5%81">#</a>
+</h2>
+<p>InputStream\OutputStream</p>
+<h3 id="举个栗子">
+  举个栗子
+  <a class="anchor" href="#%e4%b8%be%e4%b8%aa%e6%a0%97%e5%ad%90">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Kotlin" data-lang="Kotlin"><span style="color:#66d9ef">val</span> inputStream = DataInputStream(BufferedInputStream(FileInputStream(File(<span style="color:#e6db74">&#34;/sdcard/a.png&#34;</span>))))
+</code></pre></div><h3 id="几个主要实现类的类图以inputstream为例">
+  几个主要实现类的类图（以InputStream为例）
+  <a class="anchor" href="#%e5%87%a0%e4%b8%aa%e4%b8%bb%e8%a6%81%e5%ae%9e%e7%8e%b0%e7%b1%bb%e7%9a%84%e7%b1%bb%e5%9b%be%e4%bb%a5inputstream%e4%b8%ba%e4%be%8b">#</a>
+</h3>
+<p>先看几个常见的Stream类</p>
+<ul>
+<li>java.io.BufferedInputStream</li>
+<li>java.io.ByteArrayInputStream</li>
+<li>java.io.DataInputStream</li>
+<li>java.io.FilterInputStream
+我们来分析他的继承关系</li>
+</ul>
+
+
+<p class="mermaid">
+classDiagram
+    InputStream <|-- FileInputStream
+    InputStream <|-- ObjectInputStream
+    InputStream <|-- FilterInputStream
+    FilterInputStream <|-- DataInputStream
+    FilterInputStream <|-- BufferedInputStream
+    InputStream <|-- ByteArrayInputStream
+
+</p>
+
+<h3 id="几个主要stream的功能介绍">
+  几个主要stream的功能介绍
+  <a class="anchor" href="#%e5%87%a0%e4%b8%aa%e4%b8%bb%e8%a6%81stream%e7%9a%84%e5%8a%9f%e8%83%bd%e4%bb%8b%e7%bb%8d">#</a>
+</h3>
+<ul>
+<li>BufferedInputStream</li>
+<li>FileInputStream</li>
+<li>DataInputStream</li>
+<li>ByteArrayInputStream</li>
+<li>ObjectInputStream</li>
+</ul>
+<h2 id="字符流">
+  字符流
+  <a class="anchor" href="#%e5%ad%97%e7%ac%a6%e6%b5%81">#</a>
+</h2>
+<p>Reader\Writer</p>
+<h3 id="举个栗子-1">
+  举个栗子
+  <a class="anchor" href="#%e4%b8%be%e4%b8%aa%e6%a0%97%e5%ad%90-1">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Kotlin" data-lang="Kotlin"><span style="color:#66d9ef">val</span> inputStream = FileInputStream(File(<span style="color:#e6db74">&#34;/sdcard/a.png&#34;</span>))
+<span style="color:#66d9ef">val</span> reader = BufferedReader(InputStreamReader(inputStream, <span style="color:#e6db74">&#34;GBK&#34;</span>))
+</code></pre></div><h3 id="几个主要实现类的类图以reader为例">
+  几个主要实现类的类图（以Reader为例）
+  <a class="anchor" href="#%e5%87%a0%e4%b8%aa%e4%b8%bb%e8%a6%81%e5%ae%9e%e7%8e%b0%e7%b1%bb%e7%9a%84%e7%b1%bb%e5%9b%be%e4%bb%a5reader%e4%b8%ba%e4%be%8b">#</a>
+</h3>
+<p>先看几个常见的Reader类</p>
+<ul>
+<li>CharArrayReader</li>
+<li>BufferedReader</li>
+<li>FilterReader</li>
+<li>PipedReader
+我们来分析他的继承关系</li>
+</ul>
+
+
+<p class="mermaid">
+classDiagram
+    Reader <|-- BufferedReader
+    Reader <|-- LineNumberReader
+    Reader <|-- InputStreamReader
+    Reader <|-- CharArrayReader
+    InputStreamReader <|-- FileReader
+    Reader <|-- FilterReader
+    Reader <|-- StringReader
+    FilterReader <|-- PushbackReader
+
+</p>
+
+<h2 id="randomaccessfile">
+  RandomAccessFile
+  <a class="anchor" href="#randomaccessfile">#</a>
+</h2>
+<h2 id="filechannelnio">
+  FileChannel(nio)
+  <a class="anchor" href="#filechannelnio">#</a>
+</h2>
+</article>
  
       
 
@@ -1183,6 +1414,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -1193,7 +1428,30 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#java中io基础应用">Java中IO基础应用</a>
+      <ul>
+        <li><a href="#inputoutput-方向理解">Input\Output 方向理解</a></li>
+        <li><a href="#字节流">字节流</a>
+          <ul>
+            <li><a href="#举个栗子">举个栗子</a></li>
+            <li><a href="#几个主要实现类的类图以inputstream为例">几个主要实现类的类图（以InputStream为例）</a></li>
+            <li><a href="#几个主要stream的功能介绍">几个主要stream的功能介绍</a></li>
+          </ul>
+        </li>
+        <li><a href="#字符流">字符流</a>
+          <ul>
+            <li><a href="#举个栗子-1">举个栗子</a></li>
+            <li><a href="#几个主要实现类的类图以reader为例">几个主要实现类的类图（以Reader为例）</a></li>
+          </ul>
+        </li>
+        <li><a href="#randomaccessfile">RandomAccessFile</a></li>
+        <li><a href="#filechannelnio">FileChannel(nio)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

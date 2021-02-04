@@ -1,7 +1,7 @@
 publishdir = "docs"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Bokmark Pages"
+title = "Bokmark"
 themesDir = "themes"
 theme = "hugo-book"
 
@@ -30,6 +30,10 @@ enableGitInfo = true
   name = "hugo-theme-book"
   url = "https://themes.gohugo.io/theme/hugo-book/"
   weight = 30
+[[menu.after]]
+  name = "mermaid"
+  url = "https://mermaid-js.github.io/mermaid/#/"
+  weight = 40
 
 [params]
 

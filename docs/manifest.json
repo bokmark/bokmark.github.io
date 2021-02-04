@@ -1,6 +1,6 @@
 {
-  "name": "Bokmark Pages",
-  "short_name": "Bokmark Pages",
+  "name": "Bokmark",
+  "short_name": "Bokmark",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

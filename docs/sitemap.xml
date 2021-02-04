@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/bio/</loc>
+    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/java/other/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
@@ -39,6 +44,11 @@
   
   <url>
     <loc>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/</loc>
+    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
   
@@ -69,7 +79,7 @@
   
   <url>
     <loc>/docs/android/android_studio/maven_sdk/</loc>
-    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-01T22:59:22+08:00</lastmod>
   </url>
   
   <url>
@@ -84,12 +94,12 @@
   
   <url>
     <loc>/docs/android/framework/binder/</loc>
-    <lastmod>2021-01-30T01:27:42+08:00</lastmod>
+    <lastmod>2021-02-01T22:59:22+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/android/Handler/</loc>
-    <lastmod>2021-01-30T01:27:42+08:00</lastmod>
+    <lastmod>2021-02-01T22:59:22+08:00</lastmod>
   </url>
   
   <url>
@@ -268,11 +278,6 @@
   </url>
   
   <url>
-    <loc>/docs/android/android_studio/</loc>
-    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
@@ -285,6 +290,11 @@
   <url>
     <loc>/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/android_studio/</loc>
+    <lastmod>2021-02-01T22:59:22+08:00</lastmod>
   </url>
   
   <url>
@@ -337,8 +347,12 @@
   </url>
   
   <url>
+    <loc>/docs/arch/design_pattern/</loc>
+  </url>
+  
+  <url>
     <loc>/docs/</loc>
-    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-01T22:59:22+08:00</lastmod>
   </url>
   
   <url>
@@ -473,6 +487,10 @@
   <url>
     <loc>/tags/themes/</loc>
     <lastmod>2021-01-30T17:44:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/arch/design_pattern/DecoratorPattern/</loc>
   </url>
   
   <url>
