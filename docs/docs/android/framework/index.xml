@@ -26,14 +26,5 @@
       <description>启动启动流程</description>
     </item>
     
-    <item>
-      <title>Binder以及相关概念</title>
-      <link>/docs/android/framework/binder/</link>
-      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      <author>bokmark@163.com (bokmark)</author>
-      <guid>/docs/android/framework/binder/</guid>
-      <description>从handler的面试题出发了解handler</description>
-    </item>
-    
   </channel>
 </rss>

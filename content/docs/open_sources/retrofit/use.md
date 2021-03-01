@@ -1,14 +1,17 @@
 ---
-title: 'Retrofit - 原理'
+title: '如何使用'
 date: 2020-12-02
 weight: 1
 ---
+# Retrofit 如何使用，官方文档部分翻译。
+**A type-safe HTTP client for Android and Java**
 
-> Retrofit 的使用 可以看这里(/docs/open_sources/retrofit/use)
+[官方文档](https://square.github.io/retrofit/)
 
 ## 介绍
 
-retrofit 将你的htppapi 转化成java接口的样子
+retrofit 可以通过简单的注释将复杂的http 请求转化成java接口的亚子。
+比如下面的：
 ```Java
 public interface GitHubService {
   @GET("users/{user}/repos")
@@ -16,7 +19,7 @@ public interface GitHubService {
 }
 ```
 
-`Retrofit` 将会提供一个 `GitHubService` 的实现
+`Retrofit`通过`create`方法将会自动生成一个`GitHubService`接口的实现
 ```Java
 Retrofit retrofit = new Retrofit.Builder()
     .baseUrl("https://api.github.com/")
@@ -25,77 +28,76 @@ Retrofit retrofit = new Retrofit.Builder()
 GitHubService service = retrofit.create(GitHubService.class);
 ```
 
-`GitHubService` 提供的每一个 `Call` 都将提供 同步或者异步的api请求去请求http
+被创建出来的`GitHubService` 提供的每一个 `Call` 都将提供同步或者异步的方式去向远端服务器发送http请求
 ```Java
 Call<List<Repo>> repos = service.listRepos("octocat");
 ```
-我们使用注解来描述一个http请求
+我们使用注解来描述一个http请求，包括以下部分
+- url以及请求参数，支持替换
+- 类体自动转化成 request body
+- 支持多模块的 request body 和文件上传
 
 ## api定义
 
 在一个接口的方法上添加注解和参数上添加注解就已经足够描述一个接口将会被如何处理
 
-#### REQUEST METHOD
-Every method must have an HTTP annotation that provides the request method and relative URL. There are eight built-in annotations: HTTP, GET, POST, PUT, PATCH, DELETE, OPTIONS and HEAD. The relative URL of the resource is specified in the annotation.
+### 请求方式
+每一个方法都有一个 *HTTP* 的注解，用来表明请求方式和相对请求路径。有这些*HTTP*的请求方式: HTTP, GET, POST, PUT, PATCH, DELETE, OPTIONS 和 HEAD. url是定义在注解中的。
 ```
 @GET("users/list")
 ```
-You can also specify query parameters in the URL.
+你也可以同样定义请求参数到url中
 ```
 @GET("users/list?sort=desc")
 ```
 
-#### URL MANIPULATION
-A request URL can be updated dynamically using replacement blocks and parameters on the method. A replacement block is an alphanumeric string surrounded by { and }. A corresponding parameter must be annotated with @Path using the same string.
+### URL
+Retrofit支持请求URL可以动态的替换部分内容。需要被替换的部分必须被 *{* 和 *}* 包裹住。同时替换的参数必须添加*@Path* 注解。比如这样：
 
 ```
 @GET("group/{id}/users")
 Call<List<User>> groupList(@Path("id") int groupId);
 ```
-
-Query parameters can also be added.
-
+当然其他还是和正常的一样，比如可以添加 query
 
 ```
 @GET("group/{id}/users")
 Call<List<User>> groupList(@Path("id") int groupId, @Query("sort") String sort);
 ```
-For complex query parameter combinations a Map can be used.
-
+如果你的请求有复杂的请求参数，那么你可以使用*@QueryMap* 。
 
 ```
 @GET("group/{id}/users")
 Call<List<User>> groupList(@Path("id") int groupId, @QueryMap Map<String, String> options);
 ```
 
-#### REQUEST BODY
-An object can be specified for use as an HTTP request body with the @Body annotation.
+### 请求体
+允许通过 *@Body* 注解，来讲一个类转化为请求体
 ```
 @POST("users/new")
 Call<User> createUser(@Body User user);
 ```
-The object will also be converted using a converter specified on the Retrofit instance. If no converter is added, only RequestBody can be used.
+这个类，将会通过在retrofit实例化的时候传入的转化器转化为请求体，如果没有设置转化器，那么只允许设置requestbody。
 
-#### FORM ENCODED AND MULTIPART
-Methods can also be declared to send form-encoded and multipart data.
-
-Form-encoded data is sent when @FormUrlEncoded is present on the method. Each key-value pair is annotated with @Field containing the name and the object providing the value.
+### 表单和多模块表单
+retrofit 也支持表单的提交
+表单数据可以通过*@FormUrlEncoded* 标签来定，通过 *@Field* 标记一个key-value的键值对。
 ```
 @FormUrlEncoded
 @POST("user/edit")
 Call<User> updateUser(@Field("first_name") String first, @Field("last_name") String last);
 ```
-Multipart requests are used when @Multipart is present on the method. Parts are declared using the @Part annotation.
+Multipart 请求添加 *@Multipart* 注解。每个part 通过 *@Part* 注解来标记。
 ```
 @Multipart
 @PUT("user/photo")
 Call<User> updateUser(@Part("photo") RequestBody photo, @Part("description") RequestBody description);
 ```
-Multipart parts use one of Retrofit's converters or they can implement RequestBody to handle their own serialization.
 
 
-#### HEADER MANIPULATION
-You can set static headers for a method using the @Headers annotation.
+
+### 请求头
+你可以通过*@Headers* 注解来设置静态的请求头。
 ```
 @Headers("Cache-Control: max-age=640000")
 @GET("widget/list")
@@ -109,46 +111,43 @@ Call<List<Widget>> widgetList();
 @GET("users/{username}")
 Call<User> getUser(@Path("username") String username);
 ```
-Note that headers do not overwrite each other. All headers with the same name will be included in the request.
+**注意** 请求头们不会相互覆盖，所有同名的请求头都将会包含在请求中。
 
-A request Header can be updated dynamically using the @Header annotation. A corresponding parameter must be provided to the @Header. If the value is null, the header will be omitted. Otherwise, toString will be called on the value, and the result used.
-
-
+一个请求头可以动态的通过*@Header* 注解进行更新，只需要添加*@Header* 注解的参数到方法中。如果这个参数为空，那么这个请求头将会被忽略。
 ```
 @GET("user")
 Call<User> getUser(@Header("Authorization") String authorization)
 ```
-Similar to query parameters, for complex header combinations, a Map can be used.
 
-
+与请求参数map相同，你也可以有请求头map
 ```
 @GET("user")
 Call<User> getUser(@HeaderMap Map<String, String> headers)
 ```
-Headers that need to be added to every request can be specified using an OkHttp [interceptor](https://github.com/square/okhttp).
+请求头可以在指定特定的拦截器中添加到每个请求中。 [interceptor](https://github.com/square/okhttp).
 
-#### SYNCHRONOUS VS. ASYNCHRONOUS
+### 同步 VS. 异步
+返回值 Call 的实例可以被同步或者异步的执行。每一个实例只能被调用一次，但是可以通过clone方法创建一个新的实例。
+在Android平台上，回调将会在主线程上执行，在JVM上，会调将会发生在发起请求的那个线程上。
 
-Call instances can be executed either synchronously or asynchronously. Each instance can only be used once, but calling clone() will create a new instance that can be used.
+## Retrofit 的配置
+Retrofit是一个用于将你的api转化成可执行方法的实例的类。默认情况下，Retrofit 将会给你一个合理的配置，但是你可以自定义。
 
-On Android, callbacks will be executed on the main thread. On the JVM, callbacks will happen on the same thread that executed the HTTP request.
+### 转化器
+默认情况下，Retrofit 只会将http的body转化成OkHttp中的ResponseBody，当然也只接受RequestBody作为@Body 注解的类型。
 
-## Retrofit Configuration
-Retrofit is the class through which your API interfaces are turned into callable objects. By default, Retrofit will give you sane defaults for your platform but it allows for customization.
+这有一些受欢迎的转化器可供读者使用。
+- **Gson**: com.squareup.retrofit2:converter-gson
+- **Jackson**: com.squareup.retrofit2:converter-jackson
+- **Moshi**: com.squareup.retrofit2:converter-moshi
+- **Protobuf**: com.squareup.retrofit2:converter-protobuf
+- **Wire**: com.squareup.retrofit2:converter-wire
+- **Simple XML**: com.squareup.retrofit2:converter-simplexml
+- **JAXB**: com.squareup.retrofit2:converter-jaxb
+- **Scalars (primitives, boxed, and String)**: com.squareup.retrofit2:converter-scalars
 
-#### CONVERTERS
-By default, Retrofit can only deserialize HTTP bodies into OkHttp's ResponseBody type and it can only accept its RequestBody type for @Body.
-
-Converters can be added to support other types. Six sibling modules adapt popular serialization libraries for your convenience.
-- Gson: com.squareup.retrofit2:converter-gson
-- Jackson: com.squareup.retrofit2:converter-jackson
-- Moshi: com.squareup.retrofit2:converter-moshi
-- Protobuf: com.squareup.retrofit2:converter-protobuf
-- Wire: com.squareup.retrofit2:converter-wire
-- Simple XML: com.squareup.retrofit2:converter-simplexml
-- JAXB: com.squareup.retrofit2:converter-jaxb
-- Scalars (primitives, boxed, and String): com.squareup.retrofit2:converter-scalars
-Here's an example of using the GsonConverterFactory class to generate an implementation of the GitHubService interface which uses Gson for its deserialization.
+这是一个使用gson的例子。
+使用GsonConverterFactory 创建了一个GitHubService接口的实例，其中用了gson来做序列化的工具。
 
 ```
 Retrofit retrofit = new Retrofit.Builder()
@@ -158,9 +157,9 @@ Retrofit retrofit = new Retrofit.Builder()
 
 GitHubService service = retrofit.create(GitHubService.class);
 ```
+
 ## 引用方式
 ```
-
 implementation 'com.squareup.retrofit2:retrofit:(insert latest version)'
 ```
 

@@ -5,19 +5,23 @@
   <meta name="generator" content="Hugo 0.78.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Retrofit 的使用 可以看 这里
- 使用 #  retrofit 将你的htppapi 转化成java接口的样子
-public interface GitHubService { @GET(&#34;users/{user}/repos&#34;) Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&#34;user&#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
+<meta name="description" content="通过实际例子来分析阅读源码 #   Retrofit 的使用 可以看 这里
+ 栗子 #  我们先举一个例子。这是我们定义的
+public interface GitHubService { @GET(&#34;users/{user}/repos&#34;) Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&#34;user&#34;) String user); } 这是我们常用的一个配置，添加了gson的转化器，和Rxjava的calladapter。
+Retrofit 将会提供一个 GitHubService 的实现
 Retrofit retrofit = new Retrofit.Builder() .addConverterFactory(GsonConverterFactory.create()) .addCallAdapterFactory(RxJavaCallAdapterFactory.creat()) .baseUrl(&#34;https://api.github.com/&#34;) .build(); GitHubService service = retrofit.create(GitHubService.class); GitHubService 提供的每一个 Call 都将提供 同步或者异步的api请求去请求http
-Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos(&#34;octocat&#34;);  到这里我就会疑惑retrofit 是如何做到这一步的。我们点进去查看retrofit的create方法看一下
- 源码解析 #  第一步 public &lt;T&gt; T create(final Class&lt;T&gt; service) #  public &lt;T&gt; T create(final Class&lt;T&gt; service) { validateServiceInterface(service); return (T) Proxy.">
+Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos(&#34;octocat&#34;);  到这里我就会疑惑retrofit自动生成的实例是什么样子的。我们点进去查看retrofit的create方法看一下
+ 源码解析第一步-获取call #  create() #  public &lt;T&gt; T create(final Class&lt;T&gt; service)
+public &lt;T&gt; T create(final Class&lt;T&gt; service) { validateServiceInterface(service); return (T) Proxy.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Retrofit - 大致流程源码解析" />
-<meta property="og:description" content="Retrofit 的使用 可以看 这里
- 使用 #  retrofit 将你的htppapi 转化成java接口的样子
-public interface GitHubService { @GET(&#34;users/{user}/repos&#34;) Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&#34;user&#34;) String user); } Retrofit 将会提供一个 GitHubService 的实现
+<meta property="og:description" content="通过实际例子来分析阅读源码 #   Retrofit 的使用 可以看 这里
+ 栗子 #  我们先举一个例子。这是我们定义的
+public interface GitHubService { @GET(&#34;users/{user}/repos&#34;) Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&#34;user&#34;) String user); } 这是我们常用的一个配置，添加了gson的转化器，和Rxjava的calladapter。
+Retrofit 将会提供一个 GitHubService 的实现
 Retrofit retrofit = new Retrofit.Builder() .addConverterFactory(GsonConverterFactory.create()) .addCallAdapterFactory(RxJavaCallAdapterFactory.creat()) .baseUrl(&#34;https://api.github.com/&#34;) .build(); GitHubService service = retrofit.create(GitHubService.class); GitHubService 提供的每一个 Call 都将提供 同步或者异步的api请求去请求http
-Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos(&#34;octocat&#34;);  到这里我就会疑惑retrofit 是如何做到这一步的。我们点进去查看retrofit的create方法看一下
- 源码解析 #  第一步 public &lt;T&gt; T create(final Class&lt;T&gt; service) #  public &lt;T&gt; T create(final Class&lt;T&gt; service) { validateServiceInterface(service); return (T) Proxy." />
+Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos(&#34;octocat&#34;);  到这里我就会疑惑retrofit自动生成的实例是什么样子的。我们点进去查看retrofit的create方法看一下
+ 源码解析第一步-获取call #  create() #  public &lt;T&gt; T create(final Class&lt;T&gt; service)
+public &lt;T&gt; T create(final Class&lt;T&gt; service) { validateServiceInterface(service); return (T) Proxy." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/open_sources/retrofit/base/" />
 <meta property="article:published_time" content="2020-12-02T00:00:00+00:00" />
@@ -26,7 +30,7 @@ Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos(&#34;octocat&#34;);  到�
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.44110be292c9f873dbe57bd8895d52b387519bad9a89a86ed5c3705e11d6b0d5.css" integrity="sha256-RBEL4pLJ&#43;HPb5XvYiV1Ss4dRm62aiahu1cNwXhHWsNU=">
-<script defer src="/en.search.min.35bec5ae81ffd8f495d482abc7846b4fb3309df297ff5f9fe5b44fac1120204c.js" integrity="sha256-Nb7FroH/2PSV1IKrx4RrT7MwnfKX/1&#43;f5bRPrBEgIEw="></script>
+<script defer src="/en.search.min.4cff78ef3fa2f30edcc76885ff378319a418848be0374ff7332a43e99453eec3.js" integrity="sha256-TP947z&#43;i8w7cx2iF/zeDGaQYhIvgN0/3MypD6ZRT7sM="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -94,8 +98,80 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/android/binder/binder/" class="">Binder以及相关概念</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/android/Handler/" class="">Handler</a>
   
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8018332cd0b0222e2bbe53b463a21835" class="toggle"  />
+    <label for="section-8018332cd0b0222e2bbe53b463a21835" class="flex justify-between">
+      <a  class="">Camera</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/camera/camera/" class="">android camera 相关知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33aa5107d79cba563fb0e815bc6d185a" class="toggle"  />
+    <label for="section-33aa5107d79cba563fb0e815bc6d185a" class="flex justify-between">
+      <a  class="">Component</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+  </ul>
 
         </li>
       
@@ -178,6 +254,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -185,11 +266,15 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/android/framework/binder/" class="">Binder以及相关概念</a>
+    <input type="checkbox" id="section-546c38aef73042f23c5e1888dfc1e768" class="toggle"  />
+    <label for="section-546c38aef73042f23c5e1888dfc1e768" class="flex justify-between">
+      <a  class="">Ndk</a>
+      <span>▾</span>
+    </label>
   
 
-        </li>
-      
+          
+  <ul>
     
   </ul>
 
@@ -212,6 +297,8 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
     
       
         <li>
@@ -548,10 +635,25 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/bio/" class="">BIO,NIO,AIO</a>
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/io/" class="">BIO,NIO,AIO</a>
   
 
         </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/nio/" class="">BIO,NIO,AIO</a>
+  
+
+        </li>
+      
+    
       
     
       
@@ -601,6 +703,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/" class="">网络协议 相关问题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E9%9D%A2%E8%AF%95/" class="">面试题</a>
   
 
         </li>
@@ -1087,9 +1202,68 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-63289f90048a52161179aa2fc2b1cf2f" class="toggle"  />
+    <label for="section-63289f90048a52161179aa2fc2b1cf2f" class="flex justify-between">
+      <a href="/docs/open_sources/okhttp/" class="">Okhttp</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d7a0a1319d26695a5a4c2e7588e3f3d8" class="toggle"  />
+    <label for="section-d7a0a1319d26695a5a4c2e7588e3f3d8" class="flex justify-between">
+      <a href="/docs/open_sources/glide/" class="">Glide 基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/glide/with/" class="">Glide 生命周期</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle" checked />
     <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
-      <a href="/docs/open_sources/retrofit/" class="">Retrofit</a>
+      <a  class="">Retrofit</a>
       <span>▾</span>
     </label>
   
@@ -1106,7 +1280,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/open_sources/retrofit/use/" class="">Retrofit - 原理</a>
+    <a href="/docs/open_sources/retrofit/base/" class=" active">Retrofit - 大致流程源码解析</a>
   
 
         </li>
@@ -1119,7 +1293,73 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/open_sources/retrofit/base/" class=" active">Retrofit - 大致流程源码解析</a>
+    <a href="/docs/open_sources/retrofit/use/" class="">如何使用</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/others/" class="">Others</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-538a0f9eb99dcd99b375a6021f5b26fe" class="toggle"  />
+    <label for="section-538a0f9eb99dcd99b375a6021f5b26fe" class="flex justify-between">
+      <a href="/docs/others/protocal/" class="">Protocal</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/http/" class="">HTTP 协议</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/rtsp/" class="">RTSP 协议</a>
   
 
         </li>
@@ -1236,15 +1476,34 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#通过实际例子来分析阅读源码">通过实际例子来分析阅读源码</a>
       <ul>
-        <li><a href="#使用">使用</a></li>
-        <li><a href="#源码解析">源码解析</a>
+        <li><a href="#栗子">栗子</a></li>
+        <li><a href="#源码解析第一步-获取call">源码解析第一步-获取call</a>
           <ul>
-            <li></li>
+            <li><a href="#create">create()</a></li>
+            <li><a href="#servicemethod---loadservicemethod">ServiceMethod -&gt; loadServiceMethod</a></li>
+            <li><a href="#servicemethod---parseannotations">ServiceMethod -&gt; parseAnnotations</a></li>
+            <li><a href="#httpservicemethod---parseannotations">HttpServiceMethod -&gt; parseAnnotations</a></li>
+            <li><a href="#calladapted">CallAdapted</a></li>
+            <li><a href="#httpservicemethod---invoke">HttpServiceMethod -&gt; invoke</a></li>
+            <li><a href="#executorcallbackcall">ExecutorCallbackCall</a></li>
           </ul>
         </li>
-        <li><a href="#总结">总结</a></li>
+        <li><a href="#第一步小结">第一步小结</a>
+          <ul>
+            <li><a href="#流程图">流程图</a></li>
+            <li><a href="#描述">描述</a></li>
+          </ul>
+        </li>
+        <li><a href="#源码解析第二步-enqueue">源码解析第二步 enqueue</a>
+          <ul>
+            <li><a href="#okhttpcall---enqueue">OkHttpCall -&gt; enqueue</a></li>
+            <li><a href="#okhttpcall---parseresponse">OkHttpCall -&gt; parseResponse</a></li>
+            <li><a href="#responseconverter---convert">responseConverter -&gt; convert</a></li>
+            <li><a href="#gsonconverterfactory">GsonConverterFactory</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1259,20 +1518,25 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><blockquote>
+  <article class="markdown"><h1 id="通过实际例子来分析阅读源码">
+  通过实际例子来分析阅读源码
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87%e5%ae%9e%e9%99%85%e4%be%8b%e5%ad%90%e6%9d%a5%e5%88%86%e6%9e%90%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81">#</a>
+</h1>
+<blockquote>
 <p>Retrofit 的使用 可以看
   <a href="/docs/open_sources/retrofit/use/">这里</a></p>
 </blockquote>
-<h2 id="使用">
-  使用
-  <a class="anchor" href="#%e4%bd%bf%e7%94%a8">#</a>
+<h2 id="栗子">
+  栗子
+  <a class="anchor" href="#%e6%a0%97%e5%ad%90">#</a>
 </h2>
-<p>retrofit 将你的htppapi 转化成java接口的样子</p>
+<p>我们先举一个例子。这是我们定义的</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">GitHubService</span> <span style="color:#f92672">{</span>
   <span style="color:#a6e22e">@GET</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;users/{user}/repos&#34;</span><span style="color:#f92672">)</span>
   Call<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Repo<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">listRepos</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@Path</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">)</span> String user<span style="color:#f92672">);</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p><code>Retrofit</code> 将会提供一个 <code>GitHubService</code> 的实现</p>
+</code></pre></div><p>这是我们常用的一个配置，添加了gson的转化器，和Rxjava的calladapter。</p>
+<p><code>Retrofit</code> 将会提供一个 <code>GitHubService</code> 的实现</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">Retrofit retrofit <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit<span style="color:#f92672">.</span><span style="color:#a6e22e">Builder</span><span style="color:#f92672">()</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">addConverterFactory</span><span style="color:#f92672">(</span>GsonConverterFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">())</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">addCallAdapterFactory</span><span style="color:#f92672">(</span>RxJavaCallAdapterFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">creat</span><span style="color:#f92672">())</span>
@@ -1283,16 +1547,17 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
 </code></pre></div><p><code>GitHubService</code> 提供的每一个 <code>Call</code> 都将提供 同步或者异步的api请求去请求http</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">Call<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Repo<span style="color:#f92672">&gt;&gt;</span> repos <span style="color:#f92672">=</span> service<span style="color:#f92672">.</span><span style="color:#a6e22e">listRepos</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;octocat&#34;</span><span style="color:#f92672">);</span>
 </code></pre></div><blockquote>
-<p>到这里我就会疑惑retrofit 是如何做到这一步的。我们点进去查看retrofit的create方法看一下</p>
+<p>到这里我就会疑惑retrofit自动生成的实例是什么样子的。我们点进去查看retrofit的create方法看一下</p>
 </blockquote>
-<h2 id="源码解析">
-  源码解析
-  <a class="anchor" href="#%e6%ba%90%e7%a0%81%e8%a7%a3%e6%9e%90">#</a>
+<h2 id="源码解析第一步-获取call">
+  源码解析第一步-获取call
+  <a class="anchor" href="#%e6%ba%90%e7%a0%81%e8%a7%a3%e6%9e%90%e7%ac%ac%e4%b8%80%e6%ad%a5-%e8%8e%b7%e5%8f%96call">#</a>
 </h2>
-<h4 id="第一步-public-t-t-createfinal-classt-service">
-  第一步 <code>public &lt;T&gt; T create(final Class&lt;T&gt; service)</code>
-  <a class="anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5-public-t-t-createfinal-classt-service">#</a>
-</h4>
+<h3 id="create">
+  create()
+  <a class="anchor" href="#create">#</a>
+</h3>
+<p><code>public &lt;T&gt; T create(final Class&lt;T&gt; service)</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">create</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Class<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> service<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     validateServiceInterface<span style="color:#f92672">(</span>service<span style="color:#f92672">);</span>
     <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>T<span style="color:#f92672">)</span>
@@ -1321,30 +1586,31 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
   <a href="/docs/java/other/object_proxy/">这里</a>
 所谓动态代理就是指方法被调用的时候都会回调到<code>InvocationHandler</code>方法里面。</p>
 <p>这段代码中的platform我们之后
-  <a href="/docs/open_sources/retrofit/platform/">再聊</a>，先来看loadServiceMethod。</p>
-<h4 id="servicemethod---loadservicemethod">
+  <a href="/docs/open_sources/retrofit/platform/">再聊</a>，先来看loadServiceMethod方法。</p>
+<h3 id="servicemethod---loadservicemethod">
   ServiceMethod -&gt; loadServiceMethod
   <a class="anchor" href="#servicemethod---loadservicemethod">#</a>
-</h4>
+</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">ServiceMethod<span style="color:#f92672">&lt;?&gt;</span> loadServiceMethod<span style="color:#f92672">(</span>Method method<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  ServiceMethod<span style="color:#f92672">&lt;?&gt;</span> result <span style="color:#f92672">=</span> serviceMethodCache<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>method<span style="color:#f92672">);</span>
+  <span style="color:#75715e">// 做缓存，避免多次创建ServiceMethod，造成不必要的浪费。
+</span><span style="color:#75715e"></span>  ServiceMethod<span style="color:#f92672">&lt;?&gt;</span> result <span style="color:#f92672">=</span> serviceMethodCache<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>method<span style="color:#f92672">);</span>
   <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>result <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
 
   <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>serviceMethodCache<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     result <span style="color:#f92672">=</span> serviceMethodCache<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>method<span style="color:#f92672">);</span>
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>result <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-      result <span style="color:#f92672">=</span> ServiceMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">parseAnnotations</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> method<span style="color:#f92672">);</span>
+      <span style="color:#75715e">// 别的代码都是 缓存代码，关键点在这里
+</span><span style="color:#75715e"></span>      result <span style="color:#f92672">=</span> ServiceMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">parseAnnotations</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> method<span style="color:#f92672">);</span>
       serviceMethodCache<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>method<span style="color:#f92672">,</span> result<span style="color:#f92672">);</span>
     <span style="color:#f92672">}</span>
   <span style="color:#f92672">}</span>
   <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p>这是一个double-check-lock的形式，第一个get是为了效率第二个get是为了<code>serviceMethodCache</code>的线程安全。
-所以，我们需要关注的是 <code>ServiceMethod.parseAnnotations</code>里面内容</p>
-<h4 id="servicemethod---parseannotations">
+</code></pre></div><p>这是一个DCL的缓存形式，所以，我们需要关注的是 <code>ServiceMethod.parseAnnotations</code>里面内容。</p>
+<h3 id="servicemethod---parseannotations">
   ServiceMethod -&gt; parseAnnotations
   <a class="anchor" href="#servicemethod---parseannotations">#</a>
-</h4>
+</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceMethod</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
   <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> ServiceMethod<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">parseAnnotations</span><span style="color:#f92672">(</span>Retrofit retrofit<span style="color:#f92672">,</span> Method method<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     RequestFactory requestFactory <span style="color:#f92672">=</span> RequestFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">parseAnnotations</span><span style="color:#f92672">(</span>retrofit<span style="color:#f92672">,</span> method<span style="color:#f92672">);</span>
@@ -1364,11 +1630,11 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
   <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">@Nullable</span> T <span style="color:#a6e22e">invoke</span><span style="color:#f92672">(</span>Object<span style="color:#f92672">[]</span> args<span style="color:#f92672">);</span>
 <span style="color:#f92672">}</span>
 
-</code></pre></div><p>这是一个虚类的定义，而 HttpServiceMethod 是他的一个实现类，我们来看心意啊HttpServiceMethod中parseAnnotations的实现</p>
-<h4 id="httpservicemethod---parseannotations">
+</code></pre></div><p>这是一个虚类的定义，而 HttpServiceMethod 是他的一个实现类，我们先来看看HttpServiceMethod中parseAnnotations的实现</p>
+<h3 id="httpservicemethod---parseannotations">
   HttpServiceMethod -&gt; parseAnnotations
   <a class="anchor" href="#httpservicemethod---parseannotations">#</a>
-</h4>
+</h3>
 <blockquote>
 <p>这里我们先不考虑kotlin中suspend 方法的实现逻辑，只考虑纯Java的实现</p>
 </blockquote>
@@ -1378,7 +1644,8 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
     <span style="color:#66d9ef">boolean</span> continuationWantsResponse <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
     <span style="color:#66d9ef">boolean</span> continuationBodyNullable <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
 
-    Annotation<span style="color:#f92672">[]</span> annotations <span style="color:#f92672">=</span> method<span style="color:#f92672">.</span><span style="color:#a6e22e">getAnnotations</span><span style="color:#f92672">();</span>
+    <span style="color:#75715e">// 1.获取当前方法的所有注解
+</span><span style="color:#75715e"></span>    Annotation<span style="color:#f92672">[]</span> annotations <span style="color:#f92672">=</span> method<span style="color:#f92672">.</span><span style="color:#a6e22e">getAnnotations</span><span style="color:#f92672">();</span>
     Type adapterType<span style="color:#f92672">;</span>
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>isKotlinSuspendFunction<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
       <span style="color:#75715e">/**/</span>
@@ -1386,7 +1653,8 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
       adapterType <span style="color:#f92672">=</span> method<span style="color:#f92672">.</span><span style="color:#a6e22e">getGenericReturnType</span><span style="color:#f92672">();</span>
     <span style="color:#f92672">}</span>
 
-    CallAdapter<span style="color:#f92672">&lt;</span>ResponseT<span style="color:#f92672">,</span> ReturnT<span style="color:#f92672">&gt;</span> callAdapter <span style="color:#f92672">=</span>
+    <span style="color:#75715e">// 2.根据方法的返回值，创建一个一个call的适配器，其中包含了
+</span><span style="color:#75715e"></span>    CallAdapter<span style="color:#f92672">&lt;</span>ResponseT<span style="color:#f92672">,</span> ReturnT<span style="color:#f92672">&gt;</span> callAdapter <span style="color:#f92672">=</span>
         createCallAdapter<span style="color:#f92672">(</span>retrofit<span style="color:#f92672">,</span> method<span style="color:#f92672">,</span> adapterType<span style="color:#f92672">,</span> annotations<span style="color:#f92672">);</span>
     Type responseType <span style="color:#f92672">=</span> callAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">responseType</span><span style="color:#f92672">();</span>
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>responseType <span style="color:#f92672">==</span> okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Response</span><span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
@@ -1402,10 +1670,12 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
       <span style="color:#66d9ef">throw</span> methodError<span style="color:#f92672">(</span>method<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;HEAD method must use Void as response type.&#34;</span><span style="color:#f92672">);</span>
     <span style="color:#f92672">}</span>
 
-    Converter<span style="color:#f92672">&lt;</span>ResponseBody<span style="color:#f92672">,</span> ResponseT<span style="color:#f92672">&gt;</span> responseConverter <span style="color:#f92672">=</span>
+    <span style="color:#75715e">// 3.创建一个返回值的转化器
+</span><span style="color:#75715e"></span>    Converter<span style="color:#f92672">&lt;</span>ResponseBody<span style="color:#f92672">,</span> ResponseT<span style="color:#f92672">&gt;</span> responseConverter <span style="color:#f92672">=</span>
         createResponseConverter<span style="color:#f92672">(</span>retrofit<span style="color:#f92672">,</span> method<span style="color:#f92672">,</span> responseType<span style="color:#f92672">);</span>
 
-    okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Factory</span> callFactory <span style="color:#f92672">=</span> retrofit<span style="color:#f92672">.</span><span style="color:#a6e22e">callFactory</span><span style="color:#f92672">;</span>
+    <span style="color:#75715e">// 4.创建一个CallAdapted 的类
+</span><span style="color:#75715e"></span>    okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Factory</span> callFactory <span style="color:#f92672">=</span> retrofit<span style="color:#f92672">.</span><span style="color:#a6e22e">callFactory</span><span style="color:#f92672">;</span>
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>isKotlinSuspendFunction<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> CallAdapted<span style="color:#f92672">&lt;&gt;(</span>requestFactory<span style="color:#f92672">,</span> callFactory<span style="color:#f92672">,</span> responseConverter<span style="color:#f92672">,</span> callAdapter<span style="color:#f92672">);</span>
     <span style="color:#75715e">/**/</span>
@@ -1436,10 +1706,10 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
 <p>创建一个内部实现类并返回，我们在不考虑kotin的情况下查看CallAdapted的实现</p>
 </li>
 </ul>
-<h4 id="calladapted">
+<h3 id="calladapted">
   CallAdapted
   <a class="anchor" href="#calladapted">#</a>
-</h4>
+</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CallAdapted</span><span style="color:#f92672">&lt;</span>ResponseT<span style="color:#f92672">,</span> ReturnT<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> HttpServiceMethod<span style="color:#f92672">&lt;</span>ResponseT<span style="color:#f92672">,</span> ReturnT<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> CallAdapter<span style="color:#f92672">&lt;</span>ResponseT<span style="color:#f92672">,</span> ReturnT<span style="color:#f92672">&gt;</span> callAdapter<span style="color:#f92672">;</span>
 
@@ -1458,13 +1728,13 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
   <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>这里很简单主要是调用基本所有的逻辑都是在HttpServiceMethod中实现的。</p>
-<p>回到第一步的<code>create</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">oadServiceMethod<span style="color:#f92672">(</span>method<span style="color:#f92672">).</span><span style="color:#a6e22e">invoke</span><span style="color:#f92672">(</span>args<span style="color:#f92672">)</span>
+<p><strong>回到第一步的<code>create</code></strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">loadServiceMethod<span style="color:#f92672">(</span>method<span style="color:#f92672">).</span><span style="color:#a6e22e">invoke</span><span style="color:#f92672">(</span>args<span style="color:#f92672">)</span>
 </code></pre></div><p>我们来看invoke的实现也就是<code>HttpServiceMethod</code>的<code>invoke</code>的实现</p>
-<h4 id="httpservicemethod---invoke">
+<h3 id="httpservicemethod---invoke">
   HttpServiceMethod -&gt; invoke
   <a class="anchor" href="#httpservicemethod---invoke">#</a>
-</h4>
+</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#a6e22e">@Override</span>
 <span style="color:#66d9ef">final</span> <span style="color:#a6e22e">@Nullable</span> ReturnT <span style="color:#a6e22e">invoke</span><span style="color:#f92672">(</span>Object<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
   Call<span style="color:#f92672">&lt;</span>ResponseT<span style="color:#f92672">&gt;</span> call <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OkHttpCall<span style="color:#f92672">&lt;&gt;(</span>requestFactory<span style="color:#f92672">,</span> args<span style="color:#f92672">,</span> callFactory<span style="color:#f92672">,</span> responseConverter<span style="color:#f92672">);</span>
@@ -1472,8 +1742,8 @@ GitHubService service <span style="color:#f92672">=</span> retrofit<span style="
 <span style="color:#f92672">}</span>
 
 <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">@Nullable</span> ReturnT <span style="color:#a6e22e">adapt</span><span style="color:#f92672">(</span>Call<span style="color:#f92672">&lt;</span>ResponseT<span style="color:#f92672">&gt;</span> call<span style="color:#f92672">,</span> Object<span style="color:#f92672">[]</span> args<span style="color:#f92672">);</span>
-</code></pre></div><p>这理顺这里面的逻辑就是<code>CallAdapter.adapt(OkHttpCall)</code>。
-CallAdapter由我们在创建retrofit的时候传入</p>
+</code></pre></div><p>这理顺这里面的逻辑就是<code>CallAdapter.adapt(OkHttpCall)</code>。</p>
+<p>CallAdapter由我们在创建retrofit的时候传入</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">Retrofit retrofit <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit<span style="color:#f92672">.</span><span style="color:#a6e22e">Builder</span><span style="color:#f92672">()</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">addConverterFactory</span><span style="color:#f92672">(</span>GsonConverterFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">())</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">addCallAdapterFactory</span><span style="color:#f92672">(</span>RxJavaCallAdapterFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">())</span>
@@ -1524,6 +1794,10 @@ CallAdapter由我们在创建retrofit的时候传入</p>
   <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>其中的重点是<code>public CallAdapter&lt;?, ?&gt; get(Type,Annotation[],Retrofit)</code>具体代码我们就不讲解了，主要就是做一些检查，然后返回一个能返回<code>ExecutorCallbackCall</code>的callAdapter</p>
+<h3 id="executorcallbackcall">
+  ExecutorCallbackCall
+  <a class="anchor" href="#executorcallbackcall">#</a>
+</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExecutorCallbackCall</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> Call<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">final</span> Executor callbackExecutor<span style="color:#f92672">;</span>
     <span style="color:#66d9ef">final</span> Call<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> delegate<span style="color:#f92672">;</span>
@@ -1568,141 +1842,188 @@ CallAdapter由我们在创建retrofit的时候传入</p>
     <span style="color:#f92672">}</span>
     <span style="color:#75715e">/**/</span>
   <span style="color:#f92672">}</span>
+
 </code></pre></div><p>这里面的delegate 就是之前我们说的<code>okHttpCall</code>。从<code>enqueue</code>方法就能看出，其实这个CallAdapter的默认实现就是用线程池来执行<code>okHttpCall</code>的<code>enqueue</code></p>
-<h4 id="okhttpcall---enqueue">
+<h2 id="第一步小结">
+  第一步小结
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%b0%8f%e7%bb%93">#</a>
+</h2>
+<h3 id="流程图">
+  流程图
+  <a class="anchor" href="#%e6%b5%81%e7%a8%8b%e5%9b%be">#</a>
+</h3>
+<p>返回call的流程</p>
+
+
+<script src="/mermaid.min.js"></script>
+
+  <script>mermaid.initialize({
+  "flowchart": {
+    "useMaxWidth":true
+  },
+  "theme": "default"
+}
+)</script>
+
+
+
+
+<p class="mermaid">
+sequenceDiagram
+    Proxy->>ServiceMethod: loadServiceMethod()
+    ServiceMethod->>ServiceMethod: parseAnnotations()
+    ServiceMethod->>HttpServiceMethod: parseAnnotations()
+    HttpServiceMethod->>+CallAdapter:createCallAdapter()
+    CallAdapter-->>-HttpServiceMethod:createCallAdapter()
+    HttpServiceMethod->>+Converter:createResponseConverter()
+    Converter-->>-HttpServiceMethod:createResponseConverter()
+    HttpServiceMethod->>CallAdapted:new CallAdapted()
+    CallAdapted->>ServiceMethod:return
+    CallAdapted->>ExecutorCallbackCall:enqueue
+    ExecutorCallbackCall->>Proxy:delegate
+</p>
+
+<h3 id="描述">
+  描述
+  <a class="anchor" href="#%e6%8f%8f%e8%bf%b0">#</a>
+</h3>
+<p>主要通过解析注解，将我们传入的各个adapter注入到okhttpcall中。</p>
+<h2 id="源码解析第二步-enqueue">
+  源码解析第二步 enqueue
+  <a class="anchor" href="#%e6%ba%90%e7%a0%81%e8%a7%a3%e6%9e%90%e7%ac%ac%e4%ba%8c%e6%ad%a5-enqueue">#</a>
+</h2>
+<h3 id="okhttpcall---enqueue">
   OkHttpCall -&gt; enqueue
   <a class="anchor" href="#okhttpcall---enqueue">#</a>
-</h4>
+</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
-  <span style="color:#a6e22e">@Override</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Callback<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> callback<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    Objects<span style="color:#f92672">.</span><span style="color:#a6e22e">requireNonNull</span><span style="color:#f92672">(</span>callback<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;callback == null&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Callback<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> callback<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  Objects<span style="color:#f92672">.</span><span style="color:#a6e22e">requireNonNull</span><span style="color:#f92672">(</span>callback<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;callback == null&#34;</span><span style="color:#f92672">);</span>
 
-    okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span> call<span style="color:#f92672">;</span>
-    Throwable failure<span style="color:#f92672">;</span>
-    <span style="color:#75715e">/**/</span>
+  okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span> call<span style="color:#f92672">;</span>
+  Throwable failure<span style="color:#f92672">;</span>
+  <span style="color:#75715e">/**/</span>
 
-    call<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span>
-        <span style="color:#66d9ef">new</span> okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Callback</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-          <span style="color:#a6e22e">@Override</span>
-          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span><span style="color:#f92672">(</span>okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span> call<span style="color:#f92672">,</span> okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Response</span> rawResponse<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            Response<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> response<span style="color:#f92672">;</span>
-            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-              response <span style="color:#f92672">=</span> parseResponse<span style="color:#f92672">(</span>rawResponse<span style="color:#f92672">);</span>
-            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-              throwIfFatal<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
-              callFailure<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
-              <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
-            <span style="color:#f92672">}</span>
-
-            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-              callback<span style="color:#f92672">.</span><span style="color:#a6e22e">onResponse</span><span style="color:#f92672">(</span>OkHttpCall<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> response<span style="color:#f92672">);</span>
-            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-              throwIfFatal<span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
-              t<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span> <span style="color:#75715e">// TODO this is not great
-</span><span style="color:#75715e"></span>            <span style="color:#f92672">}</span>
-          <span style="color:#f92672">}</span>
-
-          <span style="color:#a6e22e">@Override</span>
-          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onFailure</span><span style="color:#f92672">(</span>okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span> call<span style="color:#f92672">,</span> IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  call<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span>
+      <span style="color:#66d9ef">new</span> okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Callback</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span><span style="color:#f92672">(</span>okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span> call<span style="color:#f92672">,</span> okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Response</span> rawResponse<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+          Response<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> response<span style="color:#f92672">;</span>
+          <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            response <span style="color:#f92672">=</span> parseResponse<span style="color:#f92672">(</span>rawResponse<span style="color:#f92672">);</span>
+          <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            throwIfFatal<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
             callFailure<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
           <span style="color:#f92672">}</span>
 
-          <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">callFailure</span><span style="color:#f92672">(</span>Throwable e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-              callback<span style="color:#f92672">.</span><span style="color:#a6e22e">onFailure</span><span style="color:#f92672">(</span>OkHttpCall<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> e<span style="color:#f92672">);</span>
-            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-              throwIfFatal<span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
-              t<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span> <span style="color:#75715e">// TODO this is not great
-</span><span style="color:#75715e"></span>            <span style="color:#f92672">}</span>
-          <span style="color:#f92672">}</span>
-        <span style="color:#f92672">});</span>
-  <span style="color:#f92672">}</span>
+          <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            callback<span style="color:#f92672">.</span><span style="color:#a6e22e">onResponse</span><span style="color:#f92672">(</span>OkHttpCall<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> response<span style="color:#f92672">);</span>
+          <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            throwIfFatal<span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
+            t<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span> <span style="color:#75715e">// TODO this is not great
+</span><span style="color:#75715e"></span>          <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onFailure</span><span style="color:#f92672">(</span>okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Call</span> call<span style="color:#f92672">,</span> IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+          callFailure<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">callFailure</span><span style="color:#f92672">(</span>Throwable e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+          <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            callback<span style="color:#f92672">.</span><span style="color:#a6e22e">onFailure</span><span style="color:#f92672">(</span>OkHttpCall<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> e<span style="color:#f92672">);</span>
+          <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            throwIfFatal<span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
+            t<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span> <span style="color:#75715e">// TODO this is not great
+</span><span style="color:#75715e"></span>          <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+      <span style="color:#f92672">});</span>
+<span style="color:#f92672">}</span>
 </code></pre></div><p>这里的重点当然是<code>response = parseResponse(rawResponse);</code>
 rawResponse:okHttpCall传入一个request创建出一个rawresponse。
 你可以认为下面的方法中rawResponse 里面只有request相关内容以及一个经过请求之后返回的内容</p>
-<h4 id="okhttpcall---parseresponse">
+<h3 id="okhttpcall---parseresponse">
   OkHttpCall -&gt; parseResponse
   <a class="anchor" href="#okhttpcall---parseresponse">#</a>
-</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">
-  Response<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">parseResponse</span><span style="color:#f92672">(</span>okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Response</span> rawResponse<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
-    ResponseBody rawBody <span style="color:#f92672">=</span> rawResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">();</span>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">Response<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">parseResponse</span><span style="color:#f92672">(</span>okhttp3<span style="color:#f92672">.</span><span style="color:#a6e22e">Response</span> rawResponse<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+  ResponseBody rawBody <span style="color:#f92672">=</span> rawResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">();</span>
 
-    <span style="color:#75715e">// Remove the body&#39;s source (the only stateful object) so we can pass the response along.
-</span><span style="color:#75715e"></span>    rawResponse <span style="color:#f92672">=</span>
-        rawResponse
-            <span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">()</span>
-            <span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> NoContentResponseBody<span style="color:#f92672">(</span>rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">contentType</span><span style="color:#f92672">(),</span> rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">contentLength</span><span style="color:#f92672">()))</span>
-            <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+  <span style="color:#75715e">// Remove the body&#39;s source (the only stateful object) so we can pass the response along.
+</span><span style="color:#75715e"></span>  rawResponse <span style="color:#f92672">=</span>
+      rawResponse
+          <span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">()</span>
+          <span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> NoContentResponseBody<span style="color:#f92672">(</span>rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">contentType</span><span style="color:#f92672">(),</span> rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">contentLength</span><span style="color:#f92672">()))</span>
+          <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
 
-    <span style="color:#66d9ef">int</span> code <span style="color:#f92672">=</span> rawResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#f92672">();</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>code <span style="color:#f92672">&lt;</span> 200 <span style="color:#f92672">||</span> code <span style="color:#f92672">&gt;=</span> 300<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-        <span style="color:#75715e">// Buffer the entire body to avoid future I/O.
-</span><span style="color:#75715e"></span>        ResponseBody bufferedBody <span style="color:#f92672">=</span> Utils<span style="color:#f92672">.</span><span style="color:#a6e22e">buffer</span><span style="color:#f92672">(</span>rawBody<span style="color:#f92672">);</span>
-        <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span>bufferedBody<span style="color:#f92672">,</span> rawResponse<span style="color:#f92672">);</span>
-      <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
-        rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-      <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>code <span style="color:#f92672">==</span> 204 <span style="color:#f92672">||</span> code <span style="color:#f92672">==</span> 205<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-      rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-      <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">success</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> rawResponse<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
-
-    ExceptionCatchingResponseBody catchingBody <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ExceptionCatchingResponseBody<span style="color:#f92672">(</span>rawBody<span style="color:#f92672">);</span>
+  <span style="color:#66d9ef">int</span> code <span style="color:#f92672">=</span> rawResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#f92672">();</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>code <span style="color:#f92672">&lt;</span> 200 <span style="color:#f92672">||</span> code <span style="color:#f92672">&gt;=</span> 300<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-      T body <span style="color:#f92672">=</span> responseConverter<span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span><span style="color:#f92672">(</span>catchingBody<span style="color:#f92672">);</span>
-      <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">success</span><span style="color:#f92672">(</span>body<span style="color:#f92672">,</span> rawResponse<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>RuntimeException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-      <span style="color:#75715e">// If the underlying source threw an exception, propagate that rather than indicating it was
-</span><span style="color:#75715e"></span>      <span style="color:#75715e">// a runtime exception.
-</span><span style="color:#75715e"></span>      catchingBody<span style="color:#f92672">.</span><span style="color:#a6e22e">throwIfCaught</span><span style="color:#f92672">();</span>
-      <span style="color:#66d9ef">throw</span> e<span style="color:#f92672">;</span>
+      <span style="color:#75715e">// Buffer the entire body to avoid future I/O.
+</span><span style="color:#75715e"></span>      ResponseBody bufferedBody <span style="color:#f92672">=</span> Utils<span style="color:#f92672">.</span><span style="color:#a6e22e">buffer</span><span style="color:#f92672">(</span>rawBody<span style="color:#f92672">);</span>
+      <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span>bufferedBody<span style="color:#f92672">,</span> rawResponse<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+      rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
     <span style="color:#f92672">}</span>
   <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>code <span style="color:#f92672">==</span> 204 <span style="color:#f92672">||</span> code <span style="color:#f92672">==</span> 205<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    rawBody<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">success</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> rawResponse<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  ExceptionCatchingResponseBody catchingBody <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ExceptionCatchingResponseBody<span style="color:#f92672">(</span>rawBody<span style="color:#f92672">);</span>
+  <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+    T body <span style="color:#f92672">=</span> responseConverter<span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span><span style="color:#f92672">(</span>catchingBody<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">success</span><span style="color:#f92672">(</span>body<span style="color:#f92672">,</span> rawResponse<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>RuntimeException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// If the underlying source threw an exception, propagate that rather than indicating it was
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// a runtime exception.
+</span><span style="color:#75715e"></span>    catchingBody<span style="color:#f92672">.</span><span style="color:#a6e22e">throwIfCaught</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">throw</span> e<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></div><p>总结一下</p>
 <ul>
 <li>获取contenttype和长度创建responsebody</li>
 <li>根据httpcode的值进行处理</li>
 <li>如果code为200则使用responseConverter对结果进行转化并返回</li>
 </ul>
-<h4 id="responseconverter---convert">
+<h3 id="responseconverter---convert">
   responseConverter -&gt; convert
   <a class="anchor" href="#responseconverter---convert">#</a>
-</h4>
+</h3>
 <p>responseConverter 由创建okhttpcall的时候传入。
 看这里就是传入<code>Converter</code>的地方</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#75715e">//retrofit -&gt; Build
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Retrofit <span style="color:#a6e22e">build</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-      <span style="color:#75715e">/**/</span>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> Retrofit <span style="color:#a6e22e">build</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  <span style="color:#75715e">/**/</span>
 
-      <span style="color:#75715e">// Make a defensive copy of the converters.
-</span><span style="color:#75715e"></span>      List<span style="color:#f92672">&lt;</span>Converter<span style="color:#f92672">.</span><span style="color:#a6e22e">Factory</span><span style="color:#f92672">&gt;</span> converterFactories <span style="color:#f92672">=</span>
-          <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;(</span>
-              1 <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">converterFactories</span><span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> platform<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultConverterFactoriesSize</span><span style="color:#f92672">());</span>
+  <span style="color:#75715e">// Make a defensive copy of the converters.
+</span><span style="color:#75715e"></span>  List<span style="color:#f92672">&lt;</span>Converter<span style="color:#f92672">.</span><span style="color:#a6e22e">Factory</span><span style="color:#f92672">&gt;</span> converterFactories <span style="color:#f92672">=</span>
+      <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;(</span>
+          1 <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">converterFactories</span><span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> platform<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultConverterFactoriesSize</span><span style="color:#f92672">());</span>
 
-      converterFactories<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> BuiltInConverters<span style="color:#f92672">());</span>
-      converterFactories<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">converterFactories</span><span style="color:#f92672">);</span>
-      <span style="color:#75715e">//根据是否用java8编译添加OptionalConverterFactory
-</span><span style="color:#75715e"></span>      converterFactories<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>platform<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultConverterFactories</span><span style="color:#f92672">());</span>
+  converterFactories<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> BuiltInConverters<span style="color:#f92672">());</span>
+  converterFactories<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">converterFactories</span><span style="color:#f92672">);</span>
+  <span style="color:#75715e">//根据是否用java8编译添加OptionalConverterFactory
+</span><span style="color:#75715e"></span>  converterFactories<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>platform<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultConverterFactories</span><span style="color:#f92672">());</span>
 
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Retrofit<span style="color:#f92672">(</span>
-          callFactory<span style="color:#f92672">,</span>
-          baseUrl<span style="color:#f92672">,</span>
-          unmodifiableList<span style="color:#f92672">(</span>converterFactories<span style="color:#f92672">),</span>
-          unmodifiableList<span style="color:#f92672">(</span>callAdapterFactories<span style="color:#f92672">),</span>
-          callbackExecutor<span style="color:#f92672">,</span>
-          validateEagerly<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Retrofit<span style="color:#f92672">(</span>
+      callFactory<span style="color:#f92672">,</span>
+      baseUrl<span style="color:#f92672">,</span>
+      unmodifiableList<span style="color:#f92672">(</span>converterFactories<span style="color:#f92672">),</span>
+      unmodifiableList<span style="color:#f92672">(</span>callAdapterFactories<span style="color:#f92672">),</span>
+      callbackExecutor<span style="color:#f92672">,</span>
+      validateEagerly<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
 </code></pre></div><p>如果是json的返回值我们一般添加<code>GsonConverterFactory</code></p>
-<h4 id="gsonconverterfactory">
+<h3 id="gsonconverterfactory">
   GsonConverterFactory
   <a class="anchor" href="#gsonconverterfactory">#</a>
-</h4>
+</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GsonConverterFactory</span> <span style="color:#66d9ef">extends</span> Converter<span style="color:#f92672">.</span><span style="color:#a6e22e">Factory</span> <span style="color:#f92672">{</span>
   <span style="color:#75715e">/**
 </span><span style="color:#75715e">   * Create an instance using a default {@link Gson} instance for conversion. Encoding to JSON and
@@ -1775,11 +2096,6 @@ rawResponse:okHttpCall传入一个request创建出一个rawresponse。
   <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>这里就是soeasy 利用了gson的解析功能呢。</p>
-<h2 id="总结">
-  总结
-  <a class="anchor" href="#%e6%80%bb%e7%bb%93">#</a>
-</h2>
-<p>整个流程串起来了。</p>
 </article>
  
       
@@ -1822,15 +2138,34 @@ rawResponse:okHttpCall传入一个request创建出一个rawresponse。
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#通过实际例子来分析阅读源码">通过实际例子来分析阅读源码</a>
       <ul>
-        <li><a href="#使用">使用</a></li>
-        <li><a href="#源码解析">源码解析</a>
+        <li><a href="#栗子">栗子</a></li>
+        <li><a href="#源码解析第一步-获取call">源码解析第一步-获取call</a>
           <ul>
-            <li></li>
+            <li><a href="#create">create()</a></li>
+            <li><a href="#servicemethod---loadservicemethod">ServiceMethod -&gt; loadServiceMethod</a></li>
+            <li><a href="#servicemethod---parseannotations">ServiceMethod -&gt; parseAnnotations</a></li>
+            <li><a href="#httpservicemethod---parseannotations">HttpServiceMethod -&gt; parseAnnotations</a></li>
+            <li><a href="#calladapted">CallAdapted</a></li>
+            <li><a href="#httpservicemethod---invoke">HttpServiceMethod -&gt; invoke</a></li>
+            <li><a href="#executorcallbackcall">ExecutorCallbackCall</a></li>
           </ul>
         </li>
-        <li><a href="#总结">总结</a></li>
+        <li><a href="#第一步小结">第一步小结</a>
+          <ul>
+            <li><a href="#流程图">流程图</a></li>
+            <li><a href="#描述">描述</a></li>
+          </ul>
+        </li>
+        <li><a href="#源码解析第二步-enqueue">源码解析第二步 enqueue</a>
+          <ul>
+            <li><a href="#okhttpcall---enqueue">OkHttpCall -&gt; enqueue</a></li>
+            <li><a href="#okhttpcall---parseresponse">OkHttpCall -&gt; parseResponse</a></li>
+            <li><a href="#responseconverter---convert">responseConverter -&gt; convert</a></li>
+            <li><a href="#gsonconverterfactory">GsonConverterFactory</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

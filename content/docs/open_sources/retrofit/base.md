@@ -3,18 +3,21 @@ title: 'Retrofit - 大致流程源码解析'
 date: 2020-12-02
 weight: 1
 ---
+# 通过实际例子来分析阅读源码
 
 > Retrofit 的使用 可以看[这里](/docs/open_sources/retrofit/use)
 
-## 使用
+## 栗子
+我们先举一个例子。这是我们定义的
 
-retrofit 将你的htppapi 转化成java接口的样子
 ```Java
 public interface GitHubService {
   @GET("users/{user}/repos")
   Call<List<Repo>> listRepos(@Path("user") String user);
 }
 ```
+这是我们常用的一个配置，添加了gson的转化器，和Rxjava的calladapter。
+
 
 `Retrofit` 将会提供一个 `GitHubService` 的实现
 ```Java
@@ -32,10 +35,12 @@ GitHubService service = retrofit.create(GitHubService.class);
 Call<List<Repo>> repos = service.listRepos("octocat");
 ```
 
-> 到这里我就会疑惑retrofit 是如何做到这一步的。我们点进去查看retrofit的create方法看一下
+> 到这里我就会疑惑retrofit自动生成的实例是什么样子的。我们点进去查看retrofit的create方法看一下
 
-## 源码解析
-#### 第一步 `public <T> T create(final Class<T> service)`
+## 源码解析第一步-获取call
+### create()
+
+ `public <T> T create(final Class<T> service)`
 ```java
 public <T> T create(final Class<T> service) {
     validateServiceInterface(service);
@@ -65,17 +70,19 @@ public <T> T create(final Class<T> service) {
 很明显这是一个动态代理。具体可以看[这里](/docs/java/other/object_proxy)
 所谓动态代理就是指方法被调用的时候都会回调到`InvocationHandler`方法里面。
 
-这段代码中的platform我们之后[再聊](/docs/open_sources/retrofit/platform)，先来看loadServiceMethod。
+这段代码中的platform我们之后[再聊](/docs/open_sources/retrofit/platform)，先来看loadServiceMethod方法。
 
-#### ServiceMethod -> loadServiceMethod
+### ServiceMethod -> loadServiceMethod
 ```Java
 ServiceMethod<?> loadServiceMethod(Method method) {
+  // 做缓存，避免多次创建ServiceMethod，造成不必要的浪费。
   ServiceMethod<?> result = serviceMethodCache.get(method);
   if (result != null) return result;
 
   synchronized (serviceMethodCache) {
     result = serviceMethodCache.get(method);
     if (result == null) {
+      // 别的代码都是 缓存代码，关键点在这里
       result = ServiceMethod.parseAnnotations(this, method);
       serviceMethodCache.put(method, result);
     }
@@ -83,10 +90,9 @@ ServiceMethod<?> loadServiceMethod(Method method) {
   return result;
 }
 ```
-这是一个double-check-lock的形式，第一个get是为了效率第二个get是为了`serviceMethodCache`的线程安全。
-所以，我们需要关注的是 `ServiceMethod.parseAnnotations`里面内容
+这是一个DCL的缓存形式，所以，我们需要关注的是 `ServiceMethod.parseAnnotations`里面内容。
 
-#### ServiceMethod -> parseAnnotations
+### ServiceMethod -> parseAnnotations
 ```java
 abstract class ServiceMethod<T> {
   static <T> ServiceMethod<T> parseAnnotations(Retrofit retrofit, Method method) {
@@ -108,9 +114,9 @@ abstract class ServiceMethod<T> {
 }
 
 ```
-这是一个虚类的定义，而 HttpServiceMethod 是他的一个实现类，我们来看心意啊HttpServiceMethod中parseAnnotations的实现
+这是一个虚类的定义，而 HttpServiceMethod 是他的一个实现类，我们先来看看HttpServiceMethod中parseAnnotations的实现
 
-#### HttpServiceMethod -> parseAnnotations
+### HttpServiceMethod -> parseAnnotations
 
 > 这里我们先不考虑kotlin中suspend 方法的实现逻辑，只考虑纯Java的实现
 
@@ -121,6 +127,7 @@ abstract class ServiceMethod<T> {
     boolean continuationWantsResponse = false;
     boolean continuationBodyNullable = false;
 
+    // 1.获取当前方法的所有注解
     Annotation[] annotations = method.getAnnotations();
     Type adapterType;
     if (isKotlinSuspendFunction) {
@@ -129,6 +136,7 @@ abstract class ServiceMethod<T> {
       adapterType = method.getGenericReturnType();
     }
 
+    // 2.根据方法的返回值，创建一个一个call的适配器，其中包含了
     CallAdapter<ResponseT, ReturnT> callAdapter =
         createCallAdapter(retrofit, method, adapterType, annotations);
     Type responseType = callAdapter.responseType();
@@ -145,9 +153,11 @@ abstract class ServiceMethod<T> {
       throw methodError(method, "HEAD method must use Void as response type.");
     }
 
+    // 3.创建一个返回值的转化器
     Converter<ResponseBody, ResponseT> responseConverter =
         createResponseConverter(retrofit, method, responseType);
 
+    // 4.创建一个CallAdapted 的类
     okhttp3.Call.Factory callFactory = retrofit.callFactory;
     if (!isKotlinSuspendFunction) {
       return new CallAdapted<>(requestFactory, callFactory, responseConverter, callAdapter);
@@ -174,7 +184,7 @@ abstract class ServiceMethod<T> {
 
 - 创建一个内部实现类并返回，我们在不考虑kotin的情况下查看CallAdapted的实现
 
-#### CallAdapted
+### CallAdapted
 ```java
 static final class CallAdapted<ResponseT, ReturnT> extends HttpServiceMethod<ResponseT, ReturnT> {
   private final CallAdapter<ResponseT, ReturnT> callAdapter;
@@ -196,12 +206,14 @@ static final class CallAdapted<ResponseT, ReturnT> extends HttpServiceMethod<Res
 ```
 这里很简单主要是调用基本所有的逻辑都是在HttpServiceMethod中实现的。
 
-回到第一步的`create`
+**回到第一步的`create`**
 ```Java
-oadServiceMethod(method).invoke(args)
+loadServiceMethod(method).invoke(args)
 ```
 我们来看invoke的实现也就是`HttpServiceMethod`的`invoke`的实现
-#### HttpServiceMethod -> invoke
+
+### HttpServiceMethod -> invoke
+
 ```Java
 @Override
 final @Nullable ReturnT invoke(Object[] args) {
@@ -212,6 +224,7 @@ final @Nullable ReturnT invoke(Object[] args) {
 protected abstract @Nullable ReturnT adapt(Call<ResponseT> call, Object[] args);
 ```
 这理顺这里面的逻辑就是`CallAdapter.adapt(OkHttpCall)`。
+
 CallAdapter由我们在创建retrofit的时候传入
 ```Java
 Retrofit retrofit = new Retrofit.Builder()
@@ -267,6 +280,8 @@ final class DefaultCallAdapterFactory extends CallAdapter.Factory {
 }
 ```
 其中的重点是`public CallAdapter<?, ?> get(Type,Annotation[],Retrofit)`具体代码我们就不讲解了，主要就是做一些检查，然后返回一个能返回`ExecutorCallbackCall`的callAdapter
+
+### ExecutorCallbackCall
 ```Java
 static final class ExecutorCallbackCall<T> implements Call<T> {
     final Executor callbackExecutor;
@@ -312,137 +327,165 @@ static final class ExecutorCallbackCall<T> implements Call<T> {
     }
     /**/
   }
+
 ```
 这里面的delegate 就是之前我们说的`okHttpCall`。从`enqueue`方法就能看出，其实这个CallAdapter的默认实现就是用线程池来执行`okHttpCall`的`enqueue`
-#### OkHttpCall -> enqueue
+
+
+## 第一步小结
+
+### 流程图
+返回call的流程
+
+{{< mermaid >}}
+sequenceDiagram
+    Proxy->>ServiceMethod: loadServiceMethod()
+    ServiceMethod->>ServiceMethod: parseAnnotations()
+    ServiceMethod->>HttpServiceMethod: parseAnnotations()
+    HttpServiceMethod->>+CallAdapter:createCallAdapter()
+    CallAdapter-->>-HttpServiceMethod:createCallAdapter()
+    HttpServiceMethod->>+Converter:createResponseConverter()
+    Converter-->>-HttpServiceMethod:createResponseConverter()
+    HttpServiceMethod->>CallAdapted:new CallAdapted()
+    CallAdapted->>ServiceMethod:return
+    CallAdapted->>ExecutorCallbackCall:enqueue
+    ExecutorCallbackCall->>Proxy:delegate
+{{</ mermaid >}}
+
+### 描述
+主要通过解析注解，将我们传入的各个adapter注入到okhttpcall中。
+
+## 源码解析第二步 enqueue
+
+### OkHttpCall -> enqueue
 ```java
 
-  @Override
-  public void enqueue(final Callback<T> callback) {
-    Objects.requireNonNull(callback, "callback == null");
+@Override
+public void enqueue(final Callback<T> callback) {
+  Objects.requireNonNull(callback, "callback == null");
 
-    okhttp3.Call call;
-    Throwable failure;
-    /**/
+  okhttp3.Call call;
+  Throwable failure;
+  /**/
 
-    call.enqueue(
-        new okhttp3.Callback() {
-          @Override
-          public void onResponse(okhttp3.Call call, okhttp3.Response rawResponse) {
-            Response<T> response;
-            try {
-              response = parseResponse(rawResponse);
-            } catch (Throwable e) {
-              throwIfFatal(e);
-              callFailure(e);
-              return;
-            }
-
-            try {
-              callback.onResponse(OkHttpCall.this, response);
-            } catch (Throwable t) {
-              throwIfFatal(t);
-              t.printStackTrace(); // TODO this is not great
-            }
-          }
-
-          @Override
-          public void onFailure(okhttp3.Call call, IOException e) {
+  call.enqueue(
+      new okhttp3.Callback() {
+        @Override
+        public void onResponse(okhttp3.Call call, okhttp3.Response rawResponse) {
+          Response<T> response;
+          try {
+            response = parseResponse(rawResponse);
+          } catch (Throwable e) {
+            throwIfFatal(e);
             callFailure(e);
+            return;
           }
 
-          private void callFailure(Throwable e) {
-            try {
-              callback.onFailure(OkHttpCall.this, e);
-            } catch (Throwable t) {
-              throwIfFatal(t);
-              t.printStackTrace(); // TODO this is not great
-            }
+          try {
+            callback.onResponse(OkHttpCall.this, response);
+          } catch (Throwable t) {
+            throwIfFatal(t);
+            t.printStackTrace(); // TODO this is not great
           }
-        });
-  }
+        }
+
+        @Override
+        public void onFailure(okhttp3.Call call, IOException e) {
+          callFailure(e);
+        }
+
+        private void callFailure(Throwable e) {
+          try {
+            callback.onFailure(OkHttpCall.this, e);
+          } catch (Throwable t) {
+            throwIfFatal(t);
+            t.printStackTrace(); // TODO this is not great
+          }
+        }
+      });
+}
 ```
 这里的重点当然是`response = parseResponse(rawResponse);`
 rawResponse:okHttpCall传入一个request创建出一个rawresponse。
 你可以认为下面的方法中rawResponse 里面只有request相关内容以及一个经过请求之后返回的内容
-#### OkHttpCall -> parseResponse
+
+### OkHttpCall -> parseResponse
+
 ```Java
+Response<T> parseResponse(okhttp3.Response rawResponse) throws IOException {
+  ResponseBody rawBody = rawResponse.body();
 
-  Response<T> parseResponse(okhttp3.Response rawResponse) throws IOException {
-    ResponseBody rawBody = rawResponse.body();
+  // Remove the body's source (the only stateful object) so we can pass the response along.
+  rawResponse =
+      rawResponse
+          .newBuilder()
+          .body(new NoContentResponseBody(rawBody.contentType(), rawBody.contentLength()))
+          .build();
 
-    // Remove the body's source (the only stateful object) so we can pass the response along.
-    rawResponse =
-        rawResponse
-            .newBuilder()
-            .body(new NoContentResponseBody(rawBody.contentType(), rawBody.contentLength()))
-            .build();
-
-    int code = rawResponse.code();
-    if (code < 200 || code >= 300) {
-      try {
-        // Buffer the entire body to avoid future I/O.
-        ResponseBody bufferedBody = Utils.buffer(rawBody);
-        return Response.error(bufferedBody, rawResponse);
-      } finally {
-        rawBody.close();
-      }
-    }
-
-    if (code == 204 || code == 205) {
-      rawBody.close();
-      return Response.success(null, rawResponse);
-    }
-
-    ExceptionCatchingResponseBody catchingBody = new ExceptionCatchingResponseBody(rawBody);
+  int code = rawResponse.code();
+  if (code < 200 || code >= 300) {
     try {
-      T body = responseConverter.convert(catchingBody);
-      return Response.success(body, rawResponse);
-    } catch (RuntimeException e) {
-      // If the underlying source threw an exception, propagate that rather than indicating it was
-      // a runtime exception.
-      catchingBody.throwIfCaught();
-      throw e;
+      // Buffer the entire body to avoid future I/O.
+      ResponseBody bufferedBody = Utils.buffer(rawBody);
+      return Response.error(bufferedBody, rawResponse);
+    } finally {
+      rawBody.close();
     }
   }
+
+  if (code == 204 || code == 205) {
+    rawBody.close();
+    return Response.success(null, rawResponse);
+  }
+
+  ExceptionCatchingResponseBody catchingBody = new ExceptionCatchingResponseBody(rawBody);
+  try {
+    T body = responseConverter.convert(catchingBody);
+    return Response.success(body, rawResponse);
+  } catch (RuntimeException e) {
+    // If the underlying source threw an exception, propagate that rather than indicating it was
+    // a runtime exception.
+    catchingBody.throwIfCaught();
+    throw e;
+  }
+}
 ```
 总结一下
 - 获取contenttype和长度创建responsebody
 - 根据httpcode的值进行处理
 - 如果code为200则使用responseConverter对结果进行转化并返回
 
-#### responseConverter -> convert
+### responseConverter -> convert
 responseConverter 由创建okhttpcall的时候传入。
 看这里就是传入`Converter`的地方
 
 ```Java
 //retrofit -> Build
-    public Retrofit build() {
-      /**/
+public Retrofit build() {
+  /**/
 
-      // Make a defensive copy of the converters.
-      List<Converter.Factory> converterFactories =
-          new ArrayList<>(
-              1 + this.converterFactories.size() + platform.defaultConverterFactoriesSize());
+  // Make a defensive copy of the converters.
+  List<Converter.Factory> converterFactories =
+      new ArrayList<>(
+          1 + this.converterFactories.size() + platform.defaultConverterFactoriesSize());
 
-      converterFactories.add(new BuiltInConverters());
-      converterFactories.addAll(this.converterFactories);
-      //根据是否用java8编译添加OptionalConverterFactory
-      converterFactories.addAll(platform.defaultConverterFactories());
+  converterFactories.add(new BuiltInConverters());
+  converterFactories.addAll(this.converterFactories);
+  //根据是否用java8编译添加OptionalConverterFactory
+  converterFactories.addAll(platform.defaultConverterFactories());
 
-      return new Retrofit(
-          callFactory,
-          baseUrl,
-          unmodifiableList(converterFactories),
-          unmodifiableList(callAdapterFactories),
-          callbackExecutor,
-          validateEagerly);
-    }
-  }
+  return new Retrofit(
+      callFactory,
+      baseUrl,
+      unmodifiableList(converterFactories),
+      unmodifiableList(callAdapterFactories),
+      callbackExecutor,
+      validateEagerly);
+}
 ```
 如果是json的返回值我们一般添加`GsonConverterFactory`
 
-#### GsonConverterFactory
+### GsonConverterFactory
 ```Java
 public final class GsonConverterFactory extends Converter.Factory {
   /**
@@ -516,6 +559,3 @@ final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
 }
 ```
 这里就是soeasy 利用了gson的解析功能呢。
-
-## 总结
-整个流程串起来了。

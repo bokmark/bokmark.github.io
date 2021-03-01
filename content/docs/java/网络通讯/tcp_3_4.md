@@ -12,7 +12,7 @@ categories: ["网络协议"]
 由于tcp 是有具有数据排序超时重传的功能，所以需要交换服务器和客户端的序列号的起始值。<br>  
 **SYN**：Synchronize Sequence Numbers <br>
 **ACK**：Acknowledge character
-{{< mermaid >}}
+{{<mermaid>}}
 sequenceDiagram
     Note left of Client: SYN_SENT
     activate Client
@@ -29,7 +29,7 @@ sequenceDiagram
     activate Server
     Note right of Server: ESTABLISHED
     deactivate Server
-{{< /mermaid >}}
+{{</mermaid>}}
 
 ### 为什么是三次握手，而不是四次握手，不是二次握手
 {{< hint info >}}
@@ -101,3 +101,6 @@ sequenceDiagram
 - 确保可以对被动关闭方发送的fin报文进行响应：预防fin报文的ack报文丢失，从而导致服务器重发了fin报文，但是客户端无法ack。
 - 确保服务器延迟发送的数据不会错误的发送到别的端口上：因为存在端口冲突，当主动发送方关闭了tcp连接的时候端口号可能被别的程序得到，从而导致被动关闭方延迟发送或者还在网络中的数据包被错误的发送的新开的程序端口上。
 {{</hint>}}
+
+### keepalive 协议中定义了75分钟
+需要应用层定义心跳机制
