@@ -4,12 +4,12 @@
   
   <url>
     <loc>/docs/others/protocal/http/</loc>
-    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/others/protocal/rtsp/</loc>
-    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -19,12 +19,12 @@
   
   <url>
     <loc>/docs/open_sources/retrofit/base/</loc>
-    <lastmod>2021-01-31T13:36:41+08:00</lastmod>
+    <lastmod>2021-03-01T19:24:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/open_sources/retrofit/use/</loc>
-    <lastmod>2021-01-31T13:36:41+08:00</lastmod>
+    <lastmod>2021-03-01T19:24:34+08:00</lastmod>
   </url>
   
   <url>
@@ -44,7 +44,7 @@
   
   <url>
     <loc>/docs/open_sources/glide/with/</loc>
-    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -59,7 +59,7 @@
   
   <url>
     <loc>/docs/open_sources/okhttp/dispatcher/</loc>
-    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -103,8 +103,13 @@
   </url>
   
   <url>
+    <loc>/posts/question1/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/android/camera/camera/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -143,13 +148,13 @@
   </url>
   
   <url>
-    <loc>/docs/android/binder/binder/</loc>
+    <loc>/docs/android/binder/note/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/android/component/fragment/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -159,12 +164,17 @@
   
   <url>
     <loc>/docs/android/view/recyclerview/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/android/view/view/</loc>
     <lastmod>2021-01-30T01:27:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/binder/arch/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
@@ -299,7 +309,7 @@
   
   <url>
     <loc>/docs/others/</loc>
-    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -343,11 +353,6 @@
   </url>
   
   <url>
-    <loc>/docs/others/protocal/</loc>
-    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
@@ -358,22 +363,7 @@
   </url>
   
   <url>
-    <loc>/docs/open_sources/okhttp/</loc>
-    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/open_sources/glide/</loc>
-    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/android/camera/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/android/component/</loc>
+    <loc>/docs/android/binder/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
@@ -388,12 +378,23 @@
   </url>
   
   <url>
+    <loc>/docs/android/camera/</loc>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/component/</loc>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/android/framework/</loc>
     <lastmod>2021-01-30T01:27:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/android/ndk/</loc>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -436,8 +437,23 @@
   </url>
   
   <url>
+    <loc>/docs/open_sources/okhttp/</loc>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/open_sources/retrofit/</loc>
-    <lastmod>2021-01-30T01:27:42+08:00</lastmod>
+    <lastmod>2021-03-01T19:24:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/others/protocal/</loc>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/open_sources/glide/</loc>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -447,27 +463,27 @@
   
   <url>
     <loc>/docs/</loc>
-    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2021-01-30T17:44:39+08:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2021-01-30T17:44:39+08:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/tcpip/</loc>
-    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</loc>
-    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
@@ -497,7 +513,7 @@
   
   <url>
     <loc>/posts/sed/</loc>
-    <lastmod>2021-01-30T01:27:42+08:00</lastmod>
+    <lastmod>2021-03-01T19:24:34+08:00</lastmod>
   </url>
   
   <url>
@@ -522,6 +538,11 @@
   
   <url>
     <loc>/tags/%E7%85%B2%E4%BB%94%E9%A5%AD/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%AD%94%E6%A1%88/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -566,7 +587,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-02-05T00:02:09+08:00</lastmod>
+    <lastmod>2021-03-01T19:24:34+08:00</lastmod>
   </url>
   
   <url>

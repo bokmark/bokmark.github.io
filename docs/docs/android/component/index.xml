@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
-    <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="/docs/android/component/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/android/component/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fragment 原理</title>
       <link>/docs/android/component/fragment/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/android/component/fragment/</guid>
-      <description>从handler的面试题出发了解handler</description>
+      <description></description>
     </item>
     
   </channel>

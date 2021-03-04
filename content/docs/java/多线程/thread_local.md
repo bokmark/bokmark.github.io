@@ -6,23 +6,19 @@ weight: 3
 summary: "Thread Local 实现方式"
 ---
 
-### ThreadLocal的使用方式
+# 多线程--thread local
+
+## ThreadLocal 为什么可以每个线程保存一份自己的变量
+
 
 ```java
-
-```
-
-### ThreadLocal 为什么可以每个线程保存一份自己的变量
-
-
-```
 
 public class ThreadLocal<T> {
     /*...*/
 
     public T get() {
         Thread var1 = Thread.currentThread();
-        ThreadLocal.ThreadLocalMap var2 = this.getMap(var1);
+        ThreadLocal.ThreadLocalMap var2 = this.getMap(var1); // 获取thread的 localmaps 成员属性
         if (var2 != null) {
             ThreadLocal.ThreadLocalMap.Entry var3 = var2.getEntry(this);
             if (var3 != null) {

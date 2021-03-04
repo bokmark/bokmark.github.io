@@ -235,11 +235,20 @@ echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
     </item>
     
     <item>
-      <title>面试题合集</title>
+      <title>面试题 题目 合集</title>
       <link>/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%90%88%E9%9B%86/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%90%88%E9%9B%86/</guid>
+      <description>面试题合集</description>
+    </item>
+    
+    <item>
+      <title>面试题 题目以及 我自己的答案</title>
+      <link>/posts/question1/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/question1/</guid>
       <description>面试题合集</description>
     </item>
     
@@ -314,11 +323,11 @@ private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map
     </item>
     
     <item>
-      <title>Binder以及相关概念</title>
-      <link>/docs/android/binder/binder/</link>
+      <title>Binder 笔记</title>
+      <link>/docs/android/binder/note/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>/docs/android/binder/binder/</guid>
+      <guid>/docs/android/binder/note/</guid>
       <description>Binder 面试问题</description>
     </item>
     
@@ -328,7 +337,7 @@ private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/android/component/fragment/</guid>
-      <description>从handler的面试题出发了解handler</description>
+      <description></description>
     </item>
     
     <item>
@@ -356,6 +365,15 @@ private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/android/view/view/</guid>
       <description>从handler的面试题出发了解handler</description>
+    </item>
+    
+    <item>
+      <title>从一个例子研究Binder</title>
+      <link>/docs/android/binder/arch/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/binder/arch/</guid>
+      <description>Binder 面试问题</description>
     </item>
     
     <item>

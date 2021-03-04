@@ -1,5 +1,5 @@
 ---
-title: 'Binder以及相关概念'
+title: 'Binder 笔记'
 date: 2018-11-28T15:14:39+10:00
 weight: 2
 summary: "Binder 面试问题"
@@ -65,50 +65,3 @@ summary: "Binder 面试问题"
 ## binder驱动 如何启动
 - linux 中 一切皆文件
 - binder 驱动 也是一个文件 可以被mmap
-
-
-
-
-
-## 从栗子研究 binder 分层 以及底层逻辑
-
-{{<mermaid>}}
-graph TD;
-    Client-->BinderProxy;
-    ServiceManager-->BinderProxy;
-    BinderProxy-->JNI["Android Runtime and AndroidUtilBinder"];
-    JNI-->BpBinder;
-    BpBinder -- ioctl --> Kernal["Kernal  \dev\binder"];
-
-
-    service_manager -- ioctl --> Kernal;
-
-    Server-->Binder;
-    Binder-->JNI;
-    JNI-->JavaBBinder;
-    JavaBBinder-->BBinder;
-    BBinder -- ioctl ----> Kernal;
-
-    BpBinder -.-> BBinder
-    BpBinder -.-> service_manager;
-    BBinder -.-> service_manager;
-
-{{</mermaid>}}
-
-- **Framework**
-- **JNI**
-- **Native**
-- **Kernal**
-
-### Kernal
-- binder_init 注册binder驱动
-- binder_open 打开binder驱动
-- binder_ioctl 读写
-- binder_mmap 映射物理内存
-
-### Native
-- ServiceManager
-
-### JNI
-
-### Framework

@@ -9,15 +9,6 @@
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
     <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Binder以及相关概念</title>
-      <link>/docs/android/binder/binder/</link>
-      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
-      <author>bokmark@163.com (bokmark)</author>
-      <guid>/docs/android/binder/binder/</guid>
-      <description>Binder 面试问题</description>
-    </item>
-    
-    <item>
       <title>Handler</title>
       <link>/docs/android/Handler/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>

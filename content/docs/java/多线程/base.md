@@ -6,8 +6,11 @@ weight: 3
 summary: "Java 线程的实现方式有几种，FeatureTask的实现方式，死锁"
 ---
 
-![java线程状态图](https://upload-images.jianshu.io/upload_images/12975041-949236dcc65e931b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-### 图解
+# 多线程--基础知识
+Java 多线程的基础知识
+
+## Java 线程的状态 变化
+![java线程状态图](/images/thread/thread_state.jpg)
 - 初始状态：`new thread` 未 `start`
 - 运行状态： 分为运行中和就绪状态，对于java层来说，不需要care 这两种状态的转化，这都是内部的逻辑，当一个线程调用了start之后线程进入就绪状态，等待系统调度，如果现场进入不需要cpu时间片 或者线程主动调用了yield之后进入 就绪态等待cpu的下次调度
 - 等待状态：如图中所说，通过三种方法回进入等待状态 ，需要主动唤醒
@@ -15,87 +18,87 @@ summary: "Java 线程的实现方式有几种，FeatureTask的实现方式，死
 - 阻塞：有且只有synchronized 关键字才会让线程进入阻塞状态
 - 终止：运行完成进程结束
 
-### 实现现场的几种方式
+## 实现现场的几种方式
 - 继承 thread
 - 实现 runnable 接口
 - callable：**严格意义上来说这种方式不是一种实现线程的方式**
 ```java
 // Thread.java
- * There are two ways to create a new thread of execution. One is to
- * declare a class to be a subclass of <code>Thread</code>. This
- * subclass should override the <code>run</code> method of class
- * <code>Thread</code>. An instance of the subclass can then be
- * allocated and started. For example, a thread that computes primes
- * larger than a stated value could be written as follows:
- * <hr><blockquote><pre>
- *     class PrimeThread extends Thread {
- *         long minPrime;
- *         PrimeThread(long minPrime) {
- *             this.minPrime = minPrime;
- *         }
- *
- *         public void run() {
- *             // compute primes larger than minPrime
- *             &nbsp;.&nbsp;.&nbsp;.
- *         }
- *     }
- * </pre></blockquote><hr>
- * <p>
- * The following code would then create a thread and start it running:
- * <blockquote><pre>
- *     PrimeThread p = new PrimeThread(143);
- *     p.start();
- * </pre></blockquote>
- * <p>
- * The other way to create a thread is to declare a class that
- * implements the <code>Runnable</code> interface. That class then
- * implements the <code>run</code> method. An instance of the class can
- * then be allocated, passed as an argument when creating
- * <code>Thread</code>, and started. The same example in this other
- * style looks like the following:
- * <hr><blockquote><pre>
- *     class PrimeRun implements Runnable {
- *         long minPrime;
- *         PrimeRun(long minPrime) {
- *             this.minPrime = minPrime;
- *         }
- *
- *         public void run() {
- *             // compute primes larger than minPrime
- *             &nbsp;.&nbsp;.&nbsp;.
- *         }
- *     }
- * </pre></blockquote><hr>
- * <p>
- * The following code would then create a thread and start it running:
- * <blockquote><pre>
- *     PrimeRun p = new PrimeRun(143);
- *     new Thread(p).start();
- * </pre></blockquote>
- * <p>
+* There are two ways to create a new thread of execution. One is to
+* declare a class to be a subclass of <code>Thread</code>. This
+* subclass should override the <code>run</code> method of class
+* <code>Thread</code>. An instance of the subclass can then be
+* allocated and started. For example, a thread that computes primes
+* larger than a stated value could be written as follows:
+* <hr><blockquote><pre>
+*     class PrimeThread extends Thread {
+*         long minPrime;
+*         PrimeThread(long minPrime) {
+*             this.minPrime = minPrime;
+*         }
+*
+*         public void run() {
+*             // compute primes larger than minPrime
+*             &nbsp;.&nbsp;.&nbsp;.
+*         }
+*     }
+* </pre></blockquote><hr>
+* <p>
+* The following code would then create a thread and start it running:
+* <blockquote><pre>
+*     PrimeThread p = new PrimeThread(143);
+*     p.start();
+* </pre></blockquote>
+* <p>
+* The other way to create a thread is to declare a class that
+* implements the <code>Runnable</code> interface. That class then
+* implements the <code>run</code> method. An instance of the class can
+* then be allocated, passed as an argument when creating
+* <code>Thread</code>, and started. The same example in this other
+* style looks like the following:
+* <hr><blockquote><pre>
+*     class PrimeRun implements Runnable {
+*         long minPrime;
+*         PrimeRun(long minPrime) {
+*             this.minPrime = minPrime;
+*         }
+*
+*         public void run() {
+*             // compute primes larger than minPrime
+*             &nbsp;.&nbsp;.&nbsp;.
+*         }
+*     }
+* </pre></blockquote><hr>
+* <p>
+* The following code would then create a thread and start it running:
+* <blockquote><pre>
+*     PrimeRun p = new PrimeRun(143);
+*     new Thread(p).start();
+* </pre></blockquote>
+* <p>
 ```
 从注释上就可以看到 java官方的说法就是只有这两种方法实现了现场。
 至于callable 让我们来看一下callable的实现方式
-```
-        Callable<String> callable = new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                Thread.sleep(1000);
-                return "aaa";
-            }
-        };
-        FutureTask<String> featureTask = new FutureTask<>(callable);
-        new Thread(featureTask).start();
-        try {
-            String ret = featureTask.get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+```java
+Callable<String> callable = new Callable<String>() {
+    @Override
+    public String call() throws Exception {
+        Thread.sleep(1000);
+        return "aaa";
+    }
+};
+FutureTask<String> featureTask = new FutureTask<>(callable);
+new Thread(featureTask).start();
+try {
+    String ret = featureTask.get();
+} catch (ExecutionException e) {
+    e.printStackTrace();
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
 ```
 其实callable 是通过futuretask 包装一下
-```
+```java
 //FutureTask.java
 public class FutureTask<V> implements RunnableFuture<V> {
   //。。。
@@ -113,6 +116,8 @@ public interface RunnableFuture<V> extends Runnable, Future<V> {
 callable 就是通过传递一个runnable 到thread 来实现线程的。
 
 ### FutureTask的实现
+
+{{<expand "FutureTask.java">}}
 ```java
 //FutureTask.java
 package java.util.concurrent;
@@ -586,15 +591,17 @@ public class FutureTask<V> implements RunnableFuture<V> {
 
 }
 ```
+{{</expand>}}
+## 死锁
 
 ### 死锁的原因
+简单版本
 - 多个操作者 抢占多个资源
 - 抢占资源的顺序不对
 - 拿到资源不释放
 ----
-
-### 死锁的条件
+四个必要条件
 - 互斥
-- 请求保持
+- 占有且等待
 - 不剥夺
 - 环路等待
