@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础 on Bokmark</title>
+    <link>/docs/java/base/</link>
+    <description>Recent content in 基础 on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
+    <lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/java/base/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 泛型</title>
+      <link>/docs/java/base/%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/base/%E6%B3%9B%E5%9E%8B/</guid>
+      <description>泛型 #  Java 的泛型在JDK5的时候引入，在没有泛型之前，从集合中读取每一个元素都必须进行类型转化。如果有人不小心插入了类型错误的对象，就会报错。而泛型将会让编译器在编译期间自动帮你进行转化，并且做类型安全检查。
+Java 的泛型是伪泛型。
+概述 #  泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。
+泛型的本质是为了参数化类型（在不创建新的类型的情况下，通过泛型指定的不同类型来控制形参具体限制的类型）。也就是说在泛型使用过程中，操作的数据类型被指定为一个参数，这种参数类型可以用在类、接口和方法中，分别被称为泛型类、泛型接口、泛型方法。
+泛型擦除 #  由于java是伪泛型，所以在编译期间会将泛型擦除。所以泛型的效果只在编译阶段有效。
+泛型的使用 #   泛型方法 泛型类 泛型接口  泛型通配符 #  泛型的上界和下界 #  总结 #  </description>
+    </item>
+    
+  </channel>
+</rss>
