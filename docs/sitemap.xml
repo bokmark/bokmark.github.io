@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/docs/java/base/%E6%B3%9B%E5%9E%8B/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/others/protocal/http/</loc>
     <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
   
   <url>
+    <loc>/docs/others/protocal/https/</loc>
+    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/others/protocal/rtsp/</loc>
     <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/algorithm/%E5%89%91%E6%8C%87offer1/</loc>
+    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -53,11 +68,6 @@
   </url>
   
   <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jmm/</loc>
-    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/docs/open_sources/okhttp/dispatcher/</loc>
     <lastmod>2021-03-01T20:53:44+08:00</lastmod>
   </url>
@@ -93,7 +103,22 @@
   </url>
   
   <url>
+    <loc>/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2020-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/%E6%B2%B9%E7%88%86%E8%99%BE/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/%E7%85%B2%E4%BB%94%E9%A5%AD/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -104,7 +129,12 @@
   
   <url>
     <loc>/posts/question1/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1base/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
@@ -123,6 +153,11 @@
   </url>
   
   <url>
+    <loc>/posts/pdca/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/android/framework/start/</loc>
     <lastmod>2021-01-30T01:27:42+08:00</lastmod>
   </url>
@@ -133,8 +168,18 @@
   </url>
   
   <url>
+    <loc>/docs/algorithm/%E5%89%91%E6%8C%87offer2/</loc>
+    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/android/android_studio/maven_sdk/</loc>
     <lastmod>2021-02-05T00:02:09+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/2jmm/</loc>
+    <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
   
   <url>
@@ -148,8 +193,18 @@
   </url>
   
   <url>
+    <loc>/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2020-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2020-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/android/binder/note/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
   </url>
   
   <url>
@@ -174,7 +229,7 @@
   
   <url>
     <loc>/docs/android/binder/arch/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
   </url>
   
   <url>
@@ -188,42 +243,17 @@
   </url>
   
   <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/aqs/</loc>
+    <loc>/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2020-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7cas/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/cas/</loc>
-    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/lock/</loc>
-    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized/</loc>
-    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/thread_local/</loc>
-    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile/</loc>
-    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/blockingqueue/</loc>
-    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/questions/</loc>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/3thread_local/</loc>
     <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
@@ -235,11 +265,6 @@
   <url>
     <loc>/docs/kotlin/coroutines/runBlocking/</loc>
     <lastmod>2021-01-31T13:36:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/base/</loc>
-    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
@@ -255,6 +280,11 @@
   <url>
     <loc>/docs/java/JavaVM/gc/</loc>
     <lastmod>2021-01-30T01:27:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4blockingqueue/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
@@ -303,13 +333,48 @@
   </url>
   
   <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5volatile/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/open_sources/</loc>
     <lastmod>2021-01-30T01:27:42+08:00</lastmod>
   </url>
   
   <url>
+    <loc>/docs/optimize/</loc>
+    <lastmod>2020-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/others/</loc>
     <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/algorithm/</loc>
+    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/8aqs/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/9lock/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/questions/</loc>
+    <lastmod>2020-02-11T19:30:08+10:00</lastmod>
   </url>
   
   <url>
@@ -353,18 +418,18 @@
   </url>
   
   <url>
-    <loc>/docs/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>/docs/java/base/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/</loc>
     <lastmod>2020-12-01T15:14:39+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/android/binder/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url>
   
   <url>
@@ -375,6 +440,11 @@
   <url>
     <loc>/docs/android/android_studio/</loc>
     <lastmod>2021-02-01T22:59:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/binder/</loc>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
   </url>
   
   <url>
@@ -463,17 +533,27 @@
   
   <url>
     <loc>/docs/</loc>
-    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E5%89%91%E6%8C%87offer/</loc>
+    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2021-03-01T20:53:44+08:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
   </url>
   
   <url>
@@ -537,13 +617,18 @@
   </url>
   
   <url>
+    <loc>/tags/%E6%B2%B9%E7%88%86%E8%99%BE/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/%E7%85%B2%E4%BB%94%E9%A5%AD/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/%E7%AD%94%E6%A1%88/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
   </url>
   
   <url>
@@ -558,12 +643,12 @@
   
   <url>
     <loc>/tags/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-04T14:56:47+08:00</lastmod>
   </url>
   
   <url>

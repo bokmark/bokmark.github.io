@@ -11,7 +11,7 @@ summary: "Binder 面试问题"
 
 ### 具体代码
 一般创建一个binder 都是通过aidl实现，那么我们也用aidl来实现 [PagesDemo/BinderDemo 具体代码可以从这里下载](https://github.com/bokmark/PagesDemo#BinderDemo)
-{{<expand "IMyAidlInterface.aidl">}}
+{{<details "IMyAidlInterface.aidl">}}
 ```AIDL
 // IMyAidlInterface.aidl
 package com.jaycema.binderdemo;
@@ -27,9 +27,9 @@ interface IMyAidlInterface {
             double aDouble, String aString);
 }
 ```
-{{</expand>}}
+{{</details>}}
 
-{{<expand "RemoteService.kt">}}
+{{<details "RemoteService.kt">}}
 ```kotlin
 class RemoteService : Service() {
 
@@ -52,9 +52,9 @@ class RemoteService : Service() {
     }
 }
 ```
-{{</expand>}}
+{{</details>}}
 
-{{<expand "MainActivity.kt">}}
+{{<details "MainActivity.kt">}}
 ```kotlin
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,9 +81,9 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
-{{</expand>}}
+{{</details>}}
 
-{{<expand "AndroidMenifest.xml">}}
+{{<details "AndroidMenifest.xml">}}
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
 </manifest>
 ```
-{{</expand>}}
+{{</details>}}
 这是一个简单到不能再简单的例子，其中我们通过调用mybinder的basicTypes方法获取string显示到textview上。
 但是跨进程真的这么简单嘛。我们逐步分析。
 
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 我们知道aidl文件最后将会编译成java代码编译进我们的apk中。那么我们就来找一下这个编译好的文件。
 ![寻找的路径](/images/blog_image/binder/aidl_java_path.jpg) 可以从这里找到编译好的文件
 
-{{<expand "IMyAidlInterface.java">}}
+{{<details "IMyAidlInterface.java">}}
 ```JAVA
 /*
  * This file is auto-generated.  DO NOT MODIFY.
@@ -285,7 +285,7 @@ public interface IMyAidlInterface extends android.os.IInterface
   public java.lang.String basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, java.lang.String aString) throws android.os.RemoteException;
 }
 ```
-{{</expand>}}
+{{</details>}}
 
 这其中最关键的就是**Stub**
 
@@ -298,7 +298,7 @@ Stub 类继承了[android.os.Binder](http://androidxref.com/6.0.0_r1/xref/framew
 #### 我们先来分析proxy。
 Proxy类是我们客户端的代理类，负责包装了客户端和服务端的通信。
 
-{{<expand "Stub.Proxy">}}
+{{<details "Stub.Proxy">}}
 ```java
 private static class Proxy implements com.jaycema.binderdemo.IMyAidlInterface
 {
@@ -345,7 +345,7 @@ private static class Proxy implements com.jaycema.binderdemo.IMyAidlInterface
   public static com.jaycema.binderdemo.IMyAidlInterface sDefaultImpl;
 }
 ```
-{{</expand>}}
+{{</details>}}
 从这里可以看到我们是如何通信的：
 - 1：创建一个请求数据的包裹和响应数据的包裹。
 - 2：将请求数据写入包裹。
@@ -384,7 +384,7 @@ override fun onServiceConnected(name: ComponentName?, service: IBinder?)
 #### 哪来的remote？
 看 remoteservice 的代码，我们可以猜测出这个`service` 应该就是`val b = object : IMyAidlInterface.Stub()` 。
 我们发挥打破砂锅问到底的精神，从bindservice查起。
-{{<expand "bindService">}}
+{{<details "bindService">}}
 ```JAVA
 // ContextWrapper.java -------------------------
 @Override
@@ -434,7 +434,7 @@ override fun onServiceConnected(name: ComponentName?, service: IBinder?)
             }
         }
 ```
-{{</expand>}}
+{{</details>}}
 关键在这句
 ```java
 int res = ActivityManagerNative.getDefault().bindService(
@@ -443,7 +443,7 @@ int res = ActivityManagerNative.getDefault().bindService(
     sd, flags, getOpPackageName(), user.getIdentifier());
 ```
 
-{{<expand "IActivityManager">}}
+{{<details "IActivityManager">}}
 ActivityManagerNative.getDefault()
 
 ```java
@@ -660,7 +660,7 @@ ActivityManagerNative.getDefault()
         return 1;
     }
 ```
-{{</expand>}}
+{{</details>}}
 
 
 

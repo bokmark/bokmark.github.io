@@ -25,12 +25,30 @@ echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
     </item>
     
     <item>
+      <title>油爆虾</title>
+      <link>/posts/%E6%B2%B9%E7%88%86%E8%99%BE/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/%E6%B2%B9%E7%88%86%E8%99%BE/</guid>
+      <description>油爆虾</description>
+    </item>
+    
+    <item>
       <title>煲仔饭</title>
       <link>/posts/%E7%85%B2%E4%BB%94%E9%A5%AD/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/posts/%E7%85%B2%E4%BB%94%E9%A5%AD/</guid>
       <description>腊肠煲仔饭</description>
+    </item>
+    
+    <item>
+      <title>面试经验</title>
+      <link>/posts/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/</guid>
+      <description>面试题合集</description>
     </item>
     
     <item>
@@ -57,6 +75,15 @@ echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/posts/mediastore/</guid>
+      <description>media store</description>
+    </item>
+    
+    <item>
+      <title>PDCA</title>
+      <link>/posts/pdca/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/pdca/</guid>
       <description>media store</description>
     </item>
     
