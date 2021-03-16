@@ -13,11 +13,14 @@ summary: "面试题合集"
 
 ## 1、泛型和多态的意义和使用场景？
 java中多态存在的意义：
-　　1.可替换性（substitutability）。多态对已存在代码dao具有可替换性。例zhuan如，多态对圆shuCircle类工作，对其他任何圆形几何体，如圆环，也同样工作。
+　　1.可替换性（substitutability）。多态对已存在代码具有可替换性。例如，多态对圆Circle类工作，对其他任何圆形几何体，如圆环，也同样工作。
 　　2.可扩充性（extensibility）。多态对代码具有可扩充性。增加新的子类不影响已存在类的多态性、继承性，以及其他特性的运行和操作。实际上新加子类更容易获得多态功能。例如，在实现了圆锥、半圆锥以及半球体的多态基础上，很容易增添球体类的多态性。
 　　3.接口性（interface-ability）。多态是超类通过方法签名，向子类提供了一个共同接口，由子类来完善或者覆盖它而实现的。
 　　4.灵活性（flexibility）。它在应用中体现了灵活多样的操作，提高了使用效率。
 　　5.简化性（simplicity）。多态简化对应用软件的代码编写和修改过程，尤其在处理大量对象的运算和操作时，这个特点尤为突出和重要
+- 泛型的意义：
+  安全地进行代码复用，
+
 ## 2、jvm数据区域？都存储哪些数据？内存泄漏发生在哪些区域？
 ## 3、软引用和弱引用的区别？使用场景？
 
@@ -39,7 +42,7 @@ java中多态存在的意义：
 3.按下电源按键（关闭屏幕显示）时；
 4.当用户按下HOME键，回到桌面时。
 
-总结 当系统“未经你许可”时销毁了你的activity，则onSaveInstanceState会被系统调用。另外，onSaveInstanceState()会在onPause()或onStop()之间执行，onRestoreInstanceState()会在onStart()和onResume()之间执行。
+总结 当系统“未经你许可”时销毁了你的activity，则onSaveInstanceState会被系统调用。另外，*onSaveInstanceState()会在onPause()或onStop()之间执行* 存疑，onRestoreInstanceState()会在onStart()和onResume()之间执行。
 
 屏幕方向切换时，Activity被系统销毁后重新建立，此时会调用onSaveInstanceState方法保存数据。方法执行过程为：
 onPause –>onSaveInstanceState–>onStop–>onDestory–>onCreate(切换屏幕后重新创建Activity时调用的onCreate方法)–>onStart–>onRestoryInstanceState–>onResume。

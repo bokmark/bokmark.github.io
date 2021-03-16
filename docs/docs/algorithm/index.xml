@@ -7,8 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
-    <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指offer - 数据结构</title>
       <link>/docs/algorithm/%E5%89%91%E6%8C%87offer1/</link>
@@ -17,6 +16,16 @@
       <guid>/docs/algorithm/%E5%89%91%E6%8C%87offer1/</guid>
       <description>剑指offer中的算法题 #    剑指Offer
  数据结构 #  面试题3：二维数组中的查找 #   题目：在一个二维数组中，每一行都按照从左到右的递增顺序排序，每一列都按照从上到下递增的顺序排序，请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/ 思路： 先拿出一个例子找出规律，然后再实现成代码。我们在这里从右上角开始往前找，如果找到的数大于target这前移一位，如果小于这下移一位。重复这歌步骤直到x 或者y超出边界。 答案：  class Solution { public boolean findNumberIn2DArray(int[][] matrix, int target) { if (matrix == null || matrix.length == 0 || matrix[0].length == 0) { return false; } int y = matrix[0].length - 1, x = 0; for (;x &amp;lt; matrix.length &amp;amp;&amp;amp; y &amp;gt;= 0;) { if (matrix[x][y] == target) { return true; } if (matrix[x][y] &amp;gt; target) { y --; } else { x ++; } } return false; } } 面试题4：替换空格 #   题目：请实现一个函数，把字符串 s 中的每个空格替换成&amp;quot;%20&amp;quot;。  https://leetcode-cn.</description>
+    </item>
+    
+    <item>
+      <title>剑指offer - 解决面试题的思路</title>
+      <link>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</guid>
+      <description>剑指offer中的算法题 #    剑指Offer
+ 解决面试题的思路 #  面试题19：二叉树的镜像（举例让抽象问题具现化） #   题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。  https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/ 思路：递归替换左右子节点即可。 答案：  /** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public TreeNode mirrorTree(TreeNode root) { if (root == null) { return null; } TreeNode left = root.</description>
     </item>
     
     <item>

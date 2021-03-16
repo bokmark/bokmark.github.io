@@ -353,6 +353,25 @@ echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
     </item>
     
     <item>
+      <title>Android 架构</title>
+      <link>/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>剑指offer - 解决面试题的思路</title>
+      <link>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</guid>
+      <description>剑指offer中的算法题 #    剑指Offer
+ 解决面试题的思路 #  面试题19：二叉树的镜像（举例让抽象问题具现化） #   题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。  https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/ 思路：递归替换左右子节点即可。 答案：  /** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public TreeNode mirrorTree(TreeNode root) { if (root == null) { return null; } TreeNode left = root.</description>
+    </item>
+    
+    <item>
       <title>剑指offer - 高质量的代码</title>
       <link>/docs/algorithm/%E5%89%91%E6%8C%87offer2/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
@@ -641,6 +660,15 @@ private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map
     </item>
     
     <item>
+      <title>逃逸分析</title>
+      <link>/docs/java/JavaVM/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 28 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>volatile</title>
       <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5volatile/</link>
       <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
@@ -657,12 +685,14 @@ volatile 实现原理 #  lock 前缀 汇编指令 lock指令添加之后 线程�
     </item>
     
     <item>
-      <title>synchronized</title>
+      <title>synchronized 关键字的原理和使用</title>
       <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/</link>
       <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/</guid>
-      <description>synchronized(this) #  synchronized 在底层字节码的实现由这两个实现
+      <description>synchronized #  我们都知道synchronized可以修饰方法和代码块，那么这两者的内部实现原理是相同的吗？我们来仔细看一下。
+ https://www.jianshu.com/p/5c4f441bf142
+ synchronized 修饰代码块 #  synchronized 在底层字节码的实现由这两个实现
  monitorenter  拿到monitor的所有权，进入代码块
  monitorexit  每一个对象都有一个monitor与之关联。 字节码获取一个moniter对象的所有权就获取了一个锁
 public synchronized void test() #  对象头 #  优化synchronized 的性能设计了多个锁的量级 #    对象头
@@ -671,8 +701,7 @@ public synchronized void test() #  对象头 #  优化synchronized 的性能设�
   重量级锁 上下文切换
   当偏向锁撤销的时候需要释放锁会导致stop the world。 这就引起一个问题，
   为什么偏向锁撤销的时候会stop the world 因为撤销偏向锁的时候需要修改堆栈的对象的对象头内容，如果这时候不
-  偏向锁 适用于 只有一个线程访问同步块场景，因为偏向锁的撤销会导致stoptheworld。
-  惊群效应 #  https://www.</description>
+  偏向锁 适用于 只有一个线程访问同步块场景，因为偏向锁的撤销会导致stoptheworld。</description>
     </item>
     
     <item>
@@ -890,11 +919,20 @@ dependencies { implementation &amp;#34;androidx.startup:startup-runtime:1.0.0-al
     </item>
     
     <item>
-      <title>装饰器模式</title>
-      <link>/docs/arch/design_pattern/DecoratorPattern/</link>
+      <title>单例模式</title>
+      <link>/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>/docs/arch/design_pattern/DecoratorPattern/</guid>
+      <guid>/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/</guid>
+      <description>单例模式 #  </description>
+    </item>
+    
+    <item>
+      <title>装饰器模式</title>
+      <link>/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
       <description>装饰器模式 #  设计模式总体介绍 #  参考文档： #  装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
 意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
 主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。

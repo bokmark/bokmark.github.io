@@ -20,6 +20,16 @@
     </item>
     
     <item>
+      <title>剑指offer - 解决面试题的思路</title>
+      <link>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</guid>
+      <description>剑指offer中的算法题 #    剑指Offer
+ 解决面试题的思路 #  面试题19：二叉树的镜像（举例让抽象问题具现化） #   题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。  https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/ 思路：递归替换左右子节点即可。 答案：  /** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public TreeNode mirrorTree(TreeNode root) { if (root == null) { return null; } TreeNode left = root.</description>
+    </item>
+    
+    <item>
       <title>剑指offer - 高质量的代码</title>
       <link>/docs/algorithm/%E5%89%91%E6%8C%87offer2/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>

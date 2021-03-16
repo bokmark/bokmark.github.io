@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="设计模式文档大纲 #    设计模式-参考文档
  设计模式模块都将按照这个模板来进行介绍
- 设计模式总体介绍 举个现有的栗子 该模式的子模块以及详解  ">
+ 设计模式总体介绍 举个现有的栗子 该模式的子模块以及详解  面向对象设计的六大原则 #  Solid &#43; 迪米特法则
+ 单一职责（single responsibility） 类或者方法的职责应该单一 开闭原则（open close） 对扩展开放，对修改关闭。 里氏替换（liskov substitution） 父类出现的地方，子类都可以出现。 接口隔离（intreface segregation） 接口应该设计的足够小，解耦，以便更好的重构，更改 依赖倒置（denpendence inversion） 面向接口编程，不依赖细节 迪米特法则（law of demeter） 最少知识，知道别人的信息最少，专注于自己，可以降低耦合度。  ">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="设计模式" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -17,7 +18,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.6c7c6446dfdee7c8c933e9bbc6e80ee3ed6c913b2a59519f2092c3c6a9d63e55.css" integrity="sha256-bHxkRt/e58jJM&#43;m7xugO4&#43;1skTsqWVGfIJLDxqnWPlU=">
-<script defer src="/en.search.min.70c6fa233c61dbe94b7d8667b7594f95a6161419e6fb4dc8e3a303a41842f55e.js" integrity="sha256-cMb6Izxh2&#43;lLfYZnt1lPlaYWFBnm&#43;03I46MDpBhC9V4="></script>
+<script defer src="/en.search.min.4a903928b78bb314012f00d1bc5b99b90b1d1ea846e7bb1895379c482d689428.js" integrity="sha256-SpA5KLeLsxQBLwDRvFuZuQsdHqhG57sYlTecSC1olCg="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <link rel="alternate" type="application/rss+xml" href="/docs/arch/design_pattern/index.xml" title="Bokmark" />
@@ -366,6 +367,30 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-2edc4cc7d8f7086c6ce5ec301ba7eb93" class="toggle"  />
+    <label for="section-2edc4cc7d8f7086c6ce5ec301ba7eb93" class="flex justify-between">
+      <a  class="">架构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
     <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
       <a href="/docs/arch/dagger/" class="">Dagger</a>
@@ -453,7 +478,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/arch/design_pattern/DecoratorPattern/" class="">装饰器模式</a>
+    <a href="/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/" class="">单例模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="">装饰器模式</a>
   
 
         </li>
@@ -481,41 +519,6 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="toggle"  />
-    <label for="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="flex justify-between">
-      <a  class="">基础</a>
-      <span>▾</span>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/java/base/%E6%B3%9B%E5%9E%8B/" class="">Java 泛型</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
     
       
         <li>
@@ -619,7 +622,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/" class="">synchronized</a>
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/" class="">synchronized 关键字的原理和使用</a>
   
 
         </li>
@@ -901,6 +904,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/" class="">逃逸分析</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -996,6 +1012,41 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="toggle"  />
+    <label for="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="flex justify-between">
+      <a  class="">基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/base/%E6%B3%9B%E5%9E%8B/" class="">Java 泛型</a>
   
 
         </li>
@@ -1374,76 +1425,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <span>各种优化</span>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/" class="">崩溃优化</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/" class="">内存优化</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/" class="">内存优化</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/" class="">卡顿优化</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
     <a href="/docs/others/" class="">Others</a>
   
 
@@ -1523,6 +1504,76 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <span>各种优化</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/" class="">崩溃优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/" class="">内存优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/" class="">内存优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/" class="">卡顿优化</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
     <a href="/docs/algorithm/" class="">算法</a>
   
 
@@ -1537,6 +1588,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer1/" class="">剑指offer - 数据结构</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer3/" class="">剑指offer - 解决面试题的思路</a>
   
 
         </li>
@@ -1661,7 +1725,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#设计模式文档大纲">设计模式文档大纲</a></li>
+    <li><a href="#设计模式文档大纲">设计模式文档大纲</a>
+      <ul>
+        <li><a href="#面向对象设计的六大原则">面向对象设计的六大原则</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1688,6 +1756,25 @@ https://github.com/alex-shpak/hugo-book
 <li>举个现有的栗子</li>
 <li>该模式的子模块以及详解</li>
 </ol>
+<h2 id="面向对象设计的六大原则">
+  面向对象设计的六大原则
+  <a class="anchor" href="#%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e8%ae%be%e8%ae%a1%e7%9a%84%e5%85%ad%e5%a4%a7%e5%8e%9f%e5%88%99">#</a>
+</h2>
+<p>Solid + 迪米特法则</p>
+<ul>
+<li><strong>单一职责（single responsibility）</strong>
+类或者方法的职责应该单一</li>
+<li><strong>开闭原则（open close）</strong>
+对扩展开放，对修改关闭。</li>
+<li><strong>里氏替换（liskov substitution）</strong>
+父类出现的地方，子类都可以出现。</li>
+<li><strong>接口隔离（intreface segregation）</strong>
+接口应该设计的足够小，解耦，以便更好的重构，更改</li>
+<li><strong>依赖倒置（denpendence inversion）</strong>
+面向接口编程，不依赖细节</li>
+<li><strong>迪米特法则（law of demeter）</strong>
+最少知识，知道别人的信息最少，专注于自己，可以降低耦合度。</li>
+</ul>
 </article>
  
       
@@ -1730,7 +1817,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#设计模式文档大纲">设计模式文档大纲</a></li>
+    <li><a href="#设计模式文档大纲">设计模式文档大纲</a>
+      <ul>
+        <li><a href="#面向对象设计的六大原则">面向对象设计的六大原则</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

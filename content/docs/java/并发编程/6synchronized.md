@@ -1,11 +1,14 @@
 ---
-title: 'synchronized'
+title: 'synchronized 关键字的原理和使用'
 date: 2020-02-11T19:30:08+10:00
 draft: false
 weight: 6
 ---
+# synchronized
+我们都知道synchronized可以修饰方法和代码块，那么这两者的内部实现原理是相同的吗？我们来仔细看一下。
+> https://www.jianshu.com/p/5c4f441bf142
 
-### synchronized(this)
+### synchronized 修饰代码块
 
 synchronized 在底层字节码的实现由这两个实现
 

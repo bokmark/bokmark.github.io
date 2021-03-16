@@ -9,11 +9,20 @@
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
     <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/arch/design_pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>装饰器模式</title>
-      <link>/docs/arch/design_pattern/DecoratorPattern/</link>
+      <title>单例模式</title>
+      <link>/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>/docs/arch/design_pattern/DecoratorPattern/</guid>
+      <guid>/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/</guid>
+      <description>单例模式 #  </description>
+    </item>
+    
+    <item>
+      <title>装饰器模式</title>
+      <link>/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
       <description>装饰器模式 #  设计模式总体介绍 #  参考文档： #  装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
 意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
 主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。

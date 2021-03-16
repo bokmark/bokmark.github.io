@@ -243,8 +243,37 @@ class Solution {
 ### 面试题18：树的子结构
 - 题目：输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)。B是A的子结构， 即 A中有出现和B相同的结构和节点值。
 - [https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/)
-- 思路：
+- 思路：只是简单的考核代码的鲁棒性，递归实现即可。
 - 答案：
 ```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isSubStructure(TreeNode A, TreeNode B) {
+        if (B == null || A == null) {
+            return false;
+        }
+        return isSame(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
+    }
 
+    private boolean isSame(TreeNode a, TreeNode b) {
+        if (a == null && b != null) {
+            return false;
+        } else {
+            if (a != null && b != null) {
+                return a.val == b.val && isSame(a.left, b.left) && isSame(a.right, b.right);
+            } else {
+                return true;
+            }
+        }
+
+    }
+}
 ```

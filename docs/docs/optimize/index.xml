@@ -7,8 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
-    <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Sat, 28 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/docs/optimize/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/optimize/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>崩溃优化</title>
       <link>/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/</link>
