@@ -94,3 +94,5 @@ weight: 20
 这里我将找几个比较常用的库 来学习 jetpack 是如何做到 如它所说的 `Jetpack 是一个由多个库组成的套件，可帮助开发者遵循最佳做法，减少样板代码并编写可在各种 Android 版本和设备中一致运行的代码，让开发者精力集中编写重要的代码。`
 
 ------
+
+http://bbs.xiangxueketang.cn/article/detail/231
