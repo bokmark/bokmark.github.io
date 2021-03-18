@@ -8,6 +8,7 @@ summary: "触摸事件"
 # Android 的触摸事件 怎么分发的
 > https://www.jianshu.com/p/e99b5e8bd67b
 > https://www.cnblogs.com/aademeng/articles/10702653.html
+> http://bbs.xiangxueketang.cn/article/detail/110
 
 
 几个主要的类的代码内容。
