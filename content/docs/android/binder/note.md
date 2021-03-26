@@ -65,3 +65,6 @@ summary: "Binder 面试问题"
 ## binder驱动 如何启动
 - linux 中 一切皆文件
 - binder 驱动 也是一个文件 可以被mmap
+
+## binder 如何跨进程，
+首先数据放通过copyfromuser 拷贝到内核空间，数据接收方由于mmap 接收方就接收到这个数据了。

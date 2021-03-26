@@ -272,30 +272,21 @@ echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
     </item>
     
     <item>
-      <title>面试经验</title>
-      <link>/posts/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <title>Paging 分页库</title>
+      <link>/docs/arch/jetpack/paging/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>/posts/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/</guid>
-      <description>面试题合集</description>
+      <guid>/docs/arch/jetpack/paging/</guid>
+      <description>Jetpack 全家桶</description>
     </item>
     
     <item>
-      <title>面试题 题目 合集</title>
-      <link>/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%90%88%E9%9B%86/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <title>StartUp</title>
+      <link>/docs/arch/jetpack/startup/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
-      <guid>/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%90%88%E9%9B%86/</guid>
-      <description>面试题合集</description>
-    </item>
-    
-    <item>
-      <title>面试题 题目以及 我自己的答案</title>
-      <link>/posts/question1/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <author>bokmark@163.com (bokmark)</author>
-      <guid>/posts/question1/</guid>
-      <description>面试题合集</description>
+      <guid>/docs/arch/jetpack/startup/</guid>
+      <description>Jetpack 全家桶</description>
     </item>
     
     <item>
@@ -305,6 +296,15 @@ echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1base/</guid>
       <description>Java 线程的实现方式有几种，FeatureTask的实现方式，死锁</description>
+    </item>
+    
+    <item>
+      <title>android AMS</title>
+      <link>/docs/android/framework/ams/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/framework/ams/</guid>
+      <description>AMS</description>
     </item>
     
     <item>
@@ -358,7 +358,7 @@ echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/</guid>
-      <description></description>
+      <description>Android 架构 #   业务需求解构， 独立出不可再分的模块 再从各个模块中提炼组件 组件的不可再发， 公用组件下沉 模块独立开发，独立测试，明确输入输出，方便编写测试代码 搭积木的方式完成整个app的构建 使用一些第三方库，来进行组件间的解耦，通信。 面向接口编程 渐进式的架构  内存优化 #   设备分级 bitmap 优化，统一图片库 大图。重复图片。图片内存缓存。  内存泄漏 #  leakcanary</description>
     </item>
     
     <item>
@@ -440,12 +440,21 @@ private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map
     </item>
     
     <item>
-      <title>内存优化</title>
+      <title>网络优化</title>
       <link>/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</link>
       <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</guid>
-      <description>内存优化</description>
+      <description>网络优化</description>
+    </item>
+    
+    <item>
+      <title>Activity launchMode</title>
+      <link>/docs/android/LaunchMode/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/LaunchMode/</guid>
+      <description>Activity 的 launchemode</description>
     </item>
     
     <item>
@@ -554,6 +563,15 @@ private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map
       <author>bokmark@163.com (bokmark)</author>
       <guid>/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</guid>
       <description>《深入理解Java 虚拟机》第二章 自学笔记</description>
+    </item>
+    
+    <item>
+      <title>触摸事件 分发流程</title>
+      <link>/docs/android/view/touch/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/touch/</guid>
+      <description>触摸事件</description>
     </item>
     
     <item>
@@ -682,6 +700,15 @@ arm 架构拥有 3级流水线，以为这可能同时执行3条指令。
 单线程情况下 重排序 将会保证执行结果相同。但是多线程情况下导致出现混乱的情况。
 volatile使用场景 #  一个线程写，多个线程读
 volatile 实现原理 #  lock 前缀 汇编指令 lock指令添加之后 线程的工作内存中使用到变量的时候必须重新从主内存中重新读取一遍 线程的工作内存中对变量进行修改之后必须立马写会主内存</description>
+    </item>
+    
+    <item>
+      <title>AsyncLayoutInflater</title>
+      <link>/docs/arch/jetpack/asynclayoutinflater/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/asynclayoutinflater/</guid>
+      <description>AsyncLayoutInflater</description>
     </item>
     
     <item>
@@ -864,6 +891,16 @@ TCP IP详解
     
     <item>
       <title></title>
+      <link>/docs/android/vm/vm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/vm/vm/</guid>
+      <description> https://blog.csdn.net/Luoshengyang/article/details/41338251
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>/docs/arch/jetpack/compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>bokmark@163.com (bokmark)</author>
@@ -886,6 +923,15 @@ TCP IP详解
     </item>
     
     <item>
+      <title></title>
+      <link>/docs/open_sources/leakcanary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/leakcanary/</guid>
+      <description>https://blog.csdn.net/braintt/article/details/99685243</description>
+    </item>
+    
+    <item>
       <title>Github Pages服务</title>
       <link>/posts/GithubPages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -898,24 +944,6 @@ cd mysitegit clone https://github.com/jugglerx/hugo-whisper-theme.git themes/hu
 baseURL = &amp;quot;/&amp;quot;themesDir = &amp;quot;themes&amp;quot;publishdir = &amp;quot;docs&amp;quot;theme = &amp;quot;hugo-whisper-theme&amp;quot;这里面最重要的是 publishdir = &amp;quot;docs&amp;quot;
   创建你要的页面
 hugo new about.md// 会在content页面 创建about.md 文件hugo new notes/other/GithubPages.</description>
-    </item>
-    
-    <item>
-      <title>StartUp</title>
-      <link>/docs/arch/jetpack/startup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>bokmark@163.com (bokmark)</author>
-      <guid>/docs/arch/jetpack/startup/</guid>
-      <description>StartUp 初始化组件 #    G oogle 官方解释
- 这是官方对于startup这个库的解释。
- App startup 库 提供了 一个直截了当、高性能的方式去初始化你的应用。第三方库和app的开发者都可以使用app startup这个库以数据流的方式去显示的安排启动的各个步骤。
-app startup这个库允许你只创建一个contentprovider 去初始化你的各个 initializer，这将有助与提升你的app启动时间。
- 从这段话中，我们可以看到几个重要的点。
- contentprovider 数据流的方式，显示的安排各个启动的步骤  配置 #  配置在你的app或者library的moudle中的build.gradle 中
-dependencies { implementation &amp;#34;androidx.startup:startup-runtime:1.0.0-alpha02&amp;#34; } 注册初始化组件 #  定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。
-组件的创建 #  实现 Initializer&amp;lt;T&amp;gt; 接口。该接口有如下两个方法：
- T create(Context) 返回创建好的实例 dependencies() 创建该组件之前需要创建的其他组件。   以workmanager举例说明
-// Initializes WorkManager. class WorkManagerInitializer implements Initializer&amp;lt;WorkManager&amp;gt; { @Override public WorkManager create(Context context) { Configuration configuration = Configuration.</description>
     </item>
     
     <item>

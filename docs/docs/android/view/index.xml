@@ -26,5 +26,14 @@
       <description>从handler的面试题出发了解handler</description>
     </item>
     
+    <item>
+      <title>触摸事件 分发流程</title>
+      <link>/docs/android/view/touch/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/touch/</guid>
+      <description>触摸事件</description>
+    </item>
+    
   </channel>
 </rss>

@@ -9,6 +9,33 @@
     <managingEditor>bokmark@163.com (bokmark)</managingEditor>
     <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/arch/jetpack/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Paging 分页库</title>
+      <link>/docs/arch/jetpack/paging/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/paging/</guid>
+      <description>Jetpack 全家桶</description>
+    </item>
+    
+    <item>
+      <title>StartUp</title>
+      <link>/docs/arch/jetpack/startup/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/startup/</guid>
+      <description>Jetpack 全家桶</description>
+    </item>
+    
+    <item>
+      <title>AsyncLayoutInflater</title>
+      <link>/docs/arch/jetpack/asynclayoutinflater/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/asynclayoutinflater/</guid>
+      <description>AsyncLayoutInflater</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>/docs/arch/jetpack/compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -16,24 +43,6 @@
       <guid>/docs/arch/jetpack/compose/</guid>
       <description>Compose #  第一步 Jetpack Compose 是干嘛用的？ #  做过启动优化的同学一定会发现LayoutInflater.inflate实在是太慢了，可是真当你一点点得去优化xml却不会有太多的提升，真的是搞得人头疼。这时候就要分析 LayoutInflater.inflate 里面到底做了什么？让我们来研究一下吧。
  public View inflate(@LayoutRes int resource, @Nullable ViewGroup root, boolean attachToRoot) { final Resources res = getContext().getResources(); if (DEBUG) { Log.d(TAG, &amp;quot;INFLATING from resource: \&amp;quot;&amp;quot; + res.getResourceName(resource) + &amp;quot;\&amp;quot; (&amp;quot; + Integer.toHexString(resource) + &amp;quot;)&amp;quot;); } View view = tryInflatePrecompiled(resource, res, root, attachToRoot); // 1 if (view != null) { return view; } XmlResourceParser parser = res.getLayout(resource); // 2 try { return inflate(parser, root, attachToRoot); // 3 } finally { parser.</description>
-    </item>
-    
-    <item>
-      <title>StartUp</title>
-      <link>/docs/arch/jetpack/startup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>bokmark@163.com (bokmark)</author>
-      <guid>/docs/arch/jetpack/startup/</guid>
-      <description>StartUp 初始化组件 #    G oogle 官方解释
- 这是官方对于startup这个库的解释。
- App startup 库 提供了 一个直截了当、高性能的方式去初始化你的应用。第三方库和app的开发者都可以使用app startup这个库以数据流的方式去显示的安排启动的各个步骤。
-app startup这个库允许你只创建一个contentprovider 去初始化你的各个 initializer，这将有助与提升你的app启动时间。
- 从这段话中，我们可以看到几个重要的点。
- contentprovider 数据流的方式，显示的安排各个启动的步骤  配置 #  配置在你的app或者library的moudle中的build.gradle 中
-dependencies { implementation &amp;#34;androidx.startup:startup-runtime:1.0.0-alpha02&amp;#34; } 注册初始化组件 #  定义了一个默认的content provider，所有的 组件都由这个content provider的create 里面创建流程。 如果想要自动化的创建组件，需要在manifest中显示的写入你的组件。
-组件的创建 #  实现 Initializer&amp;lt;T&amp;gt; 接口。该接口有如下两个方法：
- T create(Context) 返回创建好的实例 dependencies() 创建该组件之前需要创建的其他组件。   以workmanager举例说明
-// Initializes WorkManager. class WorkManagerInitializer implements Initializer&amp;lt;WorkManager&amp;gt; { @Override public WorkManager create(Context context) { Configuration configuration = Configuration.</description>
     </item>
     
   </channel>

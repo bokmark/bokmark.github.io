@@ -1,5 +1,9 @@
 ---
 title: 'StartUp'
+date: 2019-02-11T19:30:08+10:00
+draft: false
+weight: 1
+summary: "Jetpack 全家桶"
 ---
 # StartUp 初始化组件
 
