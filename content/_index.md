@@ -4,7 +4,7 @@ type: docs
 ---
 
 # 个人资料
-{{< columns >}}
+{{<columns>}}
 
 ## 基础资料
 
@@ -27,7 +27,7 @@ type: docs
 <br>
 ![扫描二维码](/images/qrcode_for_mq258.jpg)
 
-{{< /columns >}}
+{{</columns>}}
 
 ## 工作经历
-- 
+-
