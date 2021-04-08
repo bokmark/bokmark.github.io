@@ -17,7 +17,6 @@ enableGitInfo = true
   startLevel = 1
 
 [menu]
-# [[menu.before]]
 [[menu.after]]
   name = "Github"
   url = "https://github.com/bokmark"

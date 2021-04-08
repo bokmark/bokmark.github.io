@@ -1,22 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>others on Bokmark</title>
-    <link>/categories/others/</link>
-    <description>Recent content in others on Bokmark</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
-    <webMaster>bokmark@163.com (bokmark)</webMaster>
-    <lastBuildDate>Thu, 02 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/others/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>我的git配置</title>
-      <link>/posts/git_alias/</link>
-      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
-      <author>bokmark@163.com (bokmark)</author>
-      <guid>/posts/git_alias/</guid>
-      <description># This is Git&#39;s per-user configuration file.[user]# Please adapt and uncomment the following lines:name = xxxemail = xxx[filter &amp;quot;lfs&amp;quot;]clean = git-lfs clean -- %fsmudge = git-lfs smudge -- %fprocess = git-lfs filter-processrequired = true[alias]co = checkoutcp = cherry-pickcm = commitba = branch -abh = branchamend = commit -a --amendlg = loglo = log --onelinest = statusdf = diffreview = !</description>
-    </item>
-    
-  </channel>
-</rss>
