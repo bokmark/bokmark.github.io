@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模块化 on Bokmark</title>
+    <link>/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/</link>
+    <description>Recent content in 模块化 on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster>
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android 架构</title>
+      <link>/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/</guid>
+      <description>Android 架构 #   业务需求解构， 独立出不可再分的模块 再从各个模块中提炼组件 组件的不可再发， 公用组件下沉 模块独立开发，独立测试，明确输入输出，方便编写测试代码 搭积木的方式完成整个app的构建 使用一些第三方库，来进行组件间的解耦，通信。 面向接口编程 渐进式的架构  内存优化 #   设备分级 bitmap 优化，统一图片库 大图。重复图片。图片内存缓存。  内存泄漏 #  leakcanary</description>
+    </item>
+    
+  </channel>
+</rss>

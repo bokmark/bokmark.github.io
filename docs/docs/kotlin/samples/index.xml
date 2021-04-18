@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark</title>
+    <link>/docs/kotlin/samples/</link>
+    <description>Recent content on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/kotlin/samples/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【译】Kotlin - 基础介绍</title>
+      <link>/docs/kotlin/samples/intro/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/intro/</guid>
+      <description>方法、操作符方法、中缀方法、vararg、变量、泛型、继承</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 代理</title>
+      <link>/docs/kotlin/samples/delegate/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/delegate/</guid>
+      <description>委托模式 、 代理属性 、 lazy、to</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 作用域方法</title>
+      <link>/docs/kotlin/samples/funarea/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/funarea/</guid>
+      <description>let 、 run 、 with 、 apply 、 also</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 函数</title>
+      <link>/docs/kotlin/samples/function/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/function/</guid>
+      <description>高阶函数、lambda、扩展函数、扩展属性</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 流程控制</title>
+      <link>/docs/kotlin/samples/flow/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/flow/</guid>
+      <description>when 、 loop 、 区间</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 特殊特性</title>
+      <link>/docs/kotlin/samples/special/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/special/</guid>
+      <description>命名参数、string模板、解构声明、smart cast</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 特殊类</title>
+      <link>/docs/kotlin/samples/specialclass/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/specialclass/</guid>
+      <description>Data class、enum class、sealed class、object keyword</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 集合</title>
+      <link>/docs/kotlin/samples/collections/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/collections/</guid>
+      <description>list 、 map 、 set、fliter、any、all、none、first、last、partition</description>
+    </item>
+    
+  </channel>
+</rss>

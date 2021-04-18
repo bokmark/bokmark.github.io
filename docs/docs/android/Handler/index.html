@@ -1,0 +1,2657 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="从handler的面试题出发了解handler">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Handler" />
+<meta property="og:description" content="从handler的面试题出发了解handler" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/android/Handler/" />
+<meta property="article:published_time" content="2018-11-28T15:14:39+10:00" />
+<meta property="article:modified_time" content="2021-03-18T09:39:34+08:00" />
+<title>Handler | Bokmark</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6c7c6446dfdee7c8c933e9bbc6e80ee3ed6c913b2a59519f2092c3c6a9d63e55.css" integrity="sha256-bHxkRt/e58jJM&#43;m7xugO4&#43;1skTsqWVGfIJLDxqnWPlU=">
+<script defer src="/en.search.min.d2d493a5491ee6ca9a1127bb54f8b7717b24ff360d38b65461690bc1ef0582d9.js" integrity="sha256-0tSTpUke5sqaESe7VPi3cXsk/zYNOLZUYWkLwe8Fgtk="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/android_rocket_force/" >
+        《Android火箭兵》公众号
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/Handler/" class=" active">Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/LaunchMode/" class="">Activity launchMode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7bb810424bf7c7832a8f68a6b8ebba84" class="toggle"  />
+    <label for="section-7bb810424bf7c7832a8f68a6b8ebba84" class="flex justify-between">
+      <a  class="">Android Studio</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/android_studio/maven_sdk/" class="">创建并上传mavenSdk</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-223fff677be759c0ab39571dadaa19b5" class="toggle"  />
+    <label for="section-223fff677be759c0ab39571dadaa19b5" class="flex justify-between">
+      <a  class="">Binder</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/binder/note/" class="">Binder 笔记</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/binder/arch/" class="">从一个例子研究Binder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8018332cd0b0222e2bbe53b463a21835" class="toggle"  />
+    <label for="section-8018332cd0b0222e2bbe53b463a21835" class="flex justify-between">
+      <a  class="">Camera</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/camera/camera/" class="">android camera 相关知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33aa5107d79cba563fb0e815bc6d185a" class="toggle"  />
+    <label for="section-33aa5107d79cba563fb0e815bc6d185a" class="flex justify-between">
+      <a  class="">Component</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
+    <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
+      <a  class="">Framework</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/ams/" class="">android AMS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/androidvm/" class="">android vm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/start/" class="">系统启动流程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-546c38aef73042f23c5e1888dfc1e768" class="toggle"  />
+    <label for="section-546c38aef73042f23c5e1888dfc1e768" class="flex justify-between">
+      <a  class="">Ndk</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="toggle"  />
+    <label for="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="flex justify-between">
+      <a  class="">View</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/view/" class="">View </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/touch/" class="">触摸事件 分发流程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5956d62726072d04134e2c04f3853c6f" class="toggle"  />
+    <label for="section-5956d62726072d04134e2c04f3853c6f" class="flex justify-between">
+      <a  class="">Vm</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/vm/vm/" class="">Vm</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/arch/" class="">Arch</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2edc4cc7d8f7086c6ce5ec301ba7eb93" class="toggle"  />
+    <label for="section-2edc4cc7d8f7086c6ce5ec301ba7eb93" class="flex justify-between">
+      <a href="/docs/arch/%E6%9E%B6%E6%9E%84/" class="">架构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/" class="">Android 架构</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
+    <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
+      <a href="/docs/arch/dagger/" class="">Dagger</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8be0af9073ee9bf5adc200d689a982b1" class="toggle"  />
+    <label for="section-8be0af9073ee9bf5adc200d689a982b1" class="flex justify-between">
+      <a href="/docs/arch/jetpack/" class="">Jetpack</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/paging/" class="">Paging 分页库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/startup/" class="">StartUp</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/compose/" class="">Compose</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2bc0755154b587ced0ab9471360baeda" class="toggle"  />
+    <label for="section-2bc0755154b587ced0ab9471360baeda" class="flex justify-between">
+      <a href="/docs/arch/design_pattern/" class="">设计模式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/" class="">单例模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="">装饰器模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/java/" class="">Java</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ecf500dadd2d9a5c72a9dab8acc92a" class="toggle"  />
+    <label for="section-09ecf500dadd2d9a5c72a9dab8acc92a" class="flex justify-between">
+      <a  class="">并发编程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1base/" class="">基础知识</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/2jmm/" class="">JMM</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7cas/" class="">cas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/3thread_local/" class="">thread local</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4blockingqueue/" class="">阻塞队列和线程池原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5volatile/" class="">volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/" class="">synchronized 关键字的原理和使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/8aqs/" class="">AQS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/9lock/" class="">多线程--lock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/questions/" class="">多线程--面试题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f6bfaea6f082cdebaa54f92544b86ee4" class="toggle"  />
+    <label for="section-f6bfaea6f082cdebaa54f92544b86ee4" class="flex justify-between">
+      <a  class="">网络通讯</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/io/" class="">BIO,NIO,AIO</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/nio/" class="">BIO,NIO,AIO</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/" class="">TCP 三次握手、四次挥手</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/" class="">tcp 分段与ip 分片</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class="">网络协议</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/" class="">网络协议 相关问题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E9%9D%A2%E8%AF%95/" class="">面试题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ff2116bff7eb47793028d71d3690ea14" class="toggle"  />
+    <label for="section-ff2116bff7eb47793028d71d3690ea14" class="flex justify-between">
+      <a  class="">《深入理解 Java 虚拟机》</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/" class="">《深入理解Java 虚拟机》第二章</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/" class="">《深入理解Java虚拟机》字节码指令表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5cd4235df550fb51f2cd7173470aec9d" class="toggle"  />
+    <label for="section-5cd4235df550fb51f2cd7173470aec9d" class="flex justify-between">
+      <a  class="">Java v M</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/gc/" class="">Java 垃圾回收器 回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java-allocate/" class="">Java </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/question/" class="">Java vm 面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/" class="">Java 对象头的内容</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/" class="">逃逸分析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76a0b3127bcb1439cbea08b42a85d796" class="toggle"  />
+    <label for="section-76a0b3127bcb1439cbea08b42a85d796" class="flex justify-between">
+      <a  class="">Other</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io0/" class="">HSDB</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io/" class="">Java IO 的基础应用</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/object_proxy/" class="">动态代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90abdf45b388491dd8582d80fdac3b6e" class="toggle"  />
+    <label for="section-90abdf45b388491dd8582d80fdac3b6e" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="toggle"  />
+    <label for="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="flex justify-between">
+      <a  class="">基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/base/%E6%B3%9B%E5%9E%8B/" class="">Java 泛型</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Kotlin</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-daef54ee12ddb1c2b7f5e9e9854fa7a0" class="toggle"  />
+    <label for="section-daef54ee12ddb1c2b7f5e9e9854fa7a0" class="flex justify-between">
+      <a href="/docs/kotlin/coroutines/" class="">Kotlin 协程本质</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/coroutines/how-to-use/" class="">Kotlin 协程 - 怎么使用</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de1c3339b4d58bf97a87da32fd667b9f" class="toggle"  />
+    <label for="section-de1c3339b4d58bf97a87da32fd667b9f" class="flex justify-between">
+      <a href="/docs/kotlin/plus/" class="">Plus</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/fanxin/" class="">Kotlin 泛型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/plus1/" class="">Kotlin 进阶知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-890e164347abfc846f7df26b475a8732" class="toggle"  />
+    <label for="section-890e164347abfc846f7df26b475a8732" class="flex justify-between">
+      <a href="/docs/kotlin/samples/" class="">Samples</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/intro/" class="">【译】Kotlin - 基础介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/delegate/" class="">【译】Kotlin 语法基础 - 代理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/funarea/" class="">【译】Kotlin 语法基础 - 作用域方法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/function/" class="">【译】Kotlin 语法基础 - 函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/flow/" class="">【译】Kotlin 语法基础 - 流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/special/" class="">【译】Kotlin 语法基础 - 特殊特性</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/specialclass/" class="">【译】Kotlin 语法基础 - 特殊类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/collections/" class="">【译】Kotlin 语法基础 - 集合</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>OpenSources</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-63289f90048a52161179aa2fc2b1cf2f" class="toggle"  />
+    <label for="section-63289f90048a52161179aa2fc2b1cf2f" class="flex justify-between">
+      <a href="/docs/open_sources/okhttp/" class="">Okhttp</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/okhttp/summary/" class="">OkHTTP 整体流程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle"  />
+    <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
+      <a  class="">Retrofit</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/base/" class="">Retrofit - 大致流程源码解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/use/" class="">如何使用</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d7a0a1319d26695a5a4c2e7588e3f3d8" class="toggle"  />
+    <label for="section-d7a0a1319d26695a5a4c2e7588e3f3d8" class="flex justify-between">
+      <a href="/docs/open_sources/glide/" class="">Glide 基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/glide/with/" class="">Glide 生命周期</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/leakcanary/" class="">Index</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/others/" class="">Others</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-538a0f9eb99dcd99b375a6021f5b26fe" class="toggle"  />
+    <label for="section-538a0f9eb99dcd99b375a6021f5b26fe" class="flex justify-between">
+      <a href="/docs/others/protocal/" class="">Protocal</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/http/" class="">HTTP 协议</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/https/" class="">HTTPS 与http的区别</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/rtsp/" class="">RTSP 协议</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/optimize/" class="">各种优化</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/" class="">崩溃优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/" class="">内存优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/" class="">网络优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/" class="">卡顿优化</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/" class="">算法</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer1/" class="">剑指offer - 数据结构</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer3/" class="">剑指offer - 解决面试题的思路</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer2/" class="">剑指offer - 高质量的代码</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%B9%A6%E6%9C%AC/" class="">技术书籍</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        随笔
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/bokmark" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://bokmark.gitee.io" target="_blank" rel="noopener">
+        Gitee
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/theme/hugo-book/" target="_blank" rel="noopener">
+        hugo-theme-book
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener">
+        mermaid
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Handler</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#handler">Handler</a>
+      <ul>
+        <li><a href="#那么我将会从源码的角度上开始分析这几个问题">那么我将会从源码的角度上开始分析这几个问题。</a></li>
+      </ul>
+    </li>
+    <li><a href="#looper死循环为什么不会导致应用卡死">looper死循环为什么不会导致应用卡死？</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="handler">
+  Handler
+  <a class="anchor" href="#handler">#</a>
+</h1>
+<p><a href="http://bbs.xiangxueketang.cn/article/detail/111">http://bbs.xiangxueketang.cn/article/detail/111</a></p>
+<blockquote>
+<p>handler 是学习中问得最常见的一个问题。而这一次我将从几个handler最常见的几个问题来开始学习这个问题</p>
+</blockquote>
+<ul>
+<li>一个线程可以有几个Handler</li>
+<li>一个线程可以有几个looper</li>
+<li>handler的内存泄漏的原因？为什么其他的内部类没有提说过有这个问题？</li>
+<li>为何主线程可以new Handler？ 如果想要在子线程中new handler要做些什么准备？</li>
+<li>子线程中维护的Looper，消息队列无消息的时候的处理方案是什么？有什么用？</li>
+<li>既然可以存在多个Handler 往MessageQueue中add 数据，那内部是如何确保线程数据安全的？</li>
+<li>我们使用Message 时应该如何创建它？</li>
+<li>使用Handler的postDelay后消息队列会有什么变化？</li>
+<li>looper死循环为什么不会导致应用卡死？</li>
+</ul>
+<h2 id="那么我将会从源码的角度上开始分析这几个问题">
+  那么我将会从源码的角度上开始分析这几个问题。
+  <a class="anchor" href="#%e9%82%a3%e4%b9%88%e6%88%91%e5%b0%86%e4%bc%9a%e4%bb%8e%e6%ba%90%e7%a0%81%e7%9a%84%e8%a7%92%e5%ba%a6%e4%b8%8a%e5%bc%80%e5%a7%8b%e5%88%86%e6%9e%90%e8%bf%99%e5%87%a0%e4%b8%aa%e9%97%ae%e9%a2%98">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://www.jianshu.com/p/aa17a07aaae7">开篇</a>
+
+  <a href="http://androidxref.com/9.0.0_r3/xref/frameworks/base/core/java/android/os/Handler.java">handler在线源码</a></p>
+</blockquote>
+<p>先来看看我们的最常见的使用handler的方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        Handler handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Handler<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleMessage</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">handleMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">);</span>
+                <span style="color:#66d9ef">switch</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">what</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">case</span> 1<span style="color:#f92672">:</span>
+                        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">};</span>
+
+        handler<span style="color:#f92672">.</span><span style="color:#a6e22e">sendEmptyMessage</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</code></pre></div><p>然后我们从源码中分析，所有的 send post 方法最终都会调用到 <code>enqueueMessage</code></p>
+<p>
+  <img src="https://upload-images.jianshu.io/upload_images/12975041-6be0ac83b80509fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="handler外部调用关系图" /></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">enqueueMessage</span><span style="color:#f92672">(</span>MessageQueue queue<span style="color:#f92672">,</span> Message msg<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> uptimeMillis<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mAsynchronous<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            msg<span style="color:#f92672">.</span><span style="color:#a6e22e">setAsynchronous</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> queue<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueueMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">,</span> uptimeMillis<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+</code></pre></div><p>那么我们下一步就要探寻queue.enqueueMessage 里面做了什么。这一步我们看到 queue来自于 
+  <a href="http://androidxref.com/9.0.0_r3/xref/frameworks/base/core/java/android/os/Looper.java">Looper</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Handler.java
+</span><span style="color:#75715e"></span>        mQueue <span style="color:#f92672">=</span> mLooper<span style="color:#f92672">.</span><span style="color:#a6e22e">mQueue</span><span style="color:#f92672">;</span><span style="color:#75715e">//
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Looper.java
+</span><span style="color:#75715e"></span>        mQueue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MessageQueue<span style="color:#f92672">(</span>quitAllowed<span style="color:#f92672">);</span><span style="color:#75715e">//
+</span></code></pre></div><p>
+  <a href="http://androidxref.com/9.0.0_r3/xref/frameworks/base/core/java/android/os/MessageQueue.java">MessageQueue.java</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">enqueueMessage</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> when<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Message must have a target.&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">isInUse</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span>msg <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; This message is already in use.&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mQuitting<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                IllegalStateException e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span>
+                        msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; sending message to a Handler on a dead thread&#34;</span><span style="color:#f92672">);</span>
+                Log<span style="color:#f92672">.</span><span style="color:#a6e22e">w</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">(),</span> e<span style="color:#f92672">);</span>
+                msg<span style="color:#f92672">.</span><span style="color:#a6e22e">recycle</span><span style="color:#f92672">();</span>
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+
+            msg<span style="color:#f92672">.</span><span style="color:#a6e22e">markInUse</span><span style="color:#f92672">();</span>
+            msg<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span> <span style="color:#f92672">=</span> when<span style="color:#f92672">;</span>
+            Message p <span style="color:#f92672">=</span> mMessages<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">boolean</span> needWake<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>p <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> when <span style="color:#f92672">==</span> 0 <span style="color:#f92672">||</span> when <span style="color:#f92672">&lt;</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#75715e">// New head, wake up the event queue if blocked.
+</span><span style="color:#75715e"></span>                msg<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> p<span style="color:#f92672">;</span>
+                mMessages <span style="color:#f92672">=</span> msg<span style="color:#f92672">;</span>
+                needWake <span style="color:#f92672">=</span> mBlocked<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                <span style="color:#75715e">// Inserted within the middle of the queue.  Usually we don&#39;t have to wake
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// up the event queue unless there is a barrier at the head of the queue
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// and the message is the earliest asynchronous message in the queue.
+</span><span style="color:#75715e"></span>                needWake <span style="color:#f92672">=</span> mBlocked <span style="color:#f92672">&amp;&amp;</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">isAsynchronous</span><span style="color:#f92672">();</span>
+                Message prev<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;;)</span> <span style="color:#f92672">{</span>
+                    prev <span style="color:#f92672">=</span> p<span style="color:#f92672">;</span>
+                    p <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>p <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> when <span style="color:#f92672">&lt;</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>needWake <span style="color:#f92672">&amp;&amp;</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">isAsynchronous</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                        needWake <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">}</span>
+                msg<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> p<span style="color:#f92672">;</span> <span style="color:#75715e">// invariant: p == prev.next
+</span><span style="color:#75715e"></span>                prev<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> msg<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#75715e">// We can assume mPtr != 0 because mQuitting is false.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>needWake<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                nativeWake<span style="color:#f92672">(</span>mPtr<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">native</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">nativePollOnce</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> ptr<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> timeoutMillis<span style="color:#f92672">);</span> <span style="color:#75715e">/*non-static for callbacks*/</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">native</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">nativeWake</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> ptr<span style="color:#f92672">);</span>
+
+</code></pre></div><p>从里面我们可以看到 equeueMessage 只是将message 插入到队列中，至于怎么插入的我们后面再说。
+在插入之后这个message 会怎么执行呢，重点在执行<code>nativeWake(mPtr);</code> 这一句上。
+
+  <a href="http://androidxref.com/9.0.0_r3/xref/frameworks/base/core/jni/android_os_MessageQueue.cpp">课外阅读native 代码地址 android_os_MessageQueue.cpp</a></p>
+<p>在这里会做一个唤醒，既然有唤醒，就会有沉睡，那么我们来看messagequeue 在哪里调用沉睡的方法<code>nativePollOnce</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+    Message <span style="color:#a6e22e">next</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// Return here if the message loop has already quit and been disposed.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// This can happen if the application tries to restart a looper after quit
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// which is not supported.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> ptr <span style="color:#f92672">=</span> mPtr<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>ptr <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">int</span> pendingIdleHandlerCount <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span> <span style="color:#75715e">// -1 only during first iteration
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> nextPollTimeoutMillis <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;;)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nextPollTimeoutMillis <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                Binder<span style="color:#f92672">.</span><span style="color:#a6e22e">flushPendingCommands</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// 看这里看这里看这里
+</span><span style="color:#75715e"></span>            nativePollOnce<span style="color:#f92672">(</span>ptr<span style="color:#f92672">,</span> nextPollTimeoutMillis<span style="color:#f92672">);</span>
+
+            <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#75715e">// Try to retrieve the next message.  Return if found.
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> now <span style="color:#f92672">=</span> SystemClock<span style="color:#f92672">.</span><span style="color:#a6e22e">uptimeMillis</span><span style="color:#f92672">();</span>
+                Message prevMsg <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                Message msg <span style="color:#f92672">=</span> mMessages<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#75715e">// Stalled by a barrier.  Find the next asynchronous message in the queue.
+</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">do</span> <span style="color:#f92672">{</span>
+                        prevMsg <span style="color:#f92672">=</span> msg<span style="color:#f92672">;</span>
+                        msg <span style="color:#f92672">=</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span> <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>msg <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">isAsynchronous</span><span style="color:#f92672">());</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>now <span style="color:#f92672">&lt;</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        <span style="color:#75715e">// Next message is not ready.  Set a timeout to wake up when it is ready.
+</span><span style="color:#75715e"></span>                        nextPollTimeoutMillis <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">)</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span> <span style="color:#f92672">-</span> now<span style="color:#f92672">,</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">);</span>
+                    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                        <span style="color:#75715e">// Got a message.
+</span><span style="color:#75715e"></span>                        mBlocked <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+                        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>prevMsg <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                            prevMsg<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                            mMessages <span style="color:#f92672">=</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                        <span style="color:#f92672">}</span>
+                        msg<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>DEBUG<span style="color:#f92672">)</span> Log<span style="color:#f92672">.</span><span style="color:#a6e22e">v</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Returning message: &#34;</span> <span style="color:#f92672">+</span> msg<span style="color:#f92672">);</span>
+                        msg<span style="color:#f92672">.</span><span style="color:#a6e22e">markInUse</span><span style="color:#f92672">();</span>
+                        <span style="color:#66d9ef">return</span> msg<span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                    <span style="color:#75715e">// No more messages.
+</span><span style="color:#75715e"></span>                    nextPollTimeoutMillis <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+
+                <span style="color:#75715e">// Process the quit message now that all pending messages have been handled.
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mQuitting<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    dispose<span style="color:#f92672">();</span>
+                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+
+                <span style="color:#75715e">// If first time idle, then get the number of idlers to run.
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// Idle handles only run if the queue is empty or if the first message
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// in the queue (possibly a barrier) is due to be handled in the future.
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>pendingIdleHandlerCount <span style="color:#f92672">&lt;</span> 0
+                        <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>mMessages <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> now <span style="color:#f92672">&lt;</span> mMessages<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                    pendingIdleHandlerCount <span style="color:#f92672">=</span> mIdleHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">();</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>pendingIdleHandlerCount <span style="color:#f92672">&lt;=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#75715e">// No idle handlers to run.  Loop and wait some more.
+</span><span style="color:#75715e"></span>                    mBlocked <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">continue</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mPendingIdleHandlers <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    mPendingIdleHandlers <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> IdleHandler<span style="color:#f92672">[</span>Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>pendingIdleHandlerCount<span style="color:#f92672">,</span> 4<span style="color:#f92672">)];</span>
+                <span style="color:#f92672">}</span>
+                mPendingIdleHandlers <span style="color:#f92672">=</span> mIdleHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">toArray</span><span style="color:#f92672">(</span>mPendingIdleHandlers<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#75715e">// Run the idle handlers.
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// We only ever reach this code block during the first iteration.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> pendingIdleHandlerCount<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">final</span> IdleHandler idler <span style="color:#f92672">=</span> mPendingIdleHandlers<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+                mPendingIdleHandlers<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> <span style="color:#75715e">// release the reference to the handler
+</span><span style="color:#75715e"></span>
+                <span style="color:#66d9ef">boolean</span> keep <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                    keep <span style="color:#f92672">=</span> idler<span style="color:#f92672">.</span><span style="color:#a6e22e">queueIdle</span><span style="color:#f92672">();</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    Log<span style="color:#f92672">.</span><span style="color:#a6e22e">wtf</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;IdleHandler threw exception&#34;</span><span style="color:#f92672">,</span> t<span style="color:#f92672">);</span>
+                <span style="color:#f92672">}</span>
+
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>keep<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        mIdleHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>idler<span style="color:#f92672">);</span>
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#75715e">// Reset the idle handler count to 0 so we do not run them again.
+</span><span style="color:#75715e"></span>            pendingIdleHandlerCount <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+
+            <span style="color:#75715e">// While calling an idle handler, a new message could have been delivered
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// so go back and look again for a pending message without waiting.
+</span><span style="color:#75715e"></span>            nextPollTimeoutMillis <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>这里的大概流程就是按照当前的队列找到 队头的message 取出并返回，然后继续等待。
+如果有下一个message则等待 一段时间（视下一个message的delay决定）或者等待唤醒。</p>
+<p>还差最后一步2,那么是谁来嗲用message 的next的呢？
+是Looper</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Run the message queue in this thread. Be sure to call
+</span><span style="color:#75715e">     * {@link #quit()} to end the loop.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">final</span> Looper me <span style="color:#f92672">=</span> myLooper<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>me <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No Looper; Looper.prepare() wasn&#39;t called on this thread.&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">final</span> MessageQueue queue <span style="color:#f92672">=</span> me<span style="color:#f92672">.</span><span style="color:#a6e22e">mQueue</span><span style="color:#f92672">;</span>
+
+        <span style="color:#75715e">// Make sure the identity of this thread is that of the local process,
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// and keep track of what that identity token actually is.
+</span><span style="color:#75715e"></span>        Binder<span style="color:#f92672">.</span><span style="color:#a6e22e">clearCallingIdentity</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> ident <span style="color:#f92672">=</span> Binder<span style="color:#f92672">.</span><span style="color:#a6e22e">clearCallingIdentity</span><span style="color:#f92672">();</span>
+
+        <span style="color:#75715e">// Allow overriding a threshold with a system prop. e.g.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// adb shell &#39;setprop log.looper.1000.main.slow 1 &amp;&amp; stop &amp;&amp; start&#39;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> thresholdOverride <span style="color:#f92672">=</span>
+                SystemProperties<span style="color:#f92672">.</span><span style="color:#a6e22e">getInt</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;log.looper.&#34;</span>
+                        <span style="color:#f92672">+</span> Process<span style="color:#f92672">.</span><span style="color:#a6e22e">myUid</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span>
+                        <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span>
+                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.slow&#34;</span><span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">boolean</span> slowDeliveryDetected <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;;)</span> <span style="color:#f92672">{</span>
+            Message msg <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span> <span style="color:#75715e">// might block
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#75715e">// No message indicates that the message queue is quitting.
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#75715e">// This must be in a local variable, in case a UI event sets the logger
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">final</span> Printer logging <span style="color:#f92672">=</span> me<span style="color:#f92672">.</span><span style="color:#a6e22e">mLogging</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>logging <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                logging<span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&gt;&gt;&gt;&gt;&gt; Dispatching to &#34;</span> <span style="color:#f92672">+</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span>
+                        msg<span style="color:#f92672">.</span><span style="color:#a6e22e">callback</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">what</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> traceTag <span style="color:#f92672">=</span> me<span style="color:#f92672">.</span><span style="color:#a6e22e">mTraceTag</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">long</span> slowDispatchThresholdMs <span style="color:#f92672">=</span> me<span style="color:#f92672">.</span><span style="color:#a6e22e">mSlowDispatchThresholdMs</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">long</span> slowDeliveryThresholdMs <span style="color:#f92672">=</span> me<span style="color:#f92672">.</span><span style="color:#a6e22e">mSlowDeliveryThresholdMs</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>thresholdOverride <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                slowDispatchThresholdMs <span style="color:#f92672">=</span> thresholdOverride<span style="color:#f92672">;</span>
+                slowDeliveryThresholdMs <span style="color:#f92672">=</span> thresholdOverride<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> logSlowDelivery <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>slowDeliveryThresholdMs <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span> <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> logSlowDispatch <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>slowDispatchThresholdMs <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">);</span>
+
+            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> needStartTime <span style="color:#f92672">=</span> logSlowDelivery <span style="color:#f92672">||</span> logSlowDispatch<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> needEndTime <span style="color:#f92672">=</span> logSlowDispatch<span style="color:#f92672">;</span>
+
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>traceTag <span style="color:#f92672">!=</span> 0 <span style="color:#f92672">&amp;&amp;</span> Trace<span style="color:#f92672">.</span><span style="color:#a6e22e">isTagEnabled</span><span style="color:#f92672">(</span>traceTag<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                Trace<span style="color:#f92672">.</span><span style="color:#a6e22e">traceBegin</span><span style="color:#f92672">(</span>traceTag<span style="color:#f92672">,</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getTraceName</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">));</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> dispatchStart <span style="color:#f92672">=</span> needStartTime <span style="color:#f92672">?</span> SystemClock<span style="color:#f92672">.</span><span style="color:#a6e22e">uptimeMillis</span><span style="color:#f92672">()</span> <span style="color:#f92672">:</span> 0<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> dispatchEnd<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span><span style="color:#f92672">.</span><span style="color:#a6e22e">dispatchMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">);</span>
+                dispatchEnd <span style="color:#f92672">=</span> needEndTime <span style="color:#f92672">?</span> SystemClock<span style="color:#f92672">.</span><span style="color:#a6e22e">uptimeMillis</span><span style="color:#f92672">()</span> <span style="color:#f92672">:</span> 0<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>traceTag <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    Trace<span style="color:#f92672">.</span><span style="color:#a6e22e">traceEnd</span><span style="color:#f92672">(</span>traceTag<span style="color:#f92672">);</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>logSlowDelivery<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>slowDeliveryDetected<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">((</span>dispatchStart <span style="color:#f92672">-</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span><span style="color:#f92672">)</span> <span style="color:#f92672">&lt;=</span> 10<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        Slog<span style="color:#f92672">.</span><span style="color:#a6e22e">w</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Drained&#34;</span><span style="color:#f92672">);</span>
+                        slowDeliveryDetected <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>showSlowLog<span style="color:#f92672">(</span>slowDeliveryThresholdMs<span style="color:#f92672">,</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span><span style="color:#f92672">,</span> dispatchStart<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;delivery&#34;</span><span style="color:#f92672">,</span>
+                            msg<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                        <span style="color:#75715e">// Once we write a slow delivery log, suppress until the queue drains.
+</span><span style="color:#75715e"></span>                        slowDeliveryDetected <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>logSlowDispatch<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                showSlowLog<span style="color:#f92672">(</span>slowDispatchThresholdMs<span style="color:#f92672">,</span> dispatchStart<span style="color:#f92672">,</span> dispatchEnd<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;dispatch&#34;</span><span style="color:#f92672">,</span> msg<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>logging <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                logging<span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;&lt;&lt;&lt;&lt; Finished to &#34;</span> <span style="color:#f92672">+</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">callback</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#75715e">// Make sure that during the course of dispatching the
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// identity of the thread wasn&#39;t corrupted.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> newIdent <span style="color:#f92672">=</span> Binder<span style="color:#f92672">.</span><span style="color:#a6e22e">clearCallingIdentity</span><span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>ident <span style="color:#f92672">!=</span> newIdent<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                Log<span style="color:#f92672">.</span><span style="color:#a6e22e">wtf</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Thread identity changed from 0x&#34;</span>
+                        <span style="color:#f92672">+</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">toHexString</span><span style="color:#f92672">(</span>ident<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; to 0x&#34;</span>
+                        <span style="color:#f92672">+</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">toHexString</span><span style="color:#f92672">(</span>newIdent<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; while dispatching to &#34;</span>
+                        <span style="color:#f92672">+</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span>
+                        <span style="color:#f92672">+</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">callback</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; what=&#34;</span> <span style="color:#f92672">+</span> msg<span style="color:#f92672">.</span><span style="color:#a6e22e">what</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            msg<span style="color:#f92672">.</span><span style="color:#a6e22e">recycleUnchecked</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>Looper.loop() 方法是一个无限循环，从messagequeue 取出消息之后就dispatch分发这个message处理<code>msg.target.dispatchMessage(msg);</code>
+那么现在我们可以看到这handler的大郅流程如下
+  <img src="https://upload-images.jianshu.io/upload_images/12975041-f300b22d5a958a12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="未命名文件 (1).png" /></p>
+<p>looper 从mq 中去取数据 如果取不到就等待block在next上。
+取到之后就在loop() 方法里面就地分发。
+而handler则负责往mq 里面塞message。</p>
+<p>至于最开始</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Handler handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Handler<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleMessage</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">handleMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">);</span>
+                <span style="color:#66d9ef">switch</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">what</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">case</span> 1<span style="color:#f92672">:</span>
+                        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">};</span>
+</code></pre></div><p>里面的handlemessage 怎么回调的，那我们再从头追述一下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//Handler.java
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">enqueueMessage</span><span style="color:#f92672">(</span>MessageQueue queue<span style="color:#f92672">,</span> Message msg<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> uptimeMillis<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">;</span><span style="color:#75715e">//看这里
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mAsynchronous<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            msg<span style="color:#f92672">.</span><span style="color:#a6e22e">setAsynchronous</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> queue<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueueMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">,</span> uptimeMillis<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Handle system messages here.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dispatchMessage</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">callback</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            handleCallback<span style="color:#f92672">(</span>msg<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mCallback <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mCallback<span style="color:#f92672">.</span><span style="color:#a6e22e">handleMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+            handleMessage<span style="color:#f92672">(</span>msg<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>看到没有这里有个msg.target = this;而这一句也是我们常说的 handler容易导致内存泄漏的问题。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Looper.java
+</span><span style="color:#75715e"></span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span><span style="color:#f92672">.</span><span style="color:#a6e22e">dispatchMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">);</span>
+</code></pre></div><p>那么结合刚刚看的looper的源码就可以知道 Looper 中调用了 handler的 dispatchMessage
+而dispatchMessage 中就调用了hanlderMessage
+从这个方法里面我们也可以看到  如果设置了 callback 就不会调用 handleMessage了。</p>
+<p>结合上一篇Handler 整体流程通关 的源码初步分析，我们一个一个来分析问题：
+#一个线程可以有几个handler
+如果使用过handler的同学都知道在实际使用过程中可以有无数个handler。</p>
+<p>#一个线程可以有几个looper
+一个线程可以有几个looper 那么就要分析looper的源码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">prepare</span><span style="color:#f92672">(</span><span style="color:#66d9ef">boolean</span> quitAllowed<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sThreadLocal<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Only one Looper may be created per thread&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        sThreadLocal<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Looper<span style="color:#f92672">(</span>quitAllowed<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">prepareMainLooper</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        prepare<span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>Looper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sMainLooper <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;The main Looper has already been prepared.&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+            sMainLooper <span style="color:#f92672">=</span> myLooper<span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+</code></pre></div><p>Looper在使用之前必须prepare 在prepare 里面使用了 ThreadLocal，
+  <a href="https://www.jianshu.com/p/d4b2c9ce0aad">看我的这篇文章</a>
+在这里保证了一个线程只能有一个Looper</p>
+<p>#handler的内存泄漏的原因？为什么其他的内部类没有提说过有这个问题？
+在上一篇
+  <a href="https://www.jianshu.com/p/9ab4163337a6">源码</a>分析的文章里面已经说过了啊，在调用到 <code>enqueueMessage </code>的是否会将 handler赋值给 message的target，而Message 在 messagequeue中等待的时候如果生命周期发生变化但是message中的target不释放就会导致泄漏，毕竟<strong>内存泄漏就是生命周期不相等导致的</strong></p>
+<p>#为何主线程可以new Handler？ 如果想要在子线程中new Handler要做些什么准备？</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+                Handler handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Handler<span style="color:#f92672">();</span>
+                handler<span style="color:#f92672">.</span><span style="color:#a6e22e">post</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+                    <span style="color:#a6e22e">@Override</span>
+                    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">});</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</code></pre></div><p>我们在子线程中这样运行是不会生效的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">sendMessageAtTime</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> uptimeMillis<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        MessageQueue queue <span style="color:#f92672">=</span> mQueue<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>queue <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            RuntimeException e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>
+                    <span style="color:#66d9ef">this</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; sendMessageAtTime() called with no mQueue&#34;</span><span style="color:#f92672">);</span>
+            Log<span style="color:#f92672">.</span><span style="color:#a6e22e">w</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Looper&#34;</span><span style="color:#f92672">,</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">(),</span> e<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> enqueueMessage<span style="color:#f92672">(</span>queue<span style="color:#f92672">,</span> msg<span style="color:#f92672">,</span> uptimeMillis<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>所以为什么主线程的Handler 可以正确运行，必然是主线程的Handler里面的MessageQueue 是ready的 而我们又知道 messagequeue来之于looper。所以主线程必然在某个时间准备好了Looper，那么我们就去看主线程的启动地方。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//ActivityThread.java
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Trace<span style="color:#f92672">.</span><span style="color:#a6e22e">traceBegin</span><span style="color:#f92672">(</span>Trace<span style="color:#f92672">.</span><span style="color:#a6e22e">TRACE_TAG_ACTIVITY_MANAGER</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;ActivityThreadMain&#34;</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">// CloseGuard defaults to true and can be quite spammy.  We
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// disable it here, but selectively enable it later (via
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// StrictMode) on debug builds, but using DropBox, not logs.
+</span><span style="color:#75715e"></span>        CloseGuard<span style="color:#f92672">.</span><span style="color:#a6e22e">setEnabled</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+
+        Environment<span style="color:#f92672">.</span><span style="color:#a6e22e">initForCurrentUser</span><span style="color:#f92672">();</span>
+
+        <span style="color:#75715e">// Set the reporter for event logging in libcore
+</span><span style="color:#75715e"></span>        EventLogger<span style="color:#f92672">.</span><span style="color:#a6e22e">setReporter</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> EventLoggingReporter<span style="color:#f92672">());</span>
+
+        <span style="color:#75715e">// Make sure TrustedCertificateStore looks in the right place for CA certificates
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">final</span> File configDir <span style="color:#f92672">=</span> Environment<span style="color:#f92672">.</span><span style="color:#a6e22e">getUserConfigDirectory</span><span style="color:#f92672">(</span>UserHandle<span style="color:#f92672">.</span><span style="color:#a6e22e">myUserId</span><span style="color:#f92672">());</span>
+        TrustedCertificateStore<span style="color:#f92672">.</span><span style="color:#a6e22e">setDefaultUserDirectory</span><span style="color:#f92672">(</span>configDir<span style="color:#f92672">);</span>
+
+        Process<span style="color:#f92672">.</span><span style="color:#a6e22e">setArgV0</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;pre-initialized&gt;&#34;</span><span style="color:#f92672">);</span>
+
+<span style="color:#75715e">//看这里
+</span><span style="color:#75715e"></span>        Looper<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareMainLooper</span><span style="color:#f92672">();</span>
+
+        <span style="color:#75715e">// Find the value for {@link #PROC_START_SEQ_IDENT} if provided on the command line.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// It will be in the format &#34;seq=114&#34;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">long</span> startSeq <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>args <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span> <span style="color:#f92672">--</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>args<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> args<span style="color:#f92672">[</span>i<span style="color:#f92672">].</span><span style="color:#a6e22e">startsWith</span><span style="color:#f92672">(</span>PROC_START_SEQ_IDENT<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                    startSeq <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>
+                            args<span style="color:#f92672">[</span>i<span style="color:#f92672">].</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>PROC_START_SEQ_IDENT<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()));</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        ActivityThread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ActivityThread<span style="color:#f92672">();</span>
+        thread<span style="color:#f92672">.</span><span style="color:#a6e22e">attach</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">,</span> startSeq<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sMainThreadHandler <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            sMainThreadHandler <span style="color:#f92672">=</span> thread<span style="color:#f92672">.</span><span style="color:#a6e22e">getHandler</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            Looper<span style="color:#f92672">.</span><span style="color:#a6e22e">myLooper</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMessageLogging</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span>
+                    LogPrinter<span style="color:#f92672">(</span>Log<span style="color:#f92672">.</span><span style="color:#a6e22e">DEBUG</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;ActivityThread&#34;</span><span style="color:#f92672">));</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#75715e">// End of event ActivityThreadMain.
+</span><span style="color:#75715e"></span>        Trace<span style="color:#f92672">.</span><span style="color:#a6e22e">traceEnd</span><span style="color:#f92672">(</span>Trace<span style="color:#f92672">.</span><span style="color:#a6e22e">TRACE_TAG_ACTIVITY_MANAGER</span><span style="color:#f92672">);</span>
+        Looper<span style="color:#f92672">.</span><span style="color:#a6e22e">loop</span><span style="color:#f92672">();</span>
+
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Main thread loop unexpectedly exited&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>在这个方法里面，looper在<code>Looper.prepareMainLooper();</code> 之后做好准备工作之后 就开始调用loop 开始取消息，所有的 生命周期，我们都是通过message来驱动的。Looper中<code>private static Looper sMainLooper;</code> 存在这个变量更是确保了一个进程只有一个 sMainLooper，当然会有一些锁来确保线程安全。
+<strong>如果想要在子线程中new Handler要做些什么准备？</strong>
+在创建之前 调用looper的prepare 即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+                Looper<span style="color:#f92672">.</span><span style="color:#a6e22e">prepare</span><span style="color:#f92672">();</span>
+                Handler handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Handler<span style="color:#f92672">();</span>
+                handler<span style="color:#f92672">.</span><span style="color:#a6e22e">post</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+                    <span style="color:#a6e22e">@Override</span>
+                    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">});</span>
+                Looper<span style="color:#f92672">.</span><span style="color:#a6e22e">loop</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</code></pre></div><p>#子线程中维护的Looper，消息队列无消息的时候的处理方案是什么？有什么用？
+这里有两种解释。</p>
+<ul>
+<li>第一种：上一篇文章我们就说到了 loop() 方法会不断的去调用messagequeue的next() 方法。代码就不贴了，最终会在调用<code>nativePollOnce(ptr, nextPollTimeoutMillis);</code> 这一步时卡住，此时线程就休眠了，等待下一次的<code>nativeWake</code> 或者timeout自动唤醒。
+这样做有什么好处呢，节约cpu。</li>
+<li>第二种：当消息队列无消息的时候以为着什么 这个子线程已经无用了，可以推出了，这时候问的就是该如何退出。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//Looper.java
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">quit</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        mQueue<span style="color:#f92672">.</span><span style="color:#a6e22e">quit</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">quitSafely</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        mQueue<span style="color:#f92672">.</span><span style="color:#a6e22e">quit</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//MessageQueue.java
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">quit</span><span style="color:#f92672">(</span><span style="color:#66d9ef">boolean</span> safe<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>mQuitAllowed<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Main thread not allowed to quit.&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mQuitting<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+            mQuitting <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>safe<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                removeAllFutureMessagesLocked<span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                removeAllMessagesLocked<span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#75715e">// We can assume mPtr != 0 because mQuitting was previously false.
+</span><span style="color:#75715e"></span>            nativeWake<span style="color:#f92672">(</span>mPtr<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">removeAllMessagesLocked</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        Message p <span style="color:#f92672">=</span> mMessages<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>p <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            Message n <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+            p<span style="color:#f92672">.</span><span style="color:#a6e22e">recycleUnchecked</span><span style="color:#f92672">();</span>
+            p <span style="color:#f92672">=</span> n<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        mMessages <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">removeAllFutureMessagesLocked</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> now <span style="color:#f92672">=</span> SystemClock<span style="color:#f92672">.</span><span style="color:#a6e22e">uptimeMillis</span><span style="color:#f92672">();</span>
+        Message p <span style="color:#f92672">=</span> mMessages<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>p <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>p<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span> <span style="color:#f92672">&gt;</span> now<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                removeAllMessagesLocked<span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                Message n<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;;)</span> <span style="color:#f92672">{</span>
+                    n <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>n <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>n<span style="color:#f92672">.</span><span style="color:#a6e22e">when</span> <span style="color:#f92672">&gt;</span> now<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                    p <span style="color:#f92672">=</span> n<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+                p<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">do</span> <span style="color:#f92672">{</span>
+                    p <span style="color:#f92672">=</span> n<span style="color:#f92672">;</span>
+                    n <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                    p<span style="color:#f92672">.</span><span style="color:#a6e22e">recycleUnchecked</span><span style="color:#f92672">();</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>n <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>
+  <a href="/">quit 和quit safely的区别看这里&ndash;未发布</a>
+这里主要是把message 全部删除。
+在Looper.loop 方法中</p>
+<pre><code>     for (;;) {
+            Message msg = queue.next(); // might block
+// 这里如果不退出这里必然返回的不为空，要么block在这，要么返回一个非空值，
+//只有在退出时，清空队列，并且唤醒block 这里才会返回null 从而退出
+            if (msg == null) {
+                // No message indicates that the message queue is quitting.
+                return;
+            }
+。。。
+</code></pre><p>当取出的message 为null时将会推出loop ，线程也自动结束了</p>
+<p><strong>有什么用？</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//Message.java
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">recycleUnchecked</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// Mark the message as in use while it remains in the recycled object pool.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Clear out all other details.
+</span><span style="color:#75715e"></span>        flags <span style="color:#f92672">=</span> FLAG_IN_USE<span style="color:#f92672">;</span>
+        what <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        arg1 <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        arg2 <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        replyTo <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        sendingUid <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+        when <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        target <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        callback <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        data <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>sPoolSync<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sPoolSize <span style="color:#f92672">&lt;</span> MAX_POOL_SIZE<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                next <span style="color:#f92672">=</span> sPool<span style="color:#f92672">;</span>
+                sPool <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">;</span>
+                sPoolSize<span style="color:#f92672">++;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>在这里会清空message的target callback data等内容，可以释放内存，避免内存泄漏。
+#既然可以存在多个handler 往mq中add 数据，那内部是如何确保线程数据安全的？</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//MessageQueue.java
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">enqueueMessage</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> when<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Message must have a target.&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span><span style="color:#a6e22e">isInUse</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span>msg <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; This message is already in use.&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mQuitting<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                IllegalStateException e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span>
+                        msg<span style="color:#f92672">.</span><span style="color:#a6e22e">target</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; sending message to a Handler on a dead thread&#34;</span><span style="color:#f92672">);</span>
+                Log<span style="color:#f92672">.</span><span style="color:#a6e22e">w</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">(),</span> e<span style="color:#f92672">);</span>
+                msg<span style="color:#f92672">.</span><span style="color:#a6e22e">recycle</span><span style="color:#f92672">();</span>
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+<span style="color:#f92672">...</span>
+</code></pre></div><p>在这里加锁了，<code>synchronized (this)</code> 
+  <a href="/">那么synchronized 锁的内容不同有什么区别呢&ndash; 未发布</a>
+#我们使用Message 时应该如何创建它？
+Message 我们可以直接new 也可以 通过obtain 来获取复用的 message 实例。
+那么这里问的就是obtain 的运作逻辑和为什么要用obtain</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//Message.java
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Message <span style="color:#a6e22e">obtain</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>sPoolSync<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sPool <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                Message m <span style="color:#f92672">=</span> sPool<span style="color:#f92672">;</span>
+                sPool <span style="color:#f92672">=</span> m<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                m<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                m<span style="color:#f92672">.</span><span style="color:#a6e22e">flags</span> <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> <span style="color:#75715e">// clear in-use flag
+</span><span style="color:#75715e"></span>                sPoolSize<span style="color:#f92672">--;</span>
+                <span style="color:#66d9ef">return</span> m<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Message<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>这里用了一个享元模式，Message 是Android系统中很常见的一个类，如果我们每次使用都new的话 ，这个内存就抖动起来了呀。 这里也是为了避免过多的内存创建销毁的过程，平稳使用内存。
+#使用Handler的postDelay后消息队列会有什么变化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//Handler.java
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">postDelayed</span><span style="color:#f92672">(</span>Runnable r<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> delayMillis<span style="color:#f92672">)</span>
+    <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> sendMessageDelayed<span style="color:#f92672">(</span>getPostMessage<span style="color:#f92672">(</span>r<span style="color:#f92672">),</span> delayMillis<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">sendMessageDelayed</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> delayMillis<span style="color:#f92672">)</span>
+    <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>delayMillis <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            delayMillis <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> sendMessageAtTime<span style="color:#f92672">(</span>msg<span style="color:#f92672">,</span> SystemClock<span style="color:#f92672">.</span><span style="color:#a6e22e">uptimeMillis</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> delayMillis<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">sendMessageAtTime</span><span style="color:#f92672">(</span>Message msg<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> uptimeMillis<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        MessageQueue queue <span style="color:#f92672">=</span> mQueue<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>queue <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            RuntimeException e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>
+                    <span style="color:#66d9ef">this</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; sendMessageAtTime() called with no mQueue&#34;</span><span style="color:#f92672">);</span>
+            Log<span style="color:#f92672">.</span><span style="color:#a6e22e">w</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Looper&#34;</span><span style="color:#f92672">,</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">(),</span> e<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> enqueueMessage<span style="color:#f92672">(</span>queue<span style="color:#f92672">,</span> msg<span style="color:#f92672">,</span> uptimeMillis<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>我们可以看到在调用enqueueMessage的之前都是传入了一个时间值，而在messagequeue的源码中，message也是按照时间顺序排列的 一个队列。在插入之后会查看是否需要wake。如果我们插入的是一个time为0的时候messagequeue会立刻唤醒，如果插入的是一个延迟任务，将不会唤醒messagequeue。</p>
+<h1 id="looper死循环为什么不会导致应用卡死">
+  looper死循环为什么不会导致应用卡死？
+  <a class="anchor" href="#looper%e6%ad%bb%e5%be%aa%e7%8e%af%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%8d%e4%bc%9a%e5%af%bc%e8%87%b4%e5%ba%94%e7%94%a8%e5%8d%a1%e6%ad%bb">#</a>
+</h1>
+<ul>
+<li>
+  <a href="http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java">源码</a></li>
+<li>借用这篇文章你可以知道service boradcast provider 
+  <a href="http://gityuan.com/2016/07/02/android-anr/"> anr</a> 的原理</li>
+<li>借用这篇文章 你可以知道 input的 
+  <a href="http://gityuan.com/2017/01/01/input-anr/">anr</a></li>
+</ul>
+<p>这里你可以看到 为什么会anr 总结起来都是 有某些地方发送了 timeout的 message ，然后hander 处理了这个message。
+而当 looper 就是循环读取messagequeue的message 然后处理，如果没有message 就等待 这时候 的等待是不可能达成这个anr的逻辑的。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/bokmark/bokmark.github.io/commit/923f0a5c8d8336b814ead215106e4a123b3d845d" title='Last modified by bokmark | 2021-03-18' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2021-03-18</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#handler">Handler</a>
+      <ul>
+        <li><a href="#那么我将会从源码的角度上开始分析这几个问题">那么我将会从源码的角度上开始分析这几个问题。</a></li>
+      </ul>
+    </li>
+    <li><a href="#looper死循环为什么不会导致应用卡死">looper死循环为什么不会导致应用卡死？</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

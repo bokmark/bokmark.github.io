@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>各种优化 on Bokmark</title>
+    <link>/docs/optimize/</link>
+    <description>Recent content in 各种优化 on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/optimize/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>崩溃优化</title>
+      <link>/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/</guid>
+      <description>崩溃优化、crash、anr</description>
+    </item>
+    
+    <item>
+      <title>内存优化</title>
+      <link>/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</guid>
+      <description>内存优化</description>
+    </item>
+    
+    <item>
+      <title>网络优化</title>
+      <link>/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</guid>
+      <description>网络优化</description>
+    </item>
+    
+    <item>
+      <title>卡顿优化</title>
+      <link>/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/</guid>
+      <description>卡顿优化</description>
+    </item>
+    
+  </channel>
+</rss>

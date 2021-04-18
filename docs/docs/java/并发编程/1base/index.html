@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Java 线程的实现方式有几种，FeatureTask的实现方式，死锁">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="基础知识" />
+<meta property="og:description" content="Java 线程的实现方式有几种，FeatureTask的实现方式，死锁" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1base/" />
+<meta property="article:published_time" content="2019-02-11T19:30:08+10:00" />
+<meta property="article:modified_time" content="2019-02-11T19:30:08+10:00" />
+<title>基础知识 | Bokmark</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6c7c6446dfdee7c8c933e9bbc6e80ee3ed6c913b2a59519f2092c3c6a9d63e55.css" integrity="sha256-bHxkRt/e58jJM&#43;m7xugO4&#43;1skTsqWVGfIJLDxqnWPlU=">
+<script defer src="/en.search.min.d2d493a5491ee6ca9a1127bb54f8b7717b24ff360d38b65461690bc1ef0582d9.js" integrity="sha256-0tSTpUke5sqaESe7VPi3cXsk/zYNOLZUYWkLwe8Fgtk="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/bokmark_logo.png" alt="Logo" /><span>Bokmark</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/android_rocket_force/" >
+        《Android火箭兵》公众号
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/Handler/" class="">Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/LaunchMode/" class="">Activity launchMode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7bb810424bf7c7832a8f68a6b8ebba84" class="toggle"  />
+    <label for="section-7bb810424bf7c7832a8f68a6b8ebba84" class="flex justify-between">
+      <a  class="">Android Studio</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/android_studio/maven_sdk/" class="">创建并上传mavenSdk</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-223fff677be759c0ab39571dadaa19b5" class="toggle"  />
+    <label for="section-223fff677be759c0ab39571dadaa19b5" class="flex justify-between">
+      <a  class="">Binder</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/binder/note/" class="">Binder 笔记</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/binder/arch/" class="">从一个例子研究Binder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8018332cd0b0222e2bbe53b463a21835" class="toggle"  />
+    <label for="section-8018332cd0b0222e2bbe53b463a21835" class="flex justify-between">
+      <a  class="">Camera</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/camera/camera/" class="">android camera 相关知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33aa5107d79cba563fb0e815bc6d185a" class="toggle"  />
+    <label for="section-33aa5107d79cba563fb0e815bc6d185a" class="flex justify-between">
+      <a  class="">Component</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="toggle"  />
+    <label for="section-a94cff66e59bc92a943ef6c4c3ba7aba" class="flex justify-between">
+      <a  class="">Framework</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/ams/" class="">android AMS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/androidvm/" class="">android vm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/framework/start/" class="">系统启动流程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-546c38aef73042f23c5e1888dfc1e768" class="toggle"  />
+    <label for="section-546c38aef73042f23c5e1888dfc1e768" class="flex justify-between">
+      <a  class="">Ndk</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="toggle"  />
+    <label for="section-9535051bcec1bc8c3f0eddd1cda8ada0" class="flex justify-between">
+      <a  class="">View</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/view/" class="">View </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/view/touch/" class="">触摸事件 分发流程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5956d62726072d04134e2c04f3853c6f" class="toggle"  />
+    <label for="section-5956d62726072d04134e2c04f3853c6f" class="flex justify-between">
+      <a  class="">Vm</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/android/vm/vm/" class="">Vm</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/arch/" class="">Arch</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2edc4cc7d8f7086c6ce5ec301ba7eb93" class="toggle"  />
+    <label for="section-2edc4cc7d8f7086c6ce5ec301ba7eb93" class="flex justify-between">
+      <a href="/docs/arch/%E6%9E%B6%E6%9E%84/" class="">架构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/" class="">Android 架构</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f799014f50df42eda4c80e7e3cb9e41e" class="toggle"  />
+    <label for="section-f799014f50df42eda4c80e7e3cb9e41e" class="flex justify-between">
+      <a href="/docs/arch/dagger/" class="">Dagger</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8be0af9073ee9bf5adc200d689a982b1" class="toggle"  />
+    <label for="section-8be0af9073ee9bf5adc200d689a982b1" class="flex justify-between">
+      <a href="/docs/arch/jetpack/" class="">Jetpack</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/paging/" class="">Paging 分页库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/startup/" class="">StartUp</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/jetpack/compose/" class="">Compose</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2bc0755154b587ced0ab9471360baeda" class="toggle"  />
+    <label for="section-2bc0755154b587ced0ab9471360baeda" class="flex justify-between">
+      <a href="/docs/arch/design_pattern/" class="">设计模式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/" class="">单例模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="">装饰器模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/java/" class="">Java</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ecf500dadd2d9a5c72a9dab8acc92a" class="toggle" checked />
+    <label for="section-09ecf500dadd2d9a5c72a9dab8acc92a" class="flex justify-between">
+      <a  class="">并发编程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1base/" class=" active">基础知识</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/2jmm/" class="">JMM</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7cas/" class="">cas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/3thread_local/" class="">thread local</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4blockingqueue/" class="">阻塞队列和线程池原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5volatile/" class="">volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/" class="">synchronized 关键字的原理和使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/8aqs/" class="">AQS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/9lock/" class="">多线程--lock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/questions/" class="">多线程--面试题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f6bfaea6f082cdebaa54f92544b86ee4" class="toggle"  />
+    <label for="section-f6bfaea6f082cdebaa54f92544b86ee4" class="flex justify-between">
+      <a  class="">网络通讯</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/io/" class="">BIO,NIO,AIO</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/nio/" class="">BIO,NIO,AIO</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/" class="">TCP 三次握手、四次挥手</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/" class="">tcp 分段与ip 分片</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/" class="">网络协议</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/" class="">网络协议 相关问题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E9%9D%A2%E8%AF%95/" class="">面试题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ff2116bff7eb47793028d71d3690ea14" class="toggle"  />
+    <label for="section-ff2116bff7eb47793028d71d3690ea14" class="flex justify-between">
+      <a  class="">《深入理解 Java 虚拟机》</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/" class="">《深入理解Java 虚拟机》第二章</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/" class="">《深入理解Java虚拟机》字节码指令表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5cd4235df550fb51f2cd7173470aec9d" class="toggle"  />
+    <label for="section-5cd4235df550fb51f2cd7173470aec9d" class="flex justify-between">
+      <a  class="">Java v M</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/gc/" class="">Java 垃圾回收器 回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java-allocate/" class="">Java </a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/question/" class="">Java vm 面试题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/" class="">Java 对象头的内容</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/JavaVM/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/" class="">逃逸分析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76a0b3127bcb1439cbea08b42a85d796" class="toggle"  />
+    <label for="section-76a0b3127bcb1439cbea08b42a85d796" class="flex justify-between">
+      <a  class="">Other</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io0/" class="">HSDB</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/io/" class="">Java IO 的基础应用</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/other/object_proxy/" class="">动态代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90abdf45b388491dd8582d80fdac3b6e" class="toggle"  />
+    <label for="section-90abdf45b388491dd8582d80fdac3b6e" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" class="">Hash Map 源码解析与面试题整理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="toggle"  />
+    <label for="section-2cf51ffa9d15b7d4377ff2db7b02f30e" class="flex justify-between">
+      <a  class="">基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/base/%E6%B3%9B%E5%9E%8B/" class="">Java 泛型</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Kotlin</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-daef54ee12ddb1c2b7f5e9e9854fa7a0" class="toggle"  />
+    <label for="section-daef54ee12ddb1c2b7f5e9e9854fa7a0" class="flex justify-between">
+      <a href="/docs/kotlin/coroutines/" class="">Kotlin 协程本质</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/coroutines/how-to-use/" class="">Kotlin 协程 - 怎么使用</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de1c3339b4d58bf97a87da32fd667b9f" class="toggle"  />
+    <label for="section-de1c3339b4d58bf97a87da32fd667b9f" class="flex justify-between">
+      <a href="/docs/kotlin/plus/" class="">Plus</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/fanxin/" class="">Kotlin 泛型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/plus/plus1/" class="">Kotlin 进阶知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-890e164347abfc846f7df26b475a8732" class="toggle"  />
+    <label for="section-890e164347abfc846f7df26b475a8732" class="flex justify-between">
+      <a href="/docs/kotlin/samples/" class="">Samples</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/intro/" class="">【译】Kotlin - 基础介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/delegate/" class="">【译】Kotlin 语法基础 - 代理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/funarea/" class="">【译】Kotlin 语法基础 - 作用域方法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/function/" class="">【译】Kotlin 语法基础 - 函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/flow/" class="">【译】Kotlin 语法基础 - 流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/special/" class="">【译】Kotlin 语法基础 - 特殊特性</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/specialclass/" class="">【译】Kotlin 语法基础 - 特殊类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kotlin/samples/collections/" class="">【译】Kotlin 语法基础 - 集合</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>OpenSources</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-63289f90048a52161179aa2fc2b1cf2f" class="toggle"  />
+    <label for="section-63289f90048a52161179aa2fc2b1cf2f" class="flex justify-between">
+      <a href="/docs/open_sources/okhttp/" class="">Okhttp</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/okhttp/summary/" class="">OkHTTP 整体流程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b428d67668f88e6b0cca259aad88566e" class="toggle"  />
+    <label for="section-b428d67668f88e6b0cca259aad88566e" class="flex justify-between">
+      <a  class="">Retrofit</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/base/" class="">Retrofit - 大致流程源码解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/retrofit/use/" class="">如何使用</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d7a0a1319d26695a5a4c2e7588e3f3d8" class="toggle"  />
+    <label for="section-d7a0a1319d26695a5a4c2e7588e3f3d8" class="flex justify-between">
+      <a href="/docs/open_sources/glide/" class="">Glide 基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/glide/with/" class="">Glide 生命周期</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/open_sources/leakcanary/" class="">Index</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/others/" class="">Others</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-538a0f9eb99dcd99b375a6021f5b26fe" class="toggle"  />
+    <label for="section-538a0f9eb99dcd99b375a6021f5b26fe" class="flex justify-between">
+      <a href="/docs/others/protocal/" class="">Protocal</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/http/" class="">HTTP 协议</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/https/" class="">HTTPS 与http的区别</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/protocal/rtsp/" class="">RTSP 协议</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/optimize/" class="">各种优化</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/" class="">崩溃优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/" class="">内存优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/" class="">网络优化</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/" class="">卡顿优化</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/" class="">算法</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer1/" class="">剑指offer - 数据结构</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer3/" class="">剑指offer - 解决面试题的思路</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/%E5%89%91%E6%8C%87offer2/" class="">剑指offer - 高质量的代码</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%B9%A6%E6%9C%AC/" class="">技术书籍</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        随笔
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/bokmark" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://bokmark.gitee.io" target="_blank" rel="noopener">
+        Gitee
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/theme/hugo-book/" target="_blank" rel="noopener">
+        hugo-theme-book
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener">
+        mermaid
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>基础知识</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础知识">基础知识</a>
+      <ul>
+        <li><a href="#并发编程中的问题">并发编程中的问题</a>
+          <ul>
+            <li><a href="#原子性问题">原子性问题</a></li>
+            <li><a href="#可见性问题">可见性问题</a></li>
+            <li><a href="#有序性问题">有序性问题</a></li>
+          </ul>
+        </li>
+        <li><a href="#java-线程的状态-变化">Java 线程的状态 变化</a>
+          <ul>
+            <li><a href="#实现线程的几种方式">实现线程的几种方式</a></li>
+          </ul>
+        </li>
+        <li><a href="#并发编程---死锁">并发编程 - 死锁</a>
+          <ul>
+            <li><a href="#死锁的原因">死锁的原因</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="基础知识">
+  基础知识
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86">#</a>
+</h1>
+<blockquote>
+<p>在Java虚拟机规范中试图定义一种Java内存模型（Java Memory Model，JMM）来屏蔽各个硬件平台和操作系统的内存访问差异，以实现让Java程序在各种平台下都能达到一致的内存访问效果。<br/>
+
+  <a href="/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/2jmm/">JMM</a></p>
+</blockquote>
+<h2 id="并发编程中的问题">
+  并发编程中的问题
+  <a class="anchor" href="#%e5%b9%b6%e5%8f%91%e7%bc%96%e7%a8%8b%e4%b8%ad%e7%9a%84%e9%97%ae%e9%a2%98">#</a>
+</h2>
+<h3 id="原子性问题">
+  原子性问题
+  <a class="anchor" href="#%e5%8e%9f%e5%ad%90%e6%80%a7%e9%97%ae%e9%a2%98">#</a>
+</h3>
+<p>在Java中，对基本数据类型的变量的读取和赋值操作是原子性操作，即这些操作是不可被中断的，要么执行，要么不执行。</p>
+<p>但是这里有个问题：比如i++ 这种语句是非原子性的。 甚至连 i = 10 都不是原子性的，工作线程需要在工作栈中给i赋值，然后再写会到主内存中。</p>
+<h3 id="可见性问题">
+  可见性问题
+  <a class="anchor" href="#%e5%8f%af%e8%a7%81%e6%80%a7%e9%97%ae%e9%a2%98">#</a>
+</h3>
+<p>由于JMM的问题，每个工作线程都会将其需要的数据拷贝一份到工作缓存中，</p>
+<h3 id="有序性问题">
+  有序性问题
+  <a class="anchor" href="#%e6%9c%89%e5%ba%8f%e6%80%a7%e9%97%ae%e9%a2%98">#</a>
+</h3>
+<h2 id="java-线程的状态-变化">
+  Java 线程的状态 变化
+  <a class="anchor" href="#java-%e7%ba%bf%e7%a8%8b%e7%9a%84%e7%8a%b6%e6%80%81-%e5%8f%98%e5%8c%96">#</a>
+</h2>
+<p>
+  <img src="/images/thread/thread_state.jpg" alt="java线程状态图" /></p>
+<ul>
+<li>初始状态：<code>new thread</code> 未 <code>start</code></li>
+<li>运行状态： 分为运行中和就绪状态，对于java层来说，不需要care 这两种状态的转化，这都是内部的逻辑，当一个线程调用了start之后线程进入就绪状态，等待系统调度，如果现场进入不需要cpu时间片 或者线程主动调用了yield之后进入 就绪态等待cpu的下次调度</li>
+<li>等待状态：如图中所说，通过三种方法回进入等待状态 ，需要主动唤醒</li>
+<li>等待超时状态：相比与等待状态就多了一个超时自动唤醒的逻辑</li>
+<li>阻塞：有且只有synchronized 关键字才会让线程进入阻塞状态</li>
+<li>终止：运行完成进程结束</li>
+</ul>
+<h3 id="实现线程的几种方式">
+  实现线程的几种方式
+  <a class="anchor" href="#%e5%ae%9e%e7%8e%b0%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%87%a0%e7%a7%8d%e6%96%b9%e5%bc%8f">#</a>
+</h3>
+<ul>
+<li>继承 thread</li>
+<li>实现 runnable 接口</li>
+<li>callable：<strong>严格意义上来说这种方式不是一种实现线程的方式</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Thread.java
+</span><span style="color:#75715e"></span><span style="color:#f92672">*</span> There are two ways to create a <span style="color:#66d9ef">new</span> thread of execution<span style="color:#f92672">.</span> One is to
+<span style="color:#f92672">*</span> declare a <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">to</span> be a subclass of <span style="color:#f92672">&lt;</span>code<span style="color:#f92672">&gt;</span>Thread<span style="color:#f92672">&lt;/</span>code<span style="color:#f92672">&gt;.</span> This
+<span style="color:#f92672">*</span> subclass should override the <span style="color:#f92672">&lt;</span>code<span style="color:#f92672">&gt;</span>run<span style="color:#f92672">&lt;/</span>code<span style="color:#f92672">&gt;</span> method of <span style="color:#66d9ef">class</span>
+<span style="color:#960050;background-color:#1e0010">* &lt;</span><span style="color:#a6e22e">code</span><span style="color:#f92672">&gt;</span>Thread<span style="color:#f92672">&lt;/</span>code<span style="color:#f92672">&gt;.</span> An instance of the subclass can then be
+<span style="color:#f92672">*</span> allocated and started<span style="color:#f92672">.</span> For example<span style="color:#f92672">,</span> a thread that computes primes
+<span style="color:#f92672">*</span> larger than a stated value could be written as follows<span style="color:#f92672">:</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;&lt;</span>blockquote<span style="color:#f92672">&gt;&lt;</span>pre<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span>     <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrimeThread</span> <span style="color:#66d9ef">extends</span> Thread <span style="color:#f92672">{</span>
+<span style="color:#f92672">*</span>         <span style="color:#66d9ef">long</span> minPrime<span style="color:#f92672">;</span>
+<span style="color:#f92672">*</span>         PrimeThread<span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> minPrime<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">*</span>             <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">minPrime</span> <span style="color:#f92672">=</span> minPrime<span style="color:#f92672">;</span>
+<span style="color:#f92672">*</span>         <span style="color:#f92672">}</span>
+<span style="color:#f92672">*</span>
+<span style="color:#f92672">*</span>         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">*</span>             <span style="color:#75715e">// compute primes larger than minPrime
+</span><span style="color:#75715e"></span><span style="color:#f92672">*</span>             <span style="color:#f92672">&amp;</span>nbsp<span style="color:#f92672">;.&amp;</span>nbsp<span style="color:#f92672">;.&amp;</span>nbsp<span style="color:#f92672">;.</span>
+<span style="color:#f92672">*</span>         <span style="color:#f92672">}</span>
+<span style="color:#f92672">*</span>     <span style="color:#f92672">}</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;/</span>pre<span style="color:#f92672">&gt;&lt;/</span>blockquote<span style="color:#f92672">&gt;&lt;</span>hr<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span> The following code would then create a thread and start it running<span style="color:#f92672">:</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>blockquote<span style="color:#f92672">&gt;&lt;</span>pre<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span>     PrimeThread p <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrimeThread<span style="color:#f92672">(</span>143<span style="color:#f92672">);</span>
+<span style="color:#f92672">*</span>     p<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;/</span>pre<span style="color:#f92672">&gt;&lt;/</span>blockquote<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span> The other way to create a thread is to declare a <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">that</span>
+<span style="color:#f92672">*</span> <span style="color:#66d9ef">implements</span> the <span style="color:#f92672">&lt;</span>code<span style="color:#f92672">&gt;</span>Runnable<span style="color:#f92672">&lt;/</span>code<span style="color:#f92672">&gt;</span> interface<span style="color:#f92672">.</span> That <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">then</span>
+<span style="color:#f92672">*</span> <span style="color:#66d9ef">implements</span> the <span style="color:#f92672">&lt;</span>code<span style="color:#f92672">&gt;</span>run<span style="color:#f92672">&lt;/</span>code<span style="color:#f92672">&gt;</span> method<span style="color:#f92672">.</span> An instance of the <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">can</span>
+<span style="color:#f92672">*</span> then be allocated<span style="color:#f92672">,</span> passed as an argument when creating
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>code<span style="color:#f92672">&gt;</span>Thread<span style="color:#f92672">&lt;/</span>code<span style="color:#f92672">&gt;,</span> and started<span style="color:#f92672">.</span> The same example in <span style="color:#66d9ef">this</span> other
+<span style="color:#f92672">*</span> style looks like the following<span style="color:#f92672">:</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;&lt;</span>blockquote<span style="color:#f92672">&gt;&lt;</span>pre<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span>     <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrimeRun</span> <span style="color:#66d9ef">implements</span> Runnable <span style="color:#f92672">{</span>
+<span style="color:#f92672">*</span>         <span style="color:#66d9ef">long</span> minPrime<span style="color:#f92672">;</span>
+<span style="color:#f92672">*</span>         PrimeRun<span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> minPrime<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">*</span>             <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">minPrime</span> <span style="color:#f92672">=</span> minPrime<span style="color:#f92672">;</span>
+<span style="color:#f92672">*</span>         <span style="color:#f92672">}</span>
+<span style="color:#f92672">*</span>
+<span style="color:#f92672">*</span>         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">*</span>             <span style="color:#75715e">// compute primes larger than minPrime
+</span><span style="color:#75715e"></span><span style="color:#f92672">*</span>             <span style="color:#f92672">&amp;</span>nbsp<span style="color:#f92672">;.&amp;</span>nbsp<span style="color:#f92672">;.&amp;</span>nbsp<span style="color:#f92672">;.</span>
+<span style="color:#f92672">*</span>         <span style="color:#f92672">}</span>
+<span style="color:#f92672">*</span>     <span style="color:#f92672">}</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;/</span>pre<span style="color:#f92672">&gt;&lt;/</span>blockquote<span style="color:#f92672">&gt;&lt;</span>hr<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span> The following code would then create a thread and start it running<span style="color:#f92672">:</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>blockquote<span style="color:#f92672">&gt;&lt;</span>pre<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span>     PrimeRun p <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrimeRun<span style="color:#f92672">(</span>143<span style="color:#f92672">);</span>
+<span style="color:#f92672">*</span>     <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>p<span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;/</span>pre<span style="color:#f92672">&gt;&lt;/</span>blockquote<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">*</span> <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>
+</code></pre></div><p>从注释上就可以看到 java官方的说法就是只有这两种方法实现了现场。
+至于callable 让我们来看一下callable的实现方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Callable<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> callable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Callable<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>1000<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;aaa&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">};</span>
+FutureTask<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> featureTask <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FutureTask<span style="color:#f92672">&lt;&gt;(</span>callable<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>featureTask<span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+    String ret <span style="color:#f92672">=</span> featureTask<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ExecutionException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>其实callable 是通过futuretask 包装一下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//FutureTask.java
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FutureTask</span><span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> RunnableFuture<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+  <span style="color:#75715e">//。。。
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+
+<span style="color:#75715e">//RunnableFuture.java
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">RunnableFuture</span><span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Runnable<span style="color:#f92672">,</span> Future<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Sets this Future to the result of its computation
+</span><span style="color:#75715e">     * unless it has been cancelled.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>callable 就是通过传递一个runnable 到thread 来实现线程的。</p>
+<h4 id="futuretask的实现">
+  FutureTask的实现
+  <a class="anchor" href="#futuretask%e7%9a%84%e5%ae%9e%e7%8e%b0">#</a>
+</h4>
+<details >
+  <summary>FutureTask.java</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//FutureTask.java
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> java.util.concurrent<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.util.concurrent.locks.LockSupport<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 一个可以取消的异步调度。这个类提供了{@link Future}的一种实现，
+</span><span style="color:#75715e"> * 这个实现方式提供了start 和cancel的方法用于控制这个异步的计算过程，
+</span><span style="color:#75715e"> * 还提供了查询当前这个计算过程是否完成，以及取得计算结果的方法。
+</span><span style="color:#75715e"> * 这个计算结果只有当计算过程结束之后才能获取到。
+</span><span style="color:#75715e"> * {@code get} 这个方法将会一直block除非计算过程结束。
+</span><span style="color:#75715e"> * 一旦计算过程结束，那么计算过程不能被重启或者取消，
+</span><span style="color:#75715e"> * 除非使用{@link #runAndReset}。
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * 一个 {@code FutureTask} 可以用于即实现了 {@link Callable} 也实现了
+</span><span style="color:#75715e"> * {@link Runnable}。一个 {@code FutureTask} 可以提交给线程池
+</span><span style="color:#75715e"> * {@link Executor} 来执行
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * &lt;p&gt;In addition to serving as a standalone class, this class provides
+</span><span style="color:#75715e"> * {@code protected} functionality that may be useful when creating
+</span><span style="color:#75715e"> * customized task classes.
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * @since 1.5
+</span><span style="color:#75715e"> * @author Doug Lea
+</span><span style="color:#75715e"> * @param &lt;V&gt; The result type returned by this FutureTask&#39;s {@code get} methods
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FutureTask</span><span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> RunnableFuture<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">/*
+</span><span style="color:#75715e">     * Revision notes: This differs from previous versions of this
+</span><span style="color:#75715e">     * class that relied on AbstractQueuedSynchronizer, mainly to
+</span><span style="color:#75715e">     * avoid surprising users about retaining interrupt status during
+</span><span style="color:#75715e">     * cancellation races. Sync control in the current design relies
+</span><span style="color:#75715e">     * on a &#34;state&#34; field updated via CAS to track completion, along
+</span><span style="color:#75715e">     * with a simple Treiber stack to hold waiting threads.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * Style note: As usual, we bypass overhead of using
+</span><span style="color:#75715e">     * AtomicXFieldUpdaters and instead directly use Unsafe intrinsics.
+</span><span style="color:#75715e">     */</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * The run state of this task, initially NEW.  The run state
+</span><span style="color:#75715e">     * transitions to a terminal state only in methods set,
+</span><span style="color:#75715e">     * setException, and cancel.  During completion, state may take on
+</span><span style="color:#75715e">     * transient values of COMPLETING (while outcome is being set) or
+</span><span style="color:#75715e">     * INTERRUPTING (only while interrupting the runner to satisfy a
+</span><span style="color:#75715e">     * cancel(true)). Transitions from these intermediate to final
+</span><span style="color:#75715e">     * states use cheaper ordered/lazy writes because values are unique
+</span><span style="color:#75715e">     * and cannot be further modified.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * Possible state transitions:
+</span><span style="color:#75715e">     * NEW -&gt; COMPLETING -&gt; NORMAL
+</span><span style="color:#75715e">     * NEW -&gt; COMPLETING -&gt; EXCEPTIONAL
+</span><span style="color:#75715e">     * NEW -&gt; CANCELLED
+</span><span style="color:#75715e">     * NEW -&gt; INTERRUPTING -&gt; INTERRUPTED
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">int</span> state<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> NEW          <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> COMPLETING   <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> NORMAL       <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> EXCEPTIONAL  <span style="color:#f92672">=</span> 3<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> CANCELLED    <span style="color:#f92672">=</span> 4<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> INTERRUPTING <span style="color:#f92672">=</span> 5<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> INTERRUPTED  <span style="color:#f92672">=</span> 6<span style="color:#f92672">;</span>
+
+    <span style="color:#75715e">/** The underlying callable; nulled out after running */</span>
+    <span style="color:#66d9ef">private</span> Callable<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> callable<span style="color:#f92672">;</span>
+    <span style="color:#75715e">/** The result to return or exception to throw from get() */</span>
+    <span style="color:#66d9ef">private</span> Object outcome<span style="color:#f92672">;</span> <span style="color:#75715e">// non-volatile, protected by state reads/writes
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/** The thread running the callable; CASed during run() */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">volatile</span> Thread runner<span style="color:#f92672">;</span>
+    <span style="color:#75715e">/** Treiber stack of waiting threads */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">volatile</span> WaitNode waiters<span style="color:#f92672">;</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Returns result or throws exception for completed task.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * @param s completed state value
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#a6e22e">@SuppressWarnings</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;unchecked&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> V <span style="color:#a6e22e">report</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> s<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ExecutionException <span style="color:#f92672">{</span>
+        Object x <span style="color:#f92672">=</span> outcome<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">==</span> NORMAL<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>V<span style="color:#f92672">)</span>x<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">&gt;=</span> CANCELLED<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> CancellationException<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ExecutionException<span style="color:#f92672">((</span>Throwable<span style="color:#f92672">)</span>x<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Creates a {@code FutureTask} that will, upon running, execute the
+</span><span style="color:#75715e">     * given {@code Callable}.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * @param  callable the callable task
+</span><span style="color:#75715e">     * @throws NullPointerException if the callable is null
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">FutureTask</span><span style="color:#f92672">(</span>Callable<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> callable<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>callable <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> NullPointerException<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">callable</span> <span style="color:#f92672">=</span> callable<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> NEW<span style="color:#f92672">;</span>       <span style="color:#75715e">// ensure visibility of callable
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Creates a {@code FutureTask} that will, upon running, execute the
+</span><span style="color:#75715e">     * given {@code Runnable}, and arrange that {@code get} will return the
+</span><span style="color:#75715e">     * given result on successful completion.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * @param runnable the runnable task
+</span><span style="color:#75715e">     * @param result the result to return on successful completion. If
+</span><span style="color:#75715e">     * you don&#39;t need a particular result, consider using
+</span><span style="color:#75715e">     * constructions of the form:
+</span><span style="color:#75715e">     * {@code Future&lt;?&gt; f = new FutureTask&lt;Void&gt;(runnable, null)}
+</span><span style="color:#75715e">     * @throws NullPointerException if the runnable is null
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">FutureTask</span><span style="color:#f92672">(</span>Runnable runnable<span style="color:#f92672">,</span> V result<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">callable</span> <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">callable</span><span style="color:#f92672">(</span>runnable<span style="color:#f92672">,</span> result<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> NEW<span style="color:#f92672">;</span>       <span style="color:#75715e">// ensure visibility of callable
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isCancelled</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> state <span style="color:#f92672">&gt;=</span> CANCELLED<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isDone</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> state <span style="color:#f92672">!=</span> NEW<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">cancel</span><span style="color:#f92672">(</span><span style="color:#66d9ef">boolean</span> mayInterruptIfRunning<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!(</span>state <span style="color:#f92672">==</span> NEW <span style="color:#f92672">&amp;&amp;</span>
+              U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapInt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> STATE<span style="color:#f92672">,</span> NEW<span style="color:#f92672">,</span>
+                  mayInterruptIfRunning <span style="color:#f92672">?</span> INTERRUPTING <span style="color:#f92672">:</span> CANCELLED<span style="color:#f92672">)))</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">// in case call to interrupt throws exception
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mayInterruptIfRunning<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                    Thread t <span style="color:#f92672">=</span> runner<span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>t <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+                        t<span style="color:#f92672">.</span><span style="color:#a6e22e">interrupt</span><span style="color:#f92672">();</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// final state
+</span><span style="color:#75715e"></span>                    U<span style="color:#f92672">.</span><span style="color:#a6e22e">putOrderedInt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> STATE<span style="color:#f92672">,</span> INTERRUPTED<span style="color:#f92672">);</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+            finishCompletion<span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * @throws CancellationException {@inheritDoc}
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> V <span style="color:#a6e22e">get</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> InterruptedException<span style="color:#f92672">,</span> ExecutionException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> state<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">&lt;=</span> COMPLETING<span style="color:#f92672">)</span>
+            s <span style="color:#f92672">=</span> awaitDone<span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">,</span> 0L<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> report<span style="color:#f92672">(</span>s<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * @throws CancellationException {@inheritDoc}
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> V <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> timeout<span style="color:#f92672">,</span> TimeUnit unit<span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">throws</span> InterruptedException<span style="color:#f92672">,</span> ExecutionException<span style="color:#f92672">,</span> TimeoutException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>unit <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> NullPointerException<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> state<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">&lt;=</span> COMPLETING <span style="color:#f92672">&amp;&amp;</span>
+            <span style="color:#f92672">(</span>s <span style="color:#f92672">=</span> awaitDone<span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">,</span> unit<span style="color:#f92672">.</span><span style="color:#a6e22e">toNanos</span><span style="color:#f92672">(</span>timeout<span style="color:#f92672">)))</span> <span style="color:#f92672">&lt;=</span> COMPLETING<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> TimeoutException<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">return</span> report<span style="color:#f92672">(</span>s<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Protected method invoked when this task transitions to state
+</span><span style="color:#75715e">     * {@code isDone} (whether normally or via cancellation). The
+</span><span style="color:#75715e">     * default implementation does nothing.  Subclasses may override
+</span><span style="color:#75715e">     * this method to invoke completion callbacks or perform
+</span><span style="color:#75715e">     * bookkeeping. Note that you can query status inside the
+</span><span style="color:#75715e">     * implementation of this method to determine whether this task
+</span><span style="color:#75715e">     * has been cancelled.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">done</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Sets the result of this future to the given value unless
+</span><span style="color:#75715e">     * this future has already been set or has been cancelled.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * &lt;p&gt;This method is invoked internally by the {@link #run} method
+</span><span style="color:#75715e">     * upon successful completion of the computation.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * @param v the value
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>V v<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapInt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> STATE<span style="color:#f92672">,</span> NEW<span style="color:#f92672">,</span> COMPLETING<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            outcome <span style="color:#f92672">=</span> v<span style="color:#f92672">;</span>
+            U<span style="color:#f92672">.</span><span style="color:#a6e22e">putOrderedInt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> STATE<span style="color:#f92672">,</span> NORMAL<span style="color:#f92672">);</span> <span style="color:#75715e">// final state
+</span><span style="color:#75715e"></span>            finishCompletion<span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Causes this future to report an {@link ExecutionException}
+</span><span style="color:#75715e">     * with the given throwable as its cause, unless this future has
+</span><span style="color:#75715e">     * already been set or has been cancelled.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * &lt;p&gt;This method is invoked internally by the {@link #run} method
+</span><span style="color:#75715e">     * upon failure of the computation.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * @param t the cause of failure
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setException</span><span style="color:#f92672">(</span>Throwable t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapInt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> STATE<span style="color:#f92672">,</span> NEW<span style="color:#f92672">,</span> COMPLETING<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            outcome <span style="color:#f92672">=</span> t<span style="color:#f92672">;</span>
+            U<span style="color:#f92672">.</span><span style="color:#a6e22e">putOrderedInt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> STATE<span style="color:#f92672">,</span> EXCEPTIONAL<span style="color:#f92672">);</span> <span style="color:#75715e">// final state
+</span><span style="color:#75715e"></span>            finishCompletion<span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>state <span style="color:#f92672">!=</span> NEW <span style="color:#f92672">||</span>
+            <span style="color:#f92672">!</span>U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapObject</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> RUNNER<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">()))</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            Callable<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> c <span style="color:#f92672">=</span> callable<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>c <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> state <span style="color:#f92672">==</span> NEW<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                V result<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">boolean</span> ran<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                    result <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span><span style="color:#a6e22e">call</span><span style="color:#f92672">();</span>
+                    ran <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    result <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                    ran <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+                    setException<span style="color:#f92672">(</span>ex<span style="color:#f92672">);</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>ran<span style="color:#f92672">)</span>
+                    set<span style="color:#f92672">(</span>result<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// runner must be non-null until state is settled to
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// prevent concurrent calls to run()
+</span><span style="color:#75715e"></span>            runner <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            <span style="color:#75715e">// state must be re-read after nulling runner to prevent
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// leaked interrupts
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> state<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">&gt;=</span> INTERRUPTING<span style="color:#f92672">)</span>
+                handlePossibleCancellationInterrupt<span style="color:#f92672">(</span>s<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Executes the computation without setting its result, and then
+</span><span style="color:#75715e">     * resets this future to initial state, failing to do so if the
+</span><span style="color:#75715e">     * computation encounters an exception or is cancelled.  This is
+</span><span style="color:#75715e">     * designed for use with tasks that intrinsically execute more
+</span><span style="color:#75715e">     * than once.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * @return {@code true} if successfully run and reset
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">runAndReset</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>state <span style="color:#f92672">!=</span> NEW <span style="color:#f92672">||</span>
+            <span style="color:#f92672">!</span>U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapObject</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> RUNNER<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">()))</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">boolean</span> ran <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> state<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            Callable<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> c <span style="color:#f92672">=</span> callable<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>c <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> s <span style="color:#f92672">==</span> NEW<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                    c<span style="color:#f92672">.</span><span style="color:#a6e22e">call</span><span style="color:#f92672">();</span> <span style="color:#75715e">// don&#39;t set result
+</span><span style="color:#75715e"></span>                    ran <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Throwable ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    setException<span style="color:#f92672">(</span>ex<span style="color:#f92672">);</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// runner must be non-null until state is settled to
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// prevent concurrent calls to run()
+</span><span style="color:#75715e"></span>            runner <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            <span style="color:#75715e">// state must be re-read after nulling runner to prevent
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// leaked interrupts
+</span><span style="color:#75715e"></span>            s <span style="color:#f92672">=</span> state<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">&gt;=</span> INTERRUPTING<span style="color:#f92672">)</span>
+                handlePossibleCancellationInterrupt<span style="color:#f92672">(</span>s<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> ran <span style="color:#f92672">&amp;&amp;</span> s <span style="color:#f92672">==</span> NEW<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Ensures that any interrupt from a possible cancel(true) is only
+</span><span style="color:#75715e">     * delivered to a task while in run or runAndReset.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handlePossibleCancellationInterrupt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// It is possible for our interrupter to stall before getting a
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// chance to interrupt us.  Let&#39;s spin-wait patiently.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">==</span> INTERRUPTING<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>state <span style="color:#f92672">==</span> INTERRUPTING<span style="color:#f92672">)</span>
+                Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">yield</span><span style="color:#f92672">();</span> <span style="color:#75715e">// wait out pending interrupt
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// assert state == INTERRUPTED;
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// We want to clear any interrupt we may have received from
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// cancel(true).  However, it is permissible to use interrupts
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// as an independent mechanism for a task to communicate with
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// its caller, and there is no way to clear only the
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// cancellation interrupt.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Thread.interrupted();
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Simple linked list nodes to record waiting threads in a Treiber
+</span><span style="color:#75715e">     * stack.  See other classes such as Phaser and SynchronousQueue
+</span><span style="color:#75715e">     * for more detailed explanation.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WaitNode</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">volatile</span> Thread thread<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">volatile</span> WaitNode next<span style="color:#f92672">;</span>
+        WaitNode<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> thread <span style="color:#f92672">=</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">();</span> <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Removes and signals all waiting threads, invokes done(), and
+</span><span style="color:#75715e">     * nulls out callable.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">finishCompletion</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// assert state &gt; COMPLETING;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>WaitNode q<span style="color:#f92672">;</span> <span style="color:#f92672">(</span>q <span style="color:#f92672">=</span> waiters<span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapObject</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> WAITERS<span style="color:#f92672">,</span> q<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;;)</span> <span style="color:#f92672">{</span>
+                    Thread t <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span><span style="color:#a6e22e">thread</span><span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>t <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        q<span style="color:#f92672">.</span><span style="color:#a6e22e">thread</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                        LockSupport<span style="color:#f92672">.</span><span style="color:#a6e22e">unpark</span><span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
+                    <span style="color:#f92672">}</span>
+                    WaitNode next <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>next <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+                        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                    q<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> <span style="color:#75715e">// unlink to help gc
+</span><span style="color:#75715e"></span>                    q <span style="color:#f92672">=</span> next<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        done<span style="color:#f92672">();</span>
+
+        callable <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>        <span style="color:#75715e">// to reduce footprint
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Awaits completion or aborts on interrupt or timeout.
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     * @param timed true if use timed waits
+</span><span style="color:#75715e">     * @param nanos time to wait, if timed
+</span><span style="color:#75715e">     * @return state upon completion or at timeout
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">awaitDone</span><span style="color:#f92672">(</span><span style="color:#66d9ef">boolean</span> timed<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> nanos<span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// The code below is very delicate, to achieve these goals:
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// - call nanoTime exactly once for each call to park
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// - if nanos &lt;= 0L, return promptly without allocation or nanoTime
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// - if nanos == Long.MIN_VALUE, don&#39;t underflow
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// - if nanos == Long.MAX_VALUE, and nanoTime is non-monotonic
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//   and we suffer a spurious wakeup, we will do no worse than
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//   to park-spin for a while
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">long</span> startTime <span style="color:#f92672">=</span> 0L<span style="color:#f92672">;</span>    <span style="color:#75715e">// Special value 0L means not yet parked
+</span><span style="color:#75715e"></span>        WaitNode q <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">boolean</span> queued <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;;)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> state<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">&gt;</span> COMPLETING<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>q <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+                    q<span style="color:#f92672">.</span><span style="color:#a6e22e">thread</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">return</span> s<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">==</span> COMPLETING<span style="color:#f92672">)</span>
+                <span style="color:#75715e">// We may have already promised (via isDone) that we are done
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// so never return empty-handed or throw InterruptedException
+</span><span style="color:#75715e"></span>                Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">yield</span><span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">interrupted</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                removeWaiter<span style="color:#f92672">(</span>q<span style="color:#f92672">);</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InterruptedException<span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>q <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>timed <span style="color:#f92672">&amp;&amp;</span> nanos <span style="color:#f92672">&lt;=</span> 0L<span style="color:#f92672">)</span>
+                    <span style="color:#66d9ef">return</span> s<span style="color:#f92672">;</span>
+                q <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WaitNode<span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>queued<span style="color:#f92672">)</span>
+                queued <span style="color:#f92672">=</span> U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapObject</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> WAITERS<span style="color:#f92672">,</span>
+                                                q<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> waiters<span style="color:#f92672">,</span> q<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>timed<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> parkNanos<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>startTime <span style="color:#f92672">==</span> 0L<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// first time
+</span><span style="color:#75715e"></span>                    startTime <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>startTime <span style="color:#f92672">==</span> 0L<span style="color:#f92672">)</span>
+                        startTime <span style="color:#f92672">=</span> 1L<span style="color:#f92672">;</span>
+                    parkNanos <span style="color:#f92672">=</span> nanos<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">long</span> elapsed <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> startTime<span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>elapsed <span style="color:#f92672">&gt;=</span> nanos<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        removeWaiter<span style="color:#f92672">(</span>q<span style="color:#f92672">);</span>
+                        <span style="color:#66d9ef">return</span> state<span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                    parkNanos <span style="color:#f92672">=</span> nanos <span style="color:#f92672">-</span> elapsed<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#75715e">// nanoTime may be slow; recheck before parking
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>state <span style="color:#f92672">&lt;</span> COMPLETING<span style="color:#f92672">)</span>
+                    LockSupport<span style="color:#f92672">.</span><span style="color:#a6e22e">parkNanos</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> parkNanos<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">else</span>
+                LockSupport<span style="color:#f92672">.</span><span style="color:#a6e22e">park</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Tries to unlink a timed-out or interrupted wait node to avoid
+</span><span style="color:#75715e">     * accumulating garbage.  Internal nodes are simply unspliced
+</span><span style="color:#75715e">     * without CAS since it is harmless if they are traversed anyway
+</span><span style="color:#75715e">     * by releasers.  To avoid effects of unsplicing from already
+</span><span style="color:#75715e">     * removed nodes, the list is retraversed in case of an apparent
+</span><span style="color:#75715e">     * race.  This is slow when there are a lot of nodes, but we don&#39;t
+</span><span style="color:#75715e">     * expect lists to be long enough to outweigh higher-overhead
+</span><span style="color:#75715e">     * schemes.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">removeWaiter</span><span style="color:#f92672">(</span>WaitNode node<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>node <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            node<span style="color:#f92672">.</span><span style="color:#a6e22e">thread</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            retry<span style="color:#f92672">:</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;;)</span> <span style="color:#f92672">{</span>          <span style="color:#75715e">// restart on removeWaiter race
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>WaitNode pred <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> q <span style="color:#f92672">=</span> waiters<span style="color:#f92672">,</span> s<span style="color:#f92672">;</span> q <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> q <span style="color:#f92672">=</span> s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    s <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>q<span style="color:#f92672">.</span><span style="color:#a6e22e">thread</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+                        pred <span style="color:#f92672">=</span> q<span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>pred <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        pred<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> s<span style="color:#f92672">;</span>
+                        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>pred<span style="color:#f92672">.</span><span style="color:#a6e22e">thread</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#75715e">// check for race
+</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">continue</span> retry<span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>U<span style="color:#f92672">.</span><span style="color:#a6e22e">compareAndSwapObject</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> WAITERS<span style="color:#f92672">,</span> q<span style="color:#f92672">,</span> s<span style="color:#f92672">))</span>
+                        <span style="color:#66d9ef">continue</span> retry<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// Unsafe mechanics
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> sun<span style="color:#f92672">.</span><span style="color:#a6e22e">misc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Unsafe</span> U <span style="color:#f92672">=</span> sun<span style="color:#f92672">.</span><span style="color:#a6e22e">misc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Unsafe</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getUnsafe</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> STATE<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> RUNNER<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> WAITERS<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">static</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            STATE <span style="color:#f92672">=</span> U<span style="color:#f92672">.</span><span style="color:#a6e22e">objectFieldOffset</span>
+                <span style="color:#f92672">(</span>FutureTask<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getDeclaredField</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;state&#34;</span><span style="color:#f92672">));</span>
+            RUNNER <span style="color:#f92672">=</span> U<span style="color:#f92672">.</span><span style="color:#a6e22e">objectFieldOffset</span>
+                <span style="color:#f92672">(</span>FutureTask<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getDeclaredField</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;runner&#34;</span><span style="color:#f92672">));</span>
+            WAITERS <span style="color:#f92672">=</span> U<span style="color:#f92672">.</span><span style="color:#a6e22e">objectFieldOffset</span>
+                <span style="color:#f92672">(</span>FutureTask<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getDeclaredField</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;waiters&#34;</span><span style="color:#f92672">));</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ReflectiveOperationException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#75715e">// Reduce the risk of rare disastrous classloading in first call to
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// LockSupport.park: https://bugs.openjdk.java.net/browse/JDK-8074773
+</span><span style="color:#75715e"></span>        Class<span style="color:#f92672">&lt;?&gt;</span> ensureLoaded <span style="color:#f92672">=</span> LockSupport<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div>
+  </div>
+</details>
+
+<h2 id="并发编程---死锁">
+  并发编程 - 死锁
+  <a class="anchor" href="#%e5%b9%b6%e5%8f%91%e7%bc%96%e7%a8%8b---%e6%ad%bb%e9%94%81">#</a>
+</h2>
+<h3 id="死锁的原因">
+  死锁的原因
+  <a class="anchor" href="#%e6%ad%bb%e9%94%81%e7%9a%84%e5%8e%9f%e5%9b%a0">#</a>
+</h3>
+<p>简单版本</p>
+<ul>
+<li>多个操作者 抢占多个资源</li>
+<li>抢占资源的顺序不对</li>
+<li>拿到资源不释放</li>
+</ul>
+<hr>
+<p>四个必要条件</p>
+<ul>
+<li>互斥</li>
+<li>占有且等待</li>
+<li>不剥夺</li>
+<li>环路等待</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础知识">基础知识</a>
+      <ul>
+        <li><a href="#并发编程中的问题">并发编程中的问题</a>
+          <ul>
+            <li><a href="#原子性问题">原子性问题</a></li>
+            <li><a href="#可见性问题">可见性问题</a></li>
+            <li><a href="#有序性问题">有序性问题</a></li>
+          </ul>
+        </li>
+        <li><a href="#java-线程的状态-变化">Java 线程的状态 变化</a>
+          <ul>
+            <li><a href="#实现线程的几种方式">实现线程的几种方式</a></li>
+          </ul>
+        </li>
+        <li><a href="#并发编程---死锁">并发编程 - 死锁</a>
+          <ul>
+            <li><a href="#死锁的原因">死锁的原因</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

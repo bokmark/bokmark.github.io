@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>themes on Bokmark</title>
+    <link>/tags/themes/</link>
+    <description>Recent content in themes on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/tags/themes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Pages服务</title>
+      <link>/posts/GithubPages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/GithubPages/</guid>
+      <description>GithubPages #    作为一个程序员需要有一个记录知识点的地方，也需要一个做记录整理自己的知识体系的地方。GithubPages 作为影响力最大的博客网站，当我们需要进行博客搭建的时候，当然是选择他！
+ 准备 #    Pages 这是github pages 提供的帮助文档。 我们按照他提供的步骤一步步的搭建好仓库。比如我取名就是bokmark.github.io  主题 这是主题列表。我们使用hugo 来将markdown文件转化为html文件  开始 #    第一步创建hugo的站
+hugo new site mysite  然后再选一个好看的theme，我这里推荐我使用的这个主题
+cd mysitegit clone https://github.com/jugglerx/hugo-whisper-theme.git themes/hugo-whisper-theme  修改config.toml
+baseURL = &amp;quot;/&amp;quot;themesDir = &amp;quot;themes&amp;quot;publishdir = &amp;quot;docs&amp;quot;theme = &amp;quot;hugo-whisper-theme&amp;quot;这里面最重要的是 publishdir = &amp;quot;docs&amp;quot;
+  创建你要的页面
+hugo new about.md// 会在content页面 创建about.md 文件hugo new notes/other/GithubPages.</description>
+    </item>
+    
+  </channel>
+</rss>

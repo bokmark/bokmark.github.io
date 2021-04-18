@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark</title>
+    <link>/docs/android/view/</link>
+    <description>Recent content on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/android/view/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recycler View</title>
+      <link>/docs/android/view/recyclerview/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/recyclerview/</guid>
+      <description>Recycler view</description>
+    </item>
+    
+    <item>
+      <title>View </title>
+      <link>/docs/android/view/view/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/view/</guid>
+      <description>从handler的面试题出发了解handler</description>
+    </item>
+    
+    <item>
+      <title>触摸事件 分发流程</title>
+      <link>/docs/android/view/touch/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/touch/</guid>
+      <description>触摸事件</description>
+    </item>
+    
+  </channel>
+</rss>

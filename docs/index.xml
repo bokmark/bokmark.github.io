@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BokmarkPages on Bokmark</title>
+    <link>/</link>
+    <description>Recent content in BokmarkPages on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 泛型</title>
+      <link>/docs/java/base/%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/base/%E6%B3%9B%E5%9E%8B/</guid>
+      <description>泛型 #  Java 的泛型在JDK5的时候引入，在没有泛型之前，从集合中读取每一个元素都必须进行类型转化。如果有人不小心插入了类型错误的对象，就会报错。而泛型将会让编译器在编译期间自动帮你进行转化，并且做类型安全检查。
+Java 的泛型是伪泛型。
+概述 #  泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。
+泛型的本质是为了参数化类型（在不创建新的类型的情况下，通过泛型指定的不同类型来控制形参具体限制的类型）。也就是说在泛型使用过程中，操作的数据类型被指定为一个参数，这种参数类型可以用在类、接口和方法中，分别被称为泛型类、泛型接口、泛型方法。
+泛型擦除 #  由于java是伪泛型，所以在编译期间会将泛型擦除。所以泛型的效果只在编译阶段有效。
+泛型的使用 #   泛型方法 泛型类 泛型接口  泛型通配符 #  泛型的上界和下界 #  总结 #  </description>
+    </item>
+    
+    <item>
+      <title>HTTP 协议</title>
+      <link>/docs/others/protocal/http/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/others/protocal/http/</guid>
+      <description>http 协议 #  </description>
+    </item>
+    
+    <item>
+      <title>HTTPS 与http的区别</title>
+      <link>/docs/others/protocal/https/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/others/protocal/https/</guid>
+      <description>HTTPS #  http 协议的缺点 #   http协议是明文传输 没有对内容的完整性进行校验  HTTPS 在http 和tcp之间加入一层 ssl。 #   mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) sequenceDiagram participant C as Client participant S as Server participant CA as CA C-S: 发起ssl握手请求。附带支持的密码套件。 S-C: 收到请求。告知采用的密码套件。 S-C: 返回一个CA证书中的公钥。RSA非对称加密。 C-C: 先在本地查找服务器证书的根证书。 C-C: 利用根证书的公钥（如果不是受信的签发机构，找到签发机构的数字证书的签发机构是不是在列表中，一直循环。）解密服务器证书，得到摘要数据，与明面上的摘要信息比较，如果相同则通过。 C-S: 使用服务器证书的公钥加密 一个随机值（由前面协商的算法决定的）密钥。并发送给服务器 S-C: 服务器用自己的私钥解密，利用这个随机值开始通信。  为什么要有CA 预防中间人攻击。 为什么要用对称加密。 因为非对称算法的消耗巨大。对称加密的性能相较于很大。  </description>
+    </item>
+    
+    <item>
+      <title>RTSP 协议</title>
+      <link>/docs/others/protocal/rtsp/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/others/protocal/rtsp/</guid>
+      <description>RTSP 协议 #    RTSP RFC 协议 RTSP RFC 协议中文版
+ 简介 #  rtsp 是一个tcp//ip协议中的应用层协议。
+#  </description>
+    </item>
+    
+    <item>
+      <title>剑指offer - 数据结构</title>
+      <link>/docs/algorithm/%E5%89%91%E6%8C%87offer1/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/algorithm/%E5%89%91%E6%8C%87offer1/</guid>
+      <description>剑指offer中的算法题 #    剑指Offer
+ 数据结构 #  面试题3：二维数组中的查找 #   题目：在一个二维数组中，每一行都按照从左到右的递增顺序排序，每一列都按照从上到下递增的顺序排序，请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/ 思路： 先拿出一个例子找出规律，然后再实现成代码。我们在这里从右上角开始往前找，如果找到的数大于target这前移一位，如果小于这下移一位。重复这歌步骤直到x 或者y超出边界。 答案：  class Solution { public boolean findNumberIn2DArray(int[][] matrix, int target) { if (matrix == null || matrix.length == 0 || matrix[0].length == 0) { return false; } int y = matrix[0].length - 1, x = 0; for (;x &amp;lt; matrix.length &amp;amp;&amp;amp; y &amp;gt;= 0;) { if (matrix[x][y] == target) { return true; } if (matrix[x][y] &amp;gt; target) { y --; } else { x ++; } } return false; } } 面试题4：替换空格 #   题目：请实现一个函数，把字符串 s 中的每个空格替换成&amp;quot;%20&amp;quot;。  https://leetcode-cn.</description>
+    </item>
+    
+    <item>
+      <title>Retrofit - platform</title>
+      <link>/docs/open_sources/retrofit/platform/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/retrofit/platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Retrofit - 大致流程源码解析</title>
+      <link>/docs/open_sources/retrofit/base/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/retrofit/base/</guid>
+      <description>通过实际例子来分析阅读源码 #   Retrofit 的使用 可以看 这里
+ 栗子 #  我们先举一个例子。这是我们定义的
+public interface GitHubService { @GET(&amp;#34;users/{user}/repos&amp;#34;) Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; listRepos(@Path(&amp;#34;user&amp;#34;) String user); } 这是我们常用的一个配置，添加了gson的转化器，和Rxjava的calladapter。
+Retrofit 将会提供一个 GitHubService 的实现
+Retrofit retrofit = new Retrofit.Builder() .addConverterFactory(GsonConverterFactory.create()) .addCallAdapterFactory(RxJavaCallAdapterFactory.creat()) .baseUrl(&amp;#34;https://api.github.com/&amp;#34;) .build(); GitHubService service = retrofit.create(GitHubService.class); GitHubService 提供的每一个 Call 都将提供 同步或者异步的api请求去请求http
+Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; repos = service.listRepos(&amp;#34;octocat&amp;#34;);  到这里我就会疑惑retrofit自动生成的实例是什么样子的。我们点进去查看retrofit的create方法看一下
+ 源码解析第一步-获取call #  create() #  public &amp;lt;T&amp;gt; T create(final Class&amp;lt;T&amp;gt; service)
+public &amp;lt;T&amp;gt; T create(final Class&amp;lt;T&amp;gt; service) { validateServiceInterface(service); return (T) Proxy.</description>
+    </item>
+    
+    <item>
+      <title>如何使用</title>
+      <link>/docs/open_sources/retrofit/use/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/retrofit/use/</guid>
+      <description>Retrofit 如何使用，官方文档部分翻译。 #  A type-safe HTTP client for Android and Java
+ 官方文档
+介绍 #  retrofit 可以通过简单的注释将复杂的http 请求转化成java接口的亚子。 比如下面的：
+public interface GitHubService { @GET(&amp;#34;users/{user}/repos&amp;#34;) Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; listRepos(@Path(&amp;#34;user&amp;#34;) String user); } Retrofit通过create方法将会自动生成一个GitHubService接口的实现
+Retrofit retrofit = new Retrofit.Builder() .baseUrl(&amp;#34;https://api.github.com/&amp;#34;) .build(); GitHubService service = retrofit.create(GitHubService.class); 被创建出来的GitHubService 提供的每一个 Call 都将提供同步或者异步的方式去向远端服务器发送http请求
+Call&amp;lt;List&amp;lt;Repo&amp;gt;&amp;gt; repos = service.listRepos(&amp;#34;octocat&amp;#34;); 我们使用注解来描述一个http请求，包括以下部分
+ url以及请求参数，支持替换 类体自动转化成 request body 支持多模块的 request body 和文件上传  api定义 #  在一个接口的方法上添加注解和参数上添加注解就已经足够描述一个接口将会被如何处理
+请求方式 #  每一个方法都有一个 HTTP 的注解，用来表明请求方式和相对请求路径。有这些HTTP的请求方式: HTTP, GET, POST, PUT, PATCH, DELETE, OPTIONS 和 HEAD.</description>
+    </item>
+    
+    <item>
+      <title>BIO,NIO,AIO</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/io/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/io/</guid>
+      <description>网络通信基本常识 #    课外阅读-bio 与nio的区别 课外阅读-bio 与nio的区别2 课外阅读-bio 与nio的区别2
+ 基础知识 #   socket 短连接 长  三种io #   bio nio AIO  bio #  面向流的io方式
+什么是bio #  举个栗子：BIO #  ExecutorService executor = Excutors.newFixedThreadPollExecutor(100);//线程池  ServerSocket serverSocket = new ServerSocket(); serverSocket.bind(8088); while(!Thread.currentThread.isInturrupted()){//主线程死循环等待新连接到来  Socket socket = serverSocket.accept(); executor.submit(new ConnectIOnHandler(socket));//为新的连接创建新的线程 } class ConnectIOnHandler extends Thread{ private Socket socket; public ConnectIOnHandler(Socket socket){ this.socket = socket; } public void run(){ while(!</description>
+    </item>
+    
+    <item>
+      <title>BIO,NIO,AIO</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/nio/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/nio/</guid>
+      <description>网络通信基本常识 #    课外阅读-bio 与nio的区别 课外阅读-bio 与nio的区别2 课外阅读-bio 与nio的区别2
+ 基础知识 #   socket 短连接 长  11 #  读写是否需要双开线程
+nio #  io 多路复用，面向缓冲区
+什么是nio #   io 多路复用 channel  serversocketchannel socketchannel   selector selectionkey  op_accept op_connect op_read op_write  为什么op_write 事件很少注册 （只有极少数才会注册写事件，因为写事件在发送buffer有空闲时就会触发）     socket buffer  bytebuffer #   客户端传输数据和接收数据需要用两个bytebuffer 直接内存 推上分配  </description>
+    </item>
+    
+    <item>
+      <title>BIO,NIO,AIO</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/scoket/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/scoket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Glide 生命周期</title>
+      <link>/docs/open_sources/glide/with/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/glide/with/</guid>
+      <description>Glide with #  </description>
+    </item>
+    
+    <item>
+      <title>Java 序列化</title>
+      <link>/docs/java/other/%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/other/%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OkHTTP 分发器</title>
+      <link>/docs/open_sources/okhttp/dispatcher/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/okhttp/dispatcher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OkHTTP 整体流程</title>
+      <link>/docs/open_sources/okhttp/summary/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/okhttp/summary/</guid>
+      <description>okhttp #  https://blog.csdn.net/chunqiuwei/article/details/71939952
+ github 源地址
+整体流程 #   mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) sequenceDiagram participant c as OkHttpClient participant rc as RealCall participant d as Dispatchers participant chain as RealInterceptorChain c-rc: RealCall.newRealCall(this, request, false) rc--c: new RealCall(client, originalRequest, forWebSocket); rc-d: enqueue()/*见详细解释*/ d--rc: executeOn()/*见详细解释*/ rc--rc: execute() rc-chain: getResponseWithInterceptorChain() chain--c: callback 分发器 #  Dispatcher.java public final class Dispatcher { private int maxRequests = 64; private int maxRequestsPerHost = 5; private @Nullable Runnable idleCallback; /** Executes calls.</description>
+    </item>
+    
+    <item>
+      <title>TCP 三次握手、四次挥手</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_3_4/</guid>
+      <description>TCP 的三次握手、四次挥手 #  三次握手 #  由于tcp 是有具有数据排序超时重传的功能，所以需要交换服务器和客户端的序列号的起始值。
+SYN：Synchronize Sequence Numbers ACK：Acknowledge character  mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) sequenceDiagram Note left of Client: SYN_SENT activate Client Client-Server: SYN=1, seq = 12345（请求建立连接） deactivate Client activate Server Note right of Server: SYN_RCVD Server-Client: SYN=1,ACK=1,ack=12346,seq=45678(响应请求连接请求，并发送服务器的连接请求) deactivate Server activate Client Note left of Client: ESTABLISHED Client-Server: ACK=1,ack=45679(收到服务器发送的连接请求，并响应) deactivate Client activate Server Note right of Server: ESTABLISHED deactivate Server 为什么是三次握手，而不是四次握手，不是二次握手 #  这是有效建立连接必需步骤：双端需要交换序列号值起始值 的所需要的最小次数。  三次握手的漏洞 #   syn 宏泛攻击（ddos的一种） 虚假的发起syn的请求，（第一次握手），服务器返回第二次握手，并且等待。这将会大量消耗服务器资源。（超时的时间一般都是分钟级别的） syn 宏泛攻击 解决方案  无效连接监控释放 新起一个线程轮询服务器的连接，将无效的连接释放。 延缓tcb分配方法 防火墙 组织无效的请求发送到服务器     课外阅读 #   网络嗅探 原始套接字（直接抓起网卡中的数据，越过网络层传输层） tcpdump websocket：应用层协议（《HTML5 WebSocket权威指南》）  四次挥手 #    第一次挥手：客户端发送关闭请求 第二次挥手：服务端响应客户端关闭请求 第三次挥手：服务端关闭请求 第四次挥手：客户端发送关闭确认请求   sequenceDiagram Note left of 主动关闭方: FIN_WAIT_1(close主动关闭) Note right of 被动关闭方: CLOSE_WAIT activate 主动关闭方 主动关闭方-被动关闭方: FIN=1, seq = 12345（请求关闭连接） deactivate 主动关闭方 activate 被动关闭方 被动关闭方-主动关闭方: ACK=1,seq=12346(确认收到请求，并发送服务器的连接请求) deactivate 被动关闭方 activate 主动关闭方 Note left of 主动关闭方: FIN_WAIT_2 被动关闭方-主动关闭方 : FIN=1,seq=45678(确认收到请求，并发送服务器的连接请求) activate 被动关闭方 Note right of 被动关闭方: CLOSE deactivate 主动关闭方 deactivate 被动关闭方 activate 主动关闭方 主动关闭方-被动关闭方: ACK=1, seq = 45679（请求关闭连接） activate 被动关闭方 Note left of 主动关闭方: TIME_WAITING（2*MSL） deactivate 主动关闭方 Note right of 被动关闭方: CLOSED deactivate 被动关闭方  MSL: 最长报文段的寿命。一个ip报文数据在网络中能存活的最长时间。（RFC的协议定义中，是两分钟。常规定义时间是30秒）（1分钟~4分钟）  为什么是四次挥手 #  这是因为tcp是全双工的，所以连接双方都需要和对方明确不会再有数据发送  为什么第2步和第3步 不合并发送 #  可以合并发送，这不是硬性要求，这是rfc文档定义的规则，当被动关闭方收到fin的报文，并且自己也没有数据要发送的时候，就可以将第二步和第三步合并发送。但是如果被动关闭方还有别的数据需要发送，那么就需要将两个步骤分开  为什么主动发送关闭端 需要一个TIME_WAITING 状态 #   确保可以对被动关闭方发送的fin报文进行响应：预防fin报文的ack报文丢失，从而导致服务器重发了fin报文，但是客户端无法ack。 确保服务器延迟发送的数据不会错误的发送到别的端口上：因为存在端口冲突，当主动发送方关闭了tcp连接的时候端口号可能被别的程序得到，从而导致被动关闭方延迟发送或者还在网络中的数据包被错误的发送的新开的程序端口上。   keepalive 协议中定义了75分钟 #  需要应用层定义心跳机制</description>
+    </item>
+    
+    <item>
+      <title>tcp 分段与ip 分片</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/tcp_ip/</guid>
+      <description>TCP/IP详解&amp;ndash;TCP的分段和IP的分片 #    转载
+ 分组可以发生在运输层和网络层，运输层中的TCP会分段，网络层中的IP会分片。IP层的分片更多的是为运输层的UDP服务的，由于TCP自己会避免IP的分片，所以使用TCP传输在IP层都不会发生分片的现象。 我们在学习TCP/IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组， 同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。
+TCP #  我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。
+MTU（最大传输单元） #  MTU前面已经说过了，是链路层中的网络对数据帧的一个限制，依然以以太网为例，MTU为1500个字节。一个IP数据报在以太网中传输，如果它的长度大于该MTU值，就要进行分片传输，使得每片数据报的长度小于MTU。分片传输的IP数据报不一定按序到达，但IP首部中的信息能让这些数据报片按序组装 （标识 标志 偏移等信息进行重组合 卷2 有讲） 。 IP数据报的分片与重组是在网络层进完成的。  MSS（最大分段大小） #  MSS是TCP里的一个概念（首部的选项字段中）。MSS是TCP数据包每次能够传输的最大数据分段，TCP报文段的长度大于MSS时，要进行分段传输。TCP协议在建立连接的时候通常要协商双方的MSS值，每一方都有用于通告它期望接收的MSS选项（MSS选项只出现在SYN报文段中，即TCP三次握手的前两次）。MSS的值一般为MTU值减去两个首部大小（需要减去IP数据包包头的大小20Bytes和TCP数据段的包头20Bytes）所以如果用链路层以太网，MSS的值往往为1460。 而Internet上标准的MTU（最小的MTU，链路层网络为x2.5时）为576，那么如果不设置，则MSS的默认值就为536个字节。很多时候，MSS的值最好取512的倍数。TCP报文段的分段与重组是在运输层完成的。
+到了这里有一个问题自然就明了了，TCP分段的原因是MSS，IP分片的原因是MTU，由于一直有MSS&amp;lt;=MTU，很明显，分段后的每一段TCP报文段再加上IP首部后的长度不可能超过MTU，因此也就不需要在网络层进行IP分片了。因此TCP报文段很少会发生IP分片的情况。
+ UDP #  再来看UDP数据报，由于UDP数据报不会自己进行分段，因此当长度超过了MTU时，会在网络层进行IP分片。同样，ICMP（在网络层中）同样会出现IP分片情况。 在TCP/IP分层中，数据链路层用MTU（Maximum Transmission Unit，最大传输单元）来限制所能传输的数据包大小，MTU是指一次传送的数据最大长度，不包括数据链路层数据帧的帧头，如以太网的MTU为1500字节，实际上数据帧的最大长度为1518 = 6+6+2+4+1500 字节，其中以太网数据帧的帧头为6+6+2字节。  当发送的IP数据报的大小超过了MTU时，IP层就需要对数据进行分片，否则数据将无法发送成功。
+分片传输的IP数据报不一定按序到达，但IP首部中的信息能让这些数据报片按序组装。IP数据报的分片与重组是在网络层进完成的
+划重点 #   TCP分段产生原因是MSS.（最大分段大小） IP分片由网络层完成，也在网络层进行重组； TCP分段是在传输层完成，并在传输层进行重组. //透明性 到了这里有一个问题自然就明了了，TCP分段的原因是MSS，IP分片的原因是MTU，由于一直有MSS&amp;lt;=MTU，很明显，分段后的每一段TCP报文段再加上IP首部后的长度不可能超过MTU，因此也就不需要在网络层进行IP分片了。因此TCP报文段很少会发生IP分片的情况。 若数据过大，只会在传输层进行数据分段，到了IP层就不用分片。 而我们常提到的 IP分片是由于UDP传输协议造成的，因为UDP传输协议并未限定传输数据报的大小。   UDP不会分段，就由IP来分片。 TCP会分段，当然就不用IP来分片了！ #  为什么要避免UDP数据报在IP层分片呢 #  在网络编程中，我们要避免出现IP分片，那么为什么要避免呢？ 原因是IP层是没有超时重传机制的，如果IP层对一个数据包进行了分片，只要有一个分片丢失了，只能依赖于传输层进行重传，结果是所有的分片都要重传一遍，这个代价有点大。 由此可见，IP分片会大大降低传输层传送数据的成功率，所以我们要避免IP分片。 对于UDP包，我们需要在应用层去限制每个包的大小，一般不要超过1472字节，即以太网MTU（1500—UDP首部（8）—IP首部（20）。 对于TCP数据，应用层就不需要考虑这个问题了，因为传输层已经帮我们做了。在建立连接的三次握手的过程中，连接双方会相互通告MSS（Maximum Segment Size，最大报文段长度），MSS一般是MTU—IP首部（20）—TCP首部（20），每次发送的TCP数据都不会超过双方MSS的最小值，所以就保证了IP数据报不会超过MTU，避免了IP分片。  udp中一个包大小究竟为多大合适 #  在进行UDP编程的时候,我们最容易想到的问题就是,一次发送多少bytes好？</description>
+    </item>
+    
+    <item>
+      <title>网络协议</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E5%8D%8F%E8%AE%AE/</guid>
+      <description>网络协议 #    RFC 协议官方文档
+ 网络分层 #  OSI 分层模型 ISO 组织讨论的架构，分层更加详细，理想化学、术化，现实中使用TCP\IP模型更多
+ mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) graph TD 应用层--表示层; 表示层--会话层; 会话层--传输层; 传输层--网络层; 网络层--数据链路层; 数据链路层--物理层;  TCP\IP 分层模型 IEEE 组织开发，更贴近现实
+graph TD; 应用层[&#34;应用层：包括OSI模型中的应用层、表示层、传输层&#34;]--传输层; 传输层--网络层; 网络层--D[&#34;链路层：包括OSI模型中的数据链路层、物理层&#34;];  分层说明  应用层：为应用提供服务 表示层（TCP\IP协议中包含在应用层中）：数据格式转化，数据加密 会话层（TCP\IP协议中包含在应用层中）：建立、管理、维护会话 传输层：建立、管理、 维护端对端的连接 网络层：IP地址以及路由选择 数据链路层（TCP\IP协议中包含在数据层中）：提供介质访问和链路管理 物理层（TCP\IP协议中包含在数据层中）：物理传输  问题： 移动通信的3g、4g在哪个层次？ &amp;ndash; 链路层   TCP\IP协议族模型中有哪些具体协议 #  包括但不限于
+   概念模型 功能 包含的协议     应用层 文件传输、电子邮件、文件服务、虚拟终端 TFTP、HTTP、FTP、SNMP、SMTP、DNS、Telnet   应用层 数据格式化、代码转化、数据加密 没有   应用层 解除或者建立与别的节点的连接 没有   传输层 提供段对端的接口 TCP、UDP   网络层 为数据包提供路由 IP、ICMP、RIP、OSPF、BGP、IGMP   链路层 传输有地址的帧以及错误检测功能 SLIP、CSLIP、PPP、ARP、RARP、MTU   链路层 以二进制为数据形式在物理媒体上传输数据 ISO2110、IEEE802、IEEE802.</description>
+    </item>
+    
+    <item>
+      <title>网络协议 相关问题</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/question/</guid>
+      <description>网络协议 相关问题 #  一次完整的http 请求的过程 #  dns 域名解析 #   本地浏览器缓存 操作系统缓存 dns 服务器   三次握手 建立tcp 连接 #  客户端发起http请求 #  服务器响应http请求 #  客户端解析http请求，并请求html代码中的资源 #  客户端渲染展示内容 #  关闭tcp连接（1.0） #   1.1 keep_alive 2.0 io 多路复用 3 udt，不再使用tcp  DNS 劫持 #  HTTP劫持 #  </description>
+    </item>
+    
+    <item>
+      <title>面试题</title>
+      <link>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E7%BD%91%E7%BB%9C%E9%80%9A%E8%AE%AF/%E9%9D%A2%E8%AF%95/</guid>
+      <description>https://www.cnblogs.com/lh03061238/p/12215367.html
+  tcp 三次握手
+  tcp 为什么三次握手
+  tcp 四次挥手
+  tcp 为什么会有 time_waiting 状态
+  ddos 攻击 syn 洪水攻击
+ ddos 带宽性攻击：利用大量合理的请求，抢占服务器资源导致正常用户无法访问服务器 ddos 联通性攻击： syn 洪水攻击：连通性请求    哪些情况比较适合udp实现 允许丢包的情况存在。
+ 多播 直播、视频  如果需要保证可靠性，需要应用层来保证可靠性的实现
+  http 和https 的区别
+ 明文 端口 加密 安全    https 多出的步骤 #    tcp 粘包拆包
+ 消息头加消息体 消息定长 特殊的分割符    序列化</description>
+    </item>
+    
+    <item>
+      <title>Brew 的镜像更换</title>
+      <link>/posts/brew/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/brew/</guid>
+      <description>转载
+ 你可能有过这样糟糕的经历，当你满心欢喜的敲下 “brew install 应用名称”，静静的等待安装结果的时候，Homebrew在 Updating Homebrew卡死了。
+ Homebrew是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。
+使用 阿里云 的 Homebrew 镜像源进行加速 #  如果你没有更换过镜像源，执行 brew 命令安装应用的时候，跟以下 3 个仓库地址有关：
+ brew.git homebrew-core.git homebrew-bottles  通过以下操作将这 3 个仓库地址全部替换为 阿里云 提供的地址
+更换 brew.git #  cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git 更换 homebrew-core.git #  cd &amp;quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git  执行上面两个命令之后请执行 brew update
+ 更换 homebrew-bottles #  如果你使用zsh那么
+echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.</description>
+    </item>
+    
+    <item>
+      <title>崩溃优化</title>
+      <link>/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96/</guid>
+      <description>崩溃优化、crash、anr</description>
+    </item>
+    
+    <item>
+      <title>油爆虾</title>
+      <link>/posts/%E6%B2%B9%E7%88%86%E8%99%BE/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/%E6%B2%B9%E7%88%86%E8%99%BE/</guid>
+      <description>油爆虾</description>
+    </item>
+    
+    <item>
+      <title>煲仔饭</title>
+      <link>/posts/%E7%85%B2%E4%BB%94%E9%A5%AD/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/%E7%85%B2%E4%BB%94%E9%A5%AD/</guid>
+      <description>腊肠煲仔饭</description>
+    </item>
+    
+    <item>
+      <title>Paging 分页库</title>
+      <link>/docs/arch/jetpack/paging/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/paging/</guid>
+      <description>Jetpack 全家桶</description>
+    </item>
+    
+    <item>
+      <title>StartUp</title>
+      <link>/docs/arch/jetpack/startup/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/startup/</guid>
+      <description>Jetpack 全家桶</description>
+    </item>
+    
+    <item>
+      <title>基础知识</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1base/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/1base/</guid>
+      <description>Java 线程的实现方式有几种，FeatureTask的实现方式，死锁</description>
+    </item>
+    
+    <item>
+      <title>android AMS</title>
+      <link>/docs/android/framework/ams/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/framework/ams/</guid>
+      <description>AMS</description>
+    </item>
+    
+    <item>
+      <title>android camera 相关知识</title>
+      <link>/docs/android/camera/camera/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/camera/camera/</guid>
+      <description>android vm 和 java vm 的区别</description>
+    </item>
+    
+    <item>
+      <title>android vm</title>
+      <link>/docs/android/framework/androidvm/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/framework/androidvm/</guid>
+      <description>android vm 和 java vm 的区别</description>
+    </item>
+    
+    <item>
+      <title>media store</title>
+      <link>/posts/mediastore/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/mediastore/</guid>
+      <description>media store</description>
+    </item>
+    
+    <item>
+      <title>PDCA</title>
+      <link>/posts/pdca/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/pdca/</guid>
+      <description>media store</description>
+    </item>
+    
+    <item>
+      <title>系统启动流程</title>
+      <link>/docs/android/framework/start/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/framework/start/</guid>
+      <description>启动启动流程</description>
+    </item>
+    
+    <item>
+      <title>Android 架构</title>
+      <link>/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/%E6%9E%B6%E6%9E%84/%E6%84%8F%E4%B9%89/</guid>
+      <description>Android 架构 #   业务需求解构， 独立出不可再分的模块 再从各个模块中提炼组件 组件的不可再发， 公用组件下沉 模块独立开发，独立测试，明确输入输出，方便编写测试代码 搭积木的方式完成整个app的构建 使用一些第三方库，来进行组件间的解耦，通信。 面向接口编程 渐进式的架构  内存优化 #   设备分级 bitmap 优化，统一图片库 大图。重复图片。图片内存缓存。  内存泄漏 #  leakcanary</description>
+    </item>
+    
+    <item>
+      <title>剑指offer - 解决面试题的思路</title>
+      <link>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/algorithm/%E5%89%91%E6%8C%87offer3/</guid>
+      <description>剑指offer中的算法题 #    剑指Offer
+ 解决面试题的思路 #  面试题19：二叉树的镜像（举例让抽象问题具现化） #   题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。  https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/ 思路：递归替换左右子节点即可。 答案：  /** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public TreeNode mirrorTree(TreeNode root) { if (root == null) { return null; } TreeNode left = root.</description>
+    </item>
+    
+    <item>
+      <title>剑指offer - 高质量的代码</title>
+      <link>/docs/algorithm/%E5%89%91%E6%8C%87offer2/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/algorithm/%E5%89%91%E6%8C%87offer2/</guid>
+      <description>剑指offer中的算法题 #    剑指Offer
+ 高质量的代码 #  面试题11：数值的整次方 #   题目：实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn）。不得使用库函数，同时不需要考虑大数问题。  https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/ 思路：  答案：  class Solution { public double myPow(double x, int n) { if (x == 0) { return 0; } long b = n; if (n &amp;lt; 0) { x = 1 / x; b = -b; } double r = 1.0; while (b &amp;gt; 0) { if ((b &amp;amp; 1) == 1) { r = r * x; } x *= x; b = b&amp;gt;&amp;gt;1; } return r; } } 面试题12：打印1到最大的n位数 #   题目：输入数字 n，按顺序打印出从 1 到最大的 n 位十进制数。比如输入 3，则打印出 1、2、3 一直到最大的 3 位数 999。  https://leetcode-cn.</description>
+    </item>
+    
+    <item>
+      <title>创建并上传mavenSdk</title>
+      <link>/docs/android/android_studio/maven_sdk/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/android_studio/maven_sdk/</guid>
+      <description>创建并上传mavenSdk</description>
+    </item>
+    
+    <item>
+      <title>JMM</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/2jmm/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/2jmm/</guid>
+      <description>JMM - Java Memory Model #  在Java虚拟机规范中试图定义一种Java内存模型（Java Memory Model，JMM）来屏蔽各个硬件平台和操作系统的内存访问差异，以实现让Java程序在各种平台下都能达到一致的内存访问效果。 注意，为了获得较好的执行性能，Java内存模型并没有限制执行引擎使用处理器的寄存器或者高速缓存来提升指令执行速度，也没有限制编译器对指令进行重排序。也就是说，在java内存模型中，也会存在缓存一致性问题和指令重排序的问题。 Java内存模型规定所有的变量都是存在主存当中（类似于前面说的物理内存），每个线程都有自己的工作内存（类似于前面的高速缓存）。线程对变量的所有操作都必须在工作内存中进行，而不能直接对主存进行操作。并且每个线程不能访问其他线程的工作内存。
+现代计算机原理 cpu 多级缓存模型 #   线程的工作内存90% 都是以cpu中的高速内存。
+  工作内存和主内存是抽象概念
+  虚拟机中每个线程有一个工作内存，只有一个主内存
+  count++ 这个操作 在jmm中是怎么工作的
+  每个线程只允许操作自己线程的工作内存不能操作主内存和别的线程的工作内存
+  jmm 导致的并发安全问题 #  </description>
+    </item>
+    
+    <item>
+      <title>Kotlin 泛型</title>
+      <link>/docs/kotlin/plus/fanxin/</link>
+      <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/plus/fanxin/</guid>
+      <description>java的泛型 #   kotin的泛型类型 与java一样中几乎一致 没有什么大的区别，相应的例子也在 这里 有体现。 官方介绍
+ java 泛型中的通配符 #   首先需要和各位读者明确java中的泛型的两个概念，这有助于你理解kotlin的泛型
+  泛型定义，上限和下限 泛型读取模式   泛型定义是指 在类或者方法上的定义的泛型，这些定义我们 可以定义上限和下限。比如这段代码  class A{} class B extends A{} class C extends A{} class Fu&amp;lt;T&amp;gt; {} class Zi&amp;lt;T extends B&amp;gt; extends Fu&amp;lt;T&amp;gt; {} Zi class定义了他的泛型类型具有上限是B，意味着他的类型只能传入B的子类。
+你不能在Java中这样定义 class A&amp;lt;? extends T&amp;gt; 因为这样编译器无法在编译阶段确定他的类型
+泛型读取模式  List&amp;lt;? extends A&amp;gt; list = new ArrayList&amp;lt;B&amp;gt;(); A a0 = list.get(0); list.add(new A()); 这一段代码中list.</description>
+    </item>
+    
+    <item>
+      <title>Kotlin 进阶知识</title>
+      <link>/docs/kotlin/plus/plus1/</link>
+      <pubDate>Mon, 30 Nov 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/plus/plus1/</guid>
+      <description>顶级属性和顶级方法
+val PI = 3.14 var x = 0 fun incrementX() { x += 1 } fun main() { println(&amp;quot;x = $x; PI = $PI&amp;quot;) incrementX() println(&amp;quot;incrementX()&amp;quot;) println(&amp;quot;x = $x; PI = $PI&amp;quot;) } 定义在class 外面的属性 可以理解为 java中public 静态属性，可以被所有地方使用，只需要import 即可 方法同理。
+  幕后属性
+private var _table: Map&amp;lt;String, Int&amp;gt;? = null public val table: Map&amp;lt;String, Int&amp;gt; get() { if (_table == null) { _table = HashMap() // 类型参数已推断出  } return _table ?</description>
+    </item>
+    
+    <item>
+      <title>内存优化</title>
+      <link>/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</guid>
+      <description>内存优化</description>
+    </item>
+    
+    <item>
+      <title>网络优化</title>
+      <link>/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</guid>
+      <description>网络优化</description>
+    </item>
+    
+    <item>
+      <title>Binder 笔记</title>
+      <link>/docs/android/binder/note/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/binder/note/</guid>
+      <description>Binder 面试问题</description>
+    </item>
+    
+    <item>
+      <title>Fragment 原理</title>
+      <link>/docs/android/component/fragment/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/component/fragment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Handler</title>
+      <link>/docs/android/Handler/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/Handler/</guid>
+      <description>从handler的面试题出发了解handler</description>
+    </item>
+    
+    <item>
+      <title>Recycler View</title>
+      <link>/docs/android/view/recyclerview/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/recyclerview/</guid>
+      <description>Recycler view</description>
+    </item>
+    
+    <item>
+      <title>View </title>
+      <link>/docs/android/view/view/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/view/</guid>
+      <description>从handler的面试题出发了解handler</description>
+    </item>
+    
+    <item>
+      <title>从一个例子研究Binder</title>
+      <link>/docs/android/binder/arch/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/binder/arch/</guid>
+      <description>Binder 面试问题</description>
+    </item>
+    
+    <item>
+      <title>Kotlin 协程 - 怎么使用</title>
+      <link>/docs/kotlin/coroutines/how-to-use/</link>
+      <pubDate>Thu, 10 Dec 2020 13:14:00 +0800</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/coroutines/how-to-use/</guid>
+      <description>kotlin协程 launch async scope suspend</description>
+    </item>
+    
+    <item>
+      <title>卡顿优化</title>
+      <link>/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/optimize/%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/</guid>
+      <description>卡顿优化</description>
+    </item>
+    
+    <item>
+      <title>cas</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7cas/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/7cas/</guid>
+      <description>compare and swap</description>
+    </item>
+    
+    <item>
+      <title>thread local</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/3thread_local/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/3thread_local/</guid>
+      <description>Thread Local 实现方式</description>
+    </item>
+    
+    <item>
+      <title>从RunBlocking 解析</title>
+      <link>/docs/kotlin/coroutines/runBlocking/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/coroutines/runBlocking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>《深入理解Java 虚拟机》第二章</title>
+      <link>/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/2/</guid>
+      <description>《深入理解Java 虚拟机》第二章 自学笔记</description>
+    </item>
+    
+    <item>
+      <title>触摸事件 分发流程</title>
+      <link>/docs/android/view/touch/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/view/touch/</guid>
+      <description>触摸事件</description>
+    </item>
+    
+    <item>
+      <title>Java 垃圾回收器 回收算法</title>
+      <link>/docs/java/JavaVM/gc/</link>
+      <pubDate>Mon, 28 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/gc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>阻塞队列和线程池原理</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4blockingqueue/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/4blockingqueue/</guid>
+      <description>阻塞队列，线程池的实现原理</description>
+    </item>
+    
+    <item>
+      <title>HSDB</title>
+      <link>/docs/java/other/io0/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/other/io0/</guid>
+      <description>java io 的基础应用</description>
+    </item>
+    
+    <item>
+      <title>Java </title>
+      <link>/docs/java/JavaVM/java-allocate/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/java-allocate/</guid>
+      <description>  虚拟机栈-一个线程一个栈
+  动态链接 多态 - 静态分派 动态分派 dizhi
+  局部变量表 存放8大基础类型和对象引用地址。 为什么不存放对象本身呢？
+  操作数栈
+  返回地址
+    对象的分配策略
+ 对象逃逸分析：分析对象是否可以直接在栈中分配对象，如果是分配对象到栈内存中 本地线程分配缓冲：是否具有本地线程缓冲，如果有直接映射到对应的缓冲中 tlab 是否大对象：如果是大对象直接分配到老年代 对象优先分配到eden区 空间分配担保：虚拟机保证，在分配的时候如果当前的区域有足够的空间分配内存则保证一定那能分配成功，因为会先进行一次gc 大对象直接进入老年代 长期存活的对象进入老年代 对象的gc年龄会动态的判断    gc年龄
+ 当对象进去eden区之后每次gc都将对象的gc年龄加1。当超过阈值时，将会升级到下一代 eden 复制算法 复制到from或者to之中的一个 from和to相互复制直到进入老年代 当每个区满的时候将会触发gc minor gc 、young gc 新生代 major gc、old gc 老年代 full gc 全部区域 gc 年龄记在markword 区域    </description>
+    </item>
+    
+    <item>
+      <title>Java IO 的基础应用</title>
+      <link>/docs/java/other/io/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/other/io/</guid>
+      <description>java io 的基础应用</description>
+    </item>
+    
+    <item>
+      <title>Java vm 面试题</title>
+      <link>/docs/java/JavaVM/question/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/question/</guid>
+      <description>jvm 内存结构
+ jmm的规则内存分为线程的工作内存、主内存之分 线程的工作内存包括虚拟栈、本地方法栈、程序计数器 主内存包括堆、方法区 堆按照垃圾回收算法分为 eden、from、to、老年代 方法区分为静态方法区，动态方法区 虚拟机栈是一个栈帧的filo栈。一个栈帧包含操作数栈、本地变量表、动态链接、返回地址 直接内存、本地内存    什么情况下内存栈溢出
+ 线程爆炸多    描述一下 new一个对象的流程
+ 检查对象的class是否存在方法区中，如果没有则加载 分配内存  分析内存存放的区域  逃逸分析：是否分配到栈上 是否大对象，如果是直接分配到老年代 分配到eden   内存的规整化  指针碰撞 空闲列表   考虑并发问题：  talb：本地线程分配内存缓冲 cas：分配内存区域重试     内存空间初始化 设置 对象初始化    Java对象会不会分配在栈中
+ 逃逸分析：可以在栈上分配 几乎所有的对象都在堆中分配    如果判断一个对象是否被回收，有哪些算法，实际虚拟机使用得最多得是什么
+  引用计数
+  gcroot 可达性算法</description>
+    </item>
+    
+    <item>
+      <title>Java 对象头的内容</title>
+      <link>/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/java%E5%AF%B9%E8%B1%A1%E5%A4%B4/</guid>
+      <description>摘抄自 《深入理解Java虚拟机 &amp;ndash; JVM高级特性与最佳实践》</description>
+    </item>
+    
+    <item>
+      <title>json 的特别之处</title>
+      <link>/docs/java/other/json/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/other/json/</guid>
+      <description>json的特别之处</description>
+    </item>
+    
+    <item>
+      <title>《深入理解Java虚拟机》字节码指令表</title>
+      <link>/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4%E8%A1%A8/</guid>
+      <description>摘抄自 《深入理解Java虚拟机 &amp;ndash; JVM高级特性与最佳实践》</description>
+    </item>
+    
+    <item>
+      <title>动态代理</title>
+      <link>/docs/java/other/object_proxy/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/other/object_proxy/</guid>
+      <description>Java的动态代理</description>
+    </item>
+    
+    <item>
+      <title>逃逸分析</title>
+      <link>/docs/java/JavaVM/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 28 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/JavaVM/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>volatile</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5volatile/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/5volatile/</guid>
+      <description>volatile #  volatile 是什么？ 一个轻量级的同步工具，当一个共享变量被volatile修饰的时候他就具有了以下两种情况 https://www.cnblogs.com/dolphin0520/p/3920373.html https://www.cnblogs.com/wangwudi/p/12303772.html
+ jmm
+ volatile 如何保证可见性 #  volatile 可见性 #  最轻量级的同步工具，只能保证可见性，在线程的工作内存中对变量的修改会马上同步到主内存中。只能保证可见性。
+volatile 防止重排序 #  现代cpu 可以一次执行多个指令，从而 引入了 流水线和重排序 重排序缓存。
+arm 架构拥有 3级流水线，以为这可能同时执行3条指令。
+单线程情况下 重排序 将会保证执行结果相同。但是多线程情况下导致出现混乱的情况。
+volatile使用场景 #  一个线程写，多个线程读
+volatile 实现原理 #  lock 前缀 汇编指令 lock指令添加之后 线程的工作内存中使用到变量的时候必须重新从主内存中重新读取一遍 线程的工作内存中对变量进行修改之后必须立马写会主内存</description>
+    </item>
+    
+    <item>
+      <title>AsyncLayoutInflater</title>
+      <link>/docs/arch/jetpack/asynclayoutinflater/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/asynclayoutinflater/</guid>
+      <description>AsyncLayoutInflater</description>
+    </item>
+    
+    <item>
+      <title>synchronized 关键字的原理和使用</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/6synchronized/</guid>
+      <description>synchronized #  我们都知道synchronized可以修饰方法和代码块，那么这两者的内部实现原理是相同的吗？我们来仔细看一下。
+ https://www.jianshu.com/p/5c4f441bf142
+ synchronized 修饰代码块 #  synchronized 在底层字节码的实现由这两个实现
+ monitorenter  拿到monitor的所有权，进入代码块
+ monitorexit  每一个对象都有一个monitor与之关联。 字节码获取一个moniter对象的所有权就获取了一个锁
+public synchronized void test() #  对象头 #  优化synchronized 的性能设计了多个锁的量级 #    对象头
+  偏向锁 （经过统计发现，现代cpu 的锁大部分都是由同一个线程反复获得，所以设计了偏向锁，连自旋都不做了）
+  轻量级锁 - 为了避免上下文切换这类重量级操作。自旋锁cas。 适应性自旋锁 自旋锁次数由虚拟机动态调整。 自旋时间不大于上下文切换所需要的时间，否则就超出了 轻量级锁的意义
+  重量级锁 上下文切换
+  当偏向锁撤销的时候需要释放锁会导致stop the world。 这就引起一个问题，
+  为什么偏向锁撤销的时候会stop the world 因为撤销偏向锁的时候需要修改堆栈的对象的对象头内容，如果这时候不
+  偏向锁 适用于 只有一个线程访问同步块场景，因为偏向锁的撤销会导致stoptheworld。</description>
+    </item>
+    
+    <item>
+      <title>AQS</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/8aqs/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/8aqs/</guid>
+      <description>AbstractQueuedSynchronizer、 抽象队列同步器</description>
+    </item>
+    
+    <item>
+      <title>多线程--lock</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/9lock/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/9lock/</guid>
+      <description>实现一个自定义的lock 类似于 lock
+学习完 aqs之后再来研究lock的实现
+  公平锁和非公平锁
+  锁的可重入
+  </description>
+    </item>
+    
+    <item>
+      <title>Activity launchMode</title>
+      <link>/docs/android/LaunchMode/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/LaunchMode/</guid>
+      <description>Activity 的 launchemode</description>
+    </item>
+    
+    <item>
+      <title>多线程--面试题</title>
+      <link>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/questions/</link>
+      <pubDate>Tue, 11 Feb 2020 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/questions/</guid>
+      <description>synchronized 修饰普通方法和静态方法的区别？什么是可见性？ #   synchronized 锁的一定是一个具体对象，synchronzied修改的是对象头的内容， synchronized 静态方法加的是 位于方法区中的class对象 synchronized 加在普通方法上锁的是this对象 可见性： 根据jmm，在线程的工作内存中修改一个变量，其他线程将看不到他在这个线程的修改，这就是可见性。 线程从主内存中读取变量到工作内存中，修改运行在线程的工作内存中，不定时地将数据写回主内存。 使用volatile 可以在线程修改变量之后，强行要求将其写回主内存，并且在其他协程使用的时候，强行要求其从主内存再读取一次  锁分哪几类？ #  按照各个角度来分：
+ 线程要不要锁住资源  锁住：悲观锁 不锁住：乐观锁   锁住同步资源失败，线程要不要阻塞？  阻塞： 不阻塞：自旋锁 适应性自旋锁   synchronized的为了优化所定义的几个级别的锁  偏向锁 轻量级锁 重量级锁   多个线程竞争的时候是否公平  公平锁 排队锁 非公平锁 先尝试获取一次锁，再排队   一个线程中的多个流程能不能获取同一把锁  可重入锁 非可重入锁   多个线程能不能共享一把锁  共享锁 （读锁） 排他锁 （写锁）    cas 无锁编程的原理 #  利用了现代cpu提供的compare and swap 原子操作能力，辅助以自旋直到完成为止等方式实现了无锁化编程的能力。</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin - 基础介绍</title>
+      <link>/docs/kotlin/samples/intro/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/intro/</guid>
+      <description>方法、操作符方法、中缀方法、vararg、变量、泛型、继承</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 代理</title>
+      <link>/docs/kotlin/samples/delegate/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/delegate/</guid>
+      <description>委托模式 、 代理属性 、 lazy、to</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 作用域方法</title>
+      <link>/docs/kotlin/samples/funarea/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/funarea/</guid>
+      <description>let 、 run 、 with 、 apply 、 also</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 函数</title>
+      <link>/docs/kotlin/samples/function/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/function/</guid>
+      <description>高阶函数、lambda、扩展函数、扩展属性</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 流程控制</title>
+      <link>/docs/kotlin/samples/flow/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/flow/</guid>
+      <description>when 、 loop 、 区间</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 特殊特性</title>
+      <link>/docs/kotlin/samples/special/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/special/</guid>
+      <description>命名参数、string模板、解构声明、smart cast</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 特殊类</title>
+      <link>/docs/kotlin/samples/specialclass/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/specialclass/</guid>
+      <description>Data class、enum class、sealed class、object keyword</description>
+    </item>
+    
+    <item>
+      <title>【译】Kotlin 语法基础 - 集合</title>
+      <link>/docs/kotlin/samples/collections/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/kotlin/samples/collections/</guid>
+      <description>list 、 map 、 set、fliter、any、all、none、first、last、partition</description>
+    </item>
+    
+    <item>
+      <title>Gradle connect Reset</title>
+      <link>/posts/gradle_connect_reset/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/gradle_connect_reset/</guid>
+      <description>Could not install Gradle distribution from &amp;lsquo;&lt;a href=&#34;https://services.gradle.org/distributions/gradle-6.5.1-all.zip&#39;&#34;&gt;https://services.gradle.org/distributions/gradle-6.5.1-all.zip&#39;&lt;/a&gt;.</description>
+    </item>
+    
+    <item>
+      <title>Maven snapshot</title>
+      <link>/posts/maven-snapshot/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/maven-snapshot/</guid>
+      <description>Maven 快速开发迭代 版本好 snapshot</description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>/posts/sed/</link>
+      <pubDate>Sat, 14 Nov 2020 12:20:31 +0800</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/sed/</guid>
+      <description>Sed 使用方法</description>
+    </item>
+    
+    <item>
+      <title>我的git配置</title>
+      <link>/posts/git_alias/</link>
+      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/git_alias/</guid>
+      <description># This is Git&#39;s per-user configuration file.[user]# Please adapt and uncomment the following lines:name = xxxemail = xxx[filter &amp;quot;lfs&amp;quot;]clean = git-lfs clean -- %fsmudge = git-lfs smudge -- %fprocess = git-lfs filter-processrequired = true[alias]co = checkoutcp = cherry-pickcm = commitba = branch -abh = branchamend = commit -a --amendlg = loglo = log --onelinest = statusdf = diffreview = !</description>
+    </item>
+    
+    <item>
+      <title>技术书籍</title>
+      <link>/docs/%E4%B9%A6%E6%9C%AC/</link>
+      <pubDate>Sat, 27 Sep 2014 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/%E4%B9%A6%E6%9C%AC/</guid>
+      <description>Java网络编程（第4版）
+Effective Java 中文第二版
+Head First Java中文版
+Head First 设计模式(中文版)
+HTTP权威指南
+Java编程思想（第4版）
+Java并发编程实战（中文版）
+TCP IP详解
+深入理解Java虚拟机：JVM高级特性与最佳实践
+推荐名单 #  Java #    Java 编程思想  Effective java 中文版  深入理解 Java 虚拟机  Java 并发编程的艺术  Java 并发编程实战  数据结构与算法 #    算法  算法导论  算法之美  数据结构与算法分析  剑指 Offer  操作系统 #    现代操作系统  深入理解计算机系统  鸟哥的 Linux 私房菜  计算机网络 #    计算机网络  计算机网络 自顶向下方法  图解 HTTP  系统设计 #    淘宝技术这十年  大规模分布式存储系统  大型网站系统与 Java 中间件开发实践  编码艺术 #    重构  编程珠玑  代码大全  人月神话  程序员的职业素养  编写可读代码的艺术  设计模式 #    Head First 设计模式  设计模式 可复用面向对象软件的基础  敏捷软件开发 原则、模式与实践  数据库 #    数据库系统概念  MySQL 必知必会  高性能 MySQL  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/android/vm/vm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/android/vm/vm/</guid>
+      <description> https://blog.csdn.net/Luoshengyang/article/details/41338251
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/arch/jetpack/compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/jetpack/compose/</guid>
+      <description>Compose #  第一步 Jetpack Compose 是干嘛用的？ #  做过启动优化的同学一定会发现LayoutInflater.inflate实在是太慢了，可是真当你一点点得去优化xml却不会有太多的提升，真的是搞得人头疼。这时候就要分析 LayoutInflater.inflate 里面到底做了什么？让我们来研究一下吧。
+ public View inflate(@LayoutRes int resource, @Nullable ViewGroup root, boolean attachToRoot) { final Resources res = getContext().getResources(); if (DEBUG) { Log.d(TAG, &amp;quot;INFLATING from resource: \&amp;quot;&amp;quot; + res.getResourceName(resource) + &amp;quot;\&amp;quot; (&amp;quot; + Integer.toHexString(resource) + &amp;quot;)&amp;quot;); } View view = tryInflatePrecompiled(resource, res, root, attachToRoot); // 1 if (view != null) { return view; } XmlResourceParser parser = res.getLayout(resource); // 2 try { return inflate(parser, root, attachToRoot); // 3 } finally { parser.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/java/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/HashMap-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</guid>
+      <description>源码解析不会通篇解析，会通过面试题整理来针对性地解析其中的关键点
+  主要的几个面试题：
+ HashMap的底层原理是什么？线程安全么？ HashMap中put是如何实现的？ 谈一下hashMap中什么时候需要进行扩容，扩容resize()又是如何实现的？ 什么是哈希碰撞？怎么解决? HashMap和HashTable的区别 HashMap中什么时候需要进行扩容，扩容resize()是如何实现的？ hashmap concurrenthashmap原理 arraylist和hashmap的区别，为什么取数快？   1. HashMap的底层原理是什么？线程安全么？ #  HashMap的底层原理是链表的数组， 通过hash算法计算出 key的hash值再根据数组长度取模得到index 如果index相同，那么就排在同一个链表中。链表中根据key的hash值大小有序排列方便查找  jdk 1.8 之后 androidsdk 24 之后 hashmap 的内部实现有链表改为 链表加红黑树实现，当一个链表的长度大于 8之后将会在后续添加的时候转变为红黑树   get： 先通过hash算法计算出key的hash值 然后再通过hash根据 链表数组的长度取模 获得index。根据index去循环链表或者红黑树取到相应的value。 put： 先通过hash算法计算出key的hash值 然后再通过hash根据 链表数组的长度取模 获得index，再根据排列顺序将 entry放到链表或者红黑树中。  线程不安全，当多个线程操作的时候可能使读取的数据为错误数据。
+2. HashMap中put是如何实现的？ #   简单过程：先通过hash算法计算出key的hash值 然后再通过hash根据 链表数组的长度取模 获得index，再根据排列顺序将 entry放到链表或者红黑树中。 看代码：
+ public V put(K key, V value) { return putVal(hash(key), key, value, false, true); } final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) { Node&amp;lt;K,V&amp;gt;[] tab; Node&amp;lt;K,V&amp;gt; p; int n, i; if ((tab = table) == null || (n = tab.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/open_sources/leakcanary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/leakcanary/</guid>
+      <description>https://blog.csdn.net/braintt/article/details/99685243</description>
+    </item>
+    
+    <item>
+      <title>Github Pages服务</title>
+      <link>/posts/GithubPages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/posts/GithubPages/</guid>
+      <description>GithubPages #    作为一个程序员需要有一个记录知识点的地方，也需要一个做记录整理自己的知识体系的地方。GithubPages 作为影响力最大的博客网站，当我们需要进行博客搭建的时候，当然是选择他！
+ 准备 #    Pages 这是github pages 提供的帮助文档。 我们按照他提供的步骤一步步的搭建好仓库。比如我取名就是bokmark.github.io  主题 这是主题列表。我们使用hugo 来将markdown文件转化为html文件  开始 #    第一步创建hugo的站
+hugo new site mysite  然后再选一个好看的theme，我这里推荐我使用的这个主题
+cd mysitegit clone https://github.com/jugglerx/hugo-whisper-theme.git themes/hugo-whisper-theme  修改config.toml
+baseURL = &amp;quot;/&amp;quot;themesDir = &amp;quot;themes&amp;quot;publishdir = &amp;quot;docs&amp;quot;theme = &amp;quot;hugo-whisper-theme&amp;quot;这里面最重要的是 publishdir = &amp;quot;docs&amp;quot;
+  创建你要的页面
+hugo new about.md// 会在content页面 创建about.md 文件hugo new notes/other/GithubPages.</description>
+    </item>
+    
+    <item>
+      <title>单例模式</title>
+      <link>/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/design_pattern/%E5%8D%95%E4%BE%8B/</guid>
+      <description>单例模式 #  </description>
+    </item>
+    
+    <item>
+      <title>装饰器模式</title>
+      <link>/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/arch/design_pattern/%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
+      <description>装饰器模式 #  设计模式总体介绍 #  参考文档： #  装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
+意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
+主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
+何时使用：在不想增加很多子类的情况下扩展类。
+如何解决：将具体功能职责划分，同时继承装饰者模式。
+关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+应用实例： 1、孙悟空有 72 变，当他变成&amp;quot;庙宇&amp;quot;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
+优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。
+缺点：多层装饰比较复杂。
+使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
+注意事项：可代替继承。
+我们的介绍 #  为了 在保持方法签名完整的前提下，提供了额外的功能，进而设计的一种模式。通过注入不同的具体装饰类，来实现功能的动态添加或删除。 主要是为了避免继承所带来的子类膨胀化。可以使功能的添加或删除更灵活动态。
+举个现有的栗子 #    其他例子：Java 中的 Stream
+ android Context中的装饰者模式（变种装饰类）
+ mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) classDiagram Context 该模式的子模块以及详解 #   Component 抽象组件：栗子中的（Context） ConcreteComponent 具体组件：栗子中的（ContextImpl、MockContext） Decorator 抽象装饰类：栗子中的（ContextWrapper） ConcreteDecorator 具体装饰类：（Application、Activity、Service）  允许向一个现有的对象（Context），又不修改他的结构， 添加一个新功能。这种模式创建了一个装饰类（ContextWrapper），用来包装原有的类（ContextImpl），并且在 保持类方法签名完整的情况下，添加了新功能。</description>
+    </item>
+    
+  </channel>
+</rss>

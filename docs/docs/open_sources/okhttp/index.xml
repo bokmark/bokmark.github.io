@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bokmark</title>
+    <link>/docs/open_sources/okhttp/</link>
+    <description>Recent content on Bokmark</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bokmark@163.com (bokmark)</managingEditor>
+    <webMaster>bokmark@163.com (bokmark)</webMaster><atom:link href="/docs/open_sources/okhttp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OkHTTP 分发器</title>
+      <link>/docs/open_sources/okhttp/dispatcher/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/okhttp/dispatcher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OkHTTP 整体流程</title>
+      <link>/docs/open_sources/okhttp/summary/</link>
+      <pubDate>Tue, 01 Dec 2020 15:14:39 +1000</pubDate>
+      <author>bokmark@163.com (bokmark)</author>
+      <guid>/docs/open_sources/okhttp/summary/</guid>
+      <description>okhttp #  https://blog.csdn.net/chunqiuwei/article/details/71939952
+ github 源地址
+整体流程 #   mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) sequenceDiagram participant c as OkHttpClient participant rc as RealCall participant d as Dispatchers participant chain as RealInterceptorChain c-rc: RealCall.newRealCall(this, request, false) rc--c: new RealCall(client, originalRequest, forWebSocket); rc-d: enqueue()/*见详细解释*/ d--rc: executeOn()/*见详细解释*/ rc--rc: execute() rc-chain: getResponseWithInterceptorChain() chain--c: callback 分发器 #  Dispatcher.java public final class Dispatcher { private int maxRequests = 64; private int maxRequestsPerHost = 5; private @Nullable Runnable idleCallback; /** Executes calls.</description>
+    </item>
+    
+  </channel>
+</rss>
