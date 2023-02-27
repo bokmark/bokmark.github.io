@@ -30,8 +30,8 @@ params:
     favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
-        since: 2020
-        customText:
+        since: 2019
+        customText: 内容由 bokmark 提供
 
     dateFormat:
         published: 2006-01-02

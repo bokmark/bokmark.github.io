@@ -6,7 +6,7 @@ draft: true
 description: 面试题 结合
 slug: m/sync
 categories:
-    - Mianshi
+    - Interview
 tags:
     - 面试
     - 同步
