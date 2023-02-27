@@ -3,9 +3,9 @@ author: Bokmark Ma
 title: "各种面试的答案 - Handler"
 date: 2022-10-16T00:35:27+08:00
 description: 面试题 结合
-slug: m/handler
+slug: interview/handler
 categories:
-    - Mianshi
+    - Interview
 tags:
     - 面试
     - Handler

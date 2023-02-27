@@ -3,9 +3,9 @@ author: Bokmark Ma
 title: "各种面试的答案 - Kotlin"
 date: 2022-10-16T00:35:27+08:00
 description: 面试题 kotlin部分答案
-slug: m/kotlin
+slug: interview/kotlin
 categories:
-    - Mianshi
+    - Interview
 tags:
     - 面试
     - Kotlin

@@ -4,7 +4,7 @@ title: "各种面试的答案 - 同步"
 date: 2022-10-16T00:35:27+08:00
 draft: true
 description: 面试题 结合
-slug: m/sync
+slug: interview/sync
 categories:
     - Interview
 tags:

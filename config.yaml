@@ -127,7 +127,7 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/bokmark/bokmark.github.io
           params:
               icon: brand-github
 
