@@ -1,0 +1,4 @@
+- name: Hugo Actions
+  # You may pin to the exact commit or the version.
+  # uses: srt32/hugo-action@45dd72ab904158d21657b29c5aa67007a8fcdaba
+  uses: srt32/hugo-action@v0.0.3
