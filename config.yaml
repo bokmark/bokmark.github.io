@@ -115,8 +115,7 @@ params:
             enabled: true
     # busuanzi
     busuanzi:
-        enable: true
-
+        enable: true 
 
 ### Custom menu
 ### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
