@@ -1,7 +1,7 @@
 ---
 author: Bokmark Ma
 title: Android WMS
-date: 2021-10-26T00:33:33+08:00
+date: 2021-10-26
 description: Android window manager service
 slug: fwk/wms
 categories:
@@ -16,29 +16,23 @@ tags:
 
 ## 应用侧 - 相关的类图
 
-```mermaid
+{{<mermaid>}}
 classDiagram
 
 ViewManager <|-- WindowManager  
 WindowManager <|.. WindowManagerImpl
 WindowManagerImpl *--> WindowManagerGlobal
 
-
 WindowManagerImpl : WindowManagerGlobal mGlobal
-  
-
-```
-![WindowManagerGlobal](wm_global.png)
+{{</mermaid>}}
+![WindowManagerGlobal](window.drawio.png)
 
 ## 应用侧 - 相关类的具体职责
 
 ### ViewRootImpl 
 - 管理View和View树的树根DecorView
 - 触发测绘，布局，绘制
-- wms传递的事件的中转站
-![ViewRootImpl](view_root_impl.png)
-    - 事件为什么要去activity phoneWindow 转一手？  
-      因为有一大部分的时间，比如回退按钮等需要由Activity 和 phonewindow 转一手
+- wms传递的事件的中转站 
 - wms的交互
 
 
@@ -112,7 +106,7 @@ private Activity performLaunchActivity(ActivityClientRecord r, Intent customInte
                     r.ident, app, r.intent, r.activityInfo, title, r.parent,
                     r.embeddedID, r.lastNonConfigurationInstances, config,
                     r.referrer, r.voiceInteractor, window, r.configCallback);
- 
+            // instrumentation
             if (r.isPersistable()) {
                 mInstrumentation.callActivityOnCreate(activity, r.state, r.persistentState);
             } else {
@@ -136,24 +130,14 @@ final void attach(Context context, ActivityThread aThread,
     mWindow = new PhoneWindow(this, window, activityConfigCallback);
     mWindow.setWindowControllerCallback(this);
     mWindow.setCallback(this);
-    mWindow.setOnWindowDismissedCallback(this);
-    mWindow.getLayoutInflater().setPrivateFactory(this);
-    if (info.softInputMode != WindowManager.LayoutParams.SOFT_INPUT_STATE_UNSPECIFIED) {
-        mWindow.setSoftInputMode(info.softInputMode);
-    }
-    if (info.uiOptions != 0) {
-        mWindow.setUiOptions(info.uiOptions);
-    }
+    
     mUiThread = Thread.currentThread();
-  
 
     mWindow.setWindowManager(
             (WindowManager)context.getSystemService(Context.WINDOW_SERVICE),
             mToken, mComponent.flattenToString(),
             (info.flags & ActivityInfo.FLAG_HARDWARE_ACCELERATED) != 0);
-    if (mParent != null) {
-        mWindow.setContainer(mParent.getWindow());
-    }
+    
     mWindowManager = mWindow.getWindowManager();
     
 }
@@ -170,6 +154,7 @@ public class PhoneWindow extends Window implements MenuBuilder.Callback {
         super(context);
         mLayoutInflater = LayoutInflater.from(context);
     }
+    // Activity的setContentView 就是调用了Window的setContentView
     public void setContentView(int layoutResID) { 
         if (mContentParent == null) {
             installDecor();
