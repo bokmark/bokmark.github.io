@@ -234,92 +234,38 @@ public int addToDisplay(IWindow window, int seq, WindowManager.LayoutParams attr
             LayoutParams attrs, int viewVisibility, int displayId, Rect outFrame,
             Rect outContentInsets, Rect outStableInsets, Rect outOutsets,
             DisplayCutout.ParcelableWrapper outDisplayCutout, InputChannel outInputChannel) {
-    int[] appOp = new int[1];
-    // PhoneWindowManager::checkAddPermission 检查窗口类型 是否有权限进行添加
-    int res = mPolicy.checkAddPermission(attrs, appOp);
-    if (res != WindowManagerGlobal.ADD_OKAY) {
-        return res;
-    }
- 
-    synchronized(mWindowMap) {
-        // 检查 display 是否准备好，由于 window是需要添加到display上去的
-        if (!mDisplayReady) {
-            throw new IllegalStateException("Display has not been initialialized");
-        }
-
-        // 子窗口 需要依赖父窗口。
-        if (type >= FIRST_SUB_WINDOW && type <= LAST_SUB_WINDOW) {
-            ...
-        }
-
-        AppWindowToken atoken = null;
-        final boolean hasParent = parentWindow != null;
-        // 子窗口 使用父窗口的token
-        WindowToken token = displayContent.getWindowToken(
-                hasParent ? parentWindow.mAttrs.token : attrs.token);
-        // 子窗口 优先展示父窗口
-        final int rootType = hasParent ? parentWindow.mAttrs.type : type; 
-
-        if (token == null) {
-            // 如果 token 为空，意味着是系统级别的窗口。需要做一些type的判断，然后创建token
-            final IBinder binder = attrs.token != null ? attrs.token : client.asBinder(); 
-            token = new WindowToken(this, binder, type, false, displayContent,
-                    session.mCanAddInternalSystemWindow, isRoundedCornerOverlay);
-        } else if (rootType >= FIRST_APPLICATION_WINDOW && rootType <= LAST_APPLICATION_WINDOW) {
-            // 如果是 application window，做一些检查。
-            atoken = token.asAppWindowToken();
-        } else if (...) {
-            // xxx 检查各类窗口类型
-        } else if (token.asAppWindowToken() != null) {
-            // 如果是其他类型的system window类型，不能使用app的token来展示窗口，需要新建一个
-            attrs.token = null;
-            token = new WindowToken(this, client.asBinder(), type, false, displayContent,
+    // 创建了window对应的windowstate，作为window在wms侧的一对一实例
+    final WindowState win = new WindowState(this, session, client, token, parentWindow,
+                    appOp[0], seq, attrs, viewVisibility, session.mUid,
                     session.mCanAddInternalSystemWindow);
-        }
-        // 创建WindowsState。WindowState作为wms管理应用侧的window的包装类。用于提供便捷的关于window的炒作。
-        final WindowState win = new WindowState(this, session, client, token, parentWindow,
-                appOp[0], seq, attrs, viewVisibility, session.mUid,
-                session.mCanAddInternalSystemWindow);
-        
-        // 状态栏调整
-        final boolean hasStatusBarServicePermission =
-                mContext.checkCallingOrSelfPermission(permission.STATUS_BAR_SERVICE)
-                        == PackageManager.PERMISSION_GRANTED;
-        mPolicy.adjustWindowParamsLw(win, win.mAttrs, hasStatusBarServicePermission);
-        win.setShowToOwnerOnlyLocked(mPolicy.checkShowToOwnerOnly(attrs));
-
-        // 添加前的所有准备
-        res = mPolicy.prepareAddWindowLw(win, attrs);
-        if (res != WindowManagerGlobal.ADD_OKAY) {
-            return res;
-        }
-
-        final boolean openInputChannels = (outInputChannel != null
-                && (attrs.inputFeatures & INPUT_FEATURE_NO_INPUT_CHANNEL) == 0);
-        if  (openInputChannels) {
-            win.openInputChannel(outInputChannel);
-        }
-
-        if (type == TYPE_TOAST) {
-            。。。
-            // 如果添加toast ，需要把原来的toast取消
-            if (addToastWindowRequiresToken
-                    || (attrs.flags & LayoutParams.FLAG_NOT_FOCUSABLE) == 0
-                    || mCurrentFocus == null
-                    || mCurrentFocus.mOwnerUid != callingUid) {
-                mH.sendMessageDelayed(
-                        mH.obtainMessage(H.WINDOW_HIDE_TIMEOUT, win),
-                        win.mAttrs.hideTimeoutMilliseconds);
-            }
-        }
-        ... 
-        // 实际添加过程
+    final boolean openInputChannels = (outInputChannel != null
+                    && (attrs.inputFeatures & INPUT_FEATURE_NO_INPUT_CHANNEL) == 0);
+    if  (openInputChannels) {
+        win.openInputChannel(outInputChannel);
     }
+    // 创建SurfaceComposerClient
+    win.attach();
+    ...  
     return res;
 }
-
 ```
-
+### WindowState::attach
+```java
+void attach() {
+    if (localLOGV) Slog.v(TAG, "Attaching " + this + " token=" + mToken);
+    mSession.windowAddedLocked(mAttrs.packageName);
+}
+```
+### Session::windowAddedLocked
+```java
+void windowAddedLocked(String packageName) {
+    if (mSurfaceSession == null) { 
+        // 创建SurfaceComposerClient 
+        mSurfaceSession = new SurfaceSession(); 
+       
+    } 
+```
+### SurfaceComposerClient::construct
 
 
 
