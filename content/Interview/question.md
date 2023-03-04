@@ -3,7 +3,7 @@ author: Bokmark Ma
 title: "亲自遇到过的面试题"
 date: 2021-10-26T00:59:00+08:00
 description: 面试题合集
-slug: interview/intro
+slug: interview/question
 categories:
     - Interview
 tags:

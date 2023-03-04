@@ -57,20 +57,12 @@ public Activity handleLaunchActivity(ActivityClientRecord r,
 public static void initialize() {
     getWindowManagerService();
 }
-
 public static IWindowManager getWindowManagerService() {
     synchronized (WindowManagerGlobal.class) {
         if (sWindowManagerService == null) {
             sWindowManagerService = IWindowManager.Stub.asInterface(
                     ServiceManager.getService("window"));
-            try {
-                if (sWindowManagerService != null) {
-                    ValueAnimator.setDurationScale(
-                            sWindowManagerService.getCurrentAnimatorScale());
-                }
-            } catch (RemoteException e) {
-                throw e.rethrowFromSystemServer();
-            }
+            ...
         }
         return sWindowManagerService;
     }
@@ -81,50 +73,17 @@ public static IWindowManager getWindowManagerService() {
 ### ActivityThread::performLaunchActivity
 从activity的启动创建开始查看window的启动创建
 ```java
-/**  Core implementation of activity launch. */
 private Activity performLaunchActivity(ActivityClientRecord r, Intent customIntent) {
-    ActivityInfo aInfo = r.activityInfo;
     ...
-    try {
-        // 创建application，
-        Application app = r.packageInfo.makeApplication(false, mInstrumentation); 
-        Activity activity = null;
-        try {
-            // 使用反射创建activity
-            java.lang.ClassLoader cl = appContext.getClassLoader();
-            activity = mInstrumentation.newActivity(
-                    cl, component.getClassName(), r.intent);
-        } catch (Exception e) {
-        }
- 
-        // 在这里，如activity 不为空
-        if (activity != null) { 
-            Window window = null;  
-            ...
-            // 进入activity的attach
-            activity.attach(appContext, this, getInstrumentation(), r.token,
-                    r.ident, app, r.intent, r.activityInfo, title, r.parent,
-                    r.embeddedID, r.lastNonConfigurationInstances, config,
-                    r.referrer, r.voiceInteractor, window, r.configCallback);
-            // instrumentation
-            if (r.isPersistable()) {
-                mInstrumentation.callActivityOnCreate(activity, r.state, r.persistentState);
-            } else {
-                mInstrumentation.callActivityOnCreate(activity, r.state);
-            } 
-            r.activity = activity;
-        }
-        r.setState(ON_CREATE); 
-    }   
-    return activity;
+        // 创建完Activity， 进入activity的attach
+        activity.attach(appContext, this, getInstrumentation(), r.token, /*各种参数*/ window, r.configCallback);
+    ... 
 }
 ```
 
 #### Activity:attach
 ```java
-final void attach(Context context, ActivityThread aThread,
-        ...
-        Window window, ActivityConfigCallback activityConfigCallback) {
+final void attach(Context context, ActivityThread aThread,  ... Window windo ...) {
     attachBaseContext(context);
  
     mWindow = new PhoneWindow(this, window, activityConfigCallback);
@@ -138,8 +97,7 @@ final void attach(Context context, ActivityThread aThread,
             mToken, mComponent.flattenToString(),
             (info.flags & ActivityInfo.FLAG_HARDWARE_ACCELERATED) != 0);
     
-    mWindowManager = mWindow.getWindowManager();
-    
+    mWindowManager = mWindow.getWindowManager();   
 }
 
 ```
