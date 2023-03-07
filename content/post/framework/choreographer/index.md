@@ -14,11 +14,11 @@ tags:
 
 # Android Choreographer 原理
 Choreographer负责编排 一个应用整体的ui表现。我们先来看整体的流程示意图
-
+> https://ljd1996.github.io/2020/09/07/Android-Choreographer%E5%8E%9F%E7%90%86/
 ![流程示意图](choreographer.drawio.png)
 
 *总结：* 
-- Choreographer：
+- Choreographer：使用GPU或者CPU的绘制，是在VSync信号到来时才开始。在Choreographer创建的时候，会同SurfaceFlinger建立一个链接 [源码](http://aospxref.com/android-13.0.0_r3/xref/frameworks/base/core/jni/android_view_DisplayEventReceiver.cpp)。调用 postcallback之后，会发送requestNextSync，请求关注下一个Vsync
 - 
 
 ## 源码解析 
@@ -147,13 +147,4 @@ private final class FrameHandler extends Handler {
 }
 ```
 ## 类图
-
-{{<mermaid>}}
-classDiagram
-
-ViewManager <|-- WindowManager  
-WindowManager <|.. WindowManagerImpl
-WindowManagerImpl *--> WindowManagerGlobal
-
-WindowManagerImpl : WindowManagerGlobal mGlobal
-{{</mermaid>}} 
+ 

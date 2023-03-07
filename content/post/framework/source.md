@@ -3,12 +3,13 @@ author: Bokmark Ma
 title: "Android 下载源码"
 date: 2021-10-26T00:16:18+08:00 
 slug: fwk/source
-description: TODO
+description: 单独下载 Aosp的某一个分支的代码
 categories:
     - Android
 tags:
     - Framework
     - Android
+    - Aosp
 ---
 
 # Android Framework 下载源码
