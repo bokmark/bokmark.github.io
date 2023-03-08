@@ -14,3 +14,4 @@ tags:
 # https://perfetto.dev
 SystemTrace
 https://developer.android.com/topic/performance?hl=zh-cn
+https://developer.android.com/topic/performance/rendering/inspect-gpu-rendering?hl=zh-cn#profile_rendering
