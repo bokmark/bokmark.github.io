@@ -1,4 +1,4 @@
-baseurl: https://example.com
+baseurl: https://bokmark.github.io
 languageCode: zh-cn
 theme: stack
 paginate: 5
@@ -90,7 +90,7 @@ params:
     opengraph:
         twitter:
             # Your Twitter username
-            site:
+            site: bokmarkma
 
             # Available values: summary, summary_large_image
             card: summary_large_image
