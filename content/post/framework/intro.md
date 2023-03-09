@@ -83,3 +83,8 @@ https://www.jianshu.com/p/47eca41428d6
 https://weread.qq.com/web/reader/e3d32fb0593388e3dde8006kc81322c012c81e728d9d180
 
 https://weread.qq.com/web/reader/3ee32e60717f5af83ee7b37
+
+## todo
+ https://developer.android.com/training/articles/smp.html?hl=zh-cn
+ scope
+ compose

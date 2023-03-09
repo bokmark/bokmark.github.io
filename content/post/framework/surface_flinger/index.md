@@ -3,7 +3,7 @@ author: Bokmark Ma
 title: Android SurfaceFlinger
 date: 2021-10-26T00:16:18+08:00 
 slug: fwk/sufaceflinger 
-description: SurfaceFlinger是Android图形系统中用于合成各个图层的重要组件。在HWC支持的情况下，SF也会把图层直接丢给HWC来合成，这也是为了效率的考虑。代码都是来直 http://aospxref.com/android-12.0.0_r3/
+description: SurfaceFlinger是Android图形系统中用于合成各个图层的重要组件。在HWC支持的情况下，SF也会把图层直接丢给HWC来合成，这也是为了效率的考虑。代码都是来自 http://aospxref.com/android-12.0.0_r3/
 categories:
     - Android
 tags:
@@ -403,4 +403,7 @@ void SurfaceFlinger::onComposerHalVsync(hal::HWDisplayId hwcDisplayId, int64_t t
 - [Android 显示系统：SurfaceFlinger详解](https://www.cnblogs.com/blogs-of-lxl/p/11272756.html) 
 - [Android-SurfaceFlinger启动与绘图原理](https://ljd1996.github.io/2020/11/02/Android-SurfaceFlinger%E5%90%AF%E5%8A%A8%E4%B8%8E%E7%BB%98%E5%9B%BE%E5%8E%9F%E7%90%86/)
 - [Android GUI系统之SurfaceFlinger](https://blog.51cto.com/u_14344871/3369982)
-- [Android 12(S) 图像显示系统 - 开篇](https://blog.51cto.com/u_14344871/3369982)
+- [Android 12(S) 图像显示系统 - 开篇](https://www.cnblogs.com/roger-yu/p/15641545.html)
+- [VSYNC1](https://www.cnblogs.com/roger-yu/p/16075956.html)
+- [VSYNC2](https://www.cnblogs.com/roger-yu/p/16167404.html)
+- [SurfaceView 与 BufferQueue](https://www.cnblogs.com/roger-yu/p/16041250.html)
