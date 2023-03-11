@@ -88,3 +88,6 @@ https://weread.qq.com/web/reader/3ee32e60717f5af83ee7b37
  https://developer.android.com/training/articles/smp.html?hl=zh-cn
  scope
  compose
+
+截图原理分析
+ https://www.jianshu.com/p/4ae89e1fb36a
