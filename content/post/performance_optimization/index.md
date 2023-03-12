@@ -15,3 +15,6 @@ tags:
 SystemTrace
 https://developer.android.com/topic/performance?hl=zh-cn
 https://developer.android.com/topic/performance/rendering/inspect-gpu-rendering?hl=zh-cn#profile_rendering
+
+# 渲染性能问题
+https://juejin.cn/post/7096288511053004830

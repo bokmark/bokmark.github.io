@@ -21,6 +21,7 @@ tags:
     - kotlin 与 java 的泛型区别
         - kotlin 星投影，in out
         - java super extends
+        
 - synchronized 与lock 的 原理与区别
 - volatile的原理，以及与synchronized的区别。java 单例的写法，以及为什么要加 volatile。
 - UI卡顿监控
