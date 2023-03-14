@@ -2,13 +2,14 @@
 author: Bokmark Ma
 title: Android AMS 启动流程
 date: 2021-10-26T00:33:33+08:00
-description: Android Activity 启动流程
+description: Android Activity 启动流程，以 http://aospxref.com/android-12.0.0_r3 为例子
 slug: fwk/ams
 categories:
     - Android
 tags:
     - Framework
     - Android
+    - AMS
 ---
 
 
@@ -16,45 +17,49 @@ tags:
 
 > SystemServer::startBootstrapServices《创建AMS》  
   SystemServer::startOtherServices 《等系统完成之后，调用AWS的systemReady》  
-  -> AMS::startHomeActivityLocked 《由ams 调用 启动launcher》
-  ---> ActivityStartController::startHomeActivity  《 ActivityStartController AMS 的属性 》
-  -----> ActivityStarter::execute  《 ActivityStarter ActivityStartController obtain 出来的一个实例 》
+  -> AMS::startHomeActivityLocked 《由ams 调用 启动launcher》  
+  ---> ActivityStartController::startHomeActivity  《 ActivityStartController AMS 的属性 》  
+  -----> ActivityStarter::execute  《 ActivityStarter ActivityStartController obtain 出来的一个实例 》  
   -----> ActivityStarter::startActivity  《经过一系列的调用启动activity》  
   -------> ActivityStackSupervisor::resumeFocusedStackTopActivityLocked  《ActivityStackSupervisor ActivityStack的管理者 》  
   -------> ActivityStackSupervisor::mFocusedStack::resumeTopActivityUncheckedLocked  《寻找到对应的task之后，使用ActivityStack启动activity》  
   -------> ActivityStackSupervisor::startSpecificActivityLocked  《寻找到对应的task之后，使用ActivityStack启动activity》  
   -> ActivityManagerService::startProcessLocked   
-  -> ActivityManagerService::startProcess
-  ---> Process::start
-  -----> ZygoteProcess::start
-  -----> ZygoteProcess::zygoteSendArgsAndGetResult
-  -------> ZygoteServer::runSelectLoop
-  -------> ZygoteConnection::processOneCommand
-  -------> ZygoteConnection::handleChildProc
-  -> AMS::mStackSupervisor.resumeFocusedStackTopActivityLocked
+  -> ActivityManagerService::startProcess  
+  ---> Process::start  
+  -----> ZygoteProcess::start  
+  -----> ZygoteProcess::zygoteSendArgsAndGetResult  
+  -------> ZygoteServer::runSelectLoop  
+  -------> ZygoteConnection::processOneCommand  
+  -------> ZygoteConnection::handleChildProc  
+  -> AMS::mStackSupervisor.resumeFocusedStackTopActivityLocked  
 
 
 
 ## AMS 的创建
 
 ```java
-// http://androidxref.com/9.0.0_r3/xref/frameworks/base/services/java/com/android/server/SystemServer.java
+// frameworks/base/services/java/com/android/server/SystemServer.java
 private void startBootstrapServices() { 
-    ...
-    mActivityManagerService = mSystemServiceManager.startService(
-            ActivityManagerService.Lifecycle.class).getService();
-    mActivityManagerService.setSystemServiceManager(mSystemServiceManager);
-    mActivityManagerService.setInstaller(installer);
+    final Watchdog watchdog = Watchdog.getInstance();
+    watchdog.start();
     ...
 
+    ActivityTaskManagerService atm = mSystemServiceManager.startService(
+            ActivityTaskManagerService.Lifecycle.class).getService();
+    // 使用lifecycle 可以将 ams添加到systemservice
+    mActivityManagerService = ActivityManagerService.Lifecycle.startService(
+            mSystemServiceManager, atm);
+    mActivityManagerService.setSystemServiceManager(mSystemServiceManager);
+    mActivityManagerService.setInstaller(installer);
+    mWindowManagerGlobalLock = atm.getGlobalLock();
+    ...
+    // 添加到servicemanager，
     mActivityManagerService.setSystemProcess();
     ...
 
 }
-private void startOtherServices() {
-    ...
-    final Watchdog watchdog = Watchdog.getInstance();
-    watchdog.init(context, mActivityManagerService);
+private void startOtherServices() { 
     ...
     mActivityManagerService.setWindowManager(wm);
     ...
@@ -67,20 +72,24 @@ private void startOtherServices() {
 `mSystemServiceManager.startService` 通过反射去创建传入的class的实例，并且调用`onStart`方法
 
 ```java 
-// http://androidxref.com/9.0.0_r3/xref/frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java
+// frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java
 public static final class Lifecycle extends SystemService {
     private final ActivityManagerService mService;
-
+    private static ActivityTaskManagerService sAtm;
     public Lifecycle(Context context) {
         super(context);
-        // 
-        mService = new ActivityManagerService(context);
+        mService = new ActivityManagerService(context, sAtm);
+    }
+    public static ActivityManagerService startService(
+            SystemServiceManager ssm, ActivityTaskManagerService atm) {
+        sAtm = atm;
+        return ssm.startService(ActivityManagerService.Lifecycle.class).getService();
     }
 
     @Override
     public void onStart() {
         mService.start();
-    } 
+    }
     ...
     public ActivityManagerService getService() {
         return mService;
@@ -90,7 +99,7 @@ public static final class Lifecycle extends SystemService {
 这也就意味着调用 `ActivityManagerService` 的构造函数，然后调用 `start` 方法。
 先看构造函数。
 ```java
-// http://androidxref.com/9.0.0_r3/xref/frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java
+// frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java
 public ActivityManagerService(Context systemContext) { 
     ...
     // 电量Service
