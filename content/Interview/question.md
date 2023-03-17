@@ -81,12 +81,12 @@ tags:
 - 知道的设计模式：桥接模式、适配器、建造者、模板、单例、装饰着、工厂、抽象工厂、策略模式、享元模式的概念理论
 - Handler的原理
 - 六大设计规则 solid  开闭、里氏替换原则、依赖倒置、单一职责、接口隔离、迪米特、组合复用
-    单一职责原则（Single Responsibility Principle）；
-    开闭原则（Open Closed Principle）；
-    里氏替换原则（Liskov Substitution Principle）；
-    迪米特法则（Law of Demeter），又叫“最少知道法则”；
-    接口隔离原则（Interface Segregation Principle）；
-    依赖倒置原则（Dependence Inversion Principle）。
+    单一职责原则（Single Responsibility Principle）；  单一职责，一个类或者模块应该只做一件事。
+    开闭原则（Open Closed Principle）；               对扩展开放，对修改关闭。
+    里氏替换原则（Liskov Substitution Principle）；   父类出现的地方，子类可以随便替换。
+    迪米特法则（Law of Demeter），又叫“最少知道法则”；   每个类或者模块应该尽可能的减少对外的依赖。   
+    接口隔离原则（Interface Segregation Principle）； 接口需要设计的较小，不能设计一个大而全的几口。
+    依赖倒置原则（Dependence Inversion Principle）。  高层级的内容不能依赖于底层的实现。
 - surfaceview 和 textureview的原理
 - wait 和sleep的区别
 - 如何判断链表中有环
