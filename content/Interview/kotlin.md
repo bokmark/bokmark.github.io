@@ -18,6 +18,7 @@ tags:
 > object 可用于快速定义单例以及匿名类。而companion object 定义为伴生对象，具有与class相同的伴生属性，就相当于Java中的静态内部类。  
 
 *object如何快速定义单例？先看代码：*
+
 ```kotlin
 // kotlin source code
 object Single {}
