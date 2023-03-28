@@ -14,13 +14,17 @@ tags:
 # 基础知识
 https://blog.csdn.net/xiangzhihong8/article/details/115309574?spm=1001.2014.3001.5501
 
-
+ 
 
 
 
 
 # 参考资料
+- [Macrobenchmark](https://developer.android.com/studio/profile/macrobenchmark-intro?hl=zh-cn)
+- [Fighting regressions with Benchmarks in CI](https://medium.com/androiddevelopers/fighting-regressions-with-benchmarks-in-ci-6ea9a14b5c71)
+- [在持续集成系统中运行基准](https://developer.android.com/studio/profile/run-benchmarks-in-ci?hl=zh-cn)
 - [卡顿堆栈](https://juejin.cn/post/7051511422370447367)
+- [androidx.tracing](https://developer.android.com/reference/kotlin/androidx/tracing/package-summary#trace)
 - [](https://blog.csdn.net/xiangzhihong8/article/details/115309574?spm=1001.2014.3001.5501)
 - [](https://developer.android.com/topic/performance?hl=zh-cn)
 - [](https://developer.android.com/topic/performance/rendering/inspect-gpu-rendering?hl=zh-cn#profile_rendering)
