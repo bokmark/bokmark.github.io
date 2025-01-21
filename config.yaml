@@ -1,7 +1,7 @@
 baseurl: https://bokmark.github.io
 languageCode: zh-cn
 theme: stack
-pagination.pagerSize: 5
+paginate: 5
 title: 书签集散中心
 
 # Change it to your Disqus shortname before using
