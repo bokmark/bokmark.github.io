@@ -2,7 +2,7 @@
 author: Bokmark Ma
 title: "《React Native 优化终极指南》引导页"
 date: 2025-01-21
-slug: react-native/guide
+slug: react-native/optimization/guide
 description: 性能优化
 categories:
     - React Native
